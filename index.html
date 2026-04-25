@@ -74,7 +74,7 @@ body {
 /* ── HERO ── */
 .hero {
   background: #fff;
-  padding: 80px 48px 0;
+  padding: 40px 48px 0;
   position: relative; overflow: hidden;
 }
 .hero::before {
@@ -1060,6 +1060,185 @@ body {
   .sticky-demo span { display: none; }
   .sticky-demo { padding: 14px; }
 }
+
+/* ── TRUST BAR logos ── */
+.trust-logo-item {
+  display: flex; align-items: center; justify-content: center;
+  height: 32px; opacity: 0.45; filter: grayscale(1);
+  transition: opacity 0.2s, filter 0.2s;
+}
+.trust-logo-item:hover { opacity: 0.75; filter: grayscale(0); }
+.trust-logo-item svg { height: 24px; width: auto; max-width: 140px; fill: #374151; }
+.trust-logo-item text { fill: #374151; }
+
+/* ── HERO bullets ── */
+.hero-bullets {
+  list-style: none; display: flex; flex-direction: column; gap: 10px;
+  margin-bottom: 36px;
+}
+.hero-bullets li {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 15px; font-weight: 600; color: var(--gray-700);
+}
+.hb-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--violet); flex-shrink: 0;
+}
+
+/* ── MODULE STAT ── */
+.module-stat {
+  display: flex; align-items: flex-start; gap: 8px;
+  margin-top: 16px; padding-top: 16px;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  font-size: 12px; color: var(--gray-600); line-height: 1.5;
+}
+.ms-icon { flex-shrink: 0; font-size: 14px; }
+.modules-more-line {
+  text-align: center; margin-top: 32px;
+  font-size: 13px; color: #9CA3AF; font-style: italic;
+}
+
+/* ── CÓMO FUNCIONA ── */
+.como-section { padding: 96px 0; background: var(--night); }
+.como-inner { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+.como-inner .section-eyebrow { color: var(--sky); }
+.como-inner .section-h2 { color: #fff; }
+.como-inner .section-sub { color: rgba(255,255,255,0.6); }
+.como-steps {
+  display: flex; align-items: flex-start; gap: 0;
+  margin-top: 64px;
+}
+.como-step {
+  flex: 1; display: flex; flex-direction: column; align-items: center;
+  text-align: center; padding: 0 24px;
+}
+.como-step-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+  color: var(--sky); text-transform: uppercase; margin-bottom: 16px;
+}
+.como-step-icon {
+  width: 72px; height: 72px; border-radius: 20px;
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 32px; margin-bottom: 20px;
+}
+.como-step h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px; color: #fff; margin-bottom: 12px; line-height: 1.2;
+}
+.como-step p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.65; }
+.como-connector {
+  flex-shrink: 0; width: 60px; height: 2px;
+  background: linear-gradient(90deg, rgba(174,230,255,0.4), rgba(123,97,255,0.4));
+  margin-top: 52px; position: relative;
+}
+.como-connector::after {
+  content: '›'; position: absolute; right: -8px; top: -10px;
+  color: rgba(174,230,255,0.6); font-size: 20px;
+}
+
+/* ── PLANES ── */
+.planes-section { padding: 96px 0; background: var(--gray-50); }
+.planes-inner { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+.planes-grid {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 24px; margin-top: 56px; align-items: start;
+}
+.plan-card {
+  background: #fff; border: 1.5px solid rgba(0,0,0,0.07);
+  border-radius: 24px; padding: 36px; position: relative;
+  transition: all 0.25s;
+}
+.plan-card:hover { box-shadow: 0 12px 40px rgba(123,97,255,0.1); transform: translateY(-4px); }
+.plan-card-featured {
+  border-color: var(--violet); background: #fff;
+  box-shadow: 0 8px 32px rgba(123,97,255,0.15);
+}
+.plan-featured-tag {
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  background: var(--violet); color: #fff;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+  padding: 4px 14px; border-radius: 999px; white-space: nowrap;
+}
+.plan-badge {
+  display: inline-block; background: var(--violet-pale); color: var(--violet);
+  font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; padding: 5px 12px; border-radius: 999px;
+  margin-bottom: 20px;
+}
+.plan-icon { font-size: 32px; margin-bottom: 16px; }
+.plan-name {
+  font-family: 'DM Serif Display', serif; font-size: 22px;
+  color: var(--night); margin-bottom: 12px; line-height: 1.2;
+}
+.plan-desc { font-size: 14px; color: var(--gray-600); line-height: 1.65; margin-bottom: 24px; }
+.plan-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+.plan-features li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--gray-700); }
+.pf-check {
+  width: 20px; height: 20px; border-radius: 6px; background: var(--violet-pale);
+  color: var(--violet); display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; flex-shrink: 0;
+}
+.plan-cta {
+  display: block; width: 100%; padding: 13px 20px; text-align: center;
+  border-radius: 12px; background: var(--violet-pale); color: var(--violet);
+  font-size: 14px; font-weight: 700; text-decoration: none;
+  border: 1.5px solid rgba(123,97,255,0.2);
+  transition: all 0.2s;
+}
+.plan-cta:hover { background: var(--violet); color: #fff; }
+
+/* ── TABLA COMPARATIVA ── */
+.tabla-section { padding: 96px 0; background: #fff; }
+.tabla-inner { max-width: 900px; margin: 0 auto; padding: 0 48px; }
+.tabla-wrap { margin-top: 48px; overflow-x: auto; border-radius: 20px; border: 1px solid rgba(0,0,0,0.08); }
+.comp-table { width: 100%; border-collapse: collapse; }
+.comp-table th, .comp-table td { padding: 16px 20px; text-align: left; font-size: 14px; }
+.comp-table thead { background: var(--night); }
+.ct-feature { color: rgba(255,255,255,0.6); font-weight: 600; width: 45%; }
+.ct-wellnest {
+  color: var(--sky); font-weight: 800; width: 25%;
+  font-family: 'DM Serif Display', serif; font-size: 16px;
+}
+.ct-logo { color: var(--sky); }
+.ct-trad { color: rgba(255,255,255,0.5); font-weight: 600; width: 30%; }
+.comp-table tbody td { color: var(--gray-700); border-bottom: 1px solid rgba(0,0,0,0.06); }
+.comp-table tbody tr:last-child td { border-bottom: none; }
+.ct-row-alt { background: var(--gray-50); }
+.ct-yes { color: #059669; font-weight: 800; font-size: 18px; }
+.ct-no { color: #9CA3AF; font-size: 13px; }
+.ct-partial { color: #D97706; font-size: 13px; }
+
+/* ── MOBILE UNIFIED CTA ── */
+.mobile-cta-unified {
+  display: none;
+  position: fixed; bottom: 16px; left: 16px; right: 16px; z-index: 9001;
+  background: var(--violet); color: #fff;
+  padding: 15px 20px; border-radius: 14px;
+  text-align: center; font-weight: 700; font-size: 15px;
+  text-decoration: none; align-items: center; justify-content: center;
+  gap: 10px;
+  box-shadow: 0 8px 32px rgba(123,97,255,0.4);
+  animation: bouncein 0.6s 2s ease both;
+}
+@media (max-width: 768px) {
+  .sticky-demo { display: none !important; }
+  .whatsapp-btn { display: none !important; }
+  .mobile-cta-unified { display: flex; }
+  .como-steps { flex-direction: column; align-items: center; gap: 32px; }
+  .como-connector { width: 2px; height: 32px; margin-top: 0; background: linear-gradient(180deg, rgba(174,230,255,0.4), rgba(123,97,255,0.4)); }
+  .como-connector::after { content: "↓"; right: auto; left: -8px; top: auto; bottom: -12px; }
+  .planes-grid { grid-template-columns: 1fr; }
+  .planes-inner, .tabla-inner, .como-inner { padding: 0 24px; }
+  .como-section { padding: 64px 0; }
+  .planes-section { padding: 64px 0; }
+  .tabla-section { padding: 64px 0; }
+  .comp-table th, .comp-table td { padding: 12px 14px; font-size: 13px; }
+  .value-grid { grid-template-columns: 1fr 1fr !important; }
+  .contact-form > div { grid-template-columns: 1fr !important; }
+  .trust-logos { gap: 24px; flex-wrap: wrap; }
+}
 </style>
 </head>
 <body>
@@ -1099,7 +1278,7 @@ body {
       </a>
     </div>
   </div>
-  <a href="#form" class="nav-cta">Activar en mi empresa</a>
+  <a href="#form" class="nav-cta">Solicita una demo</a>
 </nav>
 
 <!-- HERO -->
@@ -1111,10 +1290,15 @@ body {
         Para líderes de Recursos Humanos
       </div>
       <h1>El beneficio que hace que tu equipo <em>se quede.</em></h1>
-      <p class="hero-sub">Wellnest entrega bienestar financiero, emocional y físico en una sola app. Sin costo para la empresa. Activa en 48 horas.</p>
+      <p class="hero-sub">La plataforma de bienestar laboral que conecta a tu empresa con lo que más importa: el bienestar de cada colaborador.</p>
+      <ul class="hero-bullets">
+        <li><span class="hb-dot"></span>Bienestar financiero, emocional y físico</li>
+        <li><span class="hb-dot"></span>Sin costo fijo para la empresa</li>
+        <li><span class="hb-dot"></span>Activa en 48 horas, sin IT</li>
+      </ul>
       <div class="hero-actions">
-        <a href="#form" class="btn-primary" style="font-size:15px;padding:14px 28px">Activar en mi empresa</a>
-        <a href="#modulos" class="btn-ghost" style="color:var(--night);border-color:rgba(0,0,0,0.18);font-size:15px;padding:14px 28px">Ver módulos →</a>
+        <a href="#form" class="btn-primary" style="font-size:15px;padding:14px 28px">Solicita una demo</a>
+        <a href="#planes" class="btn-ghost" style="color:var(--night);border-color:rgba(0,0,0,0.18);font-size:15px;padding:14px 28px">Ver planes</a>
       </div>
       <div class="hero-trust">
         <div class="hero-avatars">
@@ -1123,7 +1307,7 @@ body {
           <div class="hero-avatar">A</div>
           <div class="hero-avatar">R</div>
         </div>
-        <span style="margin-left:16px">+200 empresas ya activaron Wellnest</span>
+        <span style="margin-left:16px">Empresas en Panamá ya confían en Wellnest</span>
       </div>
     </div>
     <div class="hero-visual">
@@ -1206,45 +1390,104 @@ body {
 
 <!-- TRUST BAR -->
 <div class="trust-bar">
-  <p class="trust-bar-label">Empresas que confían en Wellnest</p>
+  <p class="trust-bar-label">Empresas en Panamá que ya confían en Wellnest</p>
   <div class="trust-logos">
-    <div class="trust-logo-placeholder"></div>
-    <div class="trust-logo-placeholder"></div>
-    <div class="trust-logo-placeholder"></div>
-    <div class="trust-logo-placeholder"></div>
-    <div class="trust-logo-placeholder"></div>
+    <div class="trust-logo-item" title="Sportline America"><svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" width="160.279" height="13.919" viewBox="0 0 160.279 13.919">
+  <path d="M7.107,3.175,6.539,5.157l10.514.01-.867,3L5.673,8.16l-.657,2.186,11.215.015L15.3,13.626,0,13.614,3.973,0,19.161.011l-.955,3.177Z" transform="translate(136.918 0.036) rotate(-0.106)"/>
+  <path d="M8.442,0,4.5,13.614H0L3.973,0Z" transform="translate(108.054 0.052) rotate(-0.106)"/>
+  <path d="M23.133.019,19.16,13.632l-7.3-.018L7.573,3.422l-.438,0-2.9,10.2L0,13.6l.9-3.032L3.973.011,11.3,0l4.227,10.221.438-.026L18.839.02Z" transform="translate(115.539 0.043) rotate(-0.106)"/>
+  <path d="M3.944,0,8.413.029,5.455,10.2l9.726.034-.986,3.411L0,13.614Z" transform="translate(92.421 0.038) rotate(-0.106)"/>
+  <path d="M1.015,0,17.722.021l-1.015,3.44-6.075-.01-2.958,10.2H3.2l2.987-10.2L0,3.44Z" transform="translate(76.953 0.065) rotate(-0.106)"/>
+  <path d="M19.892,4.426a12.2,12.2,0,0,1-.832,2.156,2.886,2.886,0,0,1-1.088,1.19,4.976,4.976,0,0,1-1.786.631,1.763,1.763,0,0,1,1.631.741,1.015,1.015,0,0,1,.169.936,16.05,16.05,0,0,1-.541,2.362l-.358,1.224-4.147,0,.209-.641c.209-.729.359-1.37.419-1.6a1.589,1.589,0,0,0-.141-.79.639.639,0,0,0-.553-.266,10.088,10.088,0,0,0-1.723-.1L5.221,10.26,4.235,13.7,0,13.7l.418-1.458L3.974,0,14.225.008c2.366.015,3.767.141,4.2.144A2.455,2.455,0,0,1,19.654.57a1.962,1.962,0,0,1,.693,1.29,7.65,7.65,0,0,1-.455,2.567Zm-4.233-.29a.5.5,0,0,0-.289-.5,1.4,1.4,0,0,0-.525-.12c-.2,0-.817-.064-1.694-.069L7.223,3.438,6.266,6.762l7.681.021a1.533,1.533,0,0,0,.585-.171,2.093,2.093,0,0,0,.529-.493,5.109,5.109,0,0,0,.415-.99,6.515,6.515,0,0,0,.182-.992Z" transform="translate(55.835 0.075) rotate(-0.106)"/>
+  <path d="M20.451,2.507a12.577,12.577,0,0,1-.427,2.743c-.12.525-.241,1.079-.42,1.691a21.3,21.3,0,0,1-1.723,4.487,4.2,4.2,0,0,1-3.519,2.226q-1.315.123-4.119.148c-.613,0-1.256.021-1.928.017-2.979-.019-5.023-.062-6.074-.186a2.4,2.4,0,0,1-1.95-.977,1.837,1.837,0,0,1-.284-1.229A10.335,10.335,0,0,1,.282,9.473c.18-.758.39-1.633.689-2.624a22.428,22.428,0,0,1,1.635-4.37A4.339,4.339,0,0,1,6.155.223C7,.141,8.376.063,10.274.017,10.888.021,11.56,0,12.29,0c2.921-.01,4.935.149,5.986.243a2.7,2.7,0,0,1,1.805.83,1.936,1.936,0,0,1,.37,1.434ZM15.767,4.229a1.149,1.149,0,0,0-.9-.561c-.467-.061-1.752-.1-3.65-.111l-.993-.006a18.808,18.808,0,0,0-2.951.185,1.8,1.8,0,0,0-1.232.839A15.241,15.241,0,0,0,5.028,7.313a9.163,9.163,0,0,0-.391,1.75c-.092.671.343,1.112,1.131,1.234.584,0,1.781.041,3.5.052.35,0,.672-.025.964-.023,1.139-.022,1.957-.046,2.366-.043a2.817,2.817,0,0,0,1.346-.371,2.1,2.1,0,0,0,.706-.813,6.415,6.415,0,0,0,.683-1.748,17.569,17.569,0,0,0,.481-2.129,2.11,2.11,0,0,0-.052-.993Z" transform="translate(36.613 0.099) rotate(-0.106)"/>
+  <path d="M19.367,4.365c-.09.291-.15.583-.239.875a9.825,9.825,0,0,1-1.688,3.581A3.86,3.86,0,0,1,16.03,9.863a6.942,6.942,0,0,1-2.135.483c-.584,0-1.694.077-3.242.066L5.22,10.406,4.235,13.7,0,13.7,3.974,0,13.5,0a29.017,29.017,0,0,1,3.562.14,3.148,3.148,0,0,1,2.329,1.1l.086.176a4.837,4.837,0,0,1-.107,2.949Zm-4.292-.2a.71.71,0,0,0-.493-.5,8.742,8.742,0,0,0-2.131-.189L7.193,3.467l-.986,3.44,7.01-.013a2.1,2.1,0,0,0,.614-.142,1.135,1.135,0,0,0,.646-.522,5.053,5.053,0,0,0,.445-1.019,4.974,4.974,0,0,0,.153-1.05Z" transform="translate(16.845 0.104) rotate(-0.106)"/>
+  <path d="M18.166,3.78c-.03.117-.119.291-.178.466-.03.058-.03.117-.06.175l-4,0a6.515,6.515,0,0,0,.121-.671.4.4,0,0,0-.2-.381,1.975,1.975,0,0,0-.875-.181c-.409,0-1.372-.038-2.833-.048A16.09,16.09,0,0,0,6.9,3.327a1.2,1.2,0,0,0-.794.9c-.12.437-.034.73.287.849a29.764,29.764,0,0,0,4.35.262c2.1.043,3.533.169,4.263.232a3,3,0,0,1,1.6.478,1.451,1.451,0,0,1,.693,1.2,5.147,5.147,0,0,1-.248,2.16,7.47,7.47,0,0,1-1.362,2.853,3.489,3.489,0,0,1-1.321.984,7.74,7.74,0,0,1-2.106.454c-.876.023-2.6.071-5.024.055-2.015.016-3.534-.052-4.5-.117A5.44,5.44,0,0,1,.7,13.129,1.48,1.48,0,0,1,0,11.986,7.329,7.329,0,0,1,.34,9.8l.179-.641,3.943-.033a1.314,1.314,0,0,0,.079,1.256.927.927,0,0,0,.671.18c.292,0,1.314.067,2.949.078l3.125-.009a2,2,0,0,0,.907-.169,1.268,1.268,0,0,0,.766-.959c.119-.35.092-.642-.053-.76A2.917,2.917,0,0,0,11.622,8.5c-.467,0-1.606-.069-3.183-.138-1.694-.04-2.774-.106-3.27-.109a9.113,9.113,0,0,1-2.247-.307A1.829,1.829,0,0,1,1.9,7.208,4.216,4.216,0,0,1,2.04,4.347,6.606,6.606,0,0,1,3.813,1.175,4.627,4.627,0,0,1,6.1.226C7.033.115,8.961.011,11.765,0a27.969,27.969,0,0,1,4.2.232A3.338,3.338,0,0,1,18.009,1a1.62,1.62,0,0,1,.174.235,3.091,3.091,0,0,1-.017,2.541Z" transform="translate(0 0.105) rotate(-0.106)"/>
+  <g transform="translate(157.177)">
+    <path d="M1.869,2.086l-.5,0-.318-.44C.939,1.466.881,1.378.823,1.349A.156.156,0,0,0,.706,1.26.5.5,0,0,0,.473,1.23H.414l-.006.847L0,2.074.014,0,.89.006a1.145,1.145,0,0,1,.5.062c.088,0,.175.089.233.177A.589.589,0,0,1,1.7.566a.417.417,0,0,1-.149.379.511.511,0,0,1-.41.2.393.393,0,0,1,.2.177,1.124,1.124,0,0,1,.232.323ZM1.089.8A.306.306,0,0,0,1.206.709a.219.219,0,0,0,.03-.146A.415.415,0,0,0,1.179.387L1,.3H.8l-.438,0,0,.555L.8.852c.146,0,.234,0,.292-.057Z" transform="translate(0.638 0.554) rotate(-0.106)"/>
+    <path d="M3.1,1.559A1.539,1.539,0,0,1,1.538,3.1H1.451A1.562,1.562,0,0,1,0,1.539,1.516,1.516,0,0,1,1.442,0h.088A1.565,1.565,0,0,1,3.1,1.559Zm-.146,0A1.433,1.433,0,0,0,1.529.117H1.441A1.433,1.433,0,0,0,.117,1.539,1.411,1.411,0,0,0,1.452,2.95h.088A1.384,1.384,0,0,0,2.95,1.558Z" transform="translate(0 0.006) rotate(-0.106)"/>
+  </g>
+</svg></div>
+    <div class="trust-logo-item" title="Nike"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 28" fill="currentColor">
+  <path d="M75.3 0.4C64.1 5.2 36.2 15.2 15.2 20.4C8.4 22.1 0.4 22.4 0.1 18.4C-0.1 15.8 2.8 13.6 6.8 12L75.3 0.4z"/>
+</svg></div>
+    <div class="trust-logo-item" title="Mercado del Calzado"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 30" fill="currentColor">
+  <text x="0" y="22" font-family="Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="0.5">MERCADO DEL CALZADO</text>
+</svg></div>
+    <div class="trust-logo-item" title="Bellini"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 30" fill="currentColor">
+  <text x="0" y="22" font-family="Georgia,serif" font-size="20" letter-spacing="2">BELLINI</text>
+</svg></div>
   </div>
 </div>
 
 <!-- PROPUESTA DE VALOR -->
 <div class="section" id="como-funciona">
   <div class="section-eyebrow">Por qué Wellnest</div>
-  <h2 class="section-h2">Un beneficio que <em>realmente</em> usan.</h2>
-  <p class="section-sub">Diseñado para que cada colaborador lo sienta como propio. No es otro beneficio más que nadie recuerda.</p>
-  <div class="value-grid">
+  <h2 class="section-h2">Un beneficio que tus colaboradores <em>realmente usan.</em></h2>
+  <p class="section-sub">Diseñado para que cada colaborador lo sienta como propio — y para que RRHH lo gestione sin esfuerzo.</p>
+  <div class="value-grid" style="grid-template-columns:repeat(3,1fr)">
     <div class="value-card">
       <div class="value-icon">📉</div>
       <h3>Retención comprobada</h3>
-      <p>Empresas con Wellnest reportan 31% menos rotación en los primeros 6 meses.</p>
+      <p>Empresas con programas de bienestar estructurado reportan mejoras significativas en retención y satisfacción del equipo.</p>
     </div>
     <div class="value-card">
       <div class="value-icon">⚡</div>
       <h3>Engagement real</h3>
-      <p>Tus colaboradores abren la app activamente. No es un beneficio que se olvida.</p>
+      <p>Tus colaboradores abren la app activamente porque resuelve necesidades reales: acceso a fondos, salud, apoyo emocional.</p>
     </div>
     <div class="value-card">
       <div class="value-icon">🏷️</div>
-      <h3>Sin costo para la empresa</h3>
-      <p>Wellnest se financia a través de los servicios opcionales que elige el colaborador.</p>
+      <h3>Sin costo fijo para la empresa</h3>
+      <p>Wellnest no tiene costo de suscripción para la empresa. El colaborador solo paga si elige usar un servicio financiero, con tasas reguladas y completamente transparentes.</p>
     </div>
     <div class="value-card">
       <div class="value-icon">🚀</div>
       <h3>Activación en 48 horas</h3>
-      <p>Sin integración compleja. Sin equipo de IT. Tu empresa activa en menos de dos días.</p>
+      <p>Sin integración compleja. Sin equipo de IT. Tu empresa está activa en menos de dos días desde la firma del acuerdo.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">📊</div>
+      <h3>Dashboard para RRHH</h3>
+      <p>Métricas de adopción, bienestar y uso de beneficios en tiempo real. Toda la información que necesitas para tomar decisiones.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">🤝</div>
+      <h3>Soporte humano local</h3>
+      <p>Equipo de soporte en Panamá, en español, disponible para tus colaboradores. No un bot — personas reales que resuelven.</p>
     </div>
   </div>
 </div>
 
+<!-- CÓMO FUNCIONA -->
+<section class="como-section" id="como-activar">
+  <div class="como-inner">
+    <div class="section-eyebrow">Proceso de activación</div>
+    <h2 class="section-h2">Tres pasos para activar <em>Wellnest.</em></h2>
+    <p class="section-sub">Sin proyectos largos, sin dependencia de IT. Tu empresa empieza a ofrecer beneficios reales en menos de 48 horas.</p>
+    <div class="como-steps">
+      <div class="como-step">
+        <div class="como-step-num">01</div>
+        <div class="como-step-icon">🔗</div>
+        <h3>Conectamos con tu sistema de nómina</h3>
+        <p>Integración directa con PayDay y otros sistemas en Panamá. Configuración en 48 horas, sin equipo técnico de tu parte.</p>
+      </div>
+      <div class="como-connector"></div>
+      <div class="como-step">
+        <div class="como-step-num">02</div>
+        <div class="como-step-icon">📱</div>
+        <h3>Tus colaboradores se registran</h3>
+        <p>Cada colaborador descarga la app, valida su empleo y accede a todos los módulos disponibles. Onboarding en minutos.</p>
+      </div>
+      <div class="como-connector"></div>
+      <div class="como-step">
+        <div class="como-step-num">03</div>
+        <div class="como-step-icon">✨</div>
+        <h3>Acceden a sus beneficios</h3>
+        <p>Bienestar financiero, salud y apoyo emocional disponibles desde el primer día. Tu equipo de RRHH ve métricas en tiempo real.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- PRODUCT SHOWCASE -->
 <section class="showcase-section">
@@ -1407,61 +1650,49 @@ body {
 <div class="modules-section" id="modulos">
   <div class="modules-inner">
     <div class="section-eyebrow">Módulos de la plataforma</div>
-    <h2 class="section-h2">Todo lo que tu equipo <em>necesita</em>, en una sola app.</h2>
-    <p class="section-sub">Seis pilares de bienestar disponibles hoy y en hoja de ruta. Activas los que tu empresa necesita.</p>
-    <div class="modules-grid">
-      <div class="module-card">
+    <h2 class="section-h2">Todo en una sola app, <em>lista para tu empresa.</em></h2>
+    <p class="section-sub">Tres pilares de bienestar activos hoy, diseñados para Panamá y listos para activar en 48 horas.</p>
+    <div class="modules-grid" style="grid-template-columns:repeat(3,1fr)">
+      <div class="module-card" style="padding:36px">
         <div class="module-top">
-          <div class="module-icon">💰</div>
-          <span class="badge b-live">Disponible</span>
+          <div class="module-icon" style="width:52px;height:52px;font-size:24px">💰</div>
+          <span class="badge b-live">Activo</span>
         </div>
-        <h3>Bienestar Financiero</h3>
-        <p>Acceso a adelantos de salario, ahorro programado y educación financiera personal.</p>
+        <h3 style="font-size:20px;margin-top:16px">Bienestar Financiero</h3>
+        <p style="margin-top:10px">Adelanto de salario hasta la próxima quincena, ahorro programado y educación financiera. Sin intereses para el colaborador en el adelanto de salario.</p>
+        <div class="module-stat">
+          <span class="ms-icon">📊</span>
+          <span>Integración directa con PayDay y otros sistemas de nómina</span>
+        </div>
       </div>
-      <div class="module-card">
+      <div class="module-card" style="padding:36px">
         <div class="module-top">
-          <div class="module-icon">🏥</div>
-          <span class="badge b-live">Disponible</span>
+          <div class="module-icon" style="width:52px;height:52px;font-size:24px;background:#FEE2E2">🏥</div>
+          <span class="badge b-live">Activo</span>
         </div>
-        <h3>Salud y Seguro</h3>
-        <p>Seguro médico accesible, telemedicina y atención en salud para toda la familia.</p>
+        <h3 style="font-size:20px;margin-top:16px">Salud y Seguro</h3>
+        <p style="margin-top:10px">Seguro médico accesible, telemedicina 24/7 y atención en salud para colaboradores y su familia. Cobertura real desde el primer día.</p>
+        <div class="module-stat">
+          <span class="ms-icon">🏥</span>
+          <span>Atención médica disponible para toda la familia del colaborador</span>
+        </div>
       </div>
-      <div class="module-card">
+      <div class="module-card" style="padding:36px">
         <div class="module-top">
-          <div class="module-icon">🧠</div>
-          <span class="badge b-live">Disponible</span>
+          <div class="module-icon" style="width:52px;height:52px;font-size:24px;background:#D1FAE5">🧠</div>
+          <span class="badge b-live">Activo</span>
         </div>
-        <h3>Bienestar Emocional</h3>
-        <p>Apoyo psicológico, meditación guiada y herramientas para el manejo del estrés.</p>
-      </div>
-      <div class="module-card">
-        <div class="module-top">
-          <div class="module-icon">🥗</div>
-          <span class="badge b-soon">Próximamente</span>
+        <h3 style="font-size:20px;margin-top:16px">Bienestar Emocional</h3>
+        <p style="margin-top:10px">Apoyo psicológico profesional, sesiones de meditación guiada y herramientas de manejo del estrés. Disponibles cuando el colaborador lo necesita.</p>
+        <div class="module-stat">
+          <span class="ms-icon">🧠</span>
+          <span>Sesiones con psicólogos certificados en español, desde la app</span>
         </div>
-        <h3>Nutrición y Fitness</h3>
-        <p>Planes de alimentación personalizados, rutinas de ejercicio y descuentos en gimnasios.</p>
-      </div>
-      <div class="module-card">
-        <div class="module-top">
-          <div class="module-icon">🛍️</div>
-          <span class="badge b-soon">Próximamente</span>
-        </div>
-        <h3>Descuentos y Beneficios</h3>
-        <p>Acceso a descuentos en marcas, comercios y servicios del día a día para tus colaboradores.</p>
-      </div>
-      <div class="module-card">
-        <div class="module-top">
-          <div class="module-icon">🏆</div>
-          <span class="badge b-road">En hoja de ruta</span>
-        </div>
-        <h3>Reconocimiento</h3>
-        <p>Sistema de puntos y reconocimiento entre pares para fortalecer la cultura de equipo.</p>
       </div>
     </div>
+    <p class="modules-more-line">Más módulos de bienestar en desarrollo — tu empresa estará entre las primeras en acceder.</p>
   </div>
 </div>
-
 
 <!-- CENTRO DE BENEFICIOS -->
 <section class="benefits-section" id="beneficios">
@@ -1660,6 +1891,61 @@ body {
   </div>
 </section>
 
+<!-- PLANES -->
+<section class="planes-section" id="planes">
+  <div class="planes-inner">
+    <div class="section-eyebrow">Planes disponibles</div>
+    <h2 class="section-h2">Elige el plan que <em>tu empresa necesita.</em></h2>
+    <p class="section-sub">Activa uno o todos los módulos. Sin costo fijo, sin contratos largos. Escala a tu ritmo.</p>
+    <div class="planes-grid">
+      <div class="plan-card">
+        <div class="plan-badge">Esencial</div>
+        <div class="plan-icon">💰</div>
+        <h3 class="plan-name">Bienestar Financiero</h3>
+        <p class="plan-desc">El punto de entrada perfecto. Ofrece acceso a fondos y educación financiera a todos tus colaboradores.</p>
+        <ul class="plan-features">
+          <li><span class="pf-check">✓</span> Adelanto de salario</li>
+          <li><span class="pf-check">✓</span> Ahorro programado</li>
+          <li><span class="pf-check">✓</span> Educación financiera</li>
+          <li><span class="pf-check">✓</span> Integración con nómina</li>
+          <li><span class="pf-check">✓</span> Dashboard RRHH</li>
+        </ul>
+        <a href="#form" class="plan-cta">Solicita una demo</a>
+      </div>
+      <div class="plan-card plan-card-featured">
+        <div class="plan-badge" style="background:var(--violet);color:#fff">Plus</div>
+        <div class="plan-featured-tag">Más popular</div>
+        <div class="plan-icon">💰🧠</div>
+        <h3 class="plan-name">Financiero + Emocional</h3>
+        <p class="plan-desc">La combinación más completa para reducir el estrés financiero y emocional de tu equipo al mismo tiempo.</p>
+        <ul class="plan-features">
+          <li><span class="pf-check">✓</span> Todo del plan Esencial</li>
+          <li><span class="pf-check">✓</span> Apoyo psicológico</li>
+          <li><span class="pf-check">✓</span> Meditación y mindfulness</li>
+          <li><span class="pf-check">✓</span> Herramientas anti-estrés</li>
+          <li><span class="pf-check">✓</span> Soporte prioritario</li>
+        </ul>
+        <a href="#form" class="plan-cta" style="background:var(--violet);color:#fff">Solicita una demo</a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-badge">Completo</div>
+        <div class="plan-icon">💰🧠🏥</div>
+        <h3 class="plan-name">Wellnest Completo</h3>
+        <p class="plan-desc">La experiencia completa de bienestar laboral: financiero, emocional y salud integrados en una sola plataforma.</p>
+        <ul class="plan-features">
+          <li><span class="pf-check">✓</span> Todo del plan Plus</li>
+          <li><span class="pf-check">✓</span> Seguro médico accesible</li>
+          <li><span class="pf-check">✓</span> Telemedicina 24/7</li>
+          <li><span class="pf-check">✓</span> Cobertura familiar</li>
+          <li><span class="pf-check">✓</span> Account manager dedicado</li>
+        </ul>
+        <a href="#form" class="plan-cta">Solicita una demo</a>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:13px;color:#9CA3AF;margin-top:32px">Todos los planes incluyen onboarding, soporte en español y activación en 48 horas.</p>
+  </div>
+</section>
+
 <!-- STATS -->
 <div class="stats-section" id="resultados">
   <div class="stats-inner">
@@ -1737,7 +2023,70 @@ body {
   </div>
 </section>
 
-<!-- SOCIAL PROOF -->
+<!-- TABLA COMPARATIVA -->
+<section class="tabla-section">
+  <div class="tabla-inner">
+    <div class="section-eyebrow">Por qué Wellnest</div>
+    <h2 class="section-h2">Wellnest vs. los beneficios <em>tradicionales.</em></h2>
+    <p class="section-sub">Una plataforma diseñada para la realidad de las empresas panameñas, no adaptada de otro mercado.</p>
+    <div class="tabla-wrap">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th class="ct-feature">Característica</th>
+            <th class="ct-wellnest">
+              <span class="ct-logo">wellnest</span>
+            </th>
+            <th class="ct-trad">Beneficios tradicionales</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Bienestar financiero, emocional y salud en una sola app</td>
+            <td class="ct-yes">✓</td>
+            <td class="ct-no">✗ Soluciones separadas</td>
+          </tr>
+          <tr class="ct-row-alt">
+            <td>Activación en 48 horas, sin equipo de IT</td>
+            <td class="ct-yes">✓</td>
+            <td class="ct-no">✗ Semanas o meses</td>
+          </tr>
+          <tr>
+            <td>Sin costo fijo para la empresa</td>
+            <td class="ct-yes">✓</td>
+            <td class="ct-no">✗ Cuota mensual por colaborador</td>
+          </tr>
+          <tr class="ct-row-alt">
+            <td>Diseñado para Panamá (Ley 23, Ley 64)</td>
+            <td class="ct-yes">✓</td>
+            <td class="ct-no">✗ Adaptado de otro mercado</td>
+          </tr>
+          <tr>
+            <td>Integración con PayDay y nóminas locales</td>
+            <td class="ct-yes">✓</td>
+            <td class="ct-no">✗ Sin integración local</td>
+          </tr>
+          <tr class="ct-row-alt">
+            <td>Soporte humano local en español</td>
+            <td class="ct-yes">✓</td>
+            <td class="ct-no">✗ Soporte offshore o bot</td>
+          </tr>
+          <tr>
+            <td>Dashboard en tiempo real para RRHH</td>
+            <td class="ct-yes">✓</td>
+            <td class="ct-partial">◐ Reportes básicos</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="text-align:center;margin-top:40px">
+      <a href="#form" class="btn-primary" style="display:inline-flex;align-items:center;gap:8px">Solicita una demo gratuita <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF — pending real testimonials
+<!- - SOCIAL PROOF - ->
 <div class="social-section">
   <div class="section-eyebrow">Lo que dicen nuestros clientes</div>
   <h2 class="section-h2">Líderes de RRHH que ya <em>lo vieron.</em></h2>
@@ -1776,7 +2125,7 @@ body {
 </div>
 
 
-<!-- ELIGIBILITY CHECKER -->
+<!- - ELIGIBILITY CHECKER - ->
 <section class="eligibility-section" id="verificar">
   <div class="eligibility-inner">
     <div class="section-eyebrow">Acceso a Wellnest</div>
@@ -1809,21 +2158,33 @@ body {
   </div>
 </section>
 
+
+END SOCIAL PROOF -->
+
 <!-- CTA FORM -->
 <div class="form-section" id="form">
-  <div class="form-container">
-    <div class="section-eyebrow" style="color:var(--sky)">Empieza hoy</div>
-    <h2 class="section-h2">Activa Wellnest en tu empresa hoy.</h2>
-    <p class="section-sub">Agenda una llamada de 30 minutos. Sin compromiso.</p>
+  <div class="form-container" style="max-width:600px">
+    <div class="section-eyebrow" style="color:var(--sky)">Solicita una demo</div>
+    <h2 class="section-h2">Agenda tu demo gratuita hoy.</h2>
+    <p class="section-sub">30 minutos. Sin compromiso. Te mostramos cómo funciona Wellnest para tu empresa específica.</p>
     <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
-      <input class="form-input" type="text" name="nombre" placeholder="Nombre completo" required>
-      <input class="form-input" type="text" name="empresa" placeholder="Empresa" required>
-      <input class="form-input" type="email" name="email" placeholder="Correo corporativo" required>
-      <button type="submit" class="form-submit">Activar en mi empresa →</button>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+        <input class="form-input" type="text" name="nombre" placeholder="Nombre completo" required>
+        <input class="form-input" type="text" name="empresa" placeholder="Empresa" required>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+        <input class="form-input" type="text" name="cargo" placeholder="Cargo / Rol" required>
+        <input class="form-input" type="text" name="colaboradores" placeholder="# de colaboradores">
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+        <input class="form-input" type="email" name="email" placeholder="Correo corporativo" required>
+        <input class="form-input" type="tel" name="telefono" placeholder="Teléfono / WhatsApp">
+      </div>
+      <button type="submit" class="form-submit">Solicita una demo →</button>
     </form>
     <div class="form-success" id="formSuccess">
       <h3>¡Listo!</h3>
-      <p>Recibimos tu solicitud. Nuestro equipo se comunicará contigo en menos de 24 horas para coordinar la llamada.</p>
+      <p>Recibimos tu solicitud. Nuestro equipo se comunicará contigo en menos de 24 horas para coordinar la demo.</p>
     </div>
     <p class="form-disclaimer">Al enviar este formulario aceptas que nos comuniquemos contigo sobre Wellnest. Sin spam, nunca.</p>
   </div>
@@ -1994,17 +2355,23 @@ function submitWaitlist(e) {
 })();
 </script>
 
-<!-- STICKY DEMO -->
+<!-- STICKY DEMO — hidden on mobile, shown on desktop -->
 <a href="#form" class="sticky-demo" id="stickyDemo">
   <span class="sticky-demo-dot"></span>
   <span>Demo en 15 min</span>
   <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
 </a>
 
-<!-- WHATSAPP -->
+<!-- WHATSAPP — desktop only; mobile uses unified CTA -->
 <a href="https://wa.me/50760000000?text=Hola%2C%20quiero%20información%20sobre%20Wellnest" class="whatsapp-btn" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
   <span class="whatsapp-tooltip">Hablar con nosotros</span>
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- MOBILE UNIFIED CTA — only shows on mobile -->
+<a href="#form" class="mobile-cta-unified" id="mobileCta">
+  <svg viewBox="0 0 24 24" fill="#fff" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  Demo en 15 min
 </a>
 </body>
 </html>
