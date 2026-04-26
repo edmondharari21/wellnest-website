@@ -1431,6 +1431,150 @@ body {
   background: rgba(123,97,255,0.04) !important;
   border-color: var(--violet) !important;
 }
+
+/* ══════════════════════════════════════════════════════
+   MOBILE RESPONSIVE — comprehensive overrides
+   ══════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* ── Global ── */
+  .section { padding: 56px 20px; }
+  .section-h2 { font-size: clamp(26px, 7vw, 36px); }
+  .section-sub { font-size: 15px; }
+  .section-eyebrow { font-size: 11px; }
+
+  /* ── Nav ── */
+  .nav { padding: 0 16px; height: 56px; }
+  .nav-links { display: none; }
+  .nav-cta { padding: 8px 14px; font-size: 13px; }
+  .nav-login-btn { font-size: 12px; padding: 8px 12px; }
+
+  /* ── Hero ── */
+  .hero { padding: 72px 20px 48px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 36px; align-items: start; }
+  .hero-text { padding-bottom: 0; }
+  .hero-eyebrow { font-size: 11px; }
+  .hero h1 { font-size: clamp(28px, 8vw, 40px); }
+  .hero-sub { font-size: 15px; }
+  .hero-actions { flex-direction: column; gap: 10px; }
+  .hero-actions a { width: 100%; text-align: center; }
+
+  /* Hero browser mockup — flatten 3D, shrink */
+  .hero-visual { overflow: visible; max-height: none; }
+  .hero-dash-preview { perspective: none; }
+  .hero-browser { transform: none !important; max-width: 100%; border-radius: 12px; box-shadow: 0 16px 48px rgba(30,27,75,0.18); }
+  .hero-browser-body { height: 240px; }
+  .hb-sidebar { width: 100px; }
+  .hb-sidebar-logo { font-size: 10px; padding: 0 10px 10px; }
+  .hb-nav-item { font-size: 9px; padding: 7px 10px; }
+  .hb-stat-row { gap: 6px; padding: 8px; }
+  .hb-stat-val { font-size: 14px; }
+  .hb-action-row { padding: 6px 8px 8px; gap: 6px; }
+  .hb-action-btn { font-size: 9px; padding: 6px 4px; }
+  .hero-float-card { display: none; }
+
+  /* ── Trust bar ── */
+  .trust-bar { padding: 28px 20px; }
+  .trust-logos { gap: 20px; }
+  .trust-logo-item img { height: 32px; }
+  .trust-logo-item svg { height: 22px; }
+
+  /* ── Value grid ── */
+  .value-grid { grid-template-columns: 1fr !important; gap: 12px; }
+  .value-card { padding: 24px; }
+
+  /* ── Cómo funciona ── */
+  .como-inner { padding: 0 20px; }
+  .como-section { padding: 56px 0; }
+  .como-steps { flex-direction: column; align-items: center; gap: 24px; margin-top: 40px; }
+  .como-connector { width: 2px; height: 28px; margin-top: 0; background: linear-gradient(180deg, rgba(174,230,255,0.4), rgba(123,97,255,0.4)); }
+  .como-connector::after { content: "↓"; right: auto; left: -8px; top: auto; bottom: -12px; }
+  .como-step { padding: 0 8px; }
+  .como-step-icon { width: 56px; height: 56px; font-size: 24px; }
+
+  /* ── Product Showcase ── */
+  .showcase-inner { padding: 0 16px; }
+  .showcase-tabs { width: 100%; justify-content: center; }
+  .showcase-tab { padding: 8px 16px; font-size: 13px; }
+  .sc-try-badge { font-size: 10px; }
+  /* Browser mockup in showcase */
+  .browser-mockup { border-radius: 14px 14px 0 0; }
+  .browser-body { padding: 14px; gap: 12px; }
+  /* Admin panel sidebar hidden on mobile */
+  .browser-body > div[style*="width:160px"] { display: none; }
+
+  /* ── Modules ── */
+  .modules-inner { padding: 0 20px; }
+  .modules-grid { grid-template-columns: 1fr !important; max-width: 100% !important; }
+  .module-card { padding: 28px 24px !important; }
+
+  /* ── Centro de Beneficios ── */
+  .benefits-inner { padding: 0 20px; }
+  .benefits-grid { grid-template-columns: 1fr; gap: 14px; }
+  .benefit-card { padding: 24px; }
+
+  /* ── Colaborador ── */
+  .colab-section { padding: 56px 0; }
+  .colab-inner { grid-template-columns: 1fr; gap: 32px; padding: 0 20px; }
+  .colab-visual { display: none; }
+  .colab-text .section-h2 { max-width: 100%; }
+
+  /* ── HR Portal ── */
+  .hrportal-inner { padding: 0 20px; }
+  .hrportal-section { padding: 56px 0; }
+  .hrportal-layout { grid-template-columns: 1fr; gap: 32px; }
+  .hrportal-visual { display: none; }
+
+  /* ── Planes ── */
+  .planes-section { padding: 56px 0; }
+  .planes-inner { padding: 0 20px; }
+  .planes-grid { grid-template-columns: 1fr; gap: 20px; }
+  .plan-card { padding: 28px 24px; }
+
+  /* ── Stats ── */
+  .stats-inner { padding: 56px 20px; }
+  .stats-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .stat-number { font-size: 36px; }
+
+  /* ── Trust Center ── */
+  .trust-inner { padding: 0 20px; }
+  .trust-grid { grid-template-columns: 1fr; gap: 14px; }
+
+  /* ── Tabla comparativa ── */
+  .tabla-section { padding: 56px 0; }
+  .tabla-inner { padding: 0 20px; }
+  .tabla-wrap { border-radius: 12px; }
+  .comp-table th, .comp-table td { padding: 10px 12px; font-size: 12px; }
+
+  /* ── Eligibility ── */
+  .eligibility-section { padding: 56px 20px; }
+  .elig-form { flex-direction: column; }
+
+  /* ── CTA Form ── */
+  .form-section { padding: 56px 20px; }
+  .contact-form > div { display: flex !important; flex-direction: column !important; gap: 12px; }
+
+  /* ── Footer ── */
+  .footer { padding: 40px 20px 96px; }
+  .footer-top { flex-direction: column; gap: 28px; }
+  .footer-links { flex-direction: column; gap: 20px; }
+
+  /* ── Floating elements ── */
+  .sticky-demo { display: none !important; }
+  .whatsapp-btn { display: none !important; }
+  .mobile-cta-unified { display: flex; }
+}
+
+@media (max-width: 420px) {
+  .hero h1 { font-size: 26px; }
+  .section-h2 { font-size: 24px; }
+  .stats-grid { grid-template-columns: 1fr; }
+  .showcase-tab { font-size: 12px; padding: 7px 12px; }
+  .hb-sidebar { display: none; }
+  .hero-browser-body { height: 200px; }
+  .trust-logo-item img { height: 26px; }
+  .trust-logo-item svg { height: 18px; }
+}
 </style>
 </head>
 <body>
