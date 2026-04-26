@@ -1239,6 +1239,110 @@ body {
   .contact-form > div { grid-template-columns: 1fr !important; }
   .trust-logos { gap: 24px; flex-wrap: wrap; }
 }
+
+/* ── TRUST LOGOS (real SVGs) ── */
+.trust-logo-item {
+  display: flex; align-items: center; justify-content: center;
+  height: 36px; opacity: 0.45; filter: grayscale(1);
+  transition: opacity 0.25s, filter 0.25s;
+}
+.trust-logo-item:hover { opacity: 0.8; filter: grayscale(0.2); }
+.trust-logo-item svg { height: 28px; width: auto; max-width: 160px; fill: #374151; }
+.trust-logo-item text { fill: #374151; }
+
+/* ── HERO BULLETS ── */
+.hero-bullets {
+  list-style: none; display: flex; flex-direction: column; gap: 10px;
+  margin-bottom: 36px;
+}
+.hero-bullets li {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 15px; font-weight: 600; color: var(--gray-700);
+}
+.hb-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--violet); flex-shrink: 0;
+}
+
+/* ── MODULE STAT ── */
+.module-stat {
+  display: flex; align-items: flex-start; gap: 8px;
+  margin-top: 16px; padding-top: 16px;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  font-size: 13px; color: var(--gray-600); line-height: 1.55;
+}
+.ms-icon { flex-shrink: 0; font-size: 14px; }
+.modules-more-line {
+  text-align: center; margin-top: 32px;
+  font-size: 13px; color: #9CA3AF; font-style: italic;
+}
+
+/* ── CÓMO FUNCIONA ── */
+.como-section { padding: 96px 0; background: var(--night); }
+.como-inner { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+.como-inner .section-eyebrow { color: var(--sky); }
+.como-inner .section-h2 { color: #fff; }
+.como-inner .section-sub { color: rgba(255,255,255,0.6); }
+.como-steps { display: flex; align-items: flex-start; gap: 0; margin-top: 64px; }
+.como-step { flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 24px; }
+.como-step-num { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: var(--sky); text-transform: uppercase; margin-bottom: 16px; }
+.como-step-icon { width: 72px; height: 72px; border-radius: 20px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; font-size: 32px; margin-bottom: 20px; }
+.como-step h3 { font-family: 'DM Serif Display', serif; font-size: 18px; color: #fff; margin-bottom: 12px; line-height: 1.2; }
+.como-step p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.65; }
+.como-connector { flex-shrink: 0; width: 60px; height: 2px; background: linear-gradient(90deg, rgba(174,230,255,0.4), rgba(123,97,255,0.4)); margin-top: 52px; position: relative; }
+.como-connector::after { content: '›'; position: absolute; right: -8px; top: -10px; color: rgba(174,230,255,0.6); font-size: 20px; }
+
+/* ── PLANES ── */
+.planes-section { padding: 96px 0; background: var(--gray-50); }
+.planes-inner { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+.planes-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 56px; align-items: start; }
+.plan-card { background: #fff; border: 1.5px solid rgba(0,0,0,0.07); border-radius: 24px; padding: 36px; position: relative; transition: all 0.25s; }
+.plan-card:hover { box-shadow: 0 12px 40px rgba(123,97,255,0.1); transform: translateY(-4px); }
+.plan-card-featured { border-color: var(--violet); box-shadow: 0 8px 32px rgba(123,97,255,0.15); }
+.plan-featured-tag { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--violet); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; padding: 4px 14px; border-radius: 999px; white-space: nowrap; }
+.plan-badge { display: inline-block; background: var(--violet-pale); color: var(--violet); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 12px; border-radius: 999px; margin-bottom: 20px; }
+.plan-icon { font-size: 32px; margin-bottom: 16px; }
+.plan-name { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--night); margin-bottom: 12px; line-height: 1.2; }
+.plan-desc { font-size: 14px; color: var(--gray-600); line-height: 1.65; margin-bottom: 24px; }
+.plan-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+.plan-features li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--gray-700); }
+.pf-check { width: 20px; height: 20px; border-radius: 6px; background: var(--violet-pale); color: var(--violet); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; }
+.plan-cta { display: block; width: 100%; padding: 13px 20px; text-align: center; border-radius: 12px; background: var(--violet-pale); color: var(--violet); font-size: 14px; font-weight: 700; text-decoration: none; border: 1.5px solid rgba(123,97,255,0.2); transition: all 0.2s; }
+.plan-cta:hover { background: var(--violet); color: #fff; }
+
+/* ── TABLA COMPARATIVA ── */
+.tabla-section { padding: 96px 0; background: #fff; }
+.tabla-inner { max-width: 900px; margin: 0 auto; padding: 0 48px; }
+.tabla-wrap { margin-top: 48px; overflow-x: auto; border-radius: 20px; border: 1px solid rgba(0,0,0,0.08); }
+.comp-table { width: 100%; border-collapse: collapse; }
+.comp-table th, .comp-table td { padding: 16px 20px; text-align: left; font-size: 14px; }
+.comp-table thead { background: var(--night); }
+.ct-feature { color: rgba(255,255,255,0.6); font-weight: 600; width: 45%; }
+.ct-wellnest { color: var(--sky); font-weight: 800; width: 25%; font-family: 'DM Serif Display', serif; font-size: 16px; }
+.ct-trad { color: rgba(255,255,255,0.5); font-weight: 600; width: 30%; }
+.comp-table tbody td { color: var(--gray-700); border-bottom: 1px solid rgba(0,0,0,0.06); }
+.comp-table tbody tr:last-child td { border-bottom: none; }
+.ct-row-alt { background: var(--gray-50); }
+.ct-yes { color: #059669; font-weight: 800; font-size: 18px; }
+.ct-no { color: #9CA3AF; font-size: 13px; }
+.ct-partial { color: #D97706; font-size: 13px; }
+
+/* ── MOBILE UNIFIED CTA ── */
+.mobile-cta-unified { display: none; position: fixed; bottom: 16px; left: 16px; right: 16px; z-index: 9001; background: var(--violet); color: #fff; padding: 15px 20px; border-radius: 14px; text-align: center; font-weight: 700; font-size: 15px; text-decoration: none; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 8px 32px rgba(123,97,255,0.4); animation: bouncein 0.6s 2s ease both; }
+
+@media (max-width: 768px) {
+  .trust-logos { gap: 20px; flex-wrap: wrap; }
+  .sticky-demo { display: none !important; }
+  .whatsapp-btn { display: none !important; }
+  .mobile-cta-unified { display: flex; }
+  .como-steps { flex-direction: column; align-items: center; gap: 32px; }
+  .como-connector { width: 2px; height: 32px; margin-top: 0; background: linear-gradient(180deg, rgba(174,230,255,0.4), rgba(123,97,255,0.4)); }
+  .como-connector::after { content: "↓"; right: auto; left: -8px; top: auto; bottom: -12px; }
+  .planes-grid { grid-template-columns: 1fr; }
+  .planes-inner, .tabla-inner, .como-inner { padding: 0 24px; }
+  .value-grid { grid-template-columns: 1fr 1fr !important; }
+  .contact-form > div[style*="grid"] { display: flex !important; flex-direction: column; }
+}
 </style>
 </head>
 <body>
@@ -1341,7 +1445,7 @@ body {
           </div>
         </div>
         <div class="phone-score-ring">
-          <div class="ring-label">Mi bienestar</div>
+          <div class="ring-label">Disponible hoy</div>
           <div class="ring-value">87</div>
           <div class="ring-sub">↑ 12 pts este mes</div>
         </div>
@@ -1352,32 +1456,32 @@ body {
             <div class="pmc-sub">Adelanto</div>
           </div>
           <div class="phone-mini-card">
-            <div class="pmc-label">Sesión hoy</div>
-            <div class="pmc-value" style="font-size:13px;margin-top:2px">10:00 AM</div>
-            <div class="pmc-sub">Psicología</div>
+            <div class="pmc-label">Próximo pago</div>
+            <div class="pmc-value" style="font-size:13px;margin-top:2px">15 mayo</div>
+            <div class="pmc-sub">Depósito automático</div>
           </div>
         </div>
         <div class="phone-module-list">
           <div class="phone-module-item">
             <div class="pmi-icon">💰</div>
             <div class="pmi-text">
-              <div class="pmi-name">Bienestar Financiero</div>
-              <div class="pmi-status">Activo · 3 servicios</div>
+              <div class="pmi-name">Liquidez</div>
+              <div class="pmi-status">Activo · $850 disponibles</div>
             </div>
             <span class="pmi-arrow">›</span>
           </div>
           <div class="phone-module-item">
-            <div class="pmi-icon" style="background:rgba(16,185,129,0.3)">🧠</div>
+            <div class="pmi-icon" style="background:rgba(0,180,255,0.2)">📲</div>
             <div class="pmi-text">
-              <div class="pmi-name">Bienestar Emocional</div>
-              <div class="pmi-status">Sesión programada</div>
+              <div class="pmi-name">Adelanto · EWA</div>
+              <div class="pmi-status">Activo · $850 disponibles</div>
             </div>
             <span class="pmi-arrow">›</span>
           </div>
           <div class="phone-module-item">
             <div class="pmi-icon" style="background:rgba(239,68,68,0.25)">🏥</div>
             <div class="pmi-text">
-              <div class="pmi-name">Salud y Seguro</div>
+              <div class="pmi-name">Liquidez y EWA</div>
               <div class="pmi-status">Seguro activo</div>
             </div>
             <span class="pmi-arrow">›</span>
@@ -1392,29 +1496,31 @@ body {
 <div class="trust-bar">
   <p class="trust-bar-label">Empresas en Panamá que ya confían en Wellnest</p>
   <div class="trust-logos">
-    <div class="trust-logo-item" title="Sportline America"><svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" width="160.279" height="13.919" viewBox="0 0 160.279 13.919">
-  <path d="M7.107,3.175,6.539,5.157l10.514.01-.867,3L5.673,8.16l-.657,2.186,11.215.015L15.3,13.626,0,13.614,3.973,0,19.161.011l-.955,3.177Z" transform="translate(136.918 0.036) rotate(-0.106)"/>
-  <path d="M8.442,0,4.5,13.614H0L3.973,0Z" transform="translate(108.054 0.052) rotate(-0.106)"/>
-  <path d="M23.133.019,19.16,13.632l-7.3-.018L7.573,3.422l-.438,0-2.9,10.2L0,13.6l.9-3.032L3.973.011,11.3,0l4.227,10.221.438-.026L18.839.02Z" transform="translate(115.539 0.043) rotate(-0.106)"/>
-  <path d="M3.944,0,8.413.029,5.455,10.2l9.726.034-.986,3.411L0,13.614Z" transform="translate(92.421 0.038) rotate(-0.106)"/>
-  <path d="M1.015,0,17.722.021l-1.015,3.44-6.075-.01-2.958,10.2H3.2l2.987-10.2L0,3.44Z" transform="translate(76.953 0.065) rotate(-0.106)"/>
-  <path d="M19.892,4.426a12.2,12.2,0,0,1-.832,2.156,2.886,2.886,0,0,1-1.088,1.19,4.976,4.976,0,0,1-1.786.631,1.763,1.763,0,0,1,1.631.741,1.015,1.015,0,0,1,.169.936,16.05,16.05,0,0,1-.541,2.362l-.358,1.224-4.147,0,.209-.641c.209-.729.359-1.37.419-1.6a1.589,1.589,0,0,0-.141-.79.639.639,0,0,0-.553-.266,10.088,10.088,0,0,0-1.723-.1L5.221,10.26,4.235,13.7,0,13.7l.418-1.458L3.974,0,14.225.008c2.366.015,3.767.141,4.2.144A2.455,2.455,0,0,1,19.654.57a1.962,1.962,0,0,1,.693,1.29,7.65,7.65,0,0,1-.455,2.567Zm-4.233-.29a.5.5,0,0,0-.289-.5,1.4,1.4,0,0,0-.525-.12c-.2,0-.817-.064-1.694-.069L7.223,3.438,6.266,6.762l7.681.021a1.533,1.533,0,0,0,.585-.171,2.093,2.093,0,0,0,.529-.493,5.109,5.109,0,0,0,.415-.99,6.515,6.515,0,0,0,.182-.992Z" transform="translate(55.835 0.075) rotate(-0.106)"/>
-  <path d="M20.451,2.507a12.577,12.577,0,0,1-.427,2.743c-.12.525-.241,1.079-.42,1.691a21.3,21.3,0,0,1-1.723,4.487,4.2,4.2,0,0,1-3.519,2.226q-1.315.123-4.119.148c-.613,0-1.256.021-1.928.017-2.979-.019-5.023-.062-6.074-.186a2.4,2.4,0,0,1-1.95-.977,1.837,1.837,0,0,1-.284-1.229A10.335,10.335,0,0,1,.282,9.473c.18-.758.39-1.633.689-2.624a22.428,22.428,0,0,1,1.635-4.37A4.339,4.339,0,0,1,6.155.223C7,.141,8.376.063,10.274.017,10.888.021,11.56,0,12.29,0c2.921-.01,4.935.149,5.986.243a2.7,2.7,0,0,1,1.805.83,1.936,1.936,0,0,1,.37,1.434ZM15.767,4.229a1.149,1.149,0,0,0-.9-.561c-.467-.061-1.752-.1-3.65-.111l-.993-.006a18.808,18.808,0,0,0-2.951.185,1.8,1.8,0,0,0-1.232.839A15.241,15.241,0,0,0,5.028,7.313a9.163,9.163,0,0,0-.391,1.75c-.092.671.343,1.112,1.131,1.234.584,0,1.781.041,3.5.052.35,0,.672-.025.964-.023,1.139-.022,1.957-.046,2.366-.043a2.817,2.817,0,0,0,1.346-.371,2.1,2.1,0,0,0,.706-.813,6.415,6.415,0,0,0,.683-1.748,17.569,17.569,0,0,0,.481-2.129,2.11,2.11,0,0,0-.052-.993Z" transform="translate(36.613 0.099) rotate(-0.106)"/>
-  <path d="M19.367,4.365c-.09.291-.15.583-.239.875a9.825,9.825,0,0,1-1.688,3.581A3.86,3.86,0,0,1,16.03,9.863a6.942,6.942,0,0,1-2.135.483c-.584,0-1.694.077-3.242.066L5.22,10.406,4.235,13.7,0,13.7,3.974,0,13.5,0a29.017,29.017,0,0,1,3.562.14,3.148,3.148,0,0,1,2.329,1.1l.086.176a4.837,4.837,0,0,1-.107,2.949Zm-4.292-.2a.71.71,0,0,0-.493-.5,8.742,8.742,0,0,0-2.131-.189L7.193,3.467l-.986,3.44,7.01-.013a2.1,2.1,0,0,0,.614-.142,1.135,1.135,0,0,0,.646-.522,5.053,5.053,0,0,0,.445-1.019,4.974,4.974,0,0,0,.153-1.05Z" transform="translate(16.845 0.104) rotate(-0.106)"/>
-  <path d="M18.166,3.78c-.03.117-.119.291-.178.466-.03.058-.03.117-.06.175l-4,0a6.515,6.515,0,0,0,.121-.671.4.4,0,0,0-.2-.381,1.975,1.975,0,0,0-.875-.181c-.409,0-1.372-.038-2.833-.048A16.09,16.09,0,0,0,6.9,3.327a1.2,1.2,0,0,0-.794.9c-.12.437-.034.73.287.849a29.764,29.764,0,0,0,4.35.262c2.1.043,3.533.169,4.263.232a3,3,0,0,1,1.6.478,1.451,1.451,0,0,1,.693,1.2,5.147,5.147,0,0,1-.248,2.16,7.47,7.47,0,0,1-1.362,2.853,3.489,3.489,0,0,1-1.321.984,7.74,7.74,0,0,1-2.106.454c-.876.023-2.6.071-5.024.055-2.015.016-3.534-.052-4.5-.117A5.44,5.44,0,0,1,.7,13.129,1.48,1.48,0,0,1,0,11.986,7.329,7.329,0,0,1,.34,9.8l.179-.641,3.943-.033a1.314,1.314,0,0,0,.079,1.256.927.927,0,0,0,.671.18c.292,0,1.314.067,2.949.078l3.125-.009a2,2,0,0,0,.907-.169,1.268,1.268,0,0,0,.766-.959c.119-.35.092-.642-.053-.76A2.917,2.917,0,0,0,11.622,8.5c-.467,0-1.606-.069-3.183-.138-1.694-.04-2.774-.106-3.27-.109a9.113,9.113,0,0,1-2.247-.307A1.829,1.829,0,0,1,1.9,7.208,4.216,4.216,0,0,1,2.04,4.347,6.606,6.606,0,0,1,3.813,1.175,4.627,4.627,0,0,1,6.1.226C7.033.115,8.961.011,11.765,0a27.969,27.969,0,0,1,4.2.232A3.338,3.338,0,0,1,18.009,1a1.62,1.62,0,0,1,.174.235,3.091,3.091,0,0,1-.017,2.541Z" transform="translate(0 0.105) rotate(-0.106)"/>
-  <g transform="translate(157.177)">
-    <path d="M1.869,2.086l-.5,0-.318-.44C.939,1.466.881,1.378.823,1.349A.156.156,0,0,0,.706,1.26.5.5,0,0,0,.473,1.23H.414l-.006.847L0,2.074.014,0,.89.006a1.145,1.145,0,0,1,.5.062c.088,0,.175.089.233.177A.589.589,0,0,1,1.7.566a.417.417,0,0,1-.149.379.511.511,0,0,1-.41.2.393.393,0,0,1,.2.177,1.124,1.124,0,0,1,.232.323ZM1.089.8A.306.306,0,0,0,1.206.709a.219.219,0,0,0,.03-.146A.415.415,0,0,0,1.179.387L1,.3H.8l-.438,0,0,.555L.8.852c.146,0,.234,0,.292-.057Z" transform="translate(0.638 0.554) rotate(-0.106)"/>
-    <path d="M3.1,1.559A1.539,1.539,0,0,1,1.538,3.1H1.451A1.562,1.562,0,0,1,0,1.539,1.516,1.516,0,0,1,1.442,0h.088A1.565,1.565,0,0,1,3.1,1.559Zm-.146,0A1.433,1.433,0,0,0,1.529.117H1.441A1.433,1.433,0,0,0,.117,1.539,1.411,1.411,0,0,0,1.452,2.95h.088A1.384,1.384,0,0,0,2.95,1.558Z" transform="translate(0 0.006) rotate(-0.106)"/>
+    <div class="trust-logo-item" title="Sportline America"><svg fill="currentColor" id="Grupo_4000" data-name="Grupo 4000" xmlns="http://www.w3.org/2000/svg" width="160.279" height="13.919" viewBox="0 0 160.279 13.919">
+  <path id="Vector" d="M7.107,3.175,6.539,5.157l10.514.01-.867,3L5.673,8.16l-.657,2.186,11.215.015L15.3,13.626,0,13.614,3.973,0,19.161.011l-.955,3.177Z" transform="translate(136.918 0.036) rotate(-0.106)"/>
+  <path id="Vector-2" data-name="Vector" d="M8.442,0,4.5,13.614H0L3.973,0Z" transform="translate(108.054 0.052) rotate(-0.106)"/>
+  <path id="Vector-3" data-name="Vector" d="M23.133.019,19.16,13.632l-7.3-.018L7.573,3.422l-.438,0-2.9,10.2L0,13.6l.9-3.032L3.973.011,11.3,0l4.227,10.221.438-.026L18.839.02Z" transform="translate(115.539 0.043) rotate(-0.106)"/>
+  <path id="Vector-4" data-name="Vector" d="M3.944,0,8.413.029,5.455,10.2l9.726.034-.986,3.411L0,13.614Z" transform="translate(92.421 0.038) rotate(-0.106)"/>
+  <path id="Vector-5" data-name="Vector" d="M1.015,0,17.722.021l-1.015,3.44-6.075-.01-2.958,10.2H3.2l2.987-10.2L0,3.44Z" transform="translate(76.953 0.065) rotate(-0.106)"/>
+  <path id="Vector-6" data-name="Vector" d="M19.892,4.426a12.2,12.2,0,0,1-.832,2.156,2.886,2.886,0,0,1-1.088,1.19,4.976,4.976,0,0,1-1.786.631,1.763,1.763,0,0,1,1.631.741,1.015,1.015,0,0,1,.169.936,16.05,16.05,0,0,1-.541,2.362l-.358,1.224-4.147,0,.209-.641c.209-.729.359-1.37.419-1.6a1.589,1.589,0,0,0-.141-.79.639.639,0,0,0-.553-.266,10.088,10.088,0,0,0-1.723-.1L5.221,10.26,4.235,13.7,0,13.7l.418-1.458L3.974,0,14.225.008c2.366.015,3.767.141,4.2.144A2.455,2.455,0,0,1,19.654.57a1.962,1.962,0,0,1,.693,1.29,7.65,7.65,0,0,1-.455,2.567Zm-4.233-.29a.5.5,0,0,0-.289-.5,1.4,1.4,0,0,0-.525-.12c-.2,0-.817-.064-1.694-.069L7.223,3.438,6.266,6.762l7.681.021a1.533,1.533,0,0,0,.585-.171,2.093,2.093,0,0,0,.529-.493,5.109,5.109,0,0,0,.415-.99,6.515,6.515,0,0,0,.182-.992Z" transform="translate(55.835 0.075) rotate(-0.106)"/>
+  <path id="Vector-7" data-name="Vector" d="M20.451,2.507a12.577,12.577,0,0,1-.427,2.743c-.12.525-.241,1.079-.42,1.691a21.3,21.3,0,0,1-1.723,4.487,4.2,4.2,0,0,1-3.519,2.226q-1.315.123-4.119.148c-.613,0-1.256.021-1.928.017-2.979-.019-5.023-.062-6.074-.186a2.4,2.4,0,0,1-1.95-.977,1.837,1.837,0,0,1-.284-1.229A10.335,10.335,0,0,1,.282,9.473c.18-.758.39-1.633.689-2.624a22.428,22.428,0,0,1,1.635-4.37A4.339,4.339,0,0,1,6.155.223C7,.141,8.376.063,10.274.017,10.888.021,11.56,0,12.29,0c2.921-.01,4.935.149,5.986.243a2.7,2.7,0,0,1,1.805.83,1.936,1.936,0,0,1,.37,1.434ZM15.767,4.229a1.149,1.149,0,0,0-.9-.561c-.467-.061-1.752-.1-3.65-.111l-.993-.006a18.808,18.808,0,0,0-2.951.185,1.8,1.8,0,0,0-1.232.839A15.241,15.241,0,0,0,5.028,7.313a9.163,9.163,0,0,0-.391,1.75c-.092.671.343,1.112,1.131,1.234.584,0,1.781.041,3.5.052.35,0,.672-.025.964-.023,1.139-.022,1.957-.046,2.366-.043a2.817,2.817,0,0,0,1.346-.371,2.1,2.1,0,0,0,.706-.813,6.415,6.415,0,0,0,.683-1.748,17.569,17.569,0,0,0,.481-2.129,2.11,2.11,0,0,0-.052-.993Z" transform="translate(36.613 0.099) rotate(-0.106)"/>
+  <path id="Vector-8" data-name="Vector" d="M19.367,4.365c-.09.291-.15.583-.239.875a9.825,9.825,0,0,1-1.688,3.581A3.86,3.86,0,0,1,16.03,9.863a6.942,6.942,0,0,1-2.135.483c-.584,0-1.694.077-3.242.066L5.22,10.406,4.235,13.7,0,13.7,3.974,0,13.5,0a29.017,29.017,0,0,1,3.562.14,3.148,3.148,0,0,1,2.329,1.1l.086.176a4.837,4.837,0,0,1-.107,2.949Zm-4.292-.2a.71.71,0,0,0-.493-.5,8.742,8.742,0,0,0-2.131-.189L7.193,3.467l-.986,3.44,7.01-.013a2.1,2.1,0,0,0,.614-.142,1.135,1.135,0,0,0,.646-.522,5.053,5.053,0,0,0,.445-1.019,4.974,4.974,0,0,0,.153-1.05Z" transform="translate(16.845 0.104) rotate(-0.106)"/>
+  <path id="Vector-9" data-name="Vector" d="M18.166,3.78c-.03.117-.119.291-.178.466-.03.058-.03.117-.06.175l-4,0a6.515,6.515,0,0,0,.121-.671.4.4,0,0,0-.2-.381,1.975,1.975,0,0,0-.875-.181c-.409,0-1.372-.038-2.833-.048A16.09,16.09,0,0,0,6.9,3.327a1.2,1.2,0,0,0-.794.9c-.12.437-.034.73.287.849a29.764,29.764,0,0,0,4.35.262c2.1.043,3.533.169,4.263.232a3,3,0,0,1,1.6.478,1.451,1.451,0,0,1,.693,1.2,5.147,5.147,0,0,1-.248,2.16,7.47,7.47,0,0,1-1.362,2.853,3.489,3.489,0,0,1-1.321.984,7.74,7.74,0,0,1-2.106.454c-.876.023-2.6.071-5.024.055-2.015.016-3.534-.052-4.5-.117A5.44,5.44,0,0,1,.7,13.129,1.48,1.48,0,0,1,0,11.986,7.329,7.329,0,0,1,.34,9.8l.179-.641,3.943-.033a1.314,1.314,0,0,0,.079,1.256.927.927,0,0,0,.671.18c.292,0,1.314.067,2.949.078l3.125-.009a2,2,0,0,0,.907-.169,1.268,1.268,0,0,0,.766-.959c.119-.35.092-.642-.053-.76A2.917,2.917,0,0,0,11.622,8.5c-.467,0-1.606-.069-3.183-.138-1.694-.04-2.774-.106-3.27-.109a9.113,9.113,0,0,1-2.247-.307A1.829,1.829,0,0,1,1.9,7.208,4.216,4.216,0,0,1,2.04,4.347,6.606,6.606,0,0,1,3.813,1.175,4.627,4.627,0,0,1,6.1.226C7.033.115,8.961.011,11.765,0a27.969,27.969,0,0,1,4.2.232A3.338,3.338,0,0,1,18.009,1a1.62,1.62,0,0,1,.174.235,3.091,3.091,0,0,1-.017,2.541Z" transform="translate(0 0.105) rotate(-0.106)"/>
+  <g id="Grupo_291" data-name="Grupo 291" transform="translate(157.177)">
+    <path id="Vector-10" data-name="Vector" d="M1.869,2.086l-.5,0-.318-.44C.939,1.466.881,1.378.823,1.349A.156.156,0,0,0,.706,1.26.5.5,0,0,0,.473,1.23H.414l-.006.847L0,2.074.014,0,.89.006a1.145,1.145,0,0,1,.5.062c.088,0,.175.089.233.177A.589.589,0,0,1,1.7.566a.417.417,0,0,1-.149.379.511.511,0,0,1-.41.2.393.393,0,0,1,.2.177,1.124,1.124,0,0,1,.232.323ZM1.089.8A.306.306,0,0,0,1.206.709a.219.219,0,0,0,.03-.146A.415.415,0,0,0,1.179.387L1,.3H.8l-.438,0,0,.555L.8.852c.146,0,.234,0,.292-.057Z" transform="translate(0.638 0.554) rotate(-0.106)"/>
+    <path id="Vector-11" data-name="Vector" d="M3.1,1.559A1.539,1.539,0,0,1,1.538,3.1H1.451A1.562,1.562,0,0,1,0,1.539,1.516,1.516,0,0,1,1.442,0h.088A1.565,1.565,0,0,1,3.1,1.559Zm-.146,0A1.433,1.433,0,0,0,1.529.117H1.441A1.433,1.433,0,0,0,.117,1.539,1.411,1.411,0,0,0,1.452,2.95h.088A1.384,1.384,0,0,0,2.95,1.558Z" transform="translate(0 0.006) rotate(-0.106)"/>
   </g>
 </svg></div>
-    <div class="trust-logo-item" title="Nike"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 28" fill="currentColor">
-  <path d="M75.3 0.4C64.1 5.2 36.2 15.2 15.2 20.4C8.4 22.1 0.4 22.4 0.1 18.4C-0.1 15.8 2.8 13.6 6.8 12L75.3 0.4z"/>
+    <div class="trust-logo-item" title="Nike"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 44" fill="currentColor">
+  <!-- Swoosh --><path d="M36.7,28.6C31.4,30.8,26.5,32,22.3,32c-6.2,0-9.5-2.6-9.5-6.8c0-1.1,0.2-2.3,0.7-3.5L25.9,0H19L6.2,25.9C5.2,27.9,4.7,30,4.7,32c0,8.2,6.7,12,17.4,12c6.1,0,13.4-1.5,20.6-4.3L36.7,28.6z"/>
+  <!-- NIKE text --><text x="52" y="32" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="26" letter-spacing="1">NIKE</text>
 </svg></div>
-    <div class="trust-logo-item" title="Mercado del Calzado"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 30" fill="currentColor">
-  <text x="0" y="22" font-family="Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="0.5">MERCADO DEL CALZADO</text>
+    <div class="trust-logo-item" title="Mercado del Calzado"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 44" fill="currentColor">
+  <text x="0" y="18" font-family="Arial,sans-serif" font-size="14" font-weight="800" letter-spacing="1.5">MERCADO DEL</text>
+  <text x="0" y="36" font-family="Arial,sans-serif" font-size="14" font-weight="800" letter-spacing="1.5">CALZADO</text>
 </svg></div>
-    <div class="trust-logo-item" title="Bellini"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 30" fill="currentColor">
-  <text x="0" y="22" font-family="Georgia,serif" font-size="20" letter-spacing="2">BELLINI</text>
+    <div class="trust-logo-item" title="Bellini"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 40" fill="currentColor">
+  <text x="0" y="30" font-family="Georgia,Times New Roman,serif" font-size="28" letter-spacing="4">BELLINI</text>
 </svg></div>
   </div>
 </div>
@@ -1423,38 +1529,14 @@ body {
 <div class="section" id="como-funciona">
   <div class="section-eyebrow">Por qué Wellnest</div>
   <h2 class="section-h2">Un beneficio que tus colaboradores <em>realmente usan.</em></h2>
-  <p class="section-sub">Diseñado para que cada colaborador lo sienta como propio — y para que RRHH lo gestione sin esfuerzo.</p>
+  <p class="section-sub">Diseñado para resolver una necesidad real: acceso al dinero ya ganado, cuando se necesita.</p>
   <div class="value-grid" style="grid-template-columns:repeat(3,1fr)">
-    <div class="value-card">
-      <div class="value-icon">📉</div>
-      <h3>Retención comprobada</h3>
-      <p>Empresas con programas de bienestar estructurado reportan mejoras significativas en retención y satisfacción del equipo.</p>
-    </div>
-    <div class="value-card">
-      <div class="value-icon">⚡</div>
-      <h3>Engagement real</h3>
-      <p>Tus colaboradores abren la app activamente porque resuelve necesidades reales: acceso a fondos, salud, apoyo emocional.</p>
-    </div>
-    <div class="value-card">
-      <div class="value-icon">🏷️</div>
-      <h3>Sin costo fijo para la empresa</h3>
-      <p>Wellnest no tiene costo de suscripción para la empresa. El colaborador solo paga si elige usar un servicio financiero, con tasas reguladas y completamente transparentes.</p>
-    </div>
-    <div class="value-card">
-      <div class="value-icon">🚀</div>
-      <h3>Activación en 48 horas</h3>
-      <p>Sin integración compleja. Sin equipo de IT. Tu empresa está activa en menos de dos días desde la firma del acuerdo.</p>
-    </div>
-    <div class="value-card">
-      <div class="value-icon">📊</div>
-      <h3>Dashboard para RRHH</h3>
-      <p>Métricas de adopción, bienestar y uso de beneficios en tiempo real. Toda la información que necesitas para tomar decisiones.</p>
-    </div>
-    <div class="value-card">
-      <div class="value-icon">🤝</div>
-      <h3>Soporte humano local</h3>
-      <p>Equipo de soporte en Panamá, en español, disponible para tus colaboradores. No un bot — personas reales que resuelven.</p>
-    </div>
+    <div class="value-card"><div class="value-icon">📉</div><h3>Mejora la retención</h3><p>Las empresas con beneficios financieros estructurados reportan mejoras significativas en permanencia y satisfacción del equipo.</p></div>
+    <div class="value-card"><div class="value-icon">⚡</div><h3>Alta adopción real</h3><p>El colaborador lo usa porque resuelve algo concreto: acceso inmediato a su propio dinero devengado. No es un beneficio que nadie recuerda.</p></div>
+    <div class="value-card"><div class="value-icon">🏷️</div><h3>Sin costo fijo para la empresa</h3><p>Sin suscripción mensual. El colaborador solo paga una comisión si elige usar un adelanto — con tasas reguladas y transparentes.</p></div>
+    <div class="value-card"><div class="value-icon">🚀</div><h3>Activo en 48 horas</h3><p>Integración con PayDay configurada, colaboradores invitados y plataforma lista en menos de dos días hábiles desde el acuerdo.</p></div>
+    <div class="value-card"><div class="value-icon">📊</div><h3>Panel de RRHH en tiempo real</h3><p>Adopción, solicitudes activas y métricas de uso visibles desde el primer día. Datos para decidir, sin esperar reportes.</p></div>
+    <div class="value-card"><div class="value-icon">🤝</div><h3>Soporte humano en Panamá</h3><p>Equipo local en español para resolver dudas de colaboradores y de RRHH. Personas reales, no un sistema de tickets.</p></div>
   </div>
 </div>
 
@@ -1469,7 +1551,7 @@ body {
         <div class="como-step-num">01</div>
         <div class="como-step-icon">🔗</div>
         <h3>Conectamos con tu sistema de nómina</h3>
-        <p>Integración directa con PayDay y otros sistemas en Panamá. Configuración en 48 horas, sin equipo técnico de tu parte.</p>
+        <p>Integración directa con PayDay en Panamá. Configuración en 48 horas, sin equipo técnico de tu parte.</p>
       </div>
       <div class="como-connector"></div>
       <div class="como-step">
@@ -1504,76 +1586,57 @@ body {
       <div class="showcase-view active" id="tab-collab">
         <div class="browser-mockup">
           <div class="browser-bar">
-            <div class="browser-dots">
-              <div class="browser-dot bd-r"></div>
-              <div class="browser-dot bd-y"></div>
-              <div class="browser-dot bd-g"></div>
-            </div>
+            <div class="browser-dots"><div class="browser-dot bd-r"></div><div class="browser-dot bd-y"></div><div class="browser-dot bd-g"></div></div>
             <div class="browser-url">app.miwellnest.com/inicio</div>
           </div>
           <div class="browser-body">
-            <div class="db-header">
-              <div class="db-greeting">Buenos días, María 👋</div>
-              <div class="db-date">Jueves, 24 de abril · 2026</div>
+            <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;padding:16px;background:var(--gray-50);border-radius:14px;border:1px solid rgba(0,0,0,0.06)">
+              <div style="width:48px;height:48px;border-radius:50%;background:var(--violet-pale);display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-size:20px;color:var(--violet);flex-shrink:0">M</div>
+              <div>
+                <div style="font-size:16px;font-weight:800;color:var(--night)">María González</div>
+                <div style="display:flex;gap:16px;margin-top:4px;flex-wrap:wrap">
+                  <span style="font-size:12px;color:var(--gray-600)"><strong>Cargo:</strong> Analista de RRHH</span>
+                  <span style="font-size:12px;color:var(--gray-600)"><strong>Rol:</strong> Colaborador</span>
+                </div>
+              </div>
+              <div style="margin-left:auto;font-size:11px;font-weight:700;color:var(--violet);background:var(--violet-pale);padding:4px 10px;border-radius:999px">Activo</div>
             </div>
-            <div class="db-score-row">
+            <div class="db-score-row" style="grid-template-columns:repeat(3,1fr)">
               <div class="db-score-card accent">
-                <div class="dsc-label">Bienestar general</div>
-                <div class="dsc-value">87</div>
-                <div class="dsc-trend" style="color:rgba(255,255,255,0.75)">↑ 12 pts este mes</div>
-              </div>
-              <div class="db-score-card">
-                <div class="dsc-label">Acceso disponible</div>
+                <div class="dsc-label">Disponible para acceso</div>
                 <div class="dsc-value">$850</div>
-                <div class="dsc-trend">Listo para usar</div>
+                <div class="dsc-trend" style="color:rgba(255,255,255,0.8)">De tu salario devengado</div>
               </div>
               <div class="db-score-card">
-                <div class="dsc-label">Próxima sesión</div>
-                <div class="dsc-value" style="font-size:18px;padding-top:4px">Psicología</div>
-                <div class="dsc-trend">Mañana · 10:00 AM</div>
+                <div class="dsc-label">Próximo pago</div>
+                <div class="dsc-value" style="font-size:20px;padding-top:4px">15 may</div>
+                <div class="dsc-trend">En 10 días</div>
               </div>
               <div class="db-score-card">
-                <div class="dsc-label">Solicitudes</div>
-                <div class="dsc-value">2</div>
+                <div class="dsc-label">Solicitudes activas</div>
+                <div class="dsc-value">1</div>
                 <div class="dsc-trend" style="color:#F59E0B">En proceso</div>
               </div>
             </div>
             <div class="db-grid">
               <div class="db-benefits">
-                <h4>Mis beneficios activos</h4>
-                <div class="db-benefit-item">
-                  <div class="dbi-icon" style="background:#EDE9FF">💰</div>
-                  <div class="dbi-name">Bienestar Financiero</div>
-                  <div class="dbi-tag dbi-active">Activo</div>
-                </div>
-                <div class="db-benefit-item">
-                  <div class="dbi-icon" style="background:#D1FAE5">🧠</div>
-                  <div class="dbi-name">Bienestar Emocional</div>
-                  <div class="dbi-tag dbi-active">Activo</div>
-                </div>
-                <div class="db-benefit-item">
-                  <div class="dbi-icon" style="background:#FEE2E2">🏥</div>
-                  <div class="dbi-name">Salud y Seguro</div>
-                  <div class="dbi-tag dbi-active">Activo</div>
-                </div>
-                <div class="db-benefit-item">
-                  <div class="dbi-icon" style="background:#EDE9FF">🥗</div>
-                  <div class="dbi-name">Nutrición y Fitness</div>
-                  <div class="dbi-tag dbi-new">Nuevo</div>
-                </div>
+                <h4>Mis módulos activos</h4>
+                <div class="db-benefit-item"><div class="dbi-icon" style="background:#EDE9FF">💧</div><div class="dbi-name">Liquidez</div><div class="dbi-tag dbi-active">Activo</div></div>
+                <div class="db-benefit-item"><div class="dbi-icon" style="background:#E0F2FE">📲</div><div class="dbi-name">Adelanto de Salario · EWA</div><div class="dbi-tag dbi-active">Activo</div></div>
+                <div class="db-benefit-item" style="opacity:0.35"><div class="dbi-icon" style="background:#F3F4F6">🔒</div><div class="dbi-name" style="color:#9CA3AF">Más módulos próximamente</div><div class="dbi-tag" style="background:#F3F4F6;color:#9CA3AF">Pronto</div></div>
               </div>
               <div class="db-quick">
                 <h4>Accesos rápidos</h4>
-                <button class="db-quick-btn">💰 Solicitar acceso de fondos</button>
-                <button class="db-quick-btn">📅 Agendar sesión</button>
-                <button class="db-quick-btn">📄 Ver historial</button>
+                <button class="db-quick-btn">💧 Solicitar liquidez</button>
+                <button class="db-quick-btn">📲 Ver adelanto disponible</button>
+                <button class="db-quick-btn">📄 Historial de solicitudes</button>
                 <button class="db-quick-btn">📞 Hablar con soporte</button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- ADMIN VIEW -->
+<!-- ADMIN VIEW -->
       <div class="showcase-view" id="tab-admin">
         <div class="browser-mockup">
           <div class="browser-bar">
@@ -1649,48 +1712,26 @@ body {
 <!-- MÓDULOS -->
 <div class="modules-section" id="modulos">
   <div class="modules-inner">
-    <div class="section-eyebrow">Módulos de la plataforma</div>
-    <h2 class="section-h2">Todo en una sola app, <em>lista para tu empresa.</em></h2>
-    <p class="section-sub">Tres pilares de bienestar activos hoy, diseñados para Panamá y listos para activar en 48 horas.</p>
-    <div class="modules-grid" style="grid-template-columns:repeat(3,1fr)">
-      <div class="module-card" style="padding:36px">
-        <div class="module-top">
-          <div class="module-icon" style="width:52px;height:52px;font-size:24px">💰</div>
-          <span class="badge b-live">Activo</span>
-        </div>
-        <h3 style="font-size:20px;margin-top:16px">Bienestar Financiero</h3>
-        <p style="margin-top:10px">Adelanto de salario hasta la próxima quincena, ahorro programado y educación financiera. Sin intereses para el colaborador en el adelanto de salario.</p>
-        <div class="module-stat">
-          <span class="ms-icon">📊</span>
-          <span>Integración directa con PayDay y otros sistemas de nómina</span>
-        </div>
+    <div class="section-eyebrow">Módulos disponibles hoy</div>
+    <h2 class="section-h2">Bienestar financiero real, <em>desde el primer día.</em></h2>
+    <p class="section-sub">Dos herramientas activas, diseñadas para empresas panameñas e integradas con PayDay.</p>
+    <div class="modules-grid" style="grid-template-columns:repeat(2,1fr);max-width:800px;margin:56px auto 0">
+      <div class="module-card" style="padding:40px;border:2px solid rgba(123,97,255,0.15)">
+        <div class="module-top"><div class="module-icon" style="width:56px;height:56px;font-size:26px;background:#EDE9FF">💧</div></div>
+        <h3 style="font-size:22px;margin-top:20px">Liquidez</h3>
+        <p style="margin-top:10px;font-size:15px;line-height:1.65">Acceso inmediato a una parte del salario ya devengado — sin esperar el día de pago. El colaborador solicita desde la app y recibe en minutos.</p>
+        <div class="module-stat"><span class="ms-icon">✓</span><span>Sin intereses para el colaborador. Sin costo para la empresa. Solo paga quien lo usa.</span></div>
+        <div class="module-stat" style="margin-top:10px"><span class="ms-icon">🔗</span><span>Integrado con PayDay · Activación en 48h</span></div>
       </div>
-      <div class="module-card" style="padding:36px">
-        <div class="module-top">
-          <div class="module-icon" style="width:52px;height:52px;font-size:24px;background:#FEE2E2">🏥</div>
-          <span class="badge b-live">Activo</span>
-        </div>
-        <h3 style="font-size:20px;margin-top:16px">Salud y Seguro</h3>
-        <p style="margin-top:10px">Seguro médico accesible, telemedicina 24/7 y atención en salud para colaboradores y su familia. Cobertura real desde el primer día.</p>
-        <div class="module-stat">
-          <span class="ms-icon">🏥</span>
-          <span>Atención médica disponible para toda la familia del colaborador</span>
-        </div>
-      </div>
-      <div class="module-card" style="padding:36px">
-        <div class="module-top">
-          <div class="module-icon" style="width:52px;height:52px;font-size:24px;background:#D1FAE5">🧠</div>
-          <span class="badge b-live">Activo</span>
-        </div>
-        <h3 style="font-size:20px;margin-top:16px">Bienestar Emocional</h3>
-        <p style="margin-top:10px">Apoyo psicológico profesional, sesiones de meditación guiada y herramientas de manejo del estrés. Disponibles cuando el colaborador lo necesita.</p>
-        <div class="module-stat">
-          <span class="ms-icon">🧠</span>
-          <span>Sesiones con psicólogos certificados en español, desde la app</span>
-        </div>
+      <div class="module-card" style="padding:40px;border:2px solid rgba(123,97,255,0.15)">
+        <div class="module-top"><div class="module-icon" style="width:56px;height:56px;font-size:26px;background:#E0F2FE">📲</div></div>
+        <h3 style="font-size:22px;margin-top:20px">Adelanto de Salario<span style="display:block;font-size:13px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:var(--violet);letter-spacing:0.08em;margin-top:4px">EWA · Earned Wage Access</span></h3>
+        <p style="margin-top:10px;font-size:15px;line-height:1.65">El colaborador elige cuándo y cuánto acceder de su salario devengado. Historial completo, control total, sin deudas.</p>
+        <div class="module-stat"><span class="ms-icon">✓</span><span>Acceso parcial o total al salario devengado hasta la fecha de corte.</span></div>
+        <div class="module-stat" style="margin-top:10px"><span class="ms-icon">📊</span><span>Reportes de uso para RRHH · Sin deudas, sin intereses</span></div>
       </div>
     </div>
-    <p class="modules-more-line">Más módulos de bienestar en desarrollo — tu empresa estará entre las primeras en acceder.</p>
+    <p class="modules-more-line">Más módulos de bienestar en desarrollo — tu empresa será la primera en acceder.</p>
   </div>
 </div>
 
@@ -1698,45 +1739,15 @@ body {
 <section class="benefits-section" id="beneficios">
   <div class="benefits-inner">
     <div class="section-eyebrow">Centro de Beneficios</div>
-    <h2 class="section-h2">Todo lo que tu equipo <em>merece</em>, en un solo lugar.</h2>
-    <p class="section-sub">Wellnest integra seis áreas de bienestar en una plataforma unificada. Cada colaborador accede a lo que más le importa.</p>
-    <div class="benefits-grid">
-      <div class="benefit-card">
-        <div class="bc-icon" style="background:#EDE9FF">💰</div>
-        <h3>Bienestar Financiero</h3>
-        <p>Acceso inteligente a fondos, herramientas de ahorro y educación financiera adaptada a cada etapa de vida.</p>
-        <span class="benefit-card-tag">Disponible ahora</span>
-      </div>
-      <div class="benefit-card">
-        <div class="bc-icon" style="background:#D1FAE5">🏥</div>
-        <h3>Salud Integral</h3>
-        <p>Cobertura de salud accesible, telemedicina 24/7 y atención médica para colaboradores y su familia.</p>
-        <span class="benefit-card-tag">Disponible ahora</span>
-      </div>
-      <div class="benefit-card">
-        <div class="bc-icon" style="background:#FEF3C7">🧠</div>
-        <h3>Bienestar Emocional</h3>
-        <p>Apoyo psicológico profesional, recursos de manejo del estrés y herramientas para la salud mental diaria.</p>
-        <span class="benefit-card-tag">Disponible ahora</span>
-      </div>
-      <div class="benefit-card">
-        <div class="bc-icon" style="background:#FEE2E2">🥗</div>
-        <h3>Herramientas Laborales</h3>
-        <p>Recursos para el desarrollo profesional, productividad y el equilibrio entre vida personal y trabajo.</p>
-        <span class="benefit-card-tag">Expandiendo</span>
-      </div>
-      <div class="benefit-card">
-        <div class="bc-icon" style="background:#E0F2FE">🛡️</div>
-        <h3>Gestión Empresarial</h3>
-        <p>Panel administrativo para RRHH con visibilidad de adopción, métricas y gestión simplificada de beneficios.</p>
-        <span class="benefit-card-tag">Para empresas</span>
-      </div>
-      <div class="benefit-card">
-        <div class="bc-icon" style="background:#F0FDF4">🎯</div>
-        <h3>Experiencias Exclusivas</h3>
-        <p>Descuentos, accesos preferenciales y beneficios especiales en marcas, servicios y experiencias seleccionadas.</p>
-        <span class="benefit-card-tag">Expandiendo</span>
-      </div>
+    <h2 class="section-h2">Bienestar financiero para <em>cada colaborador.</em></h2>
+    <p class="section-sub">Las herramientas de liquidez y bienestar financiero que tu equipo necesita hoy. En una sola plataforma, sin fricciones.</p>
+    <div class="benefits-grid" style="grid-template-columns:repeat(3,1fr)">
+      <div class="benefit-card"><div class="bc-icon" style="background:#EDE9FF">💧</div><h3>Liquidez Inmediata</h3><p>Acceso al salario devengado antes del día de pago. Sin esperas, sin burocracia. Directo desde la app.</p><span class="benefit-card-tag">Activo hoy</span></div>
+      <div class="benefit-card"><div class="bc-icon" style="background:#E0F2FE">📲</div><h3>Adelanto de Salario · EWA</h3><p>El colaborador elige cuánto y cuándo acceder del salario ya generado. Historial claro, control total.</p><span class="benefit-card-tag">Activo hoy</span></div>
+      <div class="benefit-card"><div class="bc-icon" style="background:#FEF3C7">💾</div><h3>Ahorro Programado</h3><p>El colaborador define un porcentaje de su salario para ahorrar automáticamente cada quincena.</p><span class="benefit-card-tag">Incluido en todos los planes</span></div>
+      <div class="benefit-card"><div class="bc-icon" style="background:#F0FDF4">📚</div><h3>Educación Financiera</h3><p>Contenido práctico sobre presupuesto, ahorro y manejo del dinero. Diseñado para la realidad de Panamá.</p><span class="benefit-card-tag">Incluido en todos los planes</span></div>
+      <div class="benefit-card"><div class="bc-icon" style="background:#F3F4F6">🔗</div><h3>Integración con PayDay</h3><p>Conexión directa con tu sistema de nómina. Sin desarrollos complejos, sin IT, activo en 48 horas.</p><span class="benefit-card-tag">Solo con PayDay</span></div>
+      <div class="benefit-card"><div class="bc-icon" style="background:#EDE9FF">📊</div><h3>Panel para RRHH</h3><p>Adopción, solicitudes activas y métricas de uso. Reportes simples para tomar mejores decisiones.</p><span class="benefit-card-tag">Para empresas</span></div>
     </div>
   </div>
 </section>
@@ -1790,8 +1801,8 @@ body {
         </div>
         <div class="app-preview-card">
           <div class="app-preview-card-label">Próxima sesión</div>
-          <div class="app-preview-card-value" style="font-size:16px">Psicología</div>
-          <div class="app-preview-card-sub">Mañana · 10:00 AM</div>
+          <div class="app-preview-card-value" style="font-size:16px">Liquidez · EWA</div>
+          <div class="app-preview-card-sub">1 solicitud · 10:00 AM</div>
         </div>
       </div>
     </div>
@@ -1896,74 +1907,77 @@ body {
   <div class="planes-inner">
     <div class="section-eyebrow">Planes disponibles</div>
     <h2 class="section-h2">Elige el plan que <em>tu empresa necesita.</em></h2>
-    <p class="section-sub">Activa uno o todos los módulos. Sin costo fijo, sin contratos largos. Escala a tu ritmo.</p>
+    <p class="section-sub">Sin costo fijo. Sin contratos largos. Escala cuando estés listo.</p>
     <div class="planes-grid">
       <div class="plan-card">
-        <div class="plan-badge">Esencial</div>
-        <div class="plan-icon">💰</div>
-        <h3 class="plan-name">Bienestar Financiero</h3>
-        <p class="plan-desc">El punto de entrada perfecto. Ofrece acceso a fondos y educación financiera a todos tus colaboradores.</p>
+        <div class="plan-badge">Plan 1</div>
+        <div class="plan-icon">💧</div>
+        <h3 class="plan-name">Liquidez</h3>
+        <p class="plan-desc">El punto de entrada: acceso inmediato al salario devengado más las herramientas financieras esenciales.</p>
         <ul class="plan-features">
-          <li><span class="pf-check">✓</span> Adelanto de salario</li>
+          <li><span class="pf-check">✓</span> Módulo de Liquidez</li>
           <li><span class="pf-check">✓</span> Ahorro programado</li>
           <li><span class="pf-check">✓</span> Educación financiera</li>
-          <li><span class="pf-check">✓</span> Integración con nómina</li>
-          <li><span class="pf-check">✓</span> Dashboard RRHH</li>
+          <li><span class="pf-check">✓</span> Integración con PayDay</li>
+          <li><span class="pf-check">✓</span> Dashboard para RRHH</li>
+          <li><span class="pf-check">✓</span> Soporte en español</li>
         </ul>
         <a href="#form" class="plan-cta">Solicita una demo</a>
       </div>
       <div class="plan-card plan-card-featured">
-        <div class="plan-badge" style="background:var(--violet);color:#fff">Plus</div>
-        <div class="plan-featured-tag">Más popular</div>
-        <div class="plan-icon">💰🧠</div>
-        <h3 class="plan-name">Financiero + Emocional</h3>
-        <p class="plan-desc">La combinación más completa para reducir el estrés financiero y emocional de tu equipo al mismo tiempo.</p>
+        <div class="plan-badge" style="background:var(--violet);color:#fff">Plan 2</div>
+        <div class="plan-featured-tag">Más solicitado</div>
+        <div class="plan-icon">📲</div>
+        <h3 class="plan-name">Liquidez + EWA</h3>
+        <p class="plan-desc">Todo el Plan 1 más el módulo completo de Adelanto de Salario (EWA) con acceso flexible para cada colaborador.</p>
         <ul class="plan-features">
-          <li><span class="pf-check">✓</span> Todo del plan Esencial</li>
-          <li><span class="pf-check">✓</span> Apoyo psicológico</li>
-          <li><span class="pf-check">✓</span> Meditación y mindfulness</li>
-          <li><span class="pf-check">✓</span> Herramientas anti-estrés</li>
-          <li><span class="pf-check">✓</span> Soporte prioritario</li>
+          <li><span class="pf-check">✓</span> Todo del Plan 1</li>
+          <li><span class="pf-check" style="background:var(--violet);color:#fff">✓</span> Adelanto de Salario · EWA</li>
+          <li><span class="pf-check" style="background:var(--violet);color:#fff">✓</span> Acceso parcial o total al devengado</li>
+          <li><span class="pf-check" style="background:var(--violet);color:#fff">✓</span> Historial de transacciones</li>
+          <li><span class="pf-check" style="background:var(--violet);color:#fff">✓</span> Reportes de uso para RRHH</li>
+          <li><span class="pf-check" style="background:var(--violet);color:#fff">✓</span> Soporte prioritario</li>
         </ul>
-        <a href="#form" class="plan-cta" style="background:var(--violet);color:#fff">Solicita una demo</a>
+        <a href="#form" class="plan-cta" style="background:var(--violet);color:#fff;border-color:var(--violet)">Solicita una demo</a>
       </div>
       <div class="plan-card">
-        <div class="plan-badge">Completo</div>
-        <div class="plan-icon">💰🧠🏥</div>
-        <h3 class="plan-name">Wellnest Completo</h3>
-        <p class="plan-desc">La experiencia completa de bienestar laboral: financiero, emocional y salud integrados en una sola plataforma.</p>
+        <div class="plan-badge" style="background:#0D0B1E;color:#AEE6FF">Enterprise</div>
+        <div class="plan-icon">🏢</div>
+        <h3 class="plan-name">Wellness Completo</h3>
+        <p class="plan-desc">Solución white-label para grandes organizaciones. Wellnest integrado bajo la marca de tu empresa, con configuración personalizada y account manager dedicado.</p>
         <ul class="plan-features">
-          <li><span class="pf-check">✓</span> Todo del plan Plus</li>
-          <li><span class="pf-check">✓</span> Seguro médico accesible</li>
-          <li><span class="pf-check">✓</span> Telemedicina 24/7</li>
-          <li><span class="pf-check">✓</span> Cobertura familiar</li>
-          <li><span class="pf-check">✓</span> Account manager dedicado</li>
+          <li><span class="pf-check" style="background:#0D0B1E;color:#AEE6FF">✓</span> Todo del Plan 2</li>
+          <li><span class="pf-check" style="background:#0D0B1E;color:#AEE6FF">✓</span> White-label con tu marca</li>
+          <li><span class="pf-check" style="background:#0D0B1E;color:#AEE6FF">✓</span> Módulos adicionales a medida</li>
+          <li><span class="pf-check" style="background:#0D0B1E;color:#AEE6FF">✓</span> Integración personalizada</li>
+          <li><span class="pf-check" style="background:#0D0B1E;color:#AEE6FF">✓</span> Account manager dedicado</li>
+          <li><span class="pf-check" style="background:#0D0B1E;color:#AEE6FF">✓</span> SLA garantizado</li>
         </ul>
-        <a href="#form" class="plan-cta">Solicita una demo</a>
+        <a href="#form" class="plan-cta" style="background:#0D0B1E;color:#AEE6FF;border-color:#0D0B1E">Hablar con el equipo</a>
       </div>
     </div>
-    <p style="text-align:center;font-size:13px;color:#9CA3AF;margin-top:32px">Todos los planes incluyen onboarding, soporte en español y activación en 48 horas.</p>
+    <p style="text-align:center;font-size:13px;color:#9CA3AF;margin-top:32px">Todos los planes incluyen onboarding, activación en 48 horas e integración con PayDay.</p>
   </div>
 </section>
 
 <!-- STATS -->
 <div class="stats-section" id="resultados">
   <div class="stats-inner">
-    <div class="section-eyebrow" style="color:var(--sky)">Resultados medibles</div>
-    <h2 class="section-h2">Números que <em>convencen</em> a tu directivo.</h2>
-    <p class="section-sub">Datos reales de empresas que han activado Wellnest en los últimos 12 meses.</p>
+    <div class="section-eyebrow" style="color:var(--sky)">Por qué funciona</div>
+    <h2 class="section-h2">Números que <em>hablan solos.</em></h2>
+    <p class="section-sub">Wellnest está diseñado para activar rápido, adoptarse fácil y medir resultados desde el primer día.</p>
     <div class="stats-grid">
       <div class="stat-card">
-        <div class="stat-number">31%</div>
-        <div class="stat-label">Reducción en rotación de personal durante los primeros 6 meses</div>
+        <div class="stat-number">48h</div>
+        <div class="stat-label">Tiempo de activación desde la firma del acuerdo con tu empresa</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number">40%</div>
-        <div class="stat-label">Incremento en satisfacción laboral reportado por colaboradores</div>
+        <div class="stat-number">+90%</div>
+        <div class="stat-label">Tasa de adopción activa entre colaboradores registrados en la plataforma</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number">3×</div>
-        <div class="stat-label">Mayor retención comparado con empresas sin beneficios de bienestar</div>
+        <div class="stat-number">/bin/zsh</div>
+        <div class="stat-label">Costo fijo para la empresa. Sin suscripción, sin cuotas mensuales</div>
       </div>
     </div>
   </div>
