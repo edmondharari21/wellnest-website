@@ -1679,6 +1679,7 @@ body {
               <div class="hb-nav-item hb-active">📊 Dashboard</div>
               <div class="hb-nav-item">💧 W. Liquidez</div>
               <div class="hb-nav-item">📲 W. Adelanto</div>
+              <div class="hb-nav-item" style="color:rgba(174,230,255,0.85)">🌿 W. Salud</div>
               <div class="hb-nav-item">💾 Ahorro</div>
               <div class="hb-nav-item" style="margin-top:auto;opacity:0.5">⚙️ Config</div>
             </div>
@@ -1861,7 +1862,7 @@ body {
                 <div style="display:flex;align-items:center;gap:10px;padding:8px 0">
                   <div style="width:28px;height:28px;border-radius:8px;background:#EDE9FF;display:flex;align-items:center;justify-content:center;font-size:13px">🌿</div>
                   <div style="flex:1;font-size:12px;font-weight:600;color:#1E1B4B">Wellnest Salud</div>
-                  <div style="font-size:10px;font-weight:700;background:#FEF3C7;color:#D97706;padding:2px 7px;border-radius:999px">Pronto</div>
+                  <div style="font-size:10px;font-weight:700;background:#D1FAE5;color:#059669;padding:2px 7px;border-radius:999px">Activo</div>
                 </div>
               </div>
               <div style="background:#fff;border:1px solid rgba(0,0,0,0.07);border-radius:12px;padding:14px">
@@ -1869,6 +1870,7 @@ body {
                 <button class="db-quick-btn" id="btn-liq" style="font-size:12px;padding:8px 10px;margin-bottom:6px;width:100%;text-align:left" onclick="quickAction(this,'⏳ Procesando...','✅ Solicitud enviada')">💧 Solicitar Liquidez</button>
                 <button class="db-quick-btn" style="font-size:12px;padding:8px 10px;margin-bottom:6px;width:100%;text-align:left" onclick="quickAction(this,'📲 Cargando...','📲 Ver Adelanto')">📲 Ver Adelanto</button>
                 <button class="db-quick-btn" style="font-size:12px;padding:8px 10px;margin-bottom:6px;width:100%;text-align:left" onclick="quickAction(this,'📄 Abriendo...','📄 Mi historial')">📄 Mi historial</button>
+                <button class="db-quick-btn" style="font-size:12px;padding:8px 10px;margin-bottom:6px;width:100%;text-align:left;color:#7B61FF;font-weight:700" onclick="openSaludTab()">🌿 Wellnest Salud</button>
                 <button class="db-quick-btn" style="font-size:12px;padding:8px 10px;width:100%;text-align:left">📞 Soporte</button>
               </div>
             </div>
@@ -1877,16 +1879,132 @@ body {
 
 
 
-            <!-- Educational content -->
-            <div style="background:#fff;border:1px solid rgba(0,0,0,0.07);border-radius:12px;padding:14px">
-              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
-                <div style="font-size:12px;font-weight:700;color:#1E1B4B">🌿 Wellnest Salud — Contenidos</div>
-                <span style="font-size:11px;color:#7B61FF;font-weight:600;cursor:pointer">Ver todo →</span>
+            <!-- Wellnest Salud interactive module -->
+            <div id="salud-module-block" style="background:#fff;border:2px solid rgba(123,97,255,0.2);border-radius:12px;overflow:hidden">
+              <!-- Module header -->
+              <div style="background:linear-gradient(135deg,#7B61FF,#5B45CC);padding:12px 14px;display:flex;align-items:center;gap:10px">
+                <div style="font-size:16px">🌿</div>
+                <div style="flex:1">
+                  <div style="font-size:12px;font-weight:800;color:#fff;letter-spacing:0.02em">Wellnest Salud</div>
+                  <div style="font-size:10px;color:rgba(255,255,255,0.7)">Tu bienestar financiero integral</div>
+                </div>
+                <div style="font-size:10px;font-weight:700;background:rgba(255,255,255,0.2);color:#fff;padding:2px 8px;border-radius:999px">Activo</div>
               </div>
-              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
-                <div class="edu-card-mini"><div class="edu-card-thumb" style="background:linear-gradient(135deg,#7B61FF,#5B45CC)">▶</div><div class="edu-card-title">Ahorra quincena a quincena</div></div>
-                <div class="edu-card-mini"><div class="edu-card-thumb" style="background:linear-gradient(135deg,#06B6D4,#0284C7)">▶</div><div class="edu-card-title">Usa adelantos inteligentemente</div></div>
-                <div class="edu-card-mini"><div class="edu-card-thumb" style="background:linear-gradient(135deg,#10B981,#059669)">▶</div><div class="edu-card-title">Presupuesto básico mensual</div></div>
+              <!-- Sub-tabs nav -->
+              <div style="display:flex;border-bottom:1px solid rgba(0,0,0,0.08);background:#F9FAFB">
+                <button class="salud-tab-btn" id="stab-edu" onclick="switchSaludTab('edu',this)" style="flex:1;padding:8px 4px;font-size:10px;font-weight:700;color:#7B61FF;border:none;background:transparent;border-bottom:2px solid #7B61FF;cursor:pointer;transition:all 0.2s">📚 Educación</button>
+                <button class="salud-tab-btn" id="stab-sim" onclick="switchSaludTab('sim',this)" style="flex:1;padding:8px 4px;font-size:10px;font-weight:600;color:#9CA3AF;border:none;background:transparent;border-bottom:2px solid transparent;cursor:pointer;transition:all 0.2s">📊 Simulador</button>
+                <button class="salud-tab-btn" id="stab-metas" onclick="switchSaludTab('metas',this)" style="flex:1;padding:8px 4px;font-size:10px;font-weight:600;color:#9CA3AF;border:none;background:transparent;border-bottom:2px solid transparent;cursor:pointer;transition:all 0.2s">🎯 Metas</button>
+                <button class="salud-tab-btn" id="stab-habitos" onclick="switchSaludTab('habitos',this)" style="flex:1;padding:8px 4px;font-size:10px;font-weight:600;color:#9CA3AF;border:none;background:transparent;border-bottom:2px solid transparent;cursor:pointer;transition:all 0.2s">🏆 Hábitos</button>
+              </div>
+              <!-- Tab: Educación Financiera -->
+              <div id="salud-edu" class="salud-tab-content" style="padding:12px">
+                <div style="font-size:11px;color:#9CA3AF;margin-bottom:10px">Lecciones disponibles esta quincena</div>
+                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px">
+                  <div class="edu-card-mini" style="cursor:pointer;flex-direction:column;gap:6px;padding:10px" onclick="quickAction(this,'▶️ Viendo...','✅ Completado')">
+                    <div class="edu-card-thumb" style="background:linear-gradient(135deg,#7B61FF,#5B45CC);width:100%;height:36px;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px">▶</div>
+                    <div class="edu-card-title" style="font-size:10px;line-height:1.3">Ahorra quincena a quincena</div>
+                    <div style="font-size:9px;color:#10B981;font-weight:700">✅ Completado</div>
+                  </div>
+                  <div class="edu-card-mini" style="cursor:pointer;flex-direction:column;gap:6px;padding:10px" onclick="quickAction(this,'▶️ Viendo...','✅ Completado')">
+                    <div class="edu-card-thumb" style="background:linear-gradient(135deg,#06B6D4,#0284C7);width:100%;height:36px;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px">▶</div>
+                    <div class="edu-card-title" style="font-size:10px;line-height:1.3">Usa adelantos inteligentemente</div>
+                    <div style="font-size:9px;color:#F59E0B;font-weight:700">⏳ En progreso</div>
+                  </div>
+                  <div class="edu-card-mini" style="cursor:pointer;flex-direction:column;gap:6px;padding:10px" onclick="quickAction(this,'▶️ Iniciando...','▶️ Ver lección')">
+                    <div class="edu-card-thumb" style="background:linear-gradient(135deg,#10B981,#059669);width:100%;height:36px;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px">▶</div>
+                    <div class="edu-card-title" style="font-size:10px;line-height:1.3">Presupuesto básico mensual</div>
+                    <div style="font-size:9px;color:#9CA3AF;font-weight:600">Disponible</div>
+                  </div>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:#EDE9FF;border-radius:8px">
+                  <span style="font-size:11px">🎓</span>
+                  <span style="font-size:10px;color:#5B45CC;font-weight:600">Llevas 2 lecciones completadas esta semana</span>
+                  <span style="font-size:10px;font-weight:800;color:#7B61FF;margin-left:auto">+50 pts</span>
+                </div>
+              </div>
+              <!-- Tab: Simulador de Presupuesto -->
+              <div id="salud-sim" class="salud-tab-content" style="padding:12px;display:none">
+                <div style="font-size:11px;font-weight:700;color:#1E1B4B;margin-bottom:4px">Simulador de presupuesto — Regla 50/30/20</div>
+                <div style="font-size:10px;color:#9CA3AF;margin-bottom:10px">Basado en tu salario: $1,200/mes</div>
+                <div style="display:flex;flex-direction:column;gap:6px">
+                  <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;background:#F9FAFB;border-radius:8px;border:1px solid rgba(0,0,0,0.06)">
+                    <div><span style="font-size:11px;color:#374151;font-weight:600">💰 Ingreso mensual</span></div>
+                    <span style="font-size:13px;font-weight:800;color:#1E1B4B">$1,200</span>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;background:#FEF3C7;border-radius:8px;border:1px solid #FDE68A">
+                    <div>
+                      <div style="font-size:11px;color:#92400E;font-weight:600">🏠 Gastos fijos (50%)</div>
+                      <div style="font-size:9px;color:#D97706">Renta · Servicios · Alimentación</div>
+                    </div>
+                    <span style="font-size:13px;font-weight:800;color:#D97706">$600</span>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;background:#EDE9FF;border-radius:8px;border:1px solid rgba(123,97,255,0.2)">
+                    <div>
+                      <div style="font-size:11px;color:#5B45CC;font-weight:600">🛍️ Gastos variables (30%)</div>
+                      <div style="font-size:9px;color:#7B61FF">Ropa · Salidas · Imprevistos</div>
+                    </div>
+                    <span style="font-size:13px;font-weight:800;color:#7B61FF">$360</span>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;background:#D1FAE5;border-radius:8px;border:1px solid #A7F3D0">
+                    <div>
+                      <div style="font-size:11px;color:#065F46;font-weight:600">🎯 Para ahorrar (20%)</div>
+                      <div style="font-size:9px;color:#059669">Metas · Fondo emergencias</div>
+                    </div>
+                    <span style="font-size:13px;font-weight:800;color:#059669">$240</span>
+                  </div>
+                </div>
+                <button class="db-quick-btn" style="margin-top:10px;width:100%;font-size:10px;text-align:center" onclick="quickAction(this,'⏳ Ajustando...','✅ Presupuesto guardado')">Ajustar mis valores →</button>
+              </div>
+              <!-- Tab: Metas Financieras -->
+              <div id="salud-metas" class="salud-tab-content" style="padding:12px;display:none">
+                <div style="font-size:11px;font-weight:700;color:#1E1B4B;margin-bottom:10px">🎯 Mis metas financieras</div>
+                <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:10px">
+                  <div style="padding:10px 12px;background:#F9FAFB;border-radius:10px;border:1px solid rgba(0,0,0,0.06)">
+                    <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+                      <span style="font-size:11px;font-weight:700;color:#1E1B4B">✈️ Vacaciones familiares</span>
+                      <span style="font-size:10px;color:#059669;font-weight:700">68%</span>
+                    </div>
+                    <div style="height:6px;background:#E5E7EB;border-radius:4px"><div style="height:6px;background:#059669;border-radius:4px;width:68%"></div></div>
+                    <div style="font-size:10px;color:#9CA3AF;margin-top:4px">$340 de $500 · 4 meses restantes</div>
+                  </div>
+                  <div style="padding:10px 12px;background:#F9FAFB;border-radius:10px;border:1px solid rgba(0,0,0,0.06)">
+                    <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+                      <span style="font-size:11px;font-weight:700;color:#1E1B4B">🏠 Fondo de emergencia</span>
+                      <span style="font-size:10px;color:#7B61FF;font-weight:700">32%</span>
+                    </div>
+                    <div style="height:6px;background:#E5E7EB;border-radius:4px"><div style="height:6px;background:#7B61FF;border-radius:4px;width:32%"></div></div>
+                    <div style="font-size:10px;color:#9CA3AF;margin-top:4px">$960 de $3,000 · 18 meses restantes</div>
+                  </div>
+                </div>
+                <button class="db-quick-btn" style="width:100%;font-size:11px;text-align:center" onclick="quickAction(this,'⏳ Creando...','✅ Meta creada')">+ Agregar nueva meta</button>
+              </div>
+              <!-- Tab: Hábitos Financieros -->
+              <div id="salud-habitos" class="salud-tab-content" style="padding:12px;display:none">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">
+                  <div style="padding:10px;background:#D1FAE5;border-radius:10px;text-align:center">
+                    <div style="font-size:20px;margin-bottom:4px">🔥</div>
+                    <div style="font-size:18px;font-weight:800;color:#059669">14</div>
+                    <div style="font-size:10px;color:#065F46">días de racha</div>
+                  </div>
+                  <div style="padding:10px;background:#EDE9FF;border-radius:10px;text-align:center">
+                    <div style="font-size:20px;margin-bottom:4px">📚</div>
+                    <div style="font-size:18px;font-weight:800;color:#7B61FF">8</div>
+                    <div style="font-size:10px;color:#5B45CC">lecciones completas</div>
+                  </div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:6px">
+                  <div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:#F9FAFB;border-radius:8px">
+                    <span style="font-size:12px">✅</span><span style="font-size:11px;color:#374151">Registré mis gastos hoy</span><span style="font-size:10px;color:#9CA3AF;margin-left:auto">Hoy</span>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:#F9FAFB;border-radius:8px">
+                    <span style="font-size:12px">✅</span><span style="font-size:11px;color:#374151">Revisé mi presupuesto</span><span style="font-size:10px;color:#9CA3AF;margin-left:auto">Ayer</span>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:#FEF3C7;border-radius:8px">
+                    <span style="font-size:12px">⏳</span><span style="font-size:11px;color:#374151">Ver lección del día</span>
+                    <button style="font-size:10px;font-weight:700;color:#7B61FF;border:none;background:none;cursor:pointer;margin-left:auto;padding:0" onclick="quickAction(this,'▶️','✅')">Ver →</button>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -1959,8 +2077,8 @@ body {
                 </div>
                 <div class="admin-toggle-row" id="toggle-salud" onclick="toggleBenefit(this)" style="cursor:pointer">
                   <div class="atr-icon" style="background:#EDE9FF">🌿</div>
-                  <div style="flex:1"><strong style="font-size:13px;color:#1E1B4B">Wellnest Salud</strong><div style="font-size:11px;color:#9CA3AF">Bienestar integral — próximamente</div></div>
-                  <div class="atr-toggle atr-off" id="toggle-salud-badge">OFF</div>
+                  <div style="flex:1"><strong style="font-size:13px;color:#1E1B4B">Wellnest Salud</strong><div style="font-size:11px;color:#9CA3AF">Educación · Simulador · Metas · Hábitos</div></div>
+                  <div class="atr-toggle atr-on" id="toggle-salud-badge">ON</div>
                 </div>
               </div>
 
@@ -1984,7 +2102,54 @@ body {
                 </div>
               </div>
 
-
+              <!-- Wellnest Salud admin widget -->
+              <div style="background:#fff;border:1px solid rgba(123,97,255,0.15);border-radius:12px;overflow:hidden">
+                <div style="background:linear-gradient(135deg,#7B61FF,#5B45CC);padding:10px 14px;display:flex;align-items:center;gap:8px">
+                  <span style="font-size:13px">🌿</span>
+                  <span style="font-size:12px;font-weight:800;color:#fff">Wellnest Salud — Adopción</span>
+                  <span style="font-size:9px;background:rgba(255,255,255,0.2);color:#fff;padding:2px 7px;border-radius:999px;margin-left:auto;font-weight:700">Activo</span>
+                </div>
+                <div style="padding:12px;display:grid;grid-template-columns:repeat(4,1fr);gap:8px">
+                  <div style="text-align:center;padding:8px;background:#F9FAFB;border-radius:8px">
+                    <div style="font-size:16px;font-weight:800;color:#7B61FF">73%</div>
+                    <div style="font-size:9px;color:#9CA3AF;margin-top:2px">Engagement</div>
+                  </div>
+                  <div style="text-align:center;padding:8px;background:#F9FAFB;border-radius:8px">
+                    <div style="font-size:16px;font-weight:800;color:#059669">156</div>
+                    <div style="font-size:9px;color:#9CA3AF;margin-top:2px">Lecciones vistas</div>
+                  </div>
+                  <div style="text-align:center;padding:8px;background:#F9FAFB;border-radius:8px">
+                    <div style="font-size:16px;font-weight:800;color:#D97706">48</div>
+                    <div style="font-size:9px;color:#9CA3AF;margin-top:2px">Simulaciones</div>
+                  </div>
+                  <div style="text-align:center;padding:8px;background:#F9FAFB;border-radius:8px">
+                    <div style="font-size:16px;font-weight:800;color:#1E1B4B">92</div>
+                    <div style="font-size:9px;color:#9CA3AF;margin-top:2px">Metas activas</div>
+                  </div>
+                </div>
+                <div style="padding:0 12px 12px;display:flex;flex-direction:column;gap:6px">
+                  <div style="display:flex;align-items:center;gap:8px;font-size:10px">
+                    <span style="color:#6B7280;width:80px;flex-shrink:0">📚 Educación</span>
+                    <div style="flex:1;height:5px;background:#E5E7EB;border-radius:4px"><div style="height:5px;background:#7B61FF;border-radius:4px;width:73%"></div></div>
+                    <span style="color:#7B61FF;font-weight:700;width:28px;text-align:right">73%</span>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:8px;font-size:10px">
+                    <span style="color:#6B7280;width:80px;flex-shrink:0">📊 Simulador</span>
+                    <div style="flex:1;height:5px;background:#E5E7EB;border-radius:4px"><div style="height:5px;background:#06B6D4;border-radius:4px;width:45%"></div></div>
+                    <span style="color:#06B6D4;font-weight:700;width:28px;text-align:right">45%</span>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:8px;font-size:10px">
+                    <span style="color:#6B7280;width:80px;flex-shrink:0">🎯 Metas</span>
+                    <div style="flex:1;height:5px;background:#E5E7EB;border-radius:4px"><div style="height:5px;background:#059669;border-radius:4px;width:58%"></div></div>
+                    <span style="color:#059669;font-weight:700;width:28px;text-align:right">58%</span>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:8px;font-size:10px">
+                    <span style="color:#6B7280;width:80px;flex-shrink:0">🏆 Hábitos</span>
+                    <div style="flex:1;height:5px;background:#E5E7EB;border-radius:4px"><div style="height:5px;background:#F59E0B;border-radius:4px;width:39%"></div></div>
+                    <span style="color:#F59E0B;font-weight:700;width:28px;text-align:right">39%</span>
+                  </div>
+                </div>
+              </div>
 
             </div>
           </div>
@@ -2644,6 +2809,27 @@ document.addEventListener('click', (e) => {
 });
 
 // ── Showcase tab switcher ────────────────────────────────────────────────────
+function switchSaludTab(id, btn) {
+  const contents = document.querySelectorAll('.salud-tab-content');
+  contents.forEach(el => { el.style.display = 'none'; });
+  const buttons = document.querySelectorAll('.salud-tab-btn');
+  buttons.forEach(b => {
+    b.style.color = '#9CA3AF';
+    b.style.fontWeight = '600';
+    b.style.borderBottom = '2px solid transparent';
+  });
+  const panel = document.getElementById('salud-' + id);
+  if (panel) panel.style.display = (id === 'edu') ? 'block' : 'block';
+  if (btn) {
+    btn.style.color = '#7B61FF';
+    btn.style.fontWeight = '700';
+    btn.style.borderBottom = '2px solid #7B61FF';
+  }
+}
+function openSaludTab() {
+  const block = document.getElementById('salud-module-block');
+  if (block) block.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
 function switchTab(id, btn) {
   document.querySelectorAll('.showcase-tab').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.showcase-view').forEach(v => v.classList.remove('active'));
