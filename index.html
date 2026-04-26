@@ -93,7 +93,7 @@ body {
 }
 .hero-inner {
   max-width: 1200px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr 1.2fr;
+  display: grid; grid-template-columns: 1fr 1fr;
   gap: 52px; align-items: center;
   position: relative; z-index: 1;
 }
@@ -1381,7 +1381,7 @@ body {
 
 /* ── ADMIN EDITABLE PANEL ── */
 .admin-field-group { display: flex; flex-direction: column; gap: 4px; }
-.afl { font-size: 10px; font-weight: 700; color: #9CA3AF; text-transform: uppercase; letter-spacing: 0.06em; font-family: 'Plus Jakarta Sans', sans-serif; }
+.afl { font-size: 11px; font-weight: 700; color: #6B7280; text-transform: uppercase; letter-spacing: 0.05em; font-family: 'Plus Jakarta Sans', sans-serif; margin-bottom: 4px; }
 .afinput { padding: 7px 10px; background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 8px; font-size: 12px; font-weight: 600; color: #1E1B4B; font-family: 'Plus Jakarta Sans', sans-serif; display: flex; align-items: center; justify-content: space-between; }
 .afinput-select { cursor: pointer; color: #7B61FF; }
 .afinput-select span { color: #9CA3AF; font-size: 10px; }
@@ -1482,7 +1482,7 @@ body {
         Plataforma de bienestar laboral para empresas
       </div>
       <h1>El beneficio que hace que tu equipo <em>se quede.</em></h1>
-      <p class="hero-sub">Wellnest es la plataforma web que conecta a tu empresa con el bienestar financiero de cada colaborador. Sin app. Sin IT. Sin costo fijo.</p>
+      <p class="hero-sub">Wellnest es la plataforma web que conecta a tu empresa con el bienestar financiero de cada colaborador. Onboarding en 48 horas.</p>
 
       <div class="hero-actions">
         <a href="#form" class="btn-primary" style="font-size:15px;padding:14px 28px">Solicita una demo</a>
@@ -1593,7 +1593,7 @@ body {
   <div class="value-grid" style="grid-template-columns:repeat(3,1fr)">
     <div class="value-card"><div class="value-icon">📉</div><h3>Mejora la retención</h3><p>Las empresas con beneficios financieros estructurados reportan mejoras significativas en permanencia y satisfacción del equipo.</p></div>
     <div class="value-card"><div class="value-icon">⚡</div><h3>Alta adopción real</h3><p>El colaborador lo usa porque resuelve algo concreto: acceso inmediato a su propio dinero devengado. No es un beneficio que nadie recuerda.</p></div>
-    <div class="value-card"><div class="value-icon">🏷️</div><h3>Sin costo fijo para la empresa</h3><p>Sin suscripción mensual. El colaborador solo paga una comisión si elige usar un adelanto — con tasas reguladas y transparentes.</p></div>
+    <div class="value-card"><div class="value-icon">🏷️</div><h3>Modelo basado en uso</h3><p>La empresa no paga suscripción mensual. El colaborador accede a los módulos con condiciones transparentes y reguladas.</p></div>
     <div class="value-card"><div class="value-icon">🚀</div><h3>Activo en 48 horas</h3><p>Integración con PayDay configurada, colaboradores invitados y plataforma lista en menos de dos días hábiles desde el acuerdo.</p></div>
     <div class="value-card"><div class="value-icon">📊</div><h3>Panel de RRHH en tiempo real</h3><p>Adopción, solicitudes activas y métricas de uso visibles desde el primer día. Datos para decidir, sin esperar reportes.</p></div>
     <div class="value-card"><div class="value-icon">🤝</div><h3>Soporte humano en Panamá</h3><p>Equipo local en español para resolver dudas de colaboradores y de RRHH. Personas reales, no un sistema de tickets.</p></div>
@@ -1646,7 +1646,7 @@ body {
 
       <!-- ══ COLLABORATOR INTERACTIVE VIEW ══ -->
       <div class="showcase-view active" id="tab-collab">
-        <div class="sc-try-badge">✦ Interactivo — edita y haz clic</div>
+        <div class="sc-try-badge">✦ Vista previa del producto</div>
         <div class="browser-mockup">
           <div class="browser-bar">
             <div class="browser-dots"><div class="browser-dot bd-r"></div><div class="browser-dot bd-y"></div><div class="browser-dot bd-g"></div></div>
@@ -1658,10 +1658,10 @@ body {
             <div style="display:flex;align-items:center;gap:14px;padding:14px 16px;background:#F9FAFB;border-radius:12px;border:1px solid rgba(0,0,0,0.06)">
               <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#7B61FF,#5B45CC);display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;font-family:'DM Serif Display',serif;flex-shrink:0">M</div>
               <div style="flex:1">
-                <div class="editable-field" contenteditable="true" data-label="nombre" style="font-size:15px;font-weight:800;color:#1E1B4B;outline:none;border-bottom:1px dashed transparent;cursor:text" title="Clic para editar">María González</div>
+                <div data-label="nombre" style="font-size:15px;font-weight:800;color:#1E1B4B;outline:none;border-bottom:1px dashed transparent;cursor:text" title="Clic para editar">María González</div>
                 <div style="display:flex;gap:12px;margin-top:3px;flex-wrap:wrap">
-                  <span style="font-size:11px;color:#9CA3AF">Cargo: <strong class="editable-field" contenteditable="true" style="outline:none;cursor:text" title="Clic para editar">Vendedora</strong></span>
-                  <span style="font-size:11px;color:#9CA3AF">Sucursal: <strong class="editable-field" contenteditable="true" style="outline:none;cursor:text" title="Clic para editar">El Caribe</strong></span>
+                  <span style="font-size:11px;color:#9CA3AF">Cargo: <strong style="outline:none;cursor:text" title="Clic para editar">Vendedora</strong></span>
+                  <span style="font-size:11px;color:#9CA3AF">Sucursal: <strong style="outline:none;cursor:text" title="Clic para editar">El Caribe</strong></span>
                 </div>
               </div>
               <div style="font-size:11px;font-weight:700;color:#059669;background:#D1FAE5;padding:3px 10px;border-radius:999px">Activa</div>
@@ -1669,11 +1669,11 @@ body {
 
             <!-- Stat row -->
             <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
-              <div class="stat-interactive" id="stat-disponible" onclick="handleStatClick(this,'liquidez')" style="background:linear-gradient(135deg,#7B61FF,#5B45CC);border-radius:12px;padding:14px;cursor:pointer;transition:transform 0.15s,box-shadow 0.15s" title="Clic para solicitar">
+              <div class="stat-interactive" id="stat-disponible" style="background:linear-gradient(135deg,#7B61FF,#5B45CC);border-radius:12px;padding:14px;cursor:pointer;transition:transform 0.15s,box-shadow 0.15s">
                 <div style="font-size:10px;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">Disponible</div>
-                <div class="editable-field" contenteditable="true" style="font-family:'DM Serif Display',serif;font-size:24px;color:#fff;line-height:1;outline:none;cursor:text" title="Edita el monto">$850</div>
+                <div style="font-family:'DM Serif Display',serif;font-size:24px;color:#fff;line-height:1;outline:none;cursor:text">$850</div>
                 <div style="font-size:11px;color:rgba(255,255,255,0.75);margin-top:3px">Salario devengado</div>
-                <div class="stat-cta-hint" style="font-size:9px;color:rgba(255,255,255,0.6);margin-top:6px;border-top:1px solid rgba(255,255,255,0.2);padding-top:6px">Toca para solicitar →</div>
+                
               </div>
               <div class="stat-interactive" style="background:#F9FAFB;border:1px solid rgba(0,0,0,0.06);border-radius:12px;padding:14px">
                 <div style="font-size:10px;color:#9CA3AF;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">Próximo pago</div>
@@ -1702,45 +1702,23 @@ body {
                   <div style="font-size:10px;font-weight:700;background:#D1FAE5;color:#059669;padding:2px 7px;border-radius:999px">Activo</div>
                 </div>
                 <div style="display:flex;align-items:center;gap:10px;padding:8px 0">
-                  <div style="width:28px;height:28px;border-radius:8px;background:#D1FAE5;display:flex;align-items:center;justify-content:center;font-size:13px">🌿</div>
+                  <div style="width:28px;height:28px;border-radius:8px;background:#EDE9FF;display:flex;align-items:center;justify-content:center;font-size:13px">🌿</div>
                   <div style="flex:1;font-size:12px;font-weight:600;color:#1E1B4B">Wellnest Salud</div>
                   <div style="font-size:10px;font-weight:700;background:#FEF3C7;color:#D97706;padding:2px 7px;border-radius:999px">Pronto</div>
                 </div>
               </div>
               <div style="background:#fff;border:1px solid rgba(0,0,0,0.07);border-radius:12px;padding:14px">
                 <div style="font-size:12px;font-weight:700;color:#1E1B4B;margin-bottom:10px">Acceso rápido</div>
-                <button class="db-quick-btn" onclick="openLiquidezFlow()" style="font-size:12px;padding:8px 10px;margin-bottom:6px;width:100%;text-align:left">💧 Solicitar Liquidez</button>
-                <button class="db-quick-btn" onclick="openAdelantoFlow()" style="font-size:12px;padding:8px 10px;margin-bottom:6px;width:100%;text-align:left">📲 Ver Adelanto</button>
+                <button class="db-quick-btn" style="font-size:12px;padding:8px 10px;margin-bottom:6px;width:100%;text-align:left">💧 Solicitar Liquidez</button>
+                <button class="db-quick-btn" style="font-size:12px;padding:8px 10px;margin-bottom:6px;width:100%;text-align:left">📲 Ver Adelanto</button>
                 <button class="db-quick-btn" style="font-size:12px;padding:8px 10px;margin-bottom:6px;width:100%;text-align:left">📄 Mi historial</button>
                 <button class="db-quick-btn" style="font-size:12px;padding:8px 10px;width:100%;text-align:left">📞 Soporte</button>
               </div>
             </div>
 
-            <!-- Liquidity flow (hidden by default) -->
-            <div id="liquidez-flow" style="display:none;background:linear-gradient(135deg,#EDE9FF,#F5F3FF);border:2px solid #7B61FF;border-radius:14px;padding:16px;animation:fadeInUp 0.3s ease both">
-              <div style="font-size:13px;font-weight:800;color:#1E1B4B;margin-bottom:12px">💧 Solicitar Wellnest Liquidez</div>
-              <div style="font-size:11px;color:#6B7280;margin-bottom:8px">¿Cuánto necesitas? (máx. $850 disponible)</div>
-              <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap">
-                <button class="amount-chip" onclick="selectAmount(this,'$100')">$100</button>
-                <button class="amount-chip" onclick="selectAmount(this,'$250')">$250</button>
-                <button class="amount-chip" onclick="selectAmount(this,'$500')">$500</button>
-                <button class="amount-chip amount-chip-active" onclick="selectAmount(this,'$850')">$850 máx.</button>
-              </div>
-              <div id="flow-amount" style="font-size:22px;font-weight:800;color:#7B61FF;margin-bottom:12px">$850</div>
-              <button onclick="confirmLiquidez()" style="background:linear-gradient(135deg,#7B61FF,#5B45CC);color:#fff;border:none;border-radius:10px;padding:10px 20px;font-size:13px;font-weight:700;cursor:pointer;width:100%">Confirmar solicitud →</button>
-            </div>
 
-            <!-- Adelanto flow (hidden) -->
-            <div id="adelanto-flow" style="display:none;background:linear-gradient(135deg,#E0F2FE,#F0F9FF);border:2px solid #0EA5E9;border-radius:14px;padding:16px;animation:fadeInUp 0.3s ease both">
-              <div style="font-size:13px;font-weight:800;color:#1E1B4B;margin-bottom:12px">📲 Wellnest Adelanto · EWA</div>
-              <div style="font-size:11px;color:#6B7280;margin-bottom:10px">Salario devengado al día de hoy: <strong>$850</strong></div>
-              <div style="background:#fff;border-radius:10px;padding:12px;margin-bottom:10px">
-                <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:6px"><span style="color:#9CA3AF">Período actual</span><span style="font-weight:700">1–15 mayo</span></div>
-                <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:6px"><span style="color:#9CA3AF">Días trabajados</span><span style="font-weight:700">10 de 15</span></div>
-                <div style="display:flex;justify-content:space-between;font-size:11px"><span style="color:#9CA3AF">Disponible EWA</span><span style="font-weight:700;color:#0EA5E9">$567</span></div>
-              </div>
-              <button onclick="closeAllFlows()" style="background:linear-gradient(135deg,#0EA5E9,#0284C7);color:#fff;border:none;border-radius:10px;padding:10px 20px;font-size:13px;font-weight:700;cursor:pointer;width:100%">Acceder a mi adelanto →</button>
-            </div>
+
+
 
             <!-- Educational content -->
             <div style="background:#fff;border:1px solid rgba(0,0,0,0.07);border-radius:12px;padding:14px">
@@ -1755,11 +1733,7 @@ body {
               </div>
             </div>
 
-            <!-- Confirmation toast (hidden) -->
-            <div id="confirm-toast" style="display:none;background:linear-gradient(135deg,#059669,#047857);color:#fff;border-radius:12px;padding:14px;text-align:center;animation:fadeInUp 0.3s ease both">
-              <div style="font-size:16px;font-weight:800;margin-bottom:4px">✅ Solicitud enviada</div>
-              <div style="font-size:12px;opacity:0.85">Recibirás el depósito en los próximos minutos.</div>
-            </div>
+
 
           </div>
         </div>
@@ -1767,7 +1741,7 @@ body {
 
       <!-- ══ ADMIN INTERACTIVE VIEW ══ -->
       <div class="showcase-view" id="tab-admin">
-        <div class="sc-try-badge">✦ Interactivo — edita campos y activa beneficios</div>
+        <div class="sc-try-badge">✦ Panel de administración</div>
         <div class="browser-mockup">
           <div class="browser-bar">
             <div class="browser-dots"><div class="browser-dot bd-r"></div><div class="browser-dot bd-y"></div><div class="browser-dot bd-g"></div></div>
@@ -1797,7 +1771,7 @@ body {
               <div style="background:#fff;border:1px solid rgba(0,0,0,0.07);border-radius:12px;padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
                 <div class="admin-field-group">
                   <label class="afl">Nombre de empresa</label>
-                  <div class="afinput editable-field" contenteditable="true" id="empresa-nombre" data-label="empresa">Nike Panama S.A.</div>
+                  <div class="afinput" id="empresa-nombre">Empresa Demo S.A.</div>
                 </div>
                 <div class="admin-field-group">
                   <label class="afl">Plan contratado</label>
@@ -1805,7 +1779,7 @@ body {
                 </div>
                 <div class="admin-field-group">
                   <label class="afl">Total de colaboradores</label>
-                  <div class="afinput editable-field" contenteditable="true" style="color:#1E1B4B">248</div>
+                  <div class="afinput" style="color:#1E1B4B">248</div>
                 </div>
                 <div class="admin-field-group">
                   <label class="afl">Fecha de activación</label>
@@ -1827,7 +1801,7 @@ body {
                   <div class="atr-toggle atr-on" id="toggle-adelanto-badge">ON</div>
                 </div>
                 <div class="admin-toggle-row" id="toggle-salud" onclick="toggleBenefit(this)" style="cursor:pointer">
-                  <div class="atr-icon" style="background:#D1FAE5">🌿</div>
+                  <div class="atr-icon" style="background:#EDE9FF">🌿</div>
                   <div style="flex:1"><strong style="font-size:13px;color:#1E1B4B">Wellnest Salud</strong><div style="font-size:11px;color:#9CA3AF">Bienestar integral — próximamente</div></div>
                   <div class="atr-toggle atr-off" id="toggle-salud-badge">OFF</div>
                 </div>
@@ -1853,9 +1827,7 @@ body {
                 </div>
               </div>
 
-              <!-- Save changes feedback -->
-              <div id="admin-saved" style="display:none;background:linear-gradient(135deg,#EDE9FF,#F5F3FF);border:1px solid #7B61FF;border-radius:10px;padding:10px 16px;font-size:12px;font-weight:700;color:#7B61FF;text-align:center;animation:fadeInUp 0.3s ease">✅ Cambios guardados correctamente</div>
-              <button onclick="saveAdminChanges()" style="background:linear-gradient(135deg,#7B61FF,#5B45CC);color:#fff;border:none;border-radius:10px;padding:11px 20px;font-size:13px;font-weight:700;cursor:pointer;width:100%">Guardar cambios</button>
+
 
             </div>
           </div>
@@ -1887,18 +1859,18 @@ body {
         <div class="module-stat"><span class="ms-icon">✓</span><span>Acceso parcial o total al salario devengado hasta la fecha de corte.</span></div>
         <div class="module-stat" style="margin-top:8px"><span class="ms-icon">📊</span><span>Reportes de uso para RRHH · Sin intereses</span></div>
       </div>
-      <div class="module-card" style="padding:36px;border:2px solid rgba(16,185,129,0.22);background:linear-gradient(145deg,#F0FDF4 0%,#fff 100%);position:relative;overflow:hidden">
-        <div style="position:absolute;top:16px;right:16px;background:linear-gradient(135deg,#10B981,#059669);color:#fff;font-size:9px;font-weight:800;padding:4px 12px;border-radius:20px;letter-spacing:0.1em;text-transform:uppercase">Próximamente</div>
-        <div class="module-top"><div class="module-icon" style="width:52px;height:52px;font-size:24px;background:linear-gradient(135deg,#D1FAE5,#A7F3D0)">🌿</div></div>
-        <h3 style="font-size:20px;margin-top:18px;color:#059669">Wellnest Salud</h3>
+      <div class="module-card" style="padding:36px;border:2px solid rgba(123,97,255,0.2);background:linear-gradient(145deg,#F5F3FF 0%,#fff 100%);position:relative;overflow:hidden">
+        <div style="position:absolute;top:16px;right:16px;background:linear-gradient(135deg,#7B61FF,#5B45CC);color:#fff;font-size:9px;font-weight:800;padding:4px 12px;border-radius:20px;letter-spacing:0.1em;text-transform:uppercase">Próximamente</div>
+        <div class="module-top"><div class="module-icon" style="width:52px;height:52px;font-size:24px;background:linear-gradient(135deg,#EDE9FF,#DDD6FE)">🌿</div></div>
+        <h3 style="font-size:20px;margin-top:18px;color:#7B61FF">Wellnest Salud</h3>
         <p style="margin-top:10px;font-size:14px;line-height:1.65">Módulo integral de bienestar: ahorro, salud y hábitos financieros saludables, todo en una experiencia conectada para tu equipo.</p>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-top:14px">
-          <div style="background:#F0FDF4;border:1px solid #BBF7D0;border-radius:8px;padding:7px 10px;font-size:10px;font-weight:700;color:#059669">🏥 Médico</div>
-          <div style="background:#F0FDF4;border:1px solid #BBF7D0;border-radius:8px;padding:7px 10px;font-size:10px;font-weight:700;color:#059669">🛡️ Emergencias</div>
-          <div style="background:#F0FDF4;border:1px solid #BBF7D0;border-radius:8px;padding:7px 10px;font-size:10px;font-weight:700;color:#059669">💾 Ahorro inteligente</div>
-          <div style="background:#F0FDF4;border:1px solid #BBF7D0;border-radius:8px;padding:7px 10px;font-size:10px;font-weight:700;color:#059669">📊 Presupuesto</div>
-          <div style="background:#F0FDF4;border:1px solid #BBF7D0;border-radius:8px;padding:7px 10px;font-size:10px;font-weight:700;color:#059669">🎓 Escolar</div>
-          <div style="background:#F0FDF4;border:1px solid #BBF7D0;border-radius:8px;padding:7px 10px;font-size:10px;font-weight:700;color:#059669">👨‍👩‍👧 Bienestar familiar</div>
+          <div style="background:#EDE9FF;border:1px solid #C4B5FD;border-radius:8px;padding:7px 10px;font-size:10px;font-weight:700;color:#7B61FF">🏥 Médico</div>
+          <div style="background:#EDE9FF;border:1px solid #C4B5FD;border-radius:8px;padding:7px 10px;font-size:10px;font-weight:700;color:#7B61FF">🛡️ Emergencias</div>
+          <div style="background:#EDE9FF;border:1px solid #C4B5FD;border-radius:8px;padding:7px 10px;font-size:10px;font-weight:700;color:#7B61FF">💾 Ahorro inteligente</div>
+          <div style="background:#EDE9FF;border:1px solid #C4B5FD;border-radius:8px;padding:7px 10px;font-size:10px;font-weight:700;color:#7B61FF">📊 Presupuesto</div>
+          <div style="background:#EDE9FF;border:1px solid #C4B5FD;border-radius:8px;padding:7px 10px;font-size:10px;font-weight:700;color:#7B61FF">🎓 Escolar</div>
+          <div style="background:#EDE9FF;border:1px solid #C4B5FD;border-radius:8px;padding:7px 10px;font-size:10px;font-weight:700;color:#7B61FF">👨‍👩‍👧 Bienestar familiar</div>
         </div>
       </div>
     </div>
@@ -1914,9 +1886,9 @@ body {
     <div class="benefits-grid" style="grid-template-columns:repeat(3,1fr)">
       <div class="benefit-card"><div class="bc-icon" style="background:#EDE9FF">💧</div><h3>Wellnest Liquidez</h3><p>Acceso al salario devengado antes del día de pago. Sin esperas, sin burocracia. Directo desde la app.</p><span class="benefit-card-tag">Activo hoy</span></div>
       <div class="benefit-card"><div class="bc-icon" style="background:#E0F2FE">📲</div><h3>Wellnest Adelanto · EWA</h3><p>El colaborador elige cuánto y cuándo acceder del salario ya generado. Historial claro, control total.</p><span class="benefit-card-tag">Activo hoy</span></div>
-      <div class="benefit-card"><div class="bc-icon" style="background:#FEF3C7">💾</div><h3>Wellnest Salud</h3><p>El colaborador define un porcentaje de su salario para ahorrar automáticamente cada quincena.</p><span class="benefit-card-tag">Incluido en todos los planes</span></div>
+      <div class="benefit-card"><div class="bc-icon" style="background:#EDE9FF">🌿</div><h3>Wellnest Salud</h3><p>El colaborador define un porcentaje de su salario para ahorrar automáticamente cada quincena.</p><span class="benefit-card-tag">Incluido en todos los planes</span></div>
       <div class="benefit-card"><div class="bc-icon" style="background:#F0FDF4">📚</div><h3>Educación Financiera</h3><p>Contenido práctico sobre presupuesto, ahorro y manejo del dinero. Diseñado para la realidad de Panamá.</p><span class="benefit-card-tag">Incluido en todos los planes</span></div>
-      <div class="benefit-card"><div class="bc-icon" style="background:#F3F4F6">🔗</div><h3>Integración con PayDay</h3><p>Conexión directa con tu sistema de nómina. Sin desarrollos complejos, sin IT, activo en 48 horas.</p><span class="benefit-card-tag">Solo con PayDay</span></div>
+      <div class="benefit-card"><div class="bc-icon" style="background:#F3F4F6">🔗</div><h3>Integración con PayDay</h3><p>Conexión directa con tu sistema de nómina. Conexión directa con tu sistema de nómina. Activo en 48 horas.</p><span class="benefit-card-tag">Solo con PayDay</span></div>
       <div class="benefit-card"><div class="bc-icon" style="background:#EDE9FF">📊</div><h3>Panel para RRHH</h3><p>Adopción, solicitudes activas y métricas de uso. Reportes simples para tomar mejores decisiones.</p><span class="benefit-card-tag">Para empresas</span></div>
     </div>
   </div>
@@ -2013,7 +1985,7 @@ body {
           <div class="hrf-icon">🔧</div>
           <div class="hrf-text">
             <h4>Configuración simple</h4>
-            <p>Activa o pausa módulos por grupo, departamento o toda la empresa. Sin IT, sin integraciones complejas.</p>
+            <p>Activa o pausa módulos por grupo, departamento o toda la empresa. Activación rápida, sin desarrollos complejos.</p>
           </div>
         </div>
       </div>
@@ -2077,7 +2049,7 @@ body {
   <div class="planes-inner">
     <div class="section-eyebrow">Planes disponibles</div>
     <h2 class="section-h2">Elige el plan que <em>tu empresa necesita.</em></h2>
-    <p class="section-sub">Sin costo fijo. Sin contratos largos. Escala cuando estés listo.</p>
+    <p class="section-sub">Flexible y transparente. Escala cuando estés listo.</p>
     <div class="planes-grid">
       <div class="plan-card">
         <div class="plan-badge">Plan 1</div>
@@ -2236,7 +2208,7 @@ body {
             <td class="ct-no">✗ Semanas o meses</td>
           </tr>
           <tr>
-            <td>Sin costo fijo para la empresa</td>
+            <td>Modelo basado en uso</td>
             <td class="ct-yes">✓</td>
             <td class="ct-no">✗ Cuota mensual por colaborador</td>
           </tr>
