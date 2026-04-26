@@ -94,7 +94,7 @@ body {
 .hero-inner {
   max-width: 1200px; margin: 0 auto;
   display: grid; grid-template-columns: 1fr 1fr;
-  gap: 52px; align-items: start;
+  gap: 52px; align-items: stretch;
   position: relative; z-index: 1;
 }
 .hero-text { padding-bottom: 0; }
@@ -150,8 +150,8 @@ body {
 
 /* ── HERO VISUAL ── */
 .hero-visual {
-  position: relative; padding-bottom: 0; align-self: flex-end;
-  display: flex; justify-content: center;
+  position: relative; padding-bottom: 0; align-self: stretch;
+  display: flex; flex-direction: column; justify-content: center;
   animation: fadeInUp 0.8s ease both;
 }
 @keyframes fadeInUp {
@@ -1347,16 +1347,16 @@ body {
 }
 
 /* ── HERO BROWSER MOCKUP ── */
-.hero-dash-preview { perspective: 1200px; display: flex; justify-content: center; align-items: flex-start; padding-top: 8px; }
-.hero-browser { width: 100%; max-width: 580px; background: #fff; border-radius: 16px; box-shadow: 0 40px 100px rgba(30,27,75,0.26), 0 8px 24px rgba(123,97,255,0.15); overflow: hidden; transform: rotateY(-5deg) rotateX(3deg); border: 1px solid rgba(123,97,255,0.18); }
+.hero-dash-preview { perspective: 1200px; display: flex; flex-direction: column; justify-content: center; align-items: stretch; padding-top: 8px; flex: 1; }
+.hero-browser { width: 100%; max-width: 580px; background: #fff; border-radius: 16px; box-shadow: 0 40px 100px rgba(30,27,75,0.26), 0 8px 24px rgba(123,97,255,0.15); overflow: hidden; transform: rotateY(-5deg) rotateX(3deg); border: 1px solid rgba(123,97,255,0.18); display: flex; flex-direction: column; flex: 1; }
 .hero-browser-bar { background: #F3F4F6; padding: 10px 16px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #E5E7EB; }
 .hero-browser-url { flex: 1; background: #fff; border: 1px solid #E5E7EB; border-radius: 20px; padding: 4px 12px; font-size: 11px; color: #6B7280; font-family: 'Plus Jakarta Sans', sans-serif; }
-.hero-browser-body { display: flex; height: 320px; }
+.hero-browser-body { display: flex; flex: 1; min-height: 280px; }
 .hb-sidebar { width: 148px; background: linear-gradient(180deg, #1E1B4B 0%, #2D2A6E 100%); padding: 16px 0; display: flex; flex-direction: column; gap: 2px; flex-shrink: 0; }
 .hb-sidebar-logo { padding: 0 14px 12px; font-size: 12px; font-weight: 800; color: #AEE6FF; letter-spacing: 0.05em; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 6px; font-family: 'Plus Jakarta Sans', sans-serif; }
 .hb-nav-item { padding: 8px 14px; font-size: 11px; color: rgba(255,255,255,0.6); cursor: pointer; border-radius: 0; display: flex; align-items: center; gap: 6px; font-family: 'Plus Jakarta Sans', sans-serif; transition: background 0.15s; }
 .hb-nav-item.hb-active { background: rgba(123,97,255,0.3); color: #fff; font-weight: 700; border-left: 3px solid #7B61FF; }
-.hb-main { flex: 1; background: #F9FAFB; display: flex; flex-direction: column; overflow: hidden; }
+.hb-main { flex: 1; background: #F9FAFB; display: flex; flex-direction: column; overflow-y: auto; }
 .hb-top-bar { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px 8px; border-bottom: 1px solid #E5E7EB; background: #fff; }
 .hb-page-title { font-size: 12px; font-weight: 700; color: #1E1B4B; font-family: 'Plus Jakarta Sans', sans-serif; }
 .hb-notif-dot { font-size: 14px; position: relative; }
