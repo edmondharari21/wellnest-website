@@ -38,18 +38,18 @@ body {
   position: sticky; top: 0; z-index: 1000;
   background: rgba(255,255,255,0.95);
   backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(0,0,0,0.07);
+  border-bottom: 1px solid rgba(0,0,0,0.09); box-shadow: 0 1px 12px rgba(0,0,0,0.06);
   display: flex; align-items: center;
-  padding: 0 48px; height: 68px; gap: 32px;
+  padding: 0 56px; height: 76px; gap: 32px;
 }
 .nav-logo {
   display: flex; align-items: center; gap: 8px;
   text-decoration: none; flex-shrink: 0;
 }
-.nav-logo img { height: 28px; }
+.nav-logo img { height: 40px; }
 .nav-logo-text {
   font-family: 'DM Serif Display', serif;
-  font-size: 22px; color: var(--night);
+  font-size: 26px; color: var(--night);
   letter-spacing: -0.01em;
 }
 .nav-links {
@@ -63,9 +63,9 @@ body {
 .nav-link:hover { color: var(--night); background: var(--gray-100); }
 .nav-cta {
   margin-left: 8px;
-  padding: 10px 22px; border-radius: 999px;
+  padding: 11px 26px; border-radius: 999px;
   background: var(--violet); color: #fff;
-  font-size: 14px; font-weight: 700;
+  font-size: 14px; font-weight: 700; letter-spacing: 0.01em;
   text-decoration: none; transition: background 0.2s, transform 0.15s;
   white-space: nowrap;
 }
@@ -523,7 +523,7 @@ body {
   font-family: 'DM Serif Display', serif; flex-shrink: 0;
 }
 .testimonial-info strong {
-  display: block; font-size: 14px; font-weight: 700; color: var(--night);
+  display: block; font-size: 14px; font-weight: 700; letter-spacing: 0.01em; color: var(--night);
 }
 .testimonial-info span {
   font-size: 13px; color: #9CA3AF;
@@ -692,7 +692,7 @@ body {
 }
 .nlo-icon.emp { background: #EDE9FF; }
 .nlo-icon.col { background: #D1FAE5; }
-.nlo-text strong { display: block; font-size: 14px; font-weight: 700; color: var(--night); }
+.nlo-text strong { display: block; font-size: 14px; font-weight: 700; letter-spacing: 0.01em; color: var(--night); }
 .nlo-text span { font-size: 12px; color: #9CA3AF; }
 .nlo-divider { height: 1px; background: var(--gray-100); margin: 4px 0; }
 
@@ -707,7 +707,7 @@ body {
 .showcase-tab {
   padding: 10px 24px; border-radius: 999px; border: none;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 14px; font-weight: 700; cursor: pointer;
+  font-size: 14px; font-weight: 700; letter-spacing: 0.01em; cursor: pointer;
   color: rgba(255,255,255,0.5); background: transparent;
   transition: all 0.25s;
 }
@@ -723,7 +723,7 @@ body {
 .browser-bar {
   background: #F3F4F6; padding: 12px 16px;
   display: flex; align-items: center; gap: 8px;
-  border-bottom: 1px solid rgba(0,0,0,0.07);
+  border-bottom: 1px solid rgba(0,0,0,0.09); box-shadow: 0 1px 12px rgba(0,0,0,0.06);
 }
 .browser-dots { display: flex; gap: 6px; }
 .browser-dot {
@@ -966,7 +966,7 @@ body {
   display: flex; justify-content: space-between; align-items: center;
   margin-bottom: 16px;
 }
-.hr-dash-title { font-size: 14px; font-weight: 700; color: #fff; }
+.hr-dash-title { font-size: 14px; font-weight: 700; letter-spacing: 0.01em; color: #fff; }
 .hr-dash-actions { display: flex; gap: 8px; }
 .hr-action-btn {
   padding: 6px 14px; border-radius: 8px; border: none; cursor: pointer;
@@ -1184,7 +1184,7 @@ body {
 .plan-cta {
   display: block; width: 100%; padding: 13px 20px; text-align: center;
   border-radius: 12px; background: var(--violet-pale); color: var(--violet);
-  font-size: 14px; font-weight: 700; text-decoration: none;
+  font-size: 14px; font-weight: 700; letter-spacing: 0.01em; text-decoration: none;
   border: 1.5px solid rgba(123,97,255,0.2);
   transition: all 0.2s;
 }
@@ -1304,12 +1304,12 @@ body {
 .plan-featured-tag { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--violet); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; padding: 4px 14px; border-radius: 999px; white-space: nowrap; }
 .plan-badge { display: inline-block; background: var(--violet-pale); color: var(--violet); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 12px; border-radius: 999px; margin-bottom: 20px; }
 .plan-icon { font-size: 32px; margin-bottom: 16px; }
-.plan-name { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--night); margin-bottom: 12px; line-height: 1.2; }
+.plan-name { font-family: 'DM Serif Display', serif; font-size: 26px; color: var(--night); margin-bottom: 12px; line-height: 1.2; }
 .plan-desc { font-size: 14px; color: var(--gray-600); line-height: 1.65; margin-bottom: 24px; }
 .plan-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
 .plan-features li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--gray-700); }
 .pf-check { width: 20px; height: 20px; border-radius: 6px; background: var(--violet-pale); color: var(--violet); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; }
-.plan-cta { display: block; width: 100%; padding: 13px 20px; text-align: center; border-radius: 12px; background: var(--violet-pale); color: var(--violet); font-size: 14px; font-weight: 700; text-decoration: none; border: 1.5px solid rgba(123,97,255,0.2); transition: all 0.2s; }
+.plan-cta { display: block; width: 100%; padding: 13px 20px; text-align: center; border-radius: 12px; background: var(--violet-pale); color: var(--violet); font-size: 14px; font-weight: 700; letter-spacing: 0.01em; text-decoration: none; border: 1.5px solid rgba(123,97,255,0.2); transition: all 0.2s; }
 .plan-cta:hover { background: var(--violet); color: #fff; }
 
 /* ── TABLA COMPARATIVA ── */
