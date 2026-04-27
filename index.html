@@ -1706,8 +1706,8 @@ body {
                 </div>
               </div>
               <div class="hb-action-row">
-                <button class="hb-action-btn hb-action-primary" onclick="heroBtnClick(this,'💧 Solicitando...','✅ Solicitud enviada')">💧 Solicitar liquidez</button>
-                <button class="hb-action-btn" onclick="heroBtnClick(this,'📄 Cargando...','📄 Ver historial')">📄 Ver historial</button>
+                <div class="hb-action-btn hb-action-primary" style="pointer-events:none;cursor:default">💧 Solicitar liquidez</div>
+                <div class="hb-action-btn" style="pointer-events:none;cursor:default">📄 Ver historial</div>
               </div>
             </div>
           </div>
@@ -2123,129 +2123,5 @@ function submitWaitlist(e) {
   Demo en 15 min
 </a>
 
-<script>
-/* ── INTERACTIVE DASHBOARD JS ── */
-
-// Minimal hero browser button feedback
-function heroBtnClick(btn, loadingText, resetText) {
-  const orig = btn.innerHTML;
-  btn.innerHTML = loadingText;
-  btn.style.opacity = '0.75';
-  setTimeout(() => {
-    btn.innerHTML = resetText;
-    btn.style.opacity = '1';
-    if (resetText !== orig) {
-      setTimeout(() => { btn.innerHTML = orig; }, 1800);
-    }
-  }, 900);
-}
-
-// Collaborator quick action feedback
-function quickAction(btn, loadingText, resetText) {
-  btn.innerHTML = loadingText;
-  btn.style.background = 'var(--violet-pale)';
-  btn.style.color = 'var(--violet)';
-  btn.style.borderColor = 'var(--violet)';
-  setTimeout(() => {
-    btn.innerHTML = resetText;
-    btn.style.background = '';
-    btn.style.color = '';
-    btn.style.borderColor = '';
-  }, 1400);
-}
-
-
-// Tab switching (uses existing switchTab, plus closes flows)
-function onTabSwitch(tab, btn) {
-  closeAllFlows();
-}
-
-// Editable fields: add focus ring and tooltip
-document.querySelectorAll('.editable-field').forEach(el => {
-  el.addEventListener('focus', () => { el.style.outline = 'none'; });
-  el.addEventListener('input', () => {
-    const label = el.dataset.label;
-    if (label === 'empresa') {
-      const metricEl = document.getElementById('metric-activos');
-    }
-  });
-});
-
-// Collaborator stat click
-function handleStatClick(el, type) {
-  if (type === 'liquidez') openLiquidezFlow();
-}
-
-// Liquidity flow
-function openLiquidezFlow() {
-  closeAllFlows();
-  const f = document.getElementById('liquidez-flow');
-  if (f) { f.style.display = 'block'; f.scrollIntoView({behavior:'smooth', block:'nearest'}); }
-}
-function openAdelantoFlow() {
-  closeAllFlows();
-  const f = document.getElementById('adelanto-flow');
-  if (f) { f.style.display = 'block'; f.scrollIntoView({behavior:'smooth', block:'nearest'}); }
-}
-function closeAllFlows() {
-  ['liquidez-flow','adelanto-flow','confirm-toast'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.style.display = 'none';
-  });
-}
-
-// Amount chip selection
-function selectAmount(chip, amount) {
-  document.querySelectorAll('.amount-chip').forEach(c => c.classList.remove('amount-chip-active'));
-  chip.classList.add('amount-chip-active');
-  const amountEl = document.getElementById('flow-amount');
-  if (amountEl) amountEl.textContent = amount;
-}
-
-// Confirm liquidity request
-function confirmLiquidez() {
-  const flow = document.getElementById('liquidez-flow');
-  const toast = document.getElementById('confirm-toast');
-  const reqCount = document.getElementById('req-count');
-  const reqStatus = document.getElementById('req-status');
-  if (flow) flow.style.display = 'none';
-  if (toast) { toast.style.display = 'block'; toast.scrollIntoView({behavior:'smooth', block:'nearest'}); }
-  if (reqCount) reqCount.textContent = parseInt(reqCount.textContent || '1') + 1;
-  if (reqStatus) { reqStatus.textContent = 'En proceso'; reqStatus.style.color = '#F59E0B'; }
-  setTimeout(() => { if (toast) toast.style.display = 'none'; }, 4000);
-}
-
-// Toggle benefit ON/OFF
-function toggleBenefit(row) {
-  const badge = row.querySelector('.atr-toggle');
-  if (!badge) return;
-  const isOn = badge.classList.contains('atr-on');
-  badge.classList.toggle('atr-on', !isOn);
-  badge.classList.toggle('atr-off', isOn);
-  badge.textContent = isOn ? 'OFF' : 'ON';
-  row.style.opacity = isOn ? '0.55' : '1';
-}
-
-// Cycle plan dropdown
-const plans = [
-  'Wellnest Liquidez (Plan 1) ▾',
-  'Liquidez + Adelanto (Plan 2) ▾',
-  'Wellness Completo (Plan 3) ▾'
-];
-let planIdx = 1;
-function cyclePlan(el) {
-  planIdx = (planIdx + 1) % plans.length;
-  el.innerHTML = plans[planIdx] + ' <span style="color:#9CA3AF;font-size:10px"></span>';
-}
-
-// Save admin changes
-function saveAdminChanges() {
-  const saved = document.getElementById('admin-saved');
-  if (saved) {
-    saved.style.display = 'block';
-    setTimeout(() => { saved.style.display = 'none'; }, 3000);
-  }
-}
-</script>
 </body>
 </html>
