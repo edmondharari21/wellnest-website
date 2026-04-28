@@ -1593,6 +1593,14 @@ body {
   .trust-logo-item img { height: 26px; }
   .trust-logo-item svg { height: 18px; }
 }
+.mod-tag {
+  display:inline-flex;align-items:center;gap:7px;padding:9px 18px;
+  background:#fff;border:1.5px solid rgba(123,97,255,0.2);border-radius:999px;
+  font-size:13px;font-weight:600;color:#1E1B4B;cursor:pointer;
+  font-family:inherit;transition:border-color 0.15s,background 0.15s,color 0.15s;
+}
+.mod-tag:hover { border-color:rgba(123,97,255,0.5); }
+.mod-tag.active { border-color:#7B61FF;background:#EDE9FF;color:#7B61FF; }
 </style>
 </head>
 <body>
@@ -1652,10 +1660,10 @@ body {
     </h1>
     <p style="font-size:16px;line-height:1.6;color:#6B7280;max-width:400px;margin:0 0 36px">Bienestar, respaldo y tranquilidad para que tu equipo dé su mejor versión cada día.</p>
     <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px">
-      <span style="display:inline-flex;align-items:center;gap:7px;padding:9px 18px;background:#fff;border:1.5px solid rgba(123,97,255,0.2);border-radius:999px;font-size:13px;font-weight:600;color:#1E1B4B">💧 Liquidez</span>
-      <span style="display:inline-flex;align-items:center;gap:7px;padding:9px 18px;background:#1E1B4B;border:1.5px solid #1E1B4B;border-radius:999px;font-size:13px;font-weight:600;color:#fff">🛡️ Protección</span>
-      <span style="display:inline-flex;align-items:center;gap:7px;padding:9px 18px;background:#fff;border:1.5px solid rgba(123,97,255,0.2);border-radius:999px;font-size:13px;font-weight:600;color:#1E1B4B">↑ Adelanto</span>
-      <span style="display:inline-flex;align-items:center;gap:7px;padding:9px 18px;background:#fff;border:1.5px solid rgba(123,97,255,0.2);border-radius:999px;font-size:13px;font-weight:600;color:#1E1B4B">💙 Salud</span>
+      <button class="mod-tag" onclick="setModTag(this)">💧 Liquidez</button>
+      <button class="mod-tag" onclick="setModTag(this)">🛡️ Protección</button>
+      <button class="mod-tag" onclick="setModTag(this)">↑ Adelanto</button>
+      <button class="mod-tag" onclick="setModTag(this)">💙 Salud</button>
     </div>
     <div style="display:flex;gap:14px;flex-wrap:wrap">
       <a href="#form" class="btn-primary" style="font-size:15px;padding:14px 28px">Solicita una demo</a>
@@ -1736,11 +1744,6 @@ body {
              alt="Colaborador gestionando liquidez desde Wellnest"
              style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block">
         <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(255,255,255,0.95) 100%)"></div>
-        <div style="position:absolute;top:14px;left:14px">
-          <span style="display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,0.92);border:1px solid rgba(0,0,0,0.08);border-radius:999px;padding:4px 10px;font-size:9px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#1E1B4B">
-            <span style="width:5px;height:5px;border-radius:50%;background:#7B61FF;display:inline-block"></span>LIQUIDEZ
-          </span>
-        </div>
       </div>
       <div style="padding:4px 24px 28px">
         <h3 style="font-size:19px;font-weight:800;color:#1E1B4B;margin:0 0 6px">Wellnest Liquidez</h3>
@@ -1759,11 +1762,6 @@ body {
              alt="Familia tranquila con protección Wellnest"
              style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block">
         <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(255,255,255,0.95) 100%)"></div>
-        <div style="position:absolute;top:14px;left:14px">
-          <span style="display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,0.92);border:1px solid rgba(0,0,0,0.08);border-radius:999px;padding:4px 10px;font-size:9px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#1E1B4B">
-            <span style="width:5px;height:5px;border-radius:50%;background:#7B61FF;display:inline-block"></span>PROTECCIÓN
-          </span>
-        </div>
       </div>
       <div style="padding:4px 24px 28px">
         <h3 style="font-size:19px;font-weight:800;color:#1E1B4B;margin:0 0 6px">Wellnest Protección</h3>
@@ -1785,11 +1783,6 @@ body {
              alt="Acceso disponible desde la plataforma Wellnest"
              style="width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block">
         <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(255,255,255,0.95) 100%)"></div>
-        <div style="position:absolute;top:14px;left:14px">
-          <span style="display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,0.92);border:1px solid rgba(0,0,0,0.08);border-radius:999px;padding:4px 10px;font-size:9px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#1E1B4B">
-            <span style="width:5px;height:5px;border-radius:50%;background:#7B61FF;display:inline-block"></span>ADELANTO
-          </span>
-        </div>
       </div>
       <div style="padding:4px 24px 28px">
         <h3 style="font-size:19px;font-weight:800;color:#1E1B4B;margin:0 0 6px">Wellnest Adelanto</h3>
@@ -1808,11 +1801,6 @@ body {
              alt="Colaboradores cuidando su salud con Wellnest"
              style="width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block">
         <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(255,255,255,0.95) 100%)"></div>
-        <div style="position:absolute;top:14px;left:14px">
-          <span style="display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,0.92);border:1px solid rgba(0,0,0,0.08);border-radius:999px;padding:4px 10px;font-size:9px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#1E1B4B">
-            <span style="width:5px;height:5px;border-radius:50%;background:#7B61FF;display:inline-block"></span>SALUD
-          </span>
-        </div>
       </div>
       <div style="padding:4px 24px 28px">
         <h3 style="font-size:19px;font-weight:800;color:#1E1B4B;margin:0 0 6px">Wellnest Salud</h3>
@@ -1930,7 +1918,7 @@ body {
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
 
       <div style="background:#F9FAFB;border:1px solid rgba(0,0,0,0.06);border-radius:20px;overflow:hidden;display:flex;flex-direction:column">
-        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1400&h=500&q=90&auto=format&fit=crop&crop=face" style="width:100%;height:180px;object-fit:cover;display:block" loading="lazy" alt="">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1400&h=500&q=90&auto=format&fit=crop&crop=face" style="width:100%;height:180px;object-fit:cover;object-position:center 20%;display:block" loading="lazy" alt="">
         <div style="padding:28px;display:flex;flex-direction:column;gap:14px;flex:1">
           <div style="font-size:32px;color:#7B61FF;line-height:1;font-family:'DM Serif Display',serif">"</div>
           <p style="font-size:15px;line-height:1.7;color:#374151;flex:1">"Wellnest simplificó cómo cuidamos a nuestro equipo. Nuestros colaboradores tienen acceso a su salario cuando lo necesitan, y nosotros tenemos visibilidad total desde un solo panel."</p>
@@ -1945,7 +1933,7 @@ body {
       </div>
 
       <div style="background:linear-gradient(145deg,#1E1B4B,#2D2A6E);border-radius:20px;overflow:hidden;display:flex;flex-direction:column">
-        <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=1400&h=500&q=90&auto=format&fit=crop&crop=center" style="width:100%;height:180px;object-fit:cover;display:block;opacity:0.85" loading="lazy" alt="">
+        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=1400&h=500&q=90&auto=format&fit=crop&crop=face" style="width:100%;height:180px;object-fit:cover;object-position:center 15%;display:block;opacity:0.85" loading="lazy" alt="">
         <div style="padding:28px;display:flex;flex-direction:column;gap:14px;flex:1">
           <div style="font-size:32px;color:#AEE6FF;line-height:1;font-family:'DM Serif Display',serif">"</div>
           <p style="font-size:15px;line-height:1.7;color:rgba(255,255,255,0.85);flex:1">"Una plataforma moderna que genera beneficios reales para nuestro equipo. Desde que activamos Wellnest, la satisfacción laboral en nuestra empresa mejoró visiblemente."</p>
@@ -1974,7 +1962,7 @@ body {
       </div>
 
       <div style="background:#F9FAFB;border:1px solid rgba(0,0,0,0.06);border-radius:20px;overflow:hidden;display:flex;flex-direction:column">
-        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1400&h=500&q=90&auto=format&fit=crop&crop=face" style="width:100%;height:180px;object-fit:cover;display:block" loading="lazy" alt="">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1400&h=500&q=90&auto=format&fit=crop&crop=face" style="width:100%;height:180px;object-fit:cover;object-position:center 15%;display:block" loading="lazy" alt="">
         <div style="padding:28px;display:flex;flex-direction:column;gap:14px;flex:1">
           <div style="font-size:32px;color:#7B61FF;line-height:1;font-family:'DM Serif Display',serif">"</div>
           <p style="font-size:15px;line-height:1.7;color:#374151;flex:1">"Implementamos Wellnest en una semana. Nuestros colaboradores lo adoptaron sin necesidad de capacitación. Es exactamente lo que necesitábamos: simple, confiable y en español."</p>
@@ -2314,5 +2302,11 @@ function submitWaitlist(e) {
   }
 }
 </style>
+<script>
+function setModTag(btn) {
+  document.querySelectorAll('.mod-tag').forEach(function(t){ t.classList.remove('active'); });
+  btn.classList.add('active');
+}
+</script>
 </body>
 </html>
