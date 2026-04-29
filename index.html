@@ -290,9 +290,10 @@ body {
 }
 .trust-logos-track {
   display: flex; align-items: center;
-  gap: 64px; width: max-content;
+  width: max-content;
   animation: trust-marquee 22s linear infinite;
 }
+.trust-logos-track .trust-logo-item { margin-right: 72px; }
 .trust-logos:hover .trust-logos-track { animation-play-state: paused; }
 @keyframes trust-marquee {
   0%   { transform: translateX(0); }
