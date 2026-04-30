@@ -2246,6 +2246,53 @@ function submitWaitlist(e) {
   #adelanto > div, #salud > div, #proteccion > div, #liquidez > div {
     max-width: 100% !important;
   }
+  #app-wellnest > div > div:first-child,
+  #portal-rrhh  > div > div:last-child,
+  #bienestar    > div > div:last-child,
+  #resultados   > div:first-of-type {
+    height: 320px !important;
+    min-height: 0 !important;
+  }
+  #app-wellnest > div > div:last-child,
+  #portal-rrhh  > div > div:first-child,
+  #bienestar    > div > div:first-child,
+  #resultados   > div:last-child {
+    padding: 40px 24px !important;
+  }
+  /* Hero */
+  section#inicio {
+    grid-template-columns: 1fr !important;
+  }
+  section#inicio > div:last-child {
+    height: 360px;
+    order: -1;
+  }
+  section#inicio > div:first-of-type {
+    padding: 120px 24px 48px !important;
+  }
+  section#inicio > div[style*="position:absolute;top:80px"] {
+    top: 70px !important;
+    left: 20px !important;
+  }
+  /* Portrait section max-width on desktop */
+  #adelanto > div, #salud > div, #proteccion > div, #liquidez > div {
+    max-width: 100% !important;
+  }
+}
+@media (min-width: 1400px) {
+  /* Portrait sections: limit photo height on very large screens */
+  #adelanto  > div > div:first-child,
+  #salud     > div > div:first-child,
+  #proteccion> div > div:first-child,
+  #liquidez  > div > div:first-child {
+    padding-top: 65% !important;
+  }
+}
+</style>
+<script>
+function setModTag(btn) {
+  document.querySelectorAll('.mod-tag').forEach(function(t){ t.classList.remove('active'); });
+  btn.classList.add('active');
 }
 @media (min-width: 1400px) {
   /* Portrait sections: limit photo height on very large screens */
