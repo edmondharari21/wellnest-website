@@ -71,6 +71,37 @@ body {
 }
 .nav-cta:hover { background: var(--violet-dark); transform: translateY(-1px); }
 
+/* ── HERO BUTTONS ── */
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 28px; border-radius: 999px;
+  background: var(--violet); color: #fff;
+  font-size: 15px; font-weight: 700;
+  text-decoration: none; border: none;
+  box-shadow: 0 4px 16px rgba(123,97,255,0.35);
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  white-space: nowrap; cursor: pointer;
+}
+.btn-primary:hover {
+  background: var(--violet-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(123,97,255,0.45);
+}
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 28px; border-radius: 999px;
+  background: transparent; color: var(--night);
+  font-size: 15px; font-weight: 700;
+  text-decoration: none; border: 1.5px solid rgba(0,0,0,0.15);
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+  white-space: nowrap; cursor: pointer;
+}
+.btn-ghost:hover {
+  background: rgba(0,0,0,0.04);
+  border-color: rgba(0,0,0,0.28);
+  transform: translateY(-2px);
+}
+
 /* ── HERO ── */
 .hero {
   background: #fff;
@@ -1672,8 +1703,8 @@ body {
       <button class="mod-tag" onclick="setModTag(this)"><i data-lucide="heart" class="wn-icon-sm"></i> Salud</button>
     </div>
     <div style="display:flex;gap:14px;flex-wrap:wrap">
-      <a href="#form" class="btn-primary" style="font-size:15px;padding:14px 28px">Solicita una demo</a>
-      <a href="#app-wellnest" class="btn-ghost" style="color:var(--night);border-color:rgba(0,0,0,0.18);font-size:15px;padding:14px 28px">Ver módulos</a>
+      <a href="#form" class="btn-primary">Solicita una demo</a>
+      <a href="#app-wellnest" class="btn-ghost">Ver módulos</a>
     </div>
   </div>
   <div style="position:relative;overflow:hidden">
