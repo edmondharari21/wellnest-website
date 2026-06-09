@@ -1721,15 +1721,12 @@ body {
   /* ── Trust bar ── */
   .trust-bar { padding: 20px 20px; }
   .trust-logos {
-    flex-wrap: nowrap !important;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    gap: 28px !important;
-    justify-content: flex-start !important;
-    padding-bottom: 4px;
+    flex-wrap: wrap !important;
+    overflow-x: visible !important;
+    gap: 20px 28px !important;
+    justify-content: center !important;
+    padding-bottom: 0;
   }
-  .trust-logos::-webkit-scrollbar { display: none; }
   .trust-logo-item { flex-shrink: 0; }
   .trust-logo-item img { height: 26px !important; }
   .trust-logo-item svg { height: 18px !important; }
@@ -1740,10 +1737,15 @@ body {
   .section-sub { font-size: 15px; line-height: 1.65; }
   .section-eyebrow { font-size: 11px; }
 
-  /* ── Value cards ── */
+  /* ── Value cards (inline-style grid) ── */
   .value-grid { grid-template-columns: 1fr !important; gap: 12px; }
   .value-card { padding: 18px 16px; border-radius: 14px; }
   .value-icon { width: 36px; height: 36px; font-size: 16px; margin-bottom: 10px; }
+  #por-que { padding: 0 20px !important; }
+  #por-que > div[style*="grid-template-columns:repeat(3"] {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
 
   /* ── Cómo funciona ── */
   .como-inner { padding: 0 20px; }
