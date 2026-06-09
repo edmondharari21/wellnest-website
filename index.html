@@ -1639,6 +1639,231 @@ body {
 [data-lucide] { display:inline-block; vertical-align:middle; stroke-width:2; }
 .wn-icon    { width:1em; height:1em; }
 .wn-icon-sm { width:14px; height:14px; }
+
+/* ════════════════════════════════════════
+   MOBILE — REDISEÑO COMPLETO
+   ════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* ── Base ── */
+  *, *::before, *::after { -webkit-tap-highlight-color: transparent; }
+  body { overflow-x: hidden; }
+  html { scroll-behavior: smooth; }
+
+  /* ── Nav ── */
+  .nav { padding: 0 20px; height: 60px; }
+  .nav-links { display: none !important; }
+  .nav-login-wrap { display: none; }
+  .nav-cta {
+    margin-left: auto;
+    padding: 10px 18px;
+    font-size: 13px;
+    border-radius: 999px;
+  }
+
+  /* ── Hero ── */
+  #inicio {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: unset !important;
+    padding-top: 64px !important;
+  }
+  /* Badge posicionado sobre el texto */
+  #inicio > div[style*="position:absolute"] {
+    position: relative !important;
+    top: unset !important; left: unset !important;
+    padding: 20px 20px 0 !important;
+    z-index: 2;
+  }
+  /* Columna de texto */
+  #inicio > div[style*="padding:140px"] {
+    padding: 16px 20px 32px !important;
+    order: 1;
+  }
+  #inicio h1 {
+    font-size: 32px !important;
+    line-height: 1.12 !important;
+    letter-spacing: -0.025em !important;
+    margin-bottom: 14px !important;
+  }
+  #inicio p[style*="font-size:16px"] {
+    font-size: 15px !important;
+    max-width: 100% !important;
+    margin-bottom: 24px !important;
+  }
+  /* Mod-tags: scroll horizontal */
+  #inicio div[style*="flex-wrap:wrap"] {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 8px !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 4px;
+    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 90%, transparent 100%);
+  }
+  #inicio div[style*="flex-wrap:wrap"]::-webkit-scrollbar { display: none; }
+  .mod-tag { flex-shrink: 0; font-size: 12px; padding: 8px 14px; }
+  /* Columna imagen: banner full-width debajo del texto */
+  #inicio > div[style*="position:relative;overflow:hidden"] {
+    order: 2;
+    height: 240px !important;
+    width: 100% !important;
+    flex-shrink: 0;
+  }
+  #inicio > div[style*="position:relative;overflow:hidden"] img {
+    object-position: center 15% !important;
+  }
+  #inicio > div[style*="position:relative;overflow:hidden"] > div[style*="gradient"] {
+    background: linear-gradient(to bottom, rgba(245,243,255,0.6) 0%, transparent 50%) !important;
+  }
+  .hero-float-card { display: none; }
+  .hero-trust { font-size: 12px; flex-wrap: wrap; gap: 8px; }
+
+  /* ── Trust bar ── */
+  .trust-bar { padding: 20px 20px; }
+  .trust-logos {
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 28px !important;
+    justify-content: flex-start !important;
+    padding-bottom: 4px;
+  }
+  .trust-logos::-webkit-scrollbar { display: none; }
+  .trust-logo-item { flex-shrink: 0; }
+  .trust-logo-item img { height: 26px !important; }
+  .trust-logo-item svg { height: 18px !important; }
+
+  /* ── Secciones generales ── */
+  .section { padding: 60px 20px; }
+  .section-h2 { font-size: clamp(22px, 6.5vw, 30px); line-height: 1.2; }
+  .section-sub { font-size: 15px; line-height: 1.65; }
+  .section-eyebrow { font-size: 11px; }
+
+  /* ── Value cards ── */
+  .value-grid { grid-template-columns: 1fr 1fr !important; gap: 12px; }
+  .value-card { padding: 18px 16px; border-radius: 14px; }
+  .value-icon { width: 36px; height: 36px; font-size: 16px; margin-bottom: 10px; }
+
+  /* ── Cómo funciona ── */
+  .como-inner { padding: 0 20px; }
+  .como-section { padding: 60px 0; }
+  .como-steps { flex-direction: column; align-items: center; gap: 0; margin-top: 36px; }
+  .como-connector { width: 2px; height: 28px; margin: 0 auto; }
+  .como-connector::after { content: none; }
+  .como-step { padding: 0 16px; text-align: center; }
+  .como-step-icon { width: 60px; height: 60px; font-size: 24px; margin: 0 auto 12px; }
+  .como-step-title { font-size: 15px; }
+  .como-step-body { font-size: 13px; }
+
+  /* ── Product Showcase ── */
+  .showcase-inner { padding: 0 16px; }
+  .showcase-tabs { gap: 6px; width: 100%; }
+  .showcase-tab { padding: 8px 12px; font-size: 12px; flex: 1; text-align: center; }
+  .browser-body > div[style*="width:160px"] { display: none; }
+
+  /* ── Módulos ── */
+  .modules-inner { padding: 0 20px; }
+  .modules-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 100% !important;
+    gap: 14px !important;
+  }
+  .module-card {
+    padding: 22px !important;
+    border-radius: 16px !important;
+  }
+  .module-icon { width: 44px !important; height: 44px !important; font-size: 20px !important; }
+
+  /* ── Benefits ── */
+  .benefits-inner { padding: 0 20px; }
+  .benefits-grid { grid-template-columns: 1fr; gap: 12px; }
+  .benefit-card { padding: 18px 20px; }
+
+  /* ── Colaborador ── */
+  .colab-section { padding: 60px 0; }
+  .colab-inner { grid-template-columns: 1fr; gap: 28px; padding: 0 20px; }
+  .colab-visual { display: none; }
+  .colab-text .section-h2 { max-width: 100%; }
+  .colab-checks { gap: 12px; }
+
+  /* ── Testimonios ── */
+  #testimonios { padding: 60px 0 !important; }
+  #testimonios > div { padding: 0 20px !important; }
+  #testimonios > div > div[style*="grid"] {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+  #testimonios .section-h2 { font-size: clamp(22px, 6.5vw, 30px); }
+
+  /* ── Stats ── */
+  .stats-inner { padding: 52px 20px; }
+  .stats-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .stat-number { font-size: 36px; }
+  .stat-label { font-size: 13px; }
+
+  /* ── Trust Center ── */
+  .trust-inner { padding: 0 20px; }
+  .trust-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .trust-card { padding: 20px 16px; border-radius: 14px; }
+  .tc-icon { width: 44px !important; height: 44px !important; border-radius: 10px !important; }
+
+  /* ── Planes ── */
+  .planes-section { padding: 60px 0; }
+  .planes-inner { padding: 0 20px; }
+  .planes-grid { grid-template-columns: 1fr; gap: 16px; }
+  .plan-card { padding: 24px; border-radius: 18px; }
+  .plan-icon { width: 44px; height: 44px; font-size: 20px; }
+
+  /* ── Tabla comparativa ── */
+  .tabla-section { padding: 60px 0; }
+  .tabla-inner { padding: 0 20px; }
+  .tabla-wrap { border-radius: 12px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .comp-table { min-width: 480px; }
+  .comp-table th, .comp-table td { padding: 10px 12px; font-size: 11px; }
+
+  /* ── Eligibility ── */
+  .eligibility-section { padding: 60px 20px; }
+  .elig-form { flex-direction: column; gap: 10px; }
+  .elig-input { width: 100%; font-size: 16px; }
+  .elig-btn { width: 100%; text-align: center; justify-content: center; }
+
+  /* ── CTA Form ── */
+  .form-section { padding: 60px 20px; }
+  .contact-form > div { display: flex !important; flex-direction: column !important; gap: 12px; }
+  .form-input, .form-select, .form-textarea { font-size: 16px; }
+
+  /* ── Seguridad ── */
+  #testimonios + section { padding: 60px 0 !important; }
+  #testimonios + section > div { padding: 0 20px !important; }
+  #testimonios + section > div > div[style*="grid"] {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* ── Footer ── */
+  .footer { padding: 44px 20px 100px; }
+  .footer-top { flex-direction: column; gap: 28px; }
+  .footer-links { flex-direction: column; gap: 16px; }
+  .footer-logo { font-size: 20px; }
+
+  /* ── Floating ── */
+  .sticky-demo { display: none !important; }
+  .whatsapp-btn { display: none !important; }
+  .mobile-cta-unified { display: flex !important; }
+}
+
+@media (max-width: 420px) {
+  .hero h1 { font-size: 30px !important; }
+  .section-h2 { font-size: 22px !important; }
+  .value-grid { grid-template-columns: 1fr !important; }
+  .trust-grid { grid-template-columns: 1fr !important; }
+  #testimonios + section > div > div[style*="grid"] { grid-template-columns: 1fr !important; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .plan-name { font-size: 20px; }
+}
 </style>
 <script src="lucide.min.js"></script>
 </head>
