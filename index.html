@@ -1562,6 +1562,238 @@ body {
 [data-lucide] { display:inline-block; vertical-align:middle; stroke-width:2; }
 .wn-icon    { width:1em; height:1em; }
 .wn-icon-sm { width:14px; height:14px; }
+
+/* ════════════════════════════════════════
+   MOBILE — REDISEÑO COMPLETO
+   ════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* ── Base ── */
+  *, *::before, *::after { -webkit-tap-highlight-color: transparent; }
+  body { overflow-x: hidden; }
+  html { scroll-behavior: smooth; }
+
+  /* ── Nav ── */
+  .nav { padding: 0 20px; height: 60px; }
+  .nav-links { display: none !important; }
+  .nav-login-wrap { margin-left: auto; }
+  .nav-login-btn { font-size: 12px; padding: 8px 12px; }
+  .nav-cta {
+    margin-left: 8px;
+    padding: 10px 16px;
+    font-size: 13px;
+    border-radius: 999px;
+  }
+
+  /* ── Hero ── */
+  #inicio {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: unset !important;
+    padding-top: 64px !important;
+  }
+  /* Badge: oculto en móvil */
+  #inicio > div[style*="position:absolute"] {
+    display: none !important;
+  }
+  /* Columna de texto */
+  #inicio > div[style*="padding:140px"] {
+    padding: 16px 20px 32px !important;
+    order: 1;
+  }
+  #inicio h1 {
+    font-size: 32px !important;
+    line-height: 1.12 !important;
+    letter-spacing: -0.025em !important;
+    margin-bottom: 14px !important;
+  }
+  #inicio p[style*="font-size:16px"] {
+    font-size: 15px !important;
+    max-width: 100% !important;
+    margin-bottom: 24px !important;
+  }
+  /* Mod-tags: scroll horizontal */
+  #inicio div[style*="flex-wrap:wrap"] {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 8px !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 4px;
+    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 90%, transparent 100%);
+  }
+  #inicio div[style*="flex-wrap:wrap"]::-webkit-scrollbar { display: none; }
+  .mod-tag { flex-shrink: 0; font-size: 12px; padding: 8px 14px; }
+  /* Columna imagen: banner full-width debajo del texto */
+  #inicio > div[style*="position:relative;overflow:hidden"] {
+    order: 2;
+    height: 240px !important;
+    width: 100% !important;
+    flex-shrink: 0;
+  }
+  #inicio > div[style*="position:relative;overflow:hidden"] img {
+    object-position: center 15% !important;
+  }
+  #inicio > div[style*="position:relative;overflow:hidden"] > div[style*="gradient"] {
+    background: linear-gradient(to bottom, rgba(245,243,255,0.6) 0%, transparent 50%) !important;
+  }
+  .hero-float-card { display: none; }
+  .hero-trust { font-size: 12px; flex-wrap: wrap; gap: 8px; }
+
+  /* ── Trust bar ── */
+  .trust-bar { padding: 20px 20px; }
+  .trust-logos {
+    flex-wrap: wrap !important;
+    overflow-x: visible !important;
+    gap: 20px 28px !important;
+    justify-content: center !important;
+    padding-bottom: 0;
+  }
+  .trust-logo-item { flex-shrink: 0; }
+  .trust-logo-item img { height: 26px !important; }
+  .trust-logo-item svg { height: 18px !important; }
+
+  /* ── Secciones generales ── */
+  .section { padding: 60px 20px; }
+  .section-h2 { font-size: clamp(22px, 6.5vw, 30px); line-height: 1.2; }
+  .section-sub { font-size: 15px; line-height: 1.65; }
+  .section-eyebrow { font-size: 11px; }
+
+  /* ── Value cards (inline-style grid) ── */
+  .value-grid { grid-template-columns: 1fr !important; gap: 12px; }
+  .value-card { padding: 18px 16px; border-radius: 14px; }
+  .value-icon { width: 36px; height: 36px; font-size: 16px; margin-bottom: 10px; }
+  #por-que { padding: 0 20px !important; }
+  #por-que > div[style*="grid-template-columns:repeat(3"] {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+  /* value card inline styles */
+  #por-que > div > div[style*="border-radius:20px"] {
+    padding: 22px 20px !important;
+  }
+
+  /* ── Cómo funciona ── */
+  .como-inner { padding: 0 20px; }
+  .como-section { padding: 60px 0; }
+  .como-steps { flex-direction: column; align-items: center; gap: 0; margin-top: 36px; }
+  .como-connector { width: 2px; height: 28px; margin: 0 auto; }
+  .como-connector::after { content: none; }
+  .como-step { padding: 0 16px; text-align: center; }
+  .como-step-icon { width: 60px; height: 60px; font-size: 24px; margin: 0 auto 12px; }
+  .como-step-title { font-size: 15px; }
+  .como-step-body { font-size: 13px; }
+
+  /* ── Product Showcase ── */
+  .showcase-inner { padding: 0 16px; }
+  .showcase-tabs { gap: 6px; width: 100%; }
+  .showcase-tab { padding: 8px 12px; font-size: 12px; flex: 1; text-align: center; }
+  .browser-body > div[style*="width:160px"] { display: none; }
+
+  /* ── Módulos ── */
+  .modules-inner { padding: 0 20px; }
+  .modules-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 100% !important;
+    gap: 14px !important;
+  }
+  .module-card {
+    padding: 22px !important;
+    border-radius: 16px !important;
+  }
+  .module-icon { width: 44px !important; height: 44px !important; font-size: 20px !important; }
+  /* ── Módulos inline-grid override ── */
+  #modulos { padding: 24px 20px 56px !important; }
+  #modulos > div > div[style*="1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+  #modulos > div > div > div[style*="border-radius:20px"] {
+    padding: 22px 20px !important;
+  }
+  #modulos h2 { margin-bottom: 28px !important; }
+
+  /* ── Benefits ── */
+  .benefits-inner { padding: 0 20px; }
+  .benefits-grid { grid-template-columns: 1fr; gap: 12px; }
+  .benefit-card { padding: 18px 20px; }
+
+  /* ── Colaborador ── */
+  .colab-section { padding: 60px 0; }
+  .colab-inner { grid-template-columns: 1fr; gap: 28px; padding: 0 20px; }
+  .colab-visual { display: none; }
+  .colab-text .section-h2 { max-width: 100%; }
+  .colab-checks { gap: 12px; }
+
+  /* ── Testimonios ── */
+  #testimonios { padding: 60px 0 !important; }
+  #testimonios > div { padding: 0 20px !important; }
+  #testimonios > div > div[style*="grid"] {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    justify-content: unset !important;
+  }
+  #testimonios .section-h2 { font-size: clamp(22px, 6.5vw, 30px); }
+
+  /* ── Stats ── */
+  .stats-inner { padding: 52px 20px; }
+  .stats-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .stat-number { font-size: 36px; }
+  .stat-label { font-size: 13px; }
+
+  /* ── Trust Center ── */
+  .trust-inner { padding: 0 20px; }
+  .trust-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .trust-card { padding: 20px 16px; border-radius: 14px; }
+  .tc-icon { width: 44px !important; height: 44px !important; border-radius: 10px !important; }
+
+  /* ── Tabla comparativa ── */
+  .tabla-section { padding: 60px 0; }
+  .tabla-inner { padding: 0 20px; }
+  .tabla-wrap { border-radius: 12px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .comp-table { min-width: 480px; }
+  .comp-table th, .comp-table td { padding: 10px 12px; font-size: 11px; }
+
+  /* ── Eligibility ── */
+  .eligibility-section { padding: 60px 20px; }
+  .elig-form { flex-direction: column; gap: 10px; }
+  .elig-input { width: 100%; font-size: 16px; }
+  .elig-btn { width: 100%; text-align: center; justify-content: center; }
+
+  /* ── CTA Form ── */
+  .form-section { padding: 60px 20px; }
+  .contact-form > div { display: flex !important; flex-direction: column !important; gap: 12px; }
+  .form-input, .form-select, .form-textarea { font-size: 16px; }
+
+  /* ── Seguridad ── */
+  #testimonios + section { padding: 60px 0 !important; }
+  #testimonios + section > div { padding: 0 20px !important; }
+  #testimonios + section > div > div[style*="grid"] {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* ── Footer ── */
+  .footer { padding: 44px 20px 100px; }
+  .footer-top { flex-direction: column; gap: 28px; }
+  .footer-links { flex-direction: column; gap: 16px; }
+  .footer-logo { font-size: 20px; }
+
+  /* ── Floating ── */
+  .sticky-demo { display: none !important; }
+  .whatsapp-btn { display: none !important; }
+  .mobile-cta-unified { display: flex !important; }
+}
+
+@media (max-width: 420px) {
+  .hero h1 { font-size: 30px !important; }
+  .section-h2 { font-size: 22px !important; }
+  .value-grid { grid-template-columns: 1fr !important; }
+  .trust-grid { grid-template-columns: 1fr !important; }
+  #testimonios + section > div > div[style*="grid"] { grid-template-columns: 1fr !important; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
 </style>
 <script src="lucide.min.js"></script>
 </head>
@@ -1635,21 +1867,6 @@ body {
 <div class="trust-bar">
   <p class="trust-bar-label">Empresas en Panamá que ya confían en Wellnest</p>
   <div class="trust-logos">
-    <div class="trust-logo-item" title="Sportline America"><svg fill="currentColor" id="Grupo_4000" data-name="Grupo 4000" xmlns="http://www.w3.org/2000/svg" width="160.279" height="13.919" viewBox="0 0 160.279 13.919">
-  <path id="Vector" d="M7.107,3.175,6.539,5.157l10.514.01-.867,3L5.673,8.16l-.657,2.186,11.215.015L15.3,13.626,0,13.614,3.973,0,19.161.011l-.955,3.177Z" transform="translate(136.918 0.036) rotate(-0.106)"/>
-  <path id="Vector-2" data-name="Vector" d="M8.442,0,4.5,13.614H0L3.973,0Z" transform="translate(108.054 0.052) rotate(-0.106)"/>
-  <path id="Vector-3" data-name="Vector" d="M23.133.019,19.16,13.632l-7.3-.018L7.573,3.422l-.438,0-2.9,10.2L0,13.6l.9-3.032L3.973.011,11.3,0l4.227,10.221.438-.026L18.839.02Z" transform="translate(115.539 0.043) rotate(-0.106)"/>
-  <path id="Vector-4" data-name="Vector" d="M3.944,0,8.413.029,5.455,10.2l9.726.034-.986,3.411L0,13.614Z" transform="translate(92.421 0.038) rotate(-0.106)"/>
-  <path id="Vector-5" data-name="Vector" d="M1.015,0,17.722.021l-1.015,3.44-6.075-.01-2.958,10.2H3.2l2.987-10.2L0,3.44Z" transform="translate(76.953 0.065) rotate(-0.106)"/>
-  <path id="Vector-6" data-name="Vector" d="M19.892,4.426a12.2,12.2,0,0,1-.832,2.156,2.886,2.886,0,0,1-1.088,1.19,4.976,4.976,0,0,1-1.786.631,1.763,1.763,0,0,1,1.631.741,1.015,1.015,0,0,1,.169.936,16.05,16.05,0,0,1-.541,2.362l-.358,1.224-4.147,0,.209-.641c.209-.729.359-1.37.419-1.6a1.589,1.589,0,0,0-.141-.79.639.639,0,0,0-.553-.266,10.088,10.088,0,0,0-1.723-.1L5.221,10.26,4.235,13.7,0,13.7l.418-1.458L3.974,0,14.225.008c2.366.015,3.767.141,4.2.144A2.455,2.455,0,0,1,19.654.57a1.962,1.962,0,0,1,.693,1.29,7.65,7.65,0,0,1-.455,2.567Zm-4.233-.29a.5.5,0,0,0-.289-.5,1.4,1.4,0,0,0-.525-.12c-.2,0-.817-.064-1.694-.069L7.223,3.438,6.266,6.762l7.681.021a1.533,1.533,0,0,0,.585-.171,2.093,2.093,0,0,0,.529-.493,5.109,5.109,0,0,0,.415-.99,6.515,6.515,0,0,0,.182-.992Z" transform="translate(55.835 0.075) rotate(-0.106)"/>
-  <path id="Vector-7" data-name="Vector" d="M20.451,2.507a12.577,12.577,0,0,1-.427,2.743c-.12.525-.241,1.079-.42,1.691a21.3,21.3,0,0,1-1.723,4.487,4.2,4.2,0,0,1-3.519,2.226q-1.315.123-4.119.148c-.613,0-1.256.021-1.928.017-2.979-.019-5.023-.062-6.074-.186a2.4,2.4,0,0,1-1.95-.977,1.837,1.837,0,0,1-.284-1.229A10.335,10.335,0,0,1,.282,9.473c.18-.758.39-1.633.689-2.624a22.428,22.428,0,0,1,1.635-4.37A4.339,4.339,0,0,1,6.155.223C7,.141,8.376.063,10.274.017,10.888.021,11.56,0,12.29,0c2.921-.01,4.935.149,5.986.243a2.7,2.7,0,0,1,1.805.83,1.936,1.936,0,0,1,.37,1.434ZM15.767,4.229a1.149,1.149,0,0,0-.9-.561c-.467-.061-1.752-.1-3.65-.111l-.993-.006a18.808,18.808,0,0,0-2.951.185,1.8,1.8,0,0,0-1.232.839A15.241,15.241,0,0,0,5.028,7.313a9.163,9.163,0,0,0-.391,1.75c-.092.671.343,1.112,1.131,1.234.584,0,1.781.041,3.5.052.35,0,.672-.025.964-.023,1.139-.022,1.957-.046,2.366-.043a2.817,2.817,0,0,0,1.346-.371,2.1,2.1,0,0,0,.706-.813,6.415,6.415,0,0,0,.683-1.748,17.569,17.569,0,0,0,.481-2.129,2.11,2.11,0,0,0-.052-.993Z" transform="translate(36.613 0.099) rotate(-0.106)"/>
-  <path id="Vector-8" data-name="Vector" d="M19.367,4.365c-.09.291-.15.583-.239.875a9.825,9.825,0,0,1-1.688,3.581A3.86,3.86,0,0,1,16.03,9.863a6.942,6.942,0,0,1-2.135.483c-.584,0-1.694.077-3.242.066L5.22,10.406,4.235,13.7,0,13.7,3.974,0,13.5,0a29.017,29.017,0,0,1,3.562.14,3.148,3.148,0,0,1,2.329,1.1l.086.176a4.837,4.837,0,0,1-.107,2.949Zm-4.292-.2a.71.71,0,0,0-.493-.5,8.742,8.742,0,0,0-2.131-.189L7.193,3.467l-.986,3.44,7.01-.013a2.1,2.1,0,0,0,.614-.142,1.135,1.135,0,0,0,.646-.522,5.053,5.053,0,0,0,.445-1.019,4.974,4.974,0,0,0,.153-1.05Z" transform="translate(16.845 0.104) rotate(-0.106)"/>
-  <path id="Vector-9" data-name="Vector" d="M18.166,3.78c-.03.117-.119.291-.178.466-.03.058-.03.117-.06.175l-4,0a6.515,6.515,0,0,0,.121-.671.4.4,0,0,0-.2-.381,1.975,1.975,0,0,0-.875-.181c-.409,0-1.372-.038-2.833-.048A16.09,16.09,0,0,0,6.9,3.327a1.2,1.2,0,0,0-.794.9c-.12.437-.034.73.287.849a29.764,29.764,0,0,0,4.35.262c2.1.043,3.533.169,4.263.232a3,3,0,0,1,1.6.478,1.451,1.451,0,0,1,.693,1.2,5.147,5.147,0,0,1-.248,2.16,7.47,7.47,0,0,1-1.362,2.853,3.489,3.489,0,0,1-1.321.984,7.74,7.74,0,0,1-2.106.454c-.876.023-2.6.071-5.024.055-2.015.016-3.534-.052-4.5-.117A5.44,5.44,0,0,1,.7,13.129,1.48,1.48,0,0,1,0,11.986,7.329,7.329,0,0,1,.34,9.8l.179-.641,3.943-.033a1.314,1.314,0,0,0,.079,1.256.927.927,0,0,0,.671.18c.292,0,1.314.067,2.949.078l3.125-.009a2,2,0,0,0,.907-.169,1.268,1.268,0,0,0,.766-.959c.119-.35.092-.642-.053-.76A2.917,2.917,0,0,0,11.622,8.5c-.467,0-1.606-.069-3.183-.138-1.694-.04-2.774-.106-3.27-.109a9.113,9.113,0,0,1-2.247-.307A1.829,1.829,0,0,1,1.9,7.208,4.216,4.216,0,0,1,2.04,4.347,6.606,6.606,0,0,1,3.813,1.175,4.627,4.627,0,0,1,6.1.226C7.033.115,8.961.011,11.765,0a27.969,27.969,0,0,1,4.2.232A3.338,3.338,0,0,1,18.009,1a1.62,1.62,0,0,1,.174.235,3.091,3.091,0,0,1-.017,2.541Z" transform="translate(0 0.105) rotate(-0.106)"/>
-  <g id="Grupo_291" data-name="Grupo 291" transform="translate(157.177)">
-    <path id="Vector-10" data-name="Vector" d="M1.869,2.086l-.5,0-.318-.44C.939,1.466.881,1.378.823,1.349A.156.156,0,0,0,.706,1.26.5.5,0,0,0,.473,1.23H.414l-.006.847L0,2.074.014,0,.89.006a1.145,1.145,0,0,1,.5.062c.088,0,.175.089.233.177A.589.589,0,0,1,1.7.566a.417.417,0,0,1-.149.379.511.511,0,0,1-.41.2.393.393,0,0,1,.2.177,1.124,1.124,0,0,1,.232.323ZM1.089.8A.306.306,0,0,0,1.206.709a.219.219,0,0,0,.03-.146A.415.415,0,0,0,1.179.387L1,.3H.8l-.438,0,0,.555L.8.852c.146,0,.234,0,.292-.057Z" transform="translate(0.638 0.554) rotate(-0.106)"/>
-    <path id="Vector-11" data-name="Vector" d="M3.1,1.559A1.539,1.539,0,0,1,1.538,3.1H1.451A1.562,1.562,0,0,1,0,1.539,1.516,1.516,0,0,1,1.442,0h.088A1.565,1.565,0,0,1,3.1,1.559Zm-.146,0A1.433,1.433,0,0,0,1.529.117H1.441A1.433,1.433,0,0,0,.117,1.539,1.411,1.411,0,0,0,1.452,2.95h.088A1.384,1.384,0,0,0,2.95,1.558Z" transform="translate(0 0.006) rotate(-0.106)"/>
-  </g>
-</svg></div>
     <div class="trust-logo-item" title="Nike"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M24 7.8L6.442 15.276c-1.456.616-2.679.925-3.668.925-1.12 0-1.933-.392-2.437-1.177-.317-.504-.41-1.143-.28-1.918.13-.775.476-1.6 1.036-2.478.467-.71 1.232-1.643 2.297-2.8a6.122 6.122 0 00-.784 1.848c-.28 1.195-.028 2.072.756 2.632.373.261.886.392 1.54.392.522 0 1.11-.084 1.764-.252L24 7.8z"/></svg></div>
     <div class="trust-logo-item" title="Mercado del Calzado"><img src="data:image/png;base64,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" alt="Mercado del Calzado" style="height:44px;width:auto;object-fit:contain"></div>
     <div class="trust-logo-item" title="Bellini"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 44" fill="currentColor"><text x="4" y="34" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="bold" font-style="italic" letter-spacing="6" fill="currentColor">Bellini</text></svg></div>
@@ -1708,11 +1925,19 @@ body {
     <div style="border-radius:20px;border:1px solid #E5E7EB;background:#fff;box-shadow:0 2px 16px rgba(0,0,0,0.05);padding:28px;display:flex;flex-direction:column">
       <div style="width:52px;height:52px;border-radius:14px;background:#EDE9FF;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:20px"><i data-lucide="shield" class="wn-icon"></i></div>
       <h3 style="font-size:19px;font-weight:800;color:#1E1B4B;margin:0 0 10px">Wellnest Protección</h3>
-      <p style="font-size:13px;color:#6B7280;line-height:1.6;margin:0 0 20px">Seguros y asistencias diseñados para proteger a tus colaboradores y sus familias ante cualquier imprevisto del día a día.</p>
+      <p style="font-size:13px;color:#6B7280;line-height:1.6;margin:0 0 20px">Coberturas de salud para tus colaboradores y sus familias, respaldadas por Astro Asistencias. Incluye asistencias médicas, seguros de vida y protección ante imprevistos.</p>
       <div style="border-top:1px solid #F3F4F6;padding-top:16px;margin-bottom:16px">
         <div style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:#374151">
           <span style="color:#7B61FF;flex-shrink:0">✓</span>
-          Seguros de vida, accidentes y asistencias médicas y legales incluidas.
+          Coberturas de salud provistas por Astro Asistencias, seguro de vida y asistencias médicas y legales.
+        </div>
+      </div>
+      <div style="border-top:1px solid #F3F4F6;padding-top:14px;margin-top:auto">
+        <div style="display:flex;flex-wrap:wrap;gap:7px">
+          <span style="background:#F5F3FF;border:1px solid #EDE9FF;border-radius:7px;padding:5px 9px;font-size:11px;color:#1E1B4B;font-weight:600"><i data-lucide="heart-pulse" class="wn-icon-sm"></i> Salud</span>
+          <span style="background:#F5F3FF;border:1px solid #EDE9FF;border-radius:7px;padding:5px 9px;font-size:11px;color:#1E1B4B;font-weight:600"><i data-lucide="shield-check" class="wn-icon-sm"></i> Vida</span>
+          <span style="background:#F5F3FF;border:1px solid #EDE9FF;border-radius:7px;padding:5px 9px;font-size:11px;color:#1E1B4B;font-weight:600"><i data-lucide="users" class="wn-icon-sm"></i> Familia</span>
+          <span style="background:#F5F3FF;border:1px solid #EDE9FF;border-radius:7px;padding:5px 9px;font-size:11px;color:#1E1B4B;font-weight:600"><i data-lucide="stethoscope" class="wn-icon-sm"></i> Astro</span>
         </div>
       </div>
     </div>
@@ -1730,24 +1955,23 @@ body {
       </div>
     </div>
 
-    <!-- Wellnest Salud -->
+    <!-- Wellnest Club -->
     <div style="border-radius:20px;border:1px solid #E5E7EB;background:#fff;box-shadow:0 2px 16px rgba(0,0,0,0.05);padding:28px;display:flex;flex-direction:column">
-      <div style="width:52px;height:52px;border-radius:14px;background:#D1FAE5;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:20px"><i data-lucide="leaf" class="wn-icon"></i></div>
-      <h3 style="font-size:19px;font-weight:800;color:#1E1B4B;margin:0 0 10px">Wellnest Salud</h3>
-      <p style="font-size:13px;color:#6B7280;line-height:1.6;margin:0 0 20px">Módulo integral de bienestar: ahorro, salud y hábitos financieros saludables para tu equipo y su familia.</p>
+      <div style="width:52px;height:52px;border-radius:14px;background:#FEF3C7;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:20px"><i data-lucide="tag" class="wn-icon"></i></div>
+      <h3 style="font-size:19px;font-weight:800;color:#1E1B4B;margin:0 0 10px">Wellnest Club</h3>
+      <p style="font-size:13px;color:#6B7280;line-height:1.6;margin:0 0 20px">Club de descuentos exclusivos en comercios afiliados. Tus colaboradores acceden a beneficios reales en las categorías que más importan en el día a día.</p>
       <div style="border-top:1px solid #F3F4F6;padding-top:16px;margin-bottom:16px">
         <div style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:#374151">
           <span style="color:#7B61FF;flex-shrink:0">✓</span>
-          Telemedicina, ahorro programado y educación financiera en un solo lugar.
+          Descuentos en salud, entretenimiento, educación, restaurantes y más.
         </div>
       </div>
       <div style="border-top:1px solid #F3F4F6;padding-top:14px;margin-top:auto">
         <div style="display:flex;flex-wrap:wrap;gap:7px">
-          <span style="background:#F5F3FF;border:1px solid #EDE9FF;border-radius:7px;padding:5px 9px;font-size:11px;color:#1E1B4B;font-weight:600"><i data-lucide="cross" class="wn-icon-sm"></i> Médico</span>
-
-          <span style="background:#F5F3FF;border:1px solid #EDE9FF;border-radius:7px;padding:5px 9px;font-size:11px;color:#1E1B4B;font-weight:600"><i data-lucide="piggy-bank" class="wn-icon-sm"></i> Ahorro</span>
-          <span style="background:#F5F3FF;border:1px solid #EDE9FF;border-radius:7px;padding:5px 9px;font-size:11px;color:#1E1B4B;font-weight:600"><i data-lucide="trending-up" class="wn-icon-sm"></i> Presupuesto</span>
-          <span style="background:#F5F3FF;border:1px solid #EDE9FF;border-radius:7px;padding:5px 9px;font-size:11px;color:#1E1B4B;font-weight:600"><i data-lucide="users" class="wn-icon-sm"></i> Familia</span>
+          <span style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:7px;padding:5px 9px;font-size:11px;color:#1E1B4B;font-weight:600"><i data-lucide="heart" class="wn-icon-sm"></i> Salud</span>
+          <span style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:7px;padding:5px 9px;font-size:11px;color:#1E1B4B;font-weight:600"><i data-lucide="utensils" class="wn-icon-sm"></i> Restaurantes</span>
+          <span style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:7px;padding:5px 9px;font-size:11px;color:#1E1B4B;font-weight:600"><i data-lucide="graduation-cap" class="wn-icon-sm"></i> Educación</span>
+          <span style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:7px;padding:5px 9px;font-size:11px;color:#1E1B4B;font-weight:600"><i data-lucide="music" class="wn-icon-sm"></i> Entrete.</span>
         </div>
       </div>
     </div>
@@ -1763,12 +1987,12 @@ body {
   <div style="max-width:1200px;margin:0 auto;padding:0 48px">
     <div class="section-eyebrow" style="text-align:center;color:rgba(174,230,255,0.8)">Clientes</div>
     <h2 class="section-h2" style="text-align:center;max-width:600px;margin:0 auto 56px;color:#fff">Empresas que ya <em>transformaron</em> sus beneficios.</h2>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,480px));gap:24px;justify-content:center">
 
       <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:20px;overflow:hidden;display:flex;flex-direction:column">
         <div style="padding:28px;display:flex;flex-direction:column;gap:14px;flex:1">
           <div style="font-size:32px;color:#7B61FF;line-height:1;font-family:'DM Serif Display',serif">"</div>
-          <p style="font-size:15px;line-height:1.7;color:rgba(255,255,255,0.75);flex:1">"Wellnest simplificó cómo cuidamos a nuestro equipo. Nuestros colaboradores tienen acceso a su salario cuando lo necesitan, y nosotros tenemos visibilidad total desde un solo panel."</p>
+          <p style="font-size:15px;line-height:1.7;color:rgba(255,255,255,0.75);flex:1">"Desde que tenemos Wellnest, el equipo está más tranquilo. Se siente que la empresa los cuida, y eso se nota."</p>
           <div style="display:flex;align-items:center;gap:12px;border-top:1px solid rgba(255,255,255,0.1);padding-top:16px">
             <div style="height:28px;display:flex;align-items:center;flex-shrink:0"><svg style="height:28px;width:auto;display:block" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="rgba(255,255,255,0.8)"><path d="M24 7.8L6.442 15.276c-1.456.616-2.679.925-3.668.925-1.12 0-1.933-.392-2.437-1.177-.317-.504-.41-1.143-.28-1.918.13-.775.476-1.6 1.036-2.478.467-.71 1.232-1.643 2.297-2.8a6.122 6.122 0 00-.784 1.848c-.28 1.195-.028 2.072.756 2.632.373.261.886.392 1.54.392.522 0 1.11-.084 1.764-.252L24 7.8z"/></svg></div>
             <div>
@@ -1782,40 +2006,12 @@ body {
       <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:20px;overflow:hidden;display:flex;flex-direction:column">
         <div style="padding:28px;display:flex;flex-direction:column;gap:14px;flex:1">
           <div style="font-size:32px;color:#7B61FF;line-height:1;font-family:'DM Serif Display',serif">"</div>
-          <p style="font-size:15px;line-height:1.7;color:rgba(255,255,255,0.75);flex:1">"Una plataforma moderna que genera beneficios reales para nuestro equipo. Desde que activamos Wellnest, la satisfacción laboral en nuestra empresa mejoró visiblemente."</p>
+          <p style="font-size:15px;line-height:1.7;color:rgba(255,255,255,0.75);flex:1">"Lo pusimos a funcionar rápido y el equipo lo agarró solo. No hubo que explicar nada, simplemente funcionó."</p>
           <div style="display:flex;align-items:center;gap:12px;border-top:1px solid rgba(255,255,255,0.1);padding-top:16px">
-            <div style="height:28px;display:flex;align-items:center;flex-shrink:0"><svg fill="rgba(255,255,255,0.8)" preserveAspectRatio="xMinYMid meet" id="Grupo_4000" data-name="Grupo 4000" xmlns="http://www.w3.org/2000/svg" style="height:28px;width:80px;display:block;overflow:hidden" viewBox="0 0 160.279 13.919">
-  <path id="Vector" d="M7.107,3.175,6.539,5.157l10.514.01-.867,3L5.673,8.16l-.657,2.186,11.215.015L15.3,13.626,0,13.614,3.973,0,19.161.011l-.955,3.177Z" transform="translate(136.918 0.036) rotate(-0.106)"/>
-  <path id="Vector-2" data-name="Vector" d="M8.442,0,4.5,13.614H0L3.973,0Z" transform="translate(108.054 0.052) rotate(-0.106)"/>
-  <path id="Vector-3" data-name="Vector" d="M23.133.019,19.16,13.632l-7.3-.018L7.573,3.422l-.438,0-2.9,10.2L0,13.6l.9-3.032L3.973.011,11.3,0l4.227,10.221.438-.026L18.839.02Z" transform="translate(115.539 0.043) rotate(-0.106)"/>
-  <path id="Vector-4" data-name="Vector" d="M3.944,0,8.413.029,5.455,10.2l9.726.034-.986,3.411L0,13.614Z" transform="translate(92.421 0.038) rotate(-0.106)"/>
-  <path id="Vector-5" data-name="Vector" d="M1.015,0,17.722.021l-1.015,3.44-6.075-.01-2.958,10.2H3.2l2.987-10.2L0,3.44Z" transform="translate(76.953 0.065) rotate(-0.106)"/>
-  <path id="Vector-6" data-name="Vector" d="M19.892,4.426a12.2,12.2,0,0,1-.832,2.156,2.886,2.886,0,0,1-1.088,1.19,4.976,4.976,0,0,1-1.786.631,1.763,1.763,0,0,1,1.631.741,1.015,1.015,0,0,1,.169.936,16.05,16.05,0,0,1-.541,2.362l-.358,1.224-4.147,0,.209-.641c.209-.729.359-1.37.419-1.6a1.589,1.589,0,0,0-.141-.79.639.639,0,0,0-.553-.266,10.088,10.088,0,0,0-1.723-.1L5.221,10.26,4.235,13.7,0,13.7l.418-1.458L3.974,0,14.225.008c2.366.015,3.767.141,4.2.144A2.455,2.455,0,0,1,19.654.57a1.962,1.962,0,0,1,.693,1.29,7.65,7.65,0,0,1-.455,2.567Zm-4.233-.29a.5.5,0,0,0-.289-.5,1.4,1.4,0,0,0-.525-.12c-.2,0-.817-.064-1.694-.069L7.223,3.438,6.266,6.762l7.681.021a1.533,1.533,0,0,0,.585-.171,2.093,2.093,0,0,0,.529-.493,5.109,5.109,0,0,0,.415-.99,6.515,6.515,0,0,0,.182-.992Z" transform="translate(55.835 0.075) rotate(-0.106)"/>
-  <path id="Vector-7" data-name="Vector" d="M20.451,2.507a12.577,12.577,0,0,1-.427,2.743c-.12.525-.241,1.079-.42,1.691a21.3,21.3,0,0,1-1.723,4.487,4.2,4.2,0,0,1-3.519,2.226q-1.315.123-4.119.148c-.613,0-1.256.021-1.928.017-2.979-.019-5.023-.062-6.074-.186a2.4,2.4,0,0,1-1.95-.977,1.837,1.837,0,0,1-.284-1.229A10.335,10.335,0,0,1,.282,9.473c.18-.758.39-1.633.689-2.624a22.428,22.428,0,0,1,1.635-4.37A4.339,4.339,0,0,1,6.155.223C7,.141,8.376.063,10.274.017,10.888.021,11.56,0,12.29,0c2.921-.01,4.935.149,5.986.243a2.7,2.7,0,0,1,1.805.83,1.936,1.936,0,0,1,.37,1.434ZM15.767,4.229a1.149,1.149,0,0,0-.9-.561c-.467-.061-1.752-.1-3.65-.111l-.993-.006a18.808,18.808,0,0,0-2.951.185,1.8,1.8,0,0,0-1.232.839A15.241,15.241,0,0,0,5.028,7.313a9.163,9.163,0,0,0-.391,1.75c-.092.671.343,1.112,1.131,1.234.584,0,1.781.041,3.5.052.35,0,.672-.025.964-.023,1.139-.022,1.957-.046,2.366-.043a2.817,2.817,0,0,0,1.346-.371,2.1,2.1,0,0,0,.706-.813,6.415,6.415,0,0,0,.683-1.748,17.569,17.569,0,0,0,.481-2.129,2.11,2.11,0,0,0-.052-.993Z" transform="translate(36.613 0.099) rotate(-0.106)"/>
-  <path id="Vector-8" data-name="Vector" d="M19.367,4.365c-.09.291-.15.583-.239.875a9.825,9.825,0,0,1-1.688,3.581A3.86,3.86,0,0,1,16.03,9.863a6.942,6.942,0,0,1-2.135.483c-.584,0-1.694.077-3.242.066L5.22,10.406,4.235,13.7,0,13.7,3.974,0,13.5,0a29.017,29.017,0,0,1,3.562.14,3.148,3.148,0,0,1,2.329,1.1l.086.176a4.837,4.837,0,0,1-.107,2.949Zm-4.292-.2a.71.71,0,0,0-.493-.5,8.742,8.742,0,0,0-2.131-.189L7.193,3.467l-.986,3.44,7.01-.013a2.1,2.1,0,0,0,.614-.142,1.135,1.135,0,0,0,.646-.522,5.053,5.053,0,0,0,.445-1.019,4.974,4.974,0,0,0,.153-1.05Z" transform="translate(16.845 0.104) rotate(-0.106)"/>
-  <path id="Vector-9" data-name="Vector" d="M18.166,3.78c-.03.117-.119.291-.178.466-.03.058-.03.117-.06.175l-4,0a6.515,6.515,0,0,0,.121-.671.4.4,0,0,0-.2-.381,1.975,1.975,0,0,0-.875-.181c-.409,0-1.372-.038-2.833-.048A16.09,16.09,0,0,0,6.9,3.327a1.2,1.2,0,0,0-.794.9c-.12.437-.034.73.287.849a29.764,29.764,0,0,0,4.35.262c2.1.043,3.533.169,4.263.232a3,3,0,0,1,1.6.478,1.451,1.451,0,0,1,.693,1.2,5.147,5.147,0,0,1-.248,2.16,7.47,7.47,0,0,1-1.362,2.853,3.489,3.489,0,0,1-1.321.984,7.74,7.74,0,0,1-2.106.454c-.876.023-2.6.071-5.024.055-2.015.016-3.534-.052-4.5-.117A5.44,5.44,0,0,1,.7,13.129,1.48,1.48,0,0,1,0,11.986,7.329,7.329,0,0,1,.34,9.8l.179-.641,3.943-.033a1.314,1.314,0,0,0,.079,1.256.927.927,0,0,0,.671.18c.292,0,1.314.067,2.949.078l3.125-.009a2,2,0,0,0,.907-.169,1.268,1.268,0,0,0,.766-.959c.119-.35.092-.642-.053-.76A2.917,2.917,0,0,0,11.622,8.5c-.467,0-1.606-.069-3.183-.138-1.694-.04-2.774-.106-3.27-.109a9.113,9.113,0,0,1-2.247-.307A1.829,1.829,0,0,1,1.9,7.208,4.216,4.216,0,0,1,2.04,4.347,6.606,6.606,0,0,1,3.813,1.175,4.627,4.627,0,0,1,6.1.226C7.033.115,8.961.011,11.765,0a27.969,27.969,0,0,1,4.2.232A3.338,3.338,0,0,1,18.009,1a1.62,1.62,0,0,1,.174.235,3.091,3.091,0,0,1-.017,2.541Z" transform="translate(0 0.105) rotate(-0.106)"/>
-  <g id="Grupo_291" data-name="Grupo 291" transform="translate(157.177)">
-    <path id="Vector-10" data-name="Vector" d="M1.869,2.086l-.5,0-.318-.44C.939,1.466.881,1.378.823,1.349A.156.156,0,0,0,.706,1.26.5.5,0,0,0,.473,1.23H.414l-.006.847L0,2.074.014,0,.89.006a1.145,1.145,0,0,1,.5.062c.088,0,.175.089.233.177A.589.589,0,0,1,1.7.566a.417.417,0,0,1-.149.379.511.511,0,0,1-.41.2.393.393,0,0,1,.2.177,1.124,1.124,0,0,1,.232.323ZM1.089.8A.306.306,0,0,0,1.206.709a.219.219,0,0,0,.03-.146A.415.415,0,0,0,1.179.387L1,.3H.8l-.438,0,0,.555L.8.852c.146,0,.234,0,.292-.057Z" transform="translate(0.638 0.554) rotate(-0.106)"/>
-    <path id="Vector-11" data-name="Vector" d="M3.1,1.559A1.539,1.539,0,0,1,1.538,3.1H1.451A1.562,1.562,0,0,1,0,1.539,1.516,1.516,0,0,1,1.442,0h.088A1.565,1.565,0,0,1,3.1,1.559Zm-.146,0A1.433,1.433,0,0,0,1.529.117H1.441A1.433,1.433,0,0,0,.117,1.539,1.411,1.411,0,0,0,1.452,2.95h.088A1.384,1.384,0,0,0,2.95,1.558Z" transform="translate(0 0.006) rotate(-0.106)"/>
-  </g>
-</svg></div>
+            <div style="height:28px;display:flex;align-items:center;flex-shrink:0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 44" fill="rgba(255,255,255,0.85)" style="height:28px;width:auto;display:block"><text x="4" y="34" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="bold" font-style="italic" letter-spacing="6" fill="rgba(255,255,255,0.85)">Bellini</text></svg></div>
             <div>
-              <div style="font-size:14px;font-weight:800;color:#fff">Sportline America</div>
-              <div style="font-size:12px;color:#9CA3AF">Gerente de RRHH</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:20px;overflow:hidden;display:flex;flex-direction:column">
-        <div style="padding:28px;display:flex;flex-direction:column;gap:14px;flex:1">
-          <div style="font-size:32px;color:#7B61FF;line-height:1;font-family:'DM Serif Display',serif">"</div>
-          <p style="font-size:15px;line-height:1.7;color:rgba(255,255,255,0.75);flex:1">"Implementamos Wellnest en una semana. Nuestros colaboradores lo adoptaron sin necesidad de capacitación. Es exactamente lo que necesitábamos: simple, confiable y en español."</p>
-          <div style="display:flex;align-items:center;gap:12px;border-top:1px solid rgba(255,255,255,0.1);padding-top:16px">
-            <img src="data:image/png;base64,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" style="height:28px;width:auto;object-fit:contain;flex-shrink:0" alt="Mercado del Calzado">
-            <div>
-              <div style="font-size:14px;font-weight:800;color:#fff">Mercado del Calzado</div>
-              <div style="font-size:12px;color:#9CA3AF">VP de Personas</div>
+              <div style="font-size:14px;font-weight:800;color:#fff">Bellini</div>
+              <div style="font-size:12px;color:#9CA3AF">Gerente de Personas</div>
             </div>
           </div>
         </div>
@@ -1824,7 +2020,6 @@ body {
     </div>
   </div>
 </section>
-
 <!-- CTA FORM -->
 <div class="form-section" id="form">
   <div class="form-container" style="max-width:600px">
@@ -1869,17 +2064,12 @@ body {
         <h4>Plataforma</h4>
         <a href="#modulos">Módulos</a>
         <a href="#beneficios">Centro de Beneficios</a>
-        <a href="#portal-rrhh">Portal RRHH</a>
-        <a href="#resultados">Resultados</a>
-        <a href="#verificar">Verificar acceso</a>
         <a href="#form">Activar</a>
       </div>
       <div class="footer-links-group">
         <h4>Empresa</h4>
-        <a href="/brand">Kit de Marca</a>
-        <a href="mailto:hola@miwellnest.com">Contacto</a>
-        <a href="#">Términos de servicio</a>
-        <a href="#">Política de privacidad</a>
+        <a href="mailto:team@miwellnest.com">team@miwellnest.com</a>
+        <a href="https://wa.me/50760967343?text=Hola%2C%20quiero%20información%20sobre%20Wellnest" target="_blank" rel="noopener">WhatsApp: +507 6096 7343</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -2022,20 +2212,20 @@ function submitWaitlist(e) {
 <!-- STICKY DEMO — hidden on mobile, shown on desktop -->
 <a href="#form" class="sticky-demo" id="stickyDemo">
   <span class="sticky-demo-dot"></span>
-  <span>Demo en 15 min</span>
+  <span>Demo en 30 min</span>
   <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
 </a>
 
 <!-- WHATSAPP — desktop only; mobile uses unified CTA -->
-<a href="https://wa.me/50760000000?text=Hola%2C%20quiero%20información%20sobre%20Wellnest" class="whatsapp-btn" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+<a href="https://wa.me/50760967343?text=Hola%2C%20quiero%20información%20sobre%20Wellnest" class="whatsapp-btn" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
   <span class="whatsapp-tooltip">Hablar con nosotros</span>
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
 <!-- MOBILE UNIFIED CTA — only shows on mobile -->
-<a href="#form" class="mobile-cta-unified" id="mobileCta">
+<a href="mailto:team@miwellnest.com?subject=Solicitud%20de%20Demo%20Wellnest" class="mobile-cta-unified" id="mobileCta">
   <svg viewBox="0 0 24 24" fill="#fff" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  Demo en 15 min
+  Demo en 30 min
 </a>
 
 <style>
