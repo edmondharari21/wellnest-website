@@ -24,13 +24,14 @@
   --gray-700: #374151;
   --gray-900: #111827;
 }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
   color: var(--gray-700);
   background: #fff;
   -webkit-font-smoothing: antialiased;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 /* ── NAV ── */
@@ -1177,57 +1178,6 @@ body {
   color: rgba(174,230,255,0.6); font-size: 20px;
 }
 
-/* ── PLANES ── */
-.planes-section { padding: 96px 0; background: var(--gray-50); }
-.planes-inner { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
-.planes-grid {
-  display: grid; grid-template-columns: repeat(3,1fr);
-  gap: 24px; margin-top: 56px; align-items: start;
-}
-.plan-card {
-  background: #fff; border: 1.5px solid rgba(0,0,0,0.07);
-  border-radius: 24px; padding: 36px; position: relative;
-  transition: all 0.25s;
-}
-.plan-card:hover { box-shadow: 0 12px 40px rgba(123,97,255,0.1); transform: translateY(-4px); }
-.plan-card-featured {
-  border-color: var(--violet); background: #fff;
-  box-shadow: 0 8px 32px rgba(123,97,255,0.15);
-}
-.plan-featured-tag {
-  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
-  background: var(--violet); color: #fff;
-  font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
-  padding: 4px 14px; border-radius: 999px; white-space: nowrap;
-}
-.plan-badge {
-  display: inline-block; background: var(--violet-pale); color: var(--violet);
-  font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
-  text-transform: uppercase; padding: 5px 12px; border-radius: 999px;
-  margin-bottom: 20px;
-}
-.plan-icon { font-size: 32px; margin-bottom: 16px; }
-.plan-name {
-  font-family: 'DM Serif Display', serif; font-size: 22px;
-  color: var(--night); margin-bottom: 12px; line-height: 1.2;
-}
-.plan-desc { font-size: 14px; color: var(--gray-600); line-height: 1.65; margin-bottom: 24px; }
-.plan-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
-.plan-features li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--gray-700); }
-.pf-check {
-  width: 20px; height: 20px; border-radius: 6px; background: var(--violet-pale);
-  color: var(--violet); display: flex; align-items: center; justify-content: center;
-  font-size: 11px; font-weight: 700; flex-shrink: 0;
-}
-.plan-cta {
-  display: block; width: 100%; padding: 13px 20px; text-align: center;
-  border-radius: 12px; background: var(--violet-pale); color: var(--violet);
-  font-size: 14px; font-weight: 700; text-decoration: none;
-  border: 1.5px solid rgba(123,97,255,0.2);
-  transition: all 0.2s;
-}
-.plan-cta:hover { background: var(--violet); color: #fff; }
-
 /* ── TABLA COMPARATIVA ── */
 .tabla-section { padding: 96px 0; background: #fff; }
 .tabla-inner { max-width: 900px; margin: 0 auto; padding: 0 48px; }
@@ -1268,10 +1218,8 @@ body {
   .como-steps { flex-direction: column; align-items: center; gap: 32px; }
   .como-connector { width: 2px; height: 32px; margin-top: 0; background: linear-gradient(180deg, rgba(174,230,255,0.4), rgba(123,97,255,0.4)); }
   .como-connector::after { content: "↓"; right: auto; left: -8px; top: auto; bottom: -12px; }
-  .planes-grid { grid-template-columns: 1fr; }
-  .planes-inner, .tabla-inner, .como-inner { padding: 0 24px; }
+  .tabla-inner, .como-inner { padding: 0 24px; }
   .como-section { padding: 64px 0; }
-  .planes-section { padding: 64px 0; }
   .tabla-section { padding: 64px 0; }
   .comp-table th, .comp-table td { padding: 12px 14px; font-size: 13px; }
   .value-grid { grid-template-columns: 1fr 1fr !important; }
@@ -1332,24 +1280,6 @@ body {
 .como-connector { flex-shrink: 0; width: 60px; height: 2px; background: linear-gradient(90deg, rgba(174,230,255,0.4), rgba(123,97,255,0.4)); margin-top: 52px; position: relative; }
 .como-connector::after { content: '›'; position: absolute; right: -8px; top: -10px; color: rgba(174,230,255,0.6); font-size: 20px; }
 
-/* ── PLANES ── */
-.planes-section { padding: 96px 0; background: var(--gray-50); }
-.planes-inner { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
-.planes-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 56px; align-items: start; }
-.plan-card { background: #fff; border: 1.5px solid rgba(0,0,0,0.07); border-radius: 24px; padding: 36px; position: relative; transition: all 0.25s; }
-.plan-card:hover { box-shadow: 0 12px 40px rgba(123,97,255,0.1); transform: translateY(-4px); }
-.plan-card-featured { border-color: var(--violet); box-shadow: 0 8px 32px rgba(123,97,255,0.15); }
-.plan-featured-tag { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--violet); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; padding: 4px 14px; border-radius: 999px; white-space: nowrap; }
-.plan-badge { display: inline-block; background: var(--violet-pale); color: var(--violet); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 12px; border-radius: 999px; margin-bottom: 20px; }
-.plan-icon { font-size: 32px; margin-bottom: 16px; }
-.plan-name { font-family: 'DM Serif Display', serif; font-size: 28px; color: var(--night); margin-bottom: 12px; line-height: 1.2; }
-.plan-desc { font-size: 14px; color: var(--gray-600); line-height: 1.65; margin-bottom: 24px; }
-.plan-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
-.plan-features li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--gray-700); }
-.pf-check { width: 20px; height: 20px; border-radius: 6px; background: var(--violet-pale); color: var(--violet); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; }
-.plan-cta { display: block; width: 100%; padding: 13px 20px; text-align: center; border-radius: 12px; background: var(--violet-pale); color: var(--violet); font-size: 14px; font-weight: 700; text-decoration: none; border: 1.5px solid rgba(123,97,255,0.2); transition: all 0.2s; }
-.plan-cta:hover { background: var(--violet); color: #fff; }
-
 /* ── TABLA COMPARATIVA ── */
 .tabla-section { padding: 96px 0; background: #fff; }
 .tabla-inner { max-width: 900px; margin: 0 auto; padding: 0 48px; }
@@ -1378,8 +1308,7 @@ body {
   .como-steps { flex-direction: column; align-items: center; gap: 32px; }
   .como-connector { width: 2px; height: 32px; margin-top: 0; background: linear-gradient(180deg, rgba(174,230,255,0.4), rgba(123,97,255,0.4)); }
   .como-connector::after { content: "↓"; right: auto; left: -8px; top: auto; bottom: -12px; }
-  .planes-grid { grid-template-columns: 1fr; }
-  .planes-inner, .tabla-inner, .como-inner { padding: 0 24px; }
+  .tabla-inner, .como-inner { padding: 0 24px; }
   .value-grid { grid-template-columns: 1fr 1fr !important; }
   .contact-form > div[style*="grid"] { display: flex !important; flex-direction: column; }
 }
@@ -1563,12 +1492,6 @@ body {
   .hrportal-layout { grid-template-columns: 1fr; gap: 32px; }
   .hrportal-visual { display: none; }
 
-  /* ── Planes ── */
-  .planes-section { padding: 56px 0; }
-  .planes-inner { padding: 0 20px; }
-  .planes-grid { grid-template-columns: 1fr; gap: 20px; }
-  .plan-card { padding: 28px 24px; }
-
   /* ── Stats ── */
   .stats-inner { padding: 56px 20px; }
   .stats-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
@@ -1653,7 +1576,6 @@ body {
   <div class="nav-links" style="margin-left:auto">
     <a href="#modulos" class="nav-link">Módulos</a>
     <a href="#testimonios" class="nav-link">Impacto</a>
-    <a href="#planes" class="nav-link">Planes</a>
   </div>
   <div class="nav-login-wrap" id="navLoginWrap">
     <button class="nav-login-btn" onclick="toggleLoginMenu()">
@@ -1740,7 +1662,7 @@ body {
 
 <!-- POR QUÉ WELLNEST -->
 <section style="background:linear-gradient(180deg,#110F38 0%,#2D2870 100%);padding:80px 0">
-<div style="padding:0 48px;max-width:1080px;margin:0 auto" id="por-que">
+<div style="padding:0 48px;max-width:1200px;margin:0 auto" id="por-que">
   <div class="section-eyebrow" style="text-align:center;color:rgba(255,255,255,0.65)">Por qué Wellnest</div>
   <h2 class="section-h2" style="text-align:center;max-width:600px;margin:0 auto 48px;color:#fff">Beneficios que tu equipo <em>realmente usa.</em></h2>
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
@@ -1764,7 +1686,7 @@ body {
 </section>
 
 <!-- MÓDULOS WELLNEST -->
-<div style="padding:16px 48px 72px;max-width:1080px;margin:0 auto" id="modulos">
+<div style="padding:16px 48px 72px;max-width:1200px;margin:0 auto" id="modulos">
   <div class="section-eyebrow" style="text-align:center">Módulos de la plataforma</div>
   <h2 class="section-h2" style="text-align:center;max-width:580px;margin:0 auto 40px">Cuatro módulos. <em>Impacto inmediato.</em></h2>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
@@ -1838,7 +1760,7 @@ body {
 <!-- PLATAFORMA WELLNEST -->
 <!-- TESTIMONIOS -->
 <section style="padding:96px 0;background:linear-gradient(180deg,#0E0C2E 0%,#1E1B4B 100%)" id="testimonios">
-  <div style="max-width:1100px;margin:0 auto;padding:0 48px">
+  <div style="max-width:1200px;margin:0 auto;padding:0 48px">
     <div class="section-eyebrow" style="text-align:center;color:rgba(174,230,255,0.8)">Clientes</div>
     <h2 class="section-h2" style="text-align:center;max-width:600px;margin:0 auto 56px;color:#fff">Empresas que ya <em>transformaron</em> sus beneficios.</h2>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
@@ -1900,63 +1822,6 @@ body {
       </div>
 
     </div>
-  </div>
-</section>
-<!-- PLANES -->
-<section class="planes-section" id="planes">
-  <div class="planes-inner">
-    <div class="section-eyebrow">Planes disponibles</div>
-    <h2 class="section-h2">Elige el plan que <em>tu empresa necesita.</em></h2>
-    <p class="section-sub">Flexible y transparente. Escala cuando estés listo.</p>
-    <div class="planes-grid">
-      <div class="plan-card">
-        <div class="plan-badge">Core</div>
-        <div class="plan-icon"><i data-lucide="banknote" class="wn-icon"></i></div>
-        
-        <p class="plan-desc">El punto de entrada: acceso inmediato al salario devengado más las herramientas financieras esenciales.</p>
-        <ul class="plan-features">
-          <li><span class="pf-check">✓</span> Wellnest Liquidez</li>
-          <li><span class="pf-check">✓</span> Wellnest Protección</li>
-          <li><span class="pf-check">✓</span> Wellnest Salud</li>
-          <li><span class="pf-check">✓</span> Integración con PayDay</li>
-          <li><span class="pf-check">✓</span> Dashboard para RRHH</li>
-          <li><span class="pf-check">✓</span> Soporte en español</li>
-        </ul>
-        <a href="#form" class="plan-cta">Solicita una demo</a>
-      </div>
-      <div class="plan-card plan-card-featured">
-        <div class="plan-badge" style="background:var(--violet);color:#fff">Plus</div>
-        <div class="plan-featured-tag">Más solicitado</div>
-        <div class="plan-icon"><i data-lucide="smartphone" class="wn-icon"></i></div>
-        
-        <p class="plan-desc">Todo lo del Plan 1, más Wellnest Adelanto: el colaborador elige cuánto y cuándo acceder de su salario devengado.</p>
-        <ul class="plan-features">
-          <li><span class="pf-check">✓</span> Todo del Plan 1</li>
-          <li><span class="pf-check" style="background:var(--violet);color:#fff">✓</span> Wellnest Adelanto</li>
-          <li><span class="pf-check" style="background:var(--violet);color:#fff">✓</span> Acceso parcial o total al devengado</li>
-          <li><span class="pf-check" style="background:var(--violet);color:#fff">✓</span> Historial de transacciones</li>
-          <li><span class="pf-check" style="background:var(--violet);color:#fff">✓</span> Reportes de uso para RRHH</li>
-          <li><span class="pf-check" style="background:var(--violet);color:#fff">✓</span> Soporte prioritario</li>
-        </ul>
-        <a href="#form" class="plan-cta" style="background:var(--violet);color:#fff;border-color:var(--violet)">Solicita una demo</a>
-      </div>
-      <div class="plan-card">
-        <div class="plan-badge" style="background:#0D0B1E;color:#AEE6FF">Enterprise</div>
-        <div class="plan-icon"><i data-lucide="building-2" class="wn-icon"></i></div>
-        
-        <p class="plan-desc">Solución white-label para grandes organizaciones. Wellnest integrado bajo la marca de tu empresa, con configuración personalizada y account manager dedicado.</p>
-        <ul class="plan-features">
-          <li><span class="pf-check" style="background:#0D0B1E;color:#AEE6FF">✓</span> Todo del Plan 2</li>
-          <li><span class="pf-check" style="background:#0D0B1E;color:#AEE6FF">✓</span> White-label con tu marca</li>
-          <li><span class="pf-check" style="background:#0D0B1E;color:#AEE6FF">✓</span> Módulos adicionales a medida</li>
-          <li><span class="pf-check" style="background:#0D0B1E;color:#AEE6FF">✓</span> Integración personalizada</li>
-          <li><span class="pf-check" style="background:#0D0B1E;color:#AEE6FF">✓</span> Account manager dedicado</li>
-          <li><span class="pf-check" style="background:#0D0B1E;color:#AEE6FF">✓</span> SLA garantizado</li>
-        </ul>
-        <a href="#form" class="plan-cta" style="background:#0D0B1E;color:#AEE6FF;border-color:#0D0B1E">Hablar con el equipo</a>
-      </div>
-    </div>
-    <p style="text-align:center;font-size:13px;color:#9CA3AF;margin-top:32px">Todos los planes incluyen onboarding, activación en 48 horas e integración con PayDay.</p>
   </div>
 </section>
 
