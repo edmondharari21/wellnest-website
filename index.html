@@ -434,6 +434,60 @@ body {
   font-size: 14px; color: var(--gray-600); line-height: 1.6;
   flex: 1;
 }
+.module-cta {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 14px; font-weight: 700; color: var(--violet);
+  text-decoration: none; margin-top: 4px;
+}
+.module-cta-arrow { display: inline-block; transition: transform 0.2s; }
+.module-card:hover .module-cta-arrow { transform: translateX(4px); }
+
+/* ── PARA COLABORADORES (tabs + phone) ── */
+.colab-grid > div { min-width: 0; }
+.colab-tabs { display: flex; flex-direction: column; gap: 12px; }
+.colab-tab {
+  display: flex; align-items: flex-start; gap: 14px; text-align: left;
+  width: 100%; padding: 18px; border-radius: 16px;
+  border: 1.5px solid rgba(0,0,0,0.08); background: #fff;
+  cursor: pointer; transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.colab-tab:hover { border-color: rgba(123,97,255,0.35); }
+.colab-tab.active {
+  border-color: var(--violet); background: var(--violet-pale);
+  box-shadow: 0 6px 20px rgba(123,97,255,0.12);
+}
+.colab-tab-icon {
+  width: 40px; height: 40px; border-radius: 11px; flex-shrink: 0;
+  background: var(--violet-pale); color: var(--violet);
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s, color 0.2s;
+}
+.colab-tab.active .colab-tab-icon { background: var(--violet); color: #fff; }
+.colab-tab-copy { display: flex; flex-direction: column; gap: 4px; }
+.colab-tab-copy strong { font-family: 'DM Serif Display', serif; font-size: 16px; color: var(--night); }
+.colab-tab-copy span { font-size: 13px; color: var(--gray-600); line-height: 1.55; }
+.colab-phone {
+  width: 270px; height: 560px; flex-shrink: 0;
+  background: #0D0B1E; border-radius: 44px; padding: 14px;
+  box-shadow: 0 30px 80px rgba(30,27,75,0.3), 0 0 0 1px rgba(0,0,0,0.05);
+  position: relative;
+}
+.colab-phone-notch {
+  position: absolute; top: 14px; left: 50%; transform: translateX(-50%);
+  width: 120px; height: 22px; background: #0D0B1E; border-radius: 0 0 14px 14px; z-index: 2;
+}
+.colab-phone-screen {
+  width: 100%; height: 100%; border-radius: 32px;
+  overflow: hidden; position: relative; background: #fff;
+}
+.colab-screen-img {
+  position: absolute; left: 50%; top: -78px;
+  width: 120%; max-width: none; height: auto;
+  transform: translateX(-50%);
+  opacity: 0; transition: opacity 0.4s ease;
+}
+.colab-screen-img.active { opacity: 1; }
 
 /* ── COLABORADOR ── */
 .colab-section {
@@ -1686,6 +1740,11 @@ body {
   }
   #modulos h2 { margin-bottom: 28px !important; }
 
+  /* ── Para colaboradores ── */
+  .colab-grid { grid-template-columns: 1fr !important; gap: 40px !important; padding: 0 20px !important; }
+  .colab-phone { width: 230px !important; height: 480px !important; margin: 0 auto; }
+  #colaboradores { padding: 64px 0 !important; }
+
   /* ── Benefits ── */
   .benefits-inner { padding: 0 20px; }
   .benefits-grid { grid-template-columns: 1fr; gap: 12px; }
@@ -1907,82 +1966,122 @@ body {
 
 <!-- MÓDULOS WELLNEST -->
 <div style="padding:16px 48px 72px;max-width:1200px;margin:0 auto" id="modulos">
-  <div class="section-eyebrow" style="text-align:center">Módulos de la plataforma</div>
-  <h2 class="section-h2" style="text-align:center;max-width:580px;margin:0 auto 40px">Cuatro módulos. <em>Impacto inmediato.</em></h2>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+  <div class="section-eyebrow" style="text-align:center">Soluciones Wellnest</div>
+  <h2 class="section-h2" style="text-align:center;max-width:640px;margin:0 auto 16px">Una plataforma. <em>Más posibilidades para tu equipo.</em></h2>
+  <p class="section-sub" style="text-align:center;max-width:560px;margin:0 auto 56px">Tres soluciones, un mismo acceso. Tu equipo elige lo que necesita, cuando lo necesita.</p>
+  <div class="modules-grid">
 
-    <!-- Wellnest Liquidez -->
-    <div style="border-radius:20px;border:1px solid #E5E7EB;background:#fff;box-shadow:0 2px 16px rgba(0,0,0,0.05);padding:28px;display:flex;flex-direction:column">
-      <div style="width:52px;height:52px;border-radius:14px;background:#EDE9FF;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:20px"><i data-lucide="banknote" class="wn-icon"></i></div>
-      <h3 style="font-size:19px;font-weight:800;color:#1E1B4B;margin:0 0 10px">Wellnest Liquidez</h3>
-      <p style="font-size:13px;color:#6B7280;line-height:1.6;margin:0 0 20px">Liquidez inmediata vía nómina para que tu equipo resuelva imprevistos con tranquilidad.</p>
-      <div style="border-top:1px solid #F3F4F6;padding-top:16px;margin-bottom:16px">
-        <div style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:#374151">
-          <span style="color:#7B61FF;flex-shrink:0">✓</span>
-          Solicitud en minutos, aprobación automática y descuento vía nómina.
+    <!-- Wellnest Crédito -->
+    <div class="module-card">
+      <div class="module-top">
+        <div class="module-icon"><i data-lucide="credit-card" class="wn-icon"></i></div>
+        <span class="badge b-live">Disponible</span>
+      </div>
+      <h3>Wellnest Crédito</h3>
+      <p>Préstamos con tasas preferenciales y descuento directo vía nómina, sujetos a evaluación y consulta de APC.</p>
+      <div style="border-top:1px solid #F3F4F6;padding-top:14px">
+        <div style="display:flex;flex-wrap:wrap;gap:7px">
+          <span style="background:#F5F3FF;border:1px solid #EDE9FF;border-radius:7px;padding:5px 9px;font-size:11px;color:#1E1B4B;font-weight:600"><i data-lucide="file-check" class="wn-icon-sm"></i> Proceso digital</span>
+          <span style="background:#F5F3FF;border:1px solid #EDE9FF;border-radius:7px;padding:5px 9px;font-size:11px;color:#1E1B4B;font-weight:600"><i data-lucide="percent" class="wn-icon-sm"></i> Tasa preferencial</span>
+          <span style="background:#F5F3FF;border:1px solid #EDE9FF;border-radius:7px;padding:5px 9px;font-size:11px;color:#1E1B4B;font-weight:600"><i data-lucide="wallet" class="wn-icon-sm"></i> Descuento directo</span>
         </div>
       </div>
+      <a href="#form" class="module-cta">Conocer Wellnest Crédito <span class="module-cta-arrow">→</span></a>
     </div>
 
     <!-- Wellnest Protección -->
-    <div style="border-radius:20px;border:1px solid #E5E7EB;background:#fff;box-shadow:0 2px 16px rgba(0,0,0,0.05);padding:28px;display:flex;flex-direction:column">
-      <div style="width:52px;height:52px;border-radius:14px;background:#EDE9FF;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:20px"><i data-lucide="shield" class="wn-icon"></i></div>
-      <h3 style="font-size:19px;font-weight:800;color:#1E1B4B;margin:0 0 10px">Wellnest Protección</h3>
-      <p style="font-size:13px;color:#6B7280;line-height:1.6;margin:0 0 20px">Coberturas de salud para tus colaboradores y sus familias, respaldadas por Astro Asistencias. Incluye asistencias médicas, seguros de vida y protección ante imprevistos.</p>
-      <div style="border-top:1px solid #F3F4F6;padding-top:16px;margin-bottom:16px">
-        <div style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:#374151">
-          <span style="color:#7B61FF;flex-shrink:0">✓</span>
-          Coberturas de salud provistas por Astro Asistencias, seguro de vida y asistencias médicas y legales.
-        </div>
+    <div class="module-card">
+      <div class="module-top">
+        <div class="module-icon"><i data-lucide="shield-check" class="wn-icon"></i></div>
+        <span class="badge b-live">Disponible</span>
       </div>
-      <div style="border-top:1px solid #F3F4F6;padding-top:14px;margin-top:auto">
+      <h3>Wellnest Protección</h3>
+      <p>Opciones de seguros para que tus colaboradores encuentren la cobertura que necesitan: automóvil, SOAT y más.</p>
+      <div style="border-top:1px solid #F3F4F6;padding-top:14px">
         <div style="display:flex;flex-wrap:wrap;gap:7px">
-          <span style="background:#F5F3FF;border:1px solid #EDE9FF;border-radius:7px;padding:5px 9px;font-size:11px;color:#1E1B4B;font-weight:600"><i data-lucide="heart-pulse" class="wn-icon-sm"></i> Salud</span>
-          <span style="background:#F5F3FF;border:1px solid #EDE9FF;border-radius:7px;padding:5px 9px;font-size:11px;color:#1E1B4B;font-weight:600"><i data-lucide="shield-check" class="wn-icon-sm"></i> Vida</span>
-          <span style="background:#F5F3FF;border:1px solid #EDE9FF;border-radius:7px;padding:5px 9px;font-size:11px;color:#1E1B4B;font-weight:600"><i data-lucide="users" class="wn-icon-sm"></i> Familia</span>
-          <span style="background:#F5F3FF;border:1px solid #EDE9FF;border-radius:7px;padding:5px 9px;font-size:11px;color:#1E1B4B;font-weight:600"><i data-lucide="stethoscope" class="wn-icon-sm"></i> Astro</span>
+          <span style="background:#F5F3FF;border:1px solid #EDE9FF;border-radius:7px;padding:5px 9px;font-size:11px;color:#1E1B4B;font-weight:600"><i data-lucide="car" class="wn-icon-sm"></i> Cobertura completa</span>
+          <span style="background:#F5F3FF;border:1px solid #EDE9FF;border-radius:7px;padding:5px 9px;font-size:11px;color:#1E1B4B;font-weight:600"><i data-lucide="file-text" class="wn-icon-sm"></i> SOAT</span>
+          <span style="background:#F5F3FF;border:1px solid #EDE9FF;border-radius:7px;padding:5px 9px;font-size:11px;color:#1E1B4B;font-weight:600"><i data-lucide="heart-pulse" class="wn-icon-sm"></i> Otras coberturas</span>
         </div>
       </div>
-    </div>
-
-    <!-- Wellnest Adelanto -->
-    <div style="border-radius:20px;border:1px solid #E5E7EB;background:#fff;box-shadow:0 2px 16px rgba(0,0,0,0.05);padding:28px;display:flex;flex-direction:column">
-      <div style="width:52px;height:52px;border-radius:14px;background:#DBEAFE;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:20px"><i data-lucide="banknote" class="wn-icon"></i></div>
-      <h3 style="font-size:19px;font-weight:800;color:#1E1B4B;margin:0 0 10px">Wellnest Adelanto</h3>
-      <p style="font-size:13px;color:#6B7280;line-height:1.6;margin:0 0 20px">El colaborador elige cuándo y cuánto acceder de su salario ya devengado. Sin esperas, sin trámites, sin deudas.</p>
-      <div style="border-top:1px solid #F3F4F6;padding-top:16px;margin-bottom:16px">
-        <div style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:#374151">
-          <span style="color:#7B61FF;flex-shrink:0">✓</span>
-          Acceso parcial o total al salario devengado hasta la fecha de corte.
-        </div>
-      </div>
+      <a href="#form" class="module-cta">Conocer Wellnest Protección <span class="module-cta-arrow">→</span></a>
     </div>
 
     <!-- Wellnest Club -->
-    <div style="border-radius:20px;border:1px solid #E5E7EB;background:#fff;box-shadow:0 2px 16px rgba(0,0,0,0.05);padding:28px;display:flex;flex-direction:column">
-      <div style="width:52px;height:52px;border-radius:14px;background:#FEF3C7;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:20px"><i data-lucide="tag" class="wn-icon"></i></div>
-      <h3 style="font-size:19px;font-weight:800;color:#1E1B4B;margin:0 0 10px">Wellnest Club</h3>
-      <p style="font-size:13px;color:#6B7280;line-height:1.6;margin:0 0 20px">Club de descuentos exclusivos en comercios afiliados. Tus colaboradores acceden a beneficios reales en las categorías que más importan en el día a día.</p>
-      <div style="border-top:1px solid #F3F4F6;padding-top:16px;margin-bottom:16px">
-        <div style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:#374151">
-          <span style="color:#7B61FF;flex-shrink:0">✓</span>
-          Descuentos en salud, entretenimiento, educación, restaurantes y más.
-        </div>
+    <div class="module-card">
+      <div class="module-top">
+        <div class="module-icon"><i data-lucide="tag" class="wn-icon"></i></div>
+        <span class="badge b-live">Disponible</span>
       </div>
-      <div style="border-top:1px solid #F3F4F6;padding-top:14px;margin-top:auto">
+      <h3>Wellnest Club</h3>
+      <p>Descuentos y promociones exclusivas en comercios aliados, disponibles desde la plataforma para todo el equipo.</p>
+      <div style="border-top:1px solid #F3F4F6;padding-top:14px">
         <div style="display:flex;flex-wrap:wrap;gap:7px">
-          <span style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:7px;padding:5px 9px;font-size:11px;color:#1E1B4B;font-weight:600"><i data-lucide="heart" class="wn-icon-sm"></i> Salud</span>
           <span style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:7px;padding:5px 9px;font-size:11px;color:#1E1B4B;font-weight:600"><i data-lucide="utensils" class="wn-icon-sm"></i> Restaurantes</span>
-          <span style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:7px;padding:5px 9px;font-size:11px;color:#1E1B4B;font-weight:600"><i data-lucide="graduation-cap" class="wn-icon-sm"></i> Educación</span>
-          <span style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:7px;padding:5px 9px;font-size:11px;color:#1E1B4B;font-weight:600"><i data-lucide="music" class="wn-icon-sm"></i> Entrete.</span>
+          <span style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:7px;padding:5px 9px;font-size:11px;color:#1E1B4B;font-weight:600"><i data-lucide="shirt" class="wn-icon-sm"></i> Moda</span>
+          <span style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:7px;padding:5px 9px;font-size:11px;color:#1E1B4B;font-weight:600"><i data-lucide="plane" class="wn-icon-sm"></i> Viajes</span>
         </div>
       </div>
+      <a href="#form" class="module-cta">Explorar Wellnest Club <span class="module-cta-arrow">→</span></a>
     </div>
 
   </div>
+
+  <!-- Wellnest Adelanto (producto adicional, no forma parte de las 3 soluciones principales) -->
+  <div style="margin-top:20px;border-radius:16px;border:1px solid #E5E7EB;background:#FAFAFB;padding:20px 24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+    <div style="width:40px;height:40px;border-radius:11px;background:#DBEAFE;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i data-lucide="wallet" class="wn-icon"></i></div>
+    <div style="flex:1;min-width:200px">
+      <strong style="font-size:14px;color:#1E1B4B">Wellnest Adelanto</strong>
+      <span style="font-size:13px;color:#6B7280"> — el colaborador elige cuándo y cuánto acceder de su salario ya devengado, sin deudas.</span>
+    </div>
+    <a href="#form" style="font-size:13px;font-weight:700;color:var(--violet);text-decoration:none;white-space:nowrap">Conocer más →</a>
+  </div>
 </div>
 
-
+<!-- PARA COLABORADORES -->
+<section style="padding:96px 0;background:var(--gray-50)" id="colaboradores">
+  <div style="max-width:1200px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center" class="colab-grid">
+    <div>
+      <div class="section-eyebrow">Para tus colaboradores</div>
+      <h2 class="section-h2">Beneficios pensados para <em>la vida real.</em></h2>
+      <p class="section-sub" style="margin:0 0 32px">Así accede tu equipo a cada solución, directo desde la plataforma.</p>
+      <div class="colab-tabs" role="tablist" aria-label="Soluciones para colaboradores">
+        <button class="colab-tab active" role="tab" aria-selected="true" data-tab="credito" onclick="switchColabTab('credito')">
+          <span class="colab-tab-icon"><i data-lucide="credit-card" class="wn-icon"></i></span>
+          <span class="colab-tab-copy">
+            <strong>Crédito</strong>
+            <span>Solicita una opción de crédito desde la plataforma y recibe seguimiento durante el proceso.</span>
+          </span>
+        </button>
+        <button class="colab-tab" role="tab" aria-selected="false" data-tab="proteccion" onclick="switchColabTab('proteccion')">
+          <span class="colab-tab-icon"><i data-lucide="shield-check" class="wn-icon"></i></span>
+          <span class="colab-tab-copy">
+            <strong>Protección</strong>
+            <span>Explora opciones de seguro y solicita una cotización según tus necesidades.</span>
+          </span>
+        </button>
+        <button class="colab-tab" role="tab" aria-selected="false" data-tab="club" onclick="switchColabTab('club')">
+          <span class="colab-tab-icon"><i data-lucide="tag" class="wn-icon"></i></span>
+          <span class="colab-tab-copy">
+            <strong>Club</strong>
+            <span>Encuentra descuentos y promociones exclusivas cerca de ti.</span>
+          </span>
+        </button>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:center">
+      <div class="colab-phone">
+        <div class="colab-phone-notch"></div>
+        <div class="colab-phone-screen">
+          <img src="screenshots/portal-credito-solicitud.jpeg" data-tab-img="credito" class="colab-screen-img active" alt="Pantalla de solicitud de crédito dentro de la plataforma Wellnest" loading="lazy">
+          <img src="screenshots/portal-proteccion-soat.jpeg" data-tab-img="proteccion" class="colab-screen-img" alt="Pantalla de cotización de seguro SOAT dentro de la plataforma Wellnest" loading="lazy">
+          <img src="screenshots/portal-club-listado.jpeg" data-tab-img="club" class="colab-screen-img" alt="Listado de comercios aliados de Wellnest Club" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+  <p style="text-align:center;font-size:12px;color:#9CA3AF;margin:28px 0 0">Capturas reales de la plataforma Wellnest.</p>
+</section>
 
 <!-- PLATAFORMA WELLNEST -->
 <!-- TESTIMONIOS -->
@@ -2107,6 +2206,18 @@ document.addEventListener('click', (e) => {
   const wrap = document.getElementById('navLoginWrap');
   if (wrap && !wrap.contains(e.target)) wrap.classList.remove('open');
 });
+
+// ── Para colaboradores: tab switcher ────────────────────────────────────────
+function switchColabTab(name) {
+  document.querySelectorAll('.colab-tab').forEach((t) => {
+    const active = t.dataset.tab === name;
+    t.classList.toggle('active', active);
+    t.setAttribute('aria-selected', active ? 'true' : 'false');
+  });
+  document.querySelectorAll('.colab-screen-img').forEach((img) => {
+    img.classList.toggle('active', img.dataset.tabImg === name);
+  });
+}
 
 // ── Showcase tab switcher ────────────────────────────────────────────────────
 function switchTab(id, btn) {
