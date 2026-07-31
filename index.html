@@ -110,7 +110,7 @@ body {
 /* ── HERO ── */
 .hero {
   background: #fff;
-  padding: 40px 48px 0;
+  padding: 64px 48px 80px;
   position: relative; overflow: hidden;
 }
 .hero::before {
@@ -128,12 +128,12 @@ body {
   pointer-events: none;
 }
 .hero-inner {
-  max-width: 1200px; margin: 0 auto;
+  width: 100%; max-width: 1200px; margin: 0 auto; box-sizing: border-box;
   display: grid; grid-template-columns: 1fr 1fr;
-  gap: 52px; align-items: center;
+  gap: 52px; align-items: start;
   position: relative; z-index: 1;
 }
-.hero-text { padding-bottom: 0; }
+.hero-text { padding-bottom: 0; min-width: 0; }
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
   font-size: 12px; font-weight: 700; letter-spacing: 0.14em;
@@ -191,8 +191,9 @@ body {
 .hero-proof span { font-size:13px; color:#6B7280; font-weight:500; }
 /* ── HERO VISUAL ── */
 .hero-visual {
-  position: relative; padding-bottom: 0; align-self: flex-end;
-  display: flex; justify-content: center;
+  position: relative; padding-top: 24px;
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+  justify-self: center;
   animation: fadeInUp 0.8s ease both;
 }
 @keyframes fadeInUp {
@@ -1579,10 +1580,7 @@ body {
   .nav-login-wrap { margin-left: auto; }
   .nav-login-btn { font-size: 12px; padding: 8px 12px; }
   .nav-cta {
-    margin-left: 8px;
-    padding: 10px 16px;
-    font-size: 13px;
-    border-radius: 999px;
+    display: none !important;
   }
 
   /* ── Hero ── */
@@ -1592,29 +1590,13 @@ body {
     min-height: unset !important;
     padding-top: 64px !important;
   }
-  .hero-box {
-    display: contents !important;
-  }
-  /* Badge: oculto en móvil */
-  #inicio .hero-box > div[style*="position:absolute"] {
-    display: none !important;
-  }
-  /* Columna de texto */
-  #inicio .hero-box > div[style*="padding:140px"] {
-    padding: 16px 20px 32px !important;
-    order: 1;
-  }
   #inicio h1 {
     font-size: 32px !important;
     line-height: 1.12 !important;
     letter-spacing: -0.025em !important;
     margin-bottom: 14px !important;
   }
-  #inicio p[style*="font-size:16px"] {
-    font-size: 15px !important;
-    max-width: 100% !important;
-    margin-bottom: 24px !important;
-  }
+  .hero-sub { font-size: 15px !important; max-width: 100% !important; margin-bottom: 24px !important; }
   /* Mod-tags: scroll horizontal */
   #inicio div[style*="flex-wrap:wrap"] {
     flex-wrap: nowrap !important;
@@ -1628,21 +1610,8 @@ body {
   }
   #inicio div[style*="flex-wrap:wrap"]::-webkit-scrollbar { display: none; }
   .mod-tag { flex-shrink: 0; font-size: 12px; padding: 8px 14px; }
-  /* Columna imagen: banner full-width debajo del texto */
-  #inicio .hero-box > div[style*="position:relative;overflow:hidden"] {
-    order: 2;
-    height: 240px !important;
-    width: 100% !important;
-    flex-shrink: 0;
-  }
-  #inicio .hero-box > div[style*="position:relative;overflow:hidden"] img {
-    object-position: center 15% !important;
-  }
-  #inicio .hero-box > div[style*="position:relative;overflow:hidden"] > div[style*="gradient"] {
-    background: linear-gradient(to bottom, rgba(245,243,255,0.6) 0%, transparent 50%) !important;
-  }
   .hero-float-card { display: none; }
-  .hero-trust { font-size: 12px; flex-wrap: wrap; gap: 8px; }
+  .hero-trust { font-size: 12px; flex-direction: column; align-items: flex-start; gap: 10px; }
 
   /* ── Trust bar ── */
   .trust-bar { padding: 20px 20px; }
@@ -1809,12 +1778,12 @@ body {
     <span class="nav-logo-text">wellnest</span>
   </a>
   <div class="nav-links" style="margin-left:auto">
-    <a href="#modulos" class="nav-link">Módulos</a>
-    <a href="#testimonios" class="nav-link">Impacto</a>
+    <a href="#modulos" class="nav-link">Soluciones</a>
+    <a href="#testimonios" class="nav-link">Clientes</a>
   </div>
   <div class="nav-login-wrap" id="navLoginWrap">
     <button class="nav-login-btn" onclick="toggleLoginMenu()">
-      Acceder
+      Iniciar sesión
       <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </button>
     <div class="nav-login-dropdown">
@@ -1835,36 +1804,65 @@ body {
       </a>
     </div>
   </div>
+  <a href="#form" class="nav-cta">Agendar una demo</a>
 </nav>
 
 <!-- HERO -->
-<section style="background:linear-gradient(180deg,#3B28CC 0%,#4A37D8 30%,#6350F0 65%,#7B61FF 100%);overflow:hidden;position:relative" id="inicio">
-  <div class="hero-box" style="max-width:1200px;margin:0 auto;padding:0 48px;position:relative;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:stretch;min-height:72vh">
-  <div style="position:absolute;top:80px;left:48px;z-index:10">
-    <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:999px;padding:6px 14px;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#AEE6FF">
-      <span style="width:6px;height:6px;border-radius:50%;background:#7B61FF;flex-shrink:0;display:inline-block"></span>
-      WELLNEST
-    </span>
-  </div>
-  <div style="padding:140px 0 80px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2">
-    <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#AEE6FF;margin-bottom:20px">PLATAFORMA DE BENEFICIOS LABORALES</div>
-    <h1 style="font-size:clamp(44px,4.5vw,72px);font-weight:900;line-height:1.05;color:#fff;margin:0 0 22px;font-family:'Inter',sans-serif;letter-spacing:-0.03em">
-      La plataforma que<br>
-      <em style="color:#AEE6FF;font-style:normal">cuida a tu equipo.</em>
-    </h1>
-    <p style="font-size:17px;line-height:1.65;color:rgba(255,255,255,0.62);max-width:420px;margin:0 0 40px">Soluciones reales para el bienestar de tu equipo.</p>
-    <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
-      <a href="#form" style="display:inline-flex;align-items:center;gap:8px;background:#fff;color:#1E1B4B;font-weight:700;font-size:15px;padding:15px 32px;border-radius:999px;text-decoration:none;box-shadow:0 8px 32px rgba(0,0,0,0.25);transition:background 0.2s">Solicita tu demo →</a>
+<section class="hero" id="inicio">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow"><span class="hero-eyebrow-dot"></span> Plataforma de beneficios laborales</div>
+      <h1>Todos los beneficios que tu equipo necesita, <em>en una sola plataforma.</em></h1>
+      <p class="hero-sub">Wellnest conecta a tus colaboradores con crédito a tasas preferenciales, seguros y descuentos exclusivos, sin complicar la operación de tu empresa.</p>
+      <div class="hero-actions">
+        <a href="#form" class="btn-primary">Agendar una demo →</a>
+        <a href="#modulos" class="btn-ghost">Ver cómo funciona</a>
+      </div>
+      <div class="hero-trust" style="flex-wrap:wrap">
+        <span style="display:inline-flex;align-items:center;gap:6px"><i data-lucide="check" class="wn-icon-sm" style="color:var(--violet)"></i> Implementación sencilla</span>
+        <span style="display:inline-flex;align-items:center;gap:6px"><i data-lucide="check" class="wn-icon-sm" style="color:var(--violet)"></i> Sin complicar la planilla</span>
+        <span style="display:inline-flex;align-items:center;gap:6px"><i data-lucide="check" class="wn-icon-sm" style="color:var(--violet)"></i> Una sola plataforma</span>
+        <span style="display:inline-flex;align-items:center;gap:6px"><i data-lucide="check" class="wn-icon-sm" style="color:var(--violet)"></i> Beneficios que sí se utilizan</span>
+      </div>
     </div>
-  </div>
-  <div style="position:relative;overflow:hidden">
-    <img src="hero-woman.png"
-         alt="Colaboradora usando beneficios Wellnest"
-         style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block"
-         loading="eager">
-    <div style="position:absolute;inset:0;background:linear-gradient(to right,#3B28CC 0%,transparent 35%)"></div>
-    <div style="position:absolute;inset:0;background:radial-gradient(circle at 15% 20%,rgba(123,97,255,0.25) 0%,transparent 55%);pointer-events:none"></div>
-  </div>
+    <div class="hero-visual">
+      <div class="hero-phone">
+        <div class="phone-notch"></div>
+        <div class="phone-header">
+          <div class="phone-logo"><span>wellnest</span></div>
+          <div class="phone-greeting">Hola,<strong>Daniela</strong></div>
+        </div>
+        <div class="phone-module-list">
+          <div class="phone-module-item">
+            <div class="pmi-icon"><i data-lucide="credit-card" class="wn-icon"></i></div>
+            <div class="pmi-text"><div class="pmi-name">Wellnest Crédito</div><div class="pmi-status">Disponible</div></div>
+            <span class="pmi-arrow">›</span>
+          </div>
+          <div class="phone-module-item">
+            <div class="pmi-icon"><i data-lucide="shield-check" class="wn-icon"></i></div>
+            <div class="pmi-text"><div class="pmi-name">Wellnest Protección</div><div class="pmi-status">Cotiza en minutos</div></div>
+            <span class="pmi-arrow">›</span>
+          </div>
+          <div class="phone-module-item">
+            <div class="pmi-icon"><i data-lucide="tag" class="wn-icon"></i></div>
+            <div class="pmi-text"><div class="pmi-name">Wellnest Club</div><div class="pmi-status">Descuentos activos</div></div>
+            <span class="pmi-arrow">›</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-float-card card-stat">
+        <div class="fc-label">Wellnest Protección</div>
+        <div class="fc-value" style="font-size:16px">Cobertura vehicular</div>
+        <div class="fc-sub">Cotiza en minutos</div>
+      </div>
+      <div class="hero-float-card card-notif">
+        <div class="fc-notif-row">
+          <div class="fc-notif-icon"><i data-lucide="send" class="wn-icon-sm" style="color:var(--violet)"></i></div>
+          <div class="fc-notif-text"><strong>Solicitud enviada</strong><span>Wellnest Crédito · en evaluación</span></div>
+        </div>
+      </div>
+      <div style="text-align:center;font-size:11px;color:#9CA3AF;margin-top:20px">Vista ilustrativa de la plataforma Wellnest</div>
+    </div>
   </div>
 </section>
 
@@ -2236,6 +2234,8 @@ function submitWaitlist(e) {
 <style>
 /* ─── New photo sections responsive ─── */
 @media (max-width: 900px) {
+  /* Nav: compact down before the 768px hero breakpoint so it never overflows */
+  .nav-links, .nav-cta { display: none !important; }
   /* Split landscape sections: stack vertically */
   #app-wellnest > div[style*="grid-template-columns:1fr 1fr"],
   #portal-rrhh  > div[style*="grid-template-columns:1fr 1fr"],
@@ -2257,22 +2257,7 @@ function submitWaitlist(e) {
     padding: 40px 24px !important;
   }
   /* Hero */
-  section#inicio .hero-box {
-    grid-template-columns: 1fr !important;
-    max-width: none !important;
-    padding: 0 24px !important;
-  }
-  section#inicio .hero-box > div:last-child {
-    height: 360px;
-    order: -1;
-  }
-  section#inicio .hero-box > div:first-of-type {
-    padding: 120px 24px 48px !important;
-  }
-  section#inicio .hero-box > div[style*="position:absolute;top:80px"] {
-    top: 70px !important;
-    left: 20px !important;
-  }
+  section#inicio .hero-inner { grid-template-columns: 1fr; gap: 32px; }
   /* Portrait section max-width on desktop */
   #adelanto > div, #salud > div, #proteccion > div, #liquidez > div {
     max-width: 100% !important;
@@ -2291,22 +2276,7 @@ function submitWaitlist(e) {
     padding: 40px 24px !important;
   }
   /* Hero */
-  section#inicio .hero-box {
-    grid-template-columns: 1fr !important;
-    max-width: none !important;
-    padding: 0 24px !important;
-  }
-  section#inicio .hero-box > div:last-child {
-    height: 360px;
-    order: -1;
-  }
-  section#inicio .hero-box > div:first-of-type {
-    padding: 120px 24px 48px !important;
-  }
-  section#inicio .hero-box > div[style*="position:absolute;top:80px"] {
-    top: 70px !important;
-    left: 20px !important;
-  }
+  section#inicio .hero-inner { grid-template-columns: 1fr; gap: 32px; }
   /* Portrait section max-width on desktop */
   #adelanto > div, #salud > div, #proteccion > div, #liquidez > div {
     max-width: 100% !important;
