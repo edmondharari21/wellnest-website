@@ -1592,12 +1592,15 @@ body {
     min-height: unset !important;
     padding-top: 64px !important;
   }
+  .hero-box {
+    display: contents !important;
+  }
   /* Badge: oculto en móvil */
-  #inicio > div[style*="position:absolute"] {
+  #inicio .hero-box > div[style*="position:absolute"] {
     display: none !important;
   }
   /* Columna de texto */
-  #inicio > div[style*="padding:140px"] {
+  #inicio .hero-box > div[style*="padding:140px"] {
     padding: 16px 20px 32px !important;
     order: 1;
   }
@@ -1626,16 +1629,16 @@ body {
   #inicio div[style*="flex-wrap:wrap"]::-webkit-scrollbar { display: none; }
   .mod-tag { flex-shrink: 0; font-size: 12px; padding: 8px 14px; }
   /* Columna imagen: banner full-width debajo del texto */
-  #inicio > div[style*="position:relative;overflow:hidden"] {
+  #inicio .hero-box > div[style*="position:relative;overflow:hidden"] {
     order: 2;
     height: 240px !important;
     width: 100% !important;
     flex-shrink: 0;
   }
-  #inicio > div[style*="position:relative;overflow:hidden"] img {
+  #inicio .hero-box > div[style*="position:relative;overflow:hidden"] img {
     object-position: center 15% !important;
   }
-  #inicio > div[style*="position:relative;overflow:hidden"] > div[style*="gradient"] {
+  #inicio .hero-box > div[style*="position:relative;overflow:hidden"] > div[style*="gradient"] {
     background: linear-gradient(to bottom, rgba(245,243,255,0.6) 0%, transparent 50%) !important;
   }
   .hero-float-card { display: none; }
@@ -1835,14 +1838,15 @@ body {
 </nav>
 
 <!-- HERO -->
-<section style="background:linear-gradient(180deg,#3B28CC 0%,#4A37D8 30%,#6350F0 65%,#7B61FF 100%);overflow:hidden;position:relative;min-height:72vh;display:grid;grid-template-columns:1fr 1fr;align-items:stretch" id="inicio">
-  <div style="position:absolute;top:80px;left:80px;z-index:10">
+<section style="background:linear-gradient(180deg,#3B28CC 0%,#4A37D8 30%,#6350F0 65%,#7B61FF 100%);overflow:hidden;position:relative" id="inicio">
+  <div class="hero-box" style="max-width:1200px;margin:0 auto;padding:0 48px;position:relative;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:stretch;min-height:72vh">
+  <div style="position:absolute;top:80px;left:48px;z-index:10">
     <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:999px;padding:6px 14px;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#AEE6FF">
       <span style="width:6px;height:6px;border-radius:50%;background:#7B61FF;flex-shrink:0;display:inline-block"></span>
       WELLNEST
     </span>
   </div>
-  <div style="padding:140px 56px 80px 80px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2">
+  <div style="padding:140px 0 80px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2">
     <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#AEE6FF;margin-bottom:20px">PLATAFORMA DE BENEFICIOS LABORALES</div>
     <h1 style="font-size:clamp(44px,4.5vw,72px);font-weight:900;line-height:1.05;color:#fff;margin:0 0 22px;font-family:'Inter',sans-serif;letter-spacing:-0.03em">
       La plataforma que<br>
@@ -1860,6 +1864,7 @@ body {
          loading="eager">
     <div style="position:absolute;inset:0;background:linear-gradient(to right,#3B28CC 0%,transparent 35%)"></div>
     <div style="position:absolute;inset:0;background:radial-gradient(circle at 15% 20%,rgba(123,97,255,0.25) 0%,transparent 55%);pointer-events:none"></div>
+  </div>
   </div>
 </section>
 
@@ -2252,17 +2257,19 @@ function submitWaitlist(e) {
     padding: 40px 24px !important;
   }
   /* Hero */
-  section#inicio {
+  section#inicio .hero-box {
     grid-template-columns: 1fr !important;
+    max-width: none !important;
+    padding: 0 24px !important;
   }
-  section#inicio > div:last-child {
+  section#inicio .hero-box > div:last-child {
     height: 360px;
     order: -1;
   }
-  section#inicio > div:first-of-type {
+  section#inicio .hero-box > div:first-of-type {
     padding: 120px 24px 48px !important;
   }
-  section#inicio > div[style*="position:absolute;top:80px"] {
+  section#inicio .hero-box > div[style*="position:absolute;top:80px"] {
     top: 70px !important;
     left: 20px !important;
   }
@@ -2284,17 +2291,19 @@ function submitWaitlist(e) {
     padding: 40px 24px !important;
   }
   /* Hero */
-  section#inicio {
+  section#inicio .hero-box {
     grid-template-columns: 1fr !important;
+    max-width: none !important;
+    padding: 0 24px !important;
   }
-  section#inicio > div:last-child {
+  section#inicio .hero-box > div:last-child {
     height: 360px;
     order: -1;
   }
-  section#inicio > div:first-of-type {
+  section#inicio .hero-box > div:first-of-type {
     padding: 120px 24px 48px !important;
   }
-  section#inicio > div[style*="position:absolute;top:80px"] {
+  section#inicio .hero-box > div[style*="position:absolute;top:80px"] {
     top: 70px !important;
     left: 20px !important;
   }
