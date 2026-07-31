@@ -614,25 +614,6 @@ body {
 .ms-merchant-info span { font-size: 8.5px; color: #9CA3AF; }
 .ms-merchant-badge { font-size: 9px; font-weight: 800; color: var(--violet); background: var(--violet-pale); padding: 4px 8px; border-radius: 999px; flex-shrink: 0; }
 
-/* ── INTEGRACIONES ── */
-.integrations-grid {
-  display: grid; grid-template-columns: repeat(5, 1fr);
-  gap: 16px;
-}
-.integration-chip {
-  display: flex; flex-direction: column; align-items: center; gap: 12px;
-  padding: 28px 14px; border-radius: 18px;
-  background: #fff; border: 1px solid rgba(0,0,0,0.06);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-.integration-chip:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(123,97,255,0.1); }
-.integration-icon {
-  width: 48px; height: 48px; border-radius: 14px; flex-shrink: 0;
-  background: var(--violet-pale); color: var(--violet);
-  display: flex; align-items: center; justify-content: center;
-}
-.integration-chip span { font-size: 12.5px; font-weight: 700; color: var(--night); text-align: center; line-height: 1.3; }
-
 /* ── COLABORADOR ── */
 .colab-section {
   background: linear-gradient(135deg, var(--violet-pale) 0%, #EDE9FF 100%);
@@ -1801,7 +1782,13 @@ body {
     margin-bottom: 14px !important;
   }
   .hero-sub { font-size: 15px !important; max-width: 100% !important; margin-bottom: 24px !important; }
-  .hero-visual { perspective: none !important; }
+  .hero-visual { perspective: none !important; padding-top: 40px !important; position: relative; }
+  .hero-visual::before {
+    content: ''; position: absolute; top: 30%; left: 50%;
+    width: 260px; height: 260px; transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(123,97,255,0.22) 0%, transparent 70%);
+    pointer-events: none; z-index: 0;
+  }
   .hero-phone {
     width: 250px !important;
     animation: floatMobile 5s ease-in-out infinite !important;
@@ -1825,6 +1812,12 @@ body {
   #inicio div[style*="flex-wrap:wrap"]::-webkit-scrollbar { display: none; }
   .mod-tag { flex-shrink: 0; font-size: 12px; padding: 8px 14px; }
   .hero-float-card { display: none; }
+  .hero-float-card.card-stat {
+    display: block !important;
+    position: absolute; top: -14px; right: 8px; left: auto;
+    padding: 10px 14px; border-radius: 14px; white-space: normal; max-width: 168px;
+  }
+  .hero-float-card.card-stat .fc-value { font-size: 13px !important; }
   .hero-trust { font-size: 12px; flex-direction: column; align-items: flex-start; gap: 10px; }
 
   /* ── Trust bar ── */
@@ -1906,11 +1899,6 @@ body {
   .colab-grid { grid-template-columns: 1fr !important; gap: 40px !important; padding: 0 20px !important; }
   .colab-phone { width: 230px !important; height: 480px !important; margin: 0 auto; }
   #colaboradores { padding: 64px 0 !important; }
-
-  /* ── Integraciones ── */
-  .integrations-grid { grid-template-columns: 1fr 1fr !important; }
-  #integraciones { padding: 64px 0 !important; }
-  #integraciones > div { padding: 0 20px !important; }
 
   /* ── Benefits ── */
   .benefits-inner { padding: 0 20px; }
@@ -2464,36 +2452,6 @@ body {
   </div>
 </section>
 
-<!-- INTEGRACIONES -->
-<section style="padding:96px 0;background:var(--gray-50)" id="integraciones">
-  <div style="max-width:1100px;margin:0 auto;padding:0 48px;text-align:center">
-    <div class="section-eyebrow">Integraciones</div>
-    <h2 class="section-h2" style="max-width:600px;margin:0 auto">Se conecta con tu <em>ecosistema.</em></h2>
-    <p class="section-sub" style="max-width:560px;margin:16px auto 48px">Wellnest se integra con los sistemas y aliados que ya forman parte de la operación de tu empresa.</p>
-    <div class="integrations-grid">
-      <div class="integration-chip">
-        <div class="integration-icon"><i data-lucide="file-spreadsheet" class="wn-icon"></i></div>
-        <span>Sistemas de planilla</span>
-      </div>
-      <div class="integration-chip">
-        <div class="integration-icon"><i data-lucide="landmark" class="wn-icon"></i></div>
-        <span>Proveedores financieros</span>
-      </div>
-      <div class="integration-chip">
-        <div class="integration-icon"><i data-lucide="umbrella" class="wn-icon"></i></div>
-        <span>Aseguradoras</span>
-      </div>
-      <div class="integration-chip">
-        <div class="integration-icon"><i data-lucide="store" class="wn-icon"></i></div>
-        <span>Comercios aliados</span>
-      </div>
-      <div class="integration-chip">
-        <div class="integration-icon"><i data-lucide="plug-zap" class="wn-icon"></i></div>
-        <span>APIs internas</span>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- PLATAFORMA WELLNEST -->
 <!-- TESTIMONIOS -->
@@ -2732,6 +2690,8 @@ function submitWaitlist(e) {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   els.forEach(el => obs.observe(el));
+  // Safety net: guarantee content is visible even if the observer never fires
+  setTimeout(() => { els.forEach(el => el.classList.add('visible')); }, 2500);
 })();
 </script>
 
