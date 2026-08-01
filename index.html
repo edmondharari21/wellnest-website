@@ -1980,6 +1980,32 @@ body {
   #testimonios + section > div > div[style*="grid"] { grid-template-columns: 1fr !important; }
   .stats-grid { grid-template-columns: 1fr 1fr; }
 }
+
+/* ─── FAQ ─── */
+.faq-section { padding: 96px 0; background: #fff; }
+.faq-inner { max-width: 760px; margin: 0 auto; padding: 0 48px; }
+.faq-inner .section-eyebrow { text-align: center; }
+.faq-inner .section-h2 { text-align: center; margin-bottom: 12px; }
+.faq-inner .section-sub { text-align: center; margin: 0 auto 56px; }
+.faq-list { display: flex; flex-direction: column; }
+.faq-item { border-bottom: 1px solid #E5E7EB; }
+.faq-item:first-of-type { border-top: 1px solid #E5E7EB; }
+.faq-q {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 22px 0; cursor: pointer; font-size: 16px; font-weight: 700;
+  color: var(--night); gap: 16px; list-style: none; user-select: none;
+  transition: color .2s;
+}
+.faq-q::-webkit-details-marker { display: none; }
+details[open] .faq-q { color: var(--violet); }
+.faq-chevron { flex-shrink: 0; transition: transform .3s; color: var(--gray-400); }
+details[open] .faq-chevron { transform: rotate(180deg); color: var(--violet); }
+.faq-a { font-size: 15px; color: var(--gray-600); line-height: 1.75; padding: 0 0 22px; max-width: 640px; }
+@media (max-width: 768px) {
+  .faq-section { padding: 64px 0; }
+  .faq-inner { padding: 0 20px; }
+  .faq-q { font-size: 15px; }
+}
 </style>
 <script src="lucide.min.js"></script>
 </head>
@@ -2492,6 +2518,74 @@ body {
     </div>
   </div>
 </section>
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="faq-inner">
+    <div class="section-eyebrow">Preguntas frecuentes</div>
+    <h2 class="section-h2">Lo que más nos <em>preguntan.</em></h2>
+    <p class="section-sub">Si tienes otra pregunta, escríbenos a <a href="mailto:team@miwellnest.com" style="color:var(--violet);font-weight:600">team@miwellnest.com</a></p>
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary class="faq-q">
+          ¿Wellnest es una financiera?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <p class="faq-a">No. Wellnest es una plataforma de beneficios que conecta a las empresas y sus colaboradores con proveedores financieros, aseguradoras y comercios aliados. Wellnest no otorga créditos ni seguros directamente.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">
+          ¿Tiene costo para los colaboradores?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <p class="faq-a">Las condiciones dependen de cada solución o beneficio seleccionado. Cada opción muestra sus términos antes de completar una solicitud, para que el colaborador tenga claridad total.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">
+          ¿La empresa debe aprobar cada solicitud?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <p class="faq-a">La participación de la empresa depende del beneficio y del proceso acordado durante la implementación. En algunos casos la empresa no interviene directamente en la solicitud del colaborador.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">
+          ¿Los créditos son aprobados automáticamente?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <p class="faq-a">No. Toda solicitud de crédito está sujeta a evaluación, términos, condiciones y consulta de APC cuando corresponda. Wellnest facilita el proceso, pero la decisión final la toma el aliado financiero.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">
+          ¿Cómo acceden los colaboradores?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <p class="faq-a">La empresa comparte los datos mínimos necesarios para validar a sus colaboradores. Una vez validados, cada colaborador crea su propia cuenta y accede a los beneficios disponibles.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">
+          ¿Wellnest reemplaza la planilla de la empresa?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <p class="faq-a">No. Wellnest complementa los beneficios de la empresa y se integra al proceso definido para cada solución. No modifica ni gestiona la planilla de nómina.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">
+          ¿Cómo funciona Wellnest Club?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <p class="faq-a">Los colaboradores acceden a promociones y descuentos ofrecidos por comercios aliados directamente desde la plataforma Wellnest, sin necesidad de intermediarios.</p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
 <!-- CTA FORM -->
 <div class="form-section" id="form">
   <div class="form-container" style="max-width:600px">
