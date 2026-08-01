@@ -409,7 +409,7 @@ body {
   animation: trust-scroll 22s linear infinite;
 }
 .trust-marquee:hover .trust-marquee-track { animation-play-state: paused; }
-.trust-marquee .trust-logos { flex-wrap: nowrap; justify-content: flex-start; padding: 0 10px; }
+.trust-marquee .trust-logos { flex-wrap: nowrap; justify-content: flex-start; gap: 56px; padding: 0 28px; }
 @keyframes trust-scroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
@@ -2187,72 +2187,30 @@ details[open] .faq-chevron { transform: rotate(180deg); color: var(--violet); }
 <div class="trust-bar">
   <p class="trust-bar-label">Empresas en Panamá que ya confían en Wellnest</p>
   <div class="trust-marquee">
-  <div class="trust-marquee-track">
-  <div class="trust-logos">
-    <div class="trust-logo-item" title="Northbay"><svg viewBox="0 0 120 36" width="110" height="28" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="26" font-family="'Plus Jakarta Sans',system-ui,sans-serif" font-size="18" font-weight="800" letter-spacing="-0.5" fill="currentColor">NORTHBAY</text></svg></div>
-    <div class="trust-logo-item" title="Bellini"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" width="120" height="32"><text x="2" y="30" font-family="Georgia,'Times New Roman',serif" font-size="26" font-weight="bold" font-style="italic" letter-spacing="5" fill="currentColor">Bellini</text></svg></div>
-    <div class="trust-logo-item" title="Nike"><svg role="img" viewBox="0 0 24 24" width="52" height="28" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-label="Nike"><path d="M24 7.8L6.442 15.276c-1.456.616-2.679.925-3.668.925-1.12 0-1.933-.392-2.437-1.177-.317-.504-.41-1.143-.28-1.918.13-.775.476-1.6 1.036-2.478.467-.71 1.232-1.643 2.297-2.8a6.122 6.122 0 00-.784 1.848c-.28 1.195-.028 2.072.756 2.632.373.261.886.392 1.54.392.522 0 1.11-.084 1.764-.252L24 7.8z"/></svg></div>
-  </div>
-
-    <div class="trust-logo-item" title="Bellini"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 44" fill="currentColor"><text x="4" y="34" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="bold" font-style="italic" letter-spacing="6" fill="currentColor">Bellini</text></svg></div>
-  </div>
-  <div class="trust-logos">
-    <div class="trust-logo-item" title="Northbay"><svg viewBox="0 0 120 36" width="110" height="28" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="26" font-family="'Plus Jakarta Sans',system-ui,sans-serif" font-size="18" font-weight="800" letter-spacing="-0.5" fill="currentColor">NORTHBAY</text></svg></div>
-    <div class="trust-logo-item" title="Bellini"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" width="120" height="32"><text x="2" y="30" font-family="Georgia,'Times New Roman',serif" font-size="26" font-weight="bold" font-style="italic" letter-spacing="5" fill="currentColor">Bellini</text></svg></div>
-    <div class="trust-logo-item" title="Nike"><svg role="img" viewBox="0 0 24 24" width="52" height="28" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-label="Nike"><path d="M24 7.8L6.442 15.276c-1.456.616-2.679.925-3.668.925-1.12 0-1.933-.392-2.437-1.177-.317-.504-.41-1.143-.28-1.918.13-.775.476-1.6 1.036-2.478.467-.71 1.232-1.643 2.297-2.8a6.122 6.122 0 00-.784 1.848c-.28 1.195-.028 2.072.756 2.632.373.261.886.392 1.54.392.522 0 1.11-.084 1.764-.252L24 7.8z"/></svg></div>
-  </div>
-
-    <div class="trust-logo-item" title="Bellini"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 44" fill="currentColor"><text x="4" y="34" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="bold" font-style="italic" letter-spacing="6" fill="currentColor">Bellini</text></svg></div>
-  </div>
-  <div class="trust-logos">
-    <div class="trust-logo-item" title="Northbay"><svg viewBox="0 0 120 36" width="110" height="28" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="26" font-family="'Plus Jakarta Sans',system-ui,sans-serif" font-size="18" font-weight="800" letter-spacing="-0.5" fill="currentColor">NORTHBAY</text></svg></div>
-    <div class="trust-logo-item" title="Bellini"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" width="120" height="32"><text x="2" y="30" font-family="Georgia,'Times New Roman',serif" font-size="26" font-weight="bold" font-style="italic" letter-spacing="5" fill="currentColor">Bellini</text></svg></div>
-    <div class="trust-logo-item" title="Nike"><svg role="img" viewBox="0 0 24 24" width="52" height="28" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-label="Nike"><path d="M24 7.8L6.442 15.276c-1.456.616-2.679.925-3.668.925-1.12 0-1.933-.392-2.437-1.177-.317-.504-.41-1.143-.28-1.918.13-.775.476-1.6 1.036-2.478.467-.71 1.232-1.643 2.297-2.8a6.122 6.122 0 00-.784 1.848c-.28 1.195-.028 2.072.756 2.632.373.261.886.392 1.54.392.522 0 1.11-.084 1.764-.252L24 7.8z"/></svg></div>
-  </div>
-
-    <div class="trust-logo-item" title="Bellini"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 44" fill="currentColor"><text x="4" y="34" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="bold" font-style="italic" letter-spacing="6" fill="currentColor">Bellini</text></svg></div>
-  </div>
-  <div class="trust-logos">
-    <div class="trust-logo-item" title="Northbay"><svg viewBox="0 0 120 36" width="110" height="28" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="26" font-family="'Plus Jakarta Sans',system-ui,sans-serif" font-size="18" font-weight="800" letter-spacing="-0.5" fill="currentColor">NORTHBAY</text></svg></div>
-    <div class="trust-logo-item" title="Bellini"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" width="120" height="32"><text x="2" y="30" font-family="Georgia,'Times New Roman',serif" font-size="26" font-weight="bold" font-style="italic" letter-spacing="5" fill="currentColor">Bellini</text></svg></div>
-    <div class="trust-logo-item" title="Nike"><svg role="img" viewBox="0 0 24 24" width="52" height="28" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-label="Nike"><path d="M24 7.8L6.442 15.276c-1.456.616-2.679.925-3.668.925-1.12 0-1.933-.392-2.437-1.177-.317-.504-.41-1.143-.28-1.918.13-.775.476-1.6 1.036-2.478.467-.71 1.232-1.643 2.297-2.8a6.122 6.122 0 00-.784 1.848c-.28 1.195-.028 2.072.756 2.632.373.261.886.392 1.54.392.522 0 1.11-.084 1.764-.252L24 7.8z"/></svg></div>
-  </div>
-
-    <div class="trust-logo-item" title="Bellini"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 44" fill="currentColor"><text x="4" y="34" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="bold" font-style="italic" letter-spacing="6" fill="currentColor">Bellini</text></svg></div>
-  </div>
-  <div class="trust-logos">
-    <div class="trust-logo-item" title="Northbay"><svg viewBox="0 0 120 36" width="110" height="28" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="26" font-family="'Plus Jakarta Sans',system-ui,sans-serif" font-size="18" font-weight="800" letter-spacing="-0.5" fill="currentColor">NORTHBAY</text></svg></div>
-    <div class="trust-logo-item" title="Bellini"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" width="120" height="32"><text x="2" y="30" font-family="Georgia,'Times New Roman',serif" font-size="26" font-weight="bold" font-style="italic" letter-spacing="5" fill="currentColor">Bellini</text></svg></div>
-    <div class="trust-logo-item" title="Nike"><svg role="img" viewBox="0 0 24 24" width="52" height="28" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-label="Nike"><path d="M24 7.8L6.442 15.276c-1.456.616-2.679.925-3.668.925-1.12 0-1.933-.392-2.437-1.177-.317-.504-.41-1.143-.28-1.918.13-.775.476-1.6 1.036-2.478.467-.71 1.232-1.643 2.297-2.8a6.122 6.122 0 00-.784 1.848c-.28 1.195-.028 2.072.756 2.632.373.261.886.392 1.54.392.522 0 1.11-.084 1.764-.252L24 7.8z"/></svg></div>
-  </div>
-
-    <div class="trust-logo-item" title="Bellini"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 44" fill="currentColor"><text x="4" y="34" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="bold" font-style="italic" letter-spacing="6" fill="currentColor">Bellini</text></svg></div>
-  </div>
-  <div class="trust-logos">
-    <div class="trust-logo-item" title="Northbay"><svg viewBox="0 0 120 36" width="110" height="28" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="26" font-family="'Plus Jakarta Sans',system-ui,sans-serif" font-size="18" font-weight="800" letter-spacing="-0.5" fill="currentColor">NORTHBAY</text></svg></div>
-    <div class="trust-logo-item" title="Bellini"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" width="120" height="32"><text x="2" y="30" font-family="Georgia,'Times New Roman',serif" font-size="26" font-weight="bold" font-style="italic" letter-spacing="5" fill="currentColor">Bellini</text></svg></div>
-    <div class="trust-logo-item" title="Nike"><svg role="img" viewBox="0 0 24 24" width="52" height="28" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-label="Nike"><path d="M24 7.8L6.442 15.276c-1.456.616-2.679.925-3.668.925-1.12 0-1.933-.392-2.437-1.177-.317-.504-.41-1.143-.28-1.918.13-.775.476-1.6 1.036-2.478.467-.71 1.232-1.643 2.297-2.8a6.122 6.122 0 00-.784 1.848c-.28 1.195-.028 2.072.756 2.632.373.261.886.392 1.54.392.522 0 1.11-.084 1.764-.252L24 7.8z"/></svg></div>
-  </div>
-
-    <div class="trust-logo-item" title="Bellini"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 44" fill="currentColor"><text x="4" y="34" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="bold" font-style="italic" letter-spacing="6" fill="currentColor">Bellini</text></svg></div>
-  </div>
-  <div class="trust-logos">
-    <div class="trust-logo-item" title="Northbay"><svg viewBox="0 0 120 36" width="110" height="28" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="26" font-family="'Plus Jakarta Sans',system-ui,sans-serif" font-size="18" font-weight="800" letter-spacing="-0.5" fill="currentColor">NORTHBAY</text></svg></div>
-    <div class="trust-logo-item" title="Bellini"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" width="120" height="32"><text x="2" y="30" font-family="Georgia,'Times New Roman',serif" font-size="26" font-weight="bold" font-style="italic" letter-spacing="5" fill="currentColor">Bellini</text></svg></div>
-    <div class="trust-logo-item" title="Nike"><svg role="img" viewBox="0 0 24 24" width="52" height="28" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-label="Nike"><path d="M24 7.8L6.442 15.276c-1.456.616-2.679.925-3.668.925-1.12 0-1.933-.392-2.437-1.177-.317-.504-.41-1.143-.28-1.918.13-.775.476-1.6 1.036-2.478.467-.71 1.232-1.643 2.297-2.8a6.122 6.122 0 00-.784 1.848c-.28 1.195-.028 2.072.756 2.632.373.261.886.392 1.54.392.522 0 1.11-.084 1.764-.252L24 7.8z"/></svg></div>
-  </div>
-
-    <div class="trust-logo-item" title="Bellini"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 44" fill="currentColor"><text x="4" y="34" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="bold" font-style="italic" letter-spacing="6" fill="currentColor">Bellini</text></svg></div>
-  </div>
-  <div class="trust-logos">
-    <div class="trust-logo-item" title="Northbay"><svg viewBox="0 0 120 36" width="110" height="28" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="26" font-family="'Plus Jakarta Sans',system-ui,sans-serif" font-size="18" font-weight="800" letter-spacing="-0.5" fill="currentColor">NORTHBAY</text></svg></div>
-    <div class="trust-logo-item" title="Bellini"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" width="120" height="32"><text x="2" y="30" font-family="Georgia,'Times New Roman',serif" font-size="26" font-weight="bold" font-style="italic" letter-spacing="5" fill="currentColor">Bellini</text></svg></div>
-    <div class="trust-logo-item" title="Nike"><svg role="img" viewBox="0 0 24 24" width="52" height="28" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-label="Nike"><path d="M24 7.8L6.442 15.276c-1.456.616-2.679.925-3.668.925-1.12 0-1.933-.392-2.437-1.177-.317-.504-.41-1.143-.28-1.918.13-.775.476-1.6 1.036-2.478.467-.71 1.232-1.643 2.297-2.8a6.122 6.122 0 00-.784 1.848c-.28 1.195-.028 2.072.756 2.632.373.261.886.392 1.54.392.522 0 1.11-.084 1.764-.252L24 7.8z"/></svg></div>
-  </div>
-
-    <div class="trust-logo-item" title="Bellini"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 44" fill="currentColor"><text x="4" y="34" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="bold" font-style="italic" letter-spacing="6" fill="currentColor">Bellini</text></svg></div>
-  </div>
-  </div>
+    <div class="trust-marquee-track">
+      <div class="trust-logos">
+        <div class="trust-logo-item" title="Northbay"><svg viewBox="0 0 140 36" height="28" xmlns="http://www.w3.org/2000/svg"><text x="2" y="26" font-family="'Plus Jakarta Sans',system-ui,sans-serif" font-size="20" font-weight="800" letter-spacing="1" fill="#374151">NORTHBAY</text></svg></div>
+        <div class="trust-logo-item" title="Bellini"><svg viewBox="0 0 130 38" height="28" xmlns="http://www.w3.org/2000/svg"><text x="2" y="28" font-family="Georgia,'Times New Roman',serif" font-size="24" font-weight="bold" font-style="italic" letter-spacing="4" fill="#374151">Bellini</text></svg></div>
+        <div class="trust-logo-item" title="Nike"><svg role="img" viewBox="0 0 48 20" height="20" xmlns="http://www.w3.org/2000/svg" aria-label="Nike"><path fill="#374151" d="M48 3.6L12.884 18.552c-2.912 1.232-5.358 1.85-7.336 1.85C3.44 20.402 1.932 19.619.924 18.05c-.634-1.008-.82-2.286-.56-3.836.26-1.55.952-3.2 2.072-4.956.934-1.42 2.464-3.286 4.594-5.6a12.244 12.244 0 00-1.568 3.696c-.56 2.39-.056 4.144 1.512 5.264.746.522 1.772.784 3.08.784 1.044 0 2.22-.168 3.528-.504L48 3.6z"/></svg></div>
+        <div class="trust-logo-item" title="Northbay"><svg viewBox="0 0 140 36" height="28" xmlns="http://www.w3.org/2000/svg"><text x="2" y="26" font-family="'Plus Jakarta Sans',system-ui,sans-serif" font-size="20" font-weight="800" letter-spacing="1" fill="#374151">NORTHBAY</text></svg></div>
+        <div class="trust-logo-item" title="Bellini"><svg viewBox="0 0 130 38" height="28" xmlns="http://www.w3.org/2000/svg"><text x="2" y="28" font-family="Georgia,'Times New Roman',serif" font-size="24" font-weight="bold" font-style="italic" letter-spacing="4" fill="#374151">Bellini</text></svg></div>
+        <div class="trust-logo-item" title="Nike"><svg role="img" viewBox="0 0 48 20" height="20" xmlns="http://www.w3.org/2000/svg" aria-label="Nike"><path fill="#374151" d="M48 3.6L12.884 18.552c-2.912 1.232-5.358 1.85-7.336 1.85C3.44 20.402 1.932 19.619.924 18.05c-.634-1.008-.82-2.286-.56-3.836.26-1.55.952-3.2 2.072-4.956.934-1.42 2.464-3.286 4.594-5.6a12.244 12.244 0 00-1.568 3.696c-.56 2.39-.056 4.144 1.512 5.264.746.522 1.772.784 3.08.784 1.044 0 2.22-.168 3.528-.504L48 3.6z"/></svg></div>
+        <div class="trust-logo-item" title="Northbay"><svg viewBox="0 0 140 36" height="28" xmlns="http://www.w3.org/2000/svg"><text x="2" y="26" font-family="'Plus Jakarta Sans',system-ui,sans-serif" font-size="20" font-weight="800" letter-spacing="1" fill="#374151">NORTHBAY</text></svg></div>
+        <div class="trust-logo-item" title="Bellini"><svg viewBox="0 0 130 38" height="28" xmlns="http://www.w3.org/2000/svg"><text x="2" y="28" font-family="Georgia,'Times New Roman',serif" font-size="24" font-weight="bold" font-style="italic" letter-spacing="4" fill="#374151">Bellini</text></svg></div>
+        <div class="trust-logo-item" title="Nike"><svg role="img" viewBox="0 0 48 20" height="20" xmlns="http://www.w3.org/2000/svg" aria-label="Nike"><path fill="#374151" d="M48 3.6L12.884 18.552c-2.912 1.232-5.358 1.85-7.336 1.85C3.44 20.402 1.932 19.619.924 18.05c-.634-1.008-.82-2.286-.56-3.836.26-1.55.952-3.2 2.072-4.956.934-1.42 2.464-3.286 4.594-5.6a12.244 12.244 0 00-1.568 3.696c-.56 2.39-.056 4.144 1.512 5.264.746.522 1.772.784 3.08.784 1.044 0 2.22-.168 3.528-.504L48 3.6z"/></svg></div>
+      </div>
+      <div class="trust-logos" aria-hidden="true">
+        <div class="trust-logo-item" title="Northbay"><svg viewBox="0 0 140 36" height="28" xmlns="http://www.w3.org/2000/svg"><text x="2" y="26" font-family="'Plus Jakarta Sans',system-ui,sans-serif" font-size="20" font-weight="800" letter-spacing="1" fill="#374151">NORTHBAY</text></svg></div>
+        <div class="trust-logo-item" title="Bellini"><svg viewBox="0 0 130 38" height="28" xmlns="http://www.w3.org/2000/svg"><text x="2" y="28" font-family="Georgia,'Times New Roman',serif" font-size="24" font-weight="bold" font-style="italic" letter-spacing="4" fill="#374151">Bellini</text></svg></div>
+        <div class="trust-logo-item" title="Nike"><svg role="img" viewBox="0 0 48 20" height="20" xmlns="http://www.w3.org/2000/svg" aria-label="Nike"><path fill="#374151" d="M48 3.6L12.884 18.552c-2.912 1.232-5.358 1.85-7.336 1.85C3.44 20.402 1.932 19.619.924 18.05c-.634-1.008-.82-2.286-.56-3.836.26-1.55.952-3.2 2.072-4.956.934-1.42 2.464-3.286 4.594-5.6a12.244 12.244 0 00-1.568 3.696c-.56 2.39-.056 4.144 1.512 5.264.746.522 1.772.784 3.08.784 1.044 0 2.22-.168 3.528-.504L48 3.6z"/></svg></div>
+        <div class="trust-logo-item" title="Northbay"><svg viewBox="0 0 140 36" height="28" xmlns="http://www.w3.org/2000/svg"><text x="2" y="26" font-family="'Plus Jakarta Sans',system-ui,sans-serif" font-size="20" font-weight="800" letter-spacing="1" fill="#374151">NORTHBAY</text></svg></div>
+        <div class="trust-logo-item" title="Bellini"><svg viewBox="0 0 130 38" height="28" xmlns="http://www.w3.org/2000/svg"><text x="2" y="28" font-family="Georgia,'Times New Roman',serif" font-size="24" font-weight="bold" font-style="italic" letter-spacing="4" fill="#374151">Bellini</text></svg></div>
+        <div class="trust-logo-item" title="Nike"><svg role="img" viewBox="0 0 48 20" height="20" xmlns="http://www.w3.org/2000/svg" aria-label="Nike"><path fill="#374151" d="M48 3.6L12.884 18.552c-2.912 1.232-5.358 1.85-7.336 1.85C3.44 20.402 1.932 19.619.924 18.05c-.634-1.008-.82-2.286-.56-3.836.26-1.55.952-3.2 2.072-4.956.934-1.42 2.464-3.286 4.594-5.6a12.244 12.244 0 00-1.568 3.696c-.56 2.39-.056 4.144 1.512 5.264.746.522 1.772.784 3.08.784 1.044 0 2.22-.168 3.528-.504L48 3.6z"/></svg></div>
+        <div class="trust-logo-item" title="Northbay"><svg viewBox="0 0 140 36" height="28" xmlns="http://www.w3.org/2000/svg"><text x="2" y="26" font-family="'Plus Jakarta Sans',system-ui,sans-serif" font-size="20" font-weight="800" letter-spacing="1" fill="#374151">NORTHBAY</text></svg></div>
+        <div class="trust-logo-item" title="Bellini"><svg viewBox="0 0 130 38" height="28" xmlns="http://www.w3.org/2000/svg"><text x="2" y="28" font-family="Georgia,'Times New Roman',serif" font-size="24" font-weight="bold" font-style="italic" letter-spacing="4" fill="#374151">Bellini</text></svg></div>
+        <div class="trust-logo-item" title="Nike"><svg role="img" viewBox="0 0 48 20" height="20" xmlns="http://www.w3.org/2000/svg" aria-label="Nike"><path fill="#374151" d="M48 3.6L12.884 18.552c-2.912 1.232-5.358 1.85-7.336 1.85C3.44 20.402 1.932 19.619.924 18.05c-.634-1.008-.82-2.286-.56-3.836.26-1.55.952-3.2 2.072-4.956.934-1.42 2.464-3.286 4.594-5.6a12.244 12.244 0 00-1.568 3.696c-.56 2.39-.056 4.144 1.512 5.264.746.522 1.772.784 3.08.784 1.044 0 2.22-.168 3.528-.504L48 3.6z"/></svg></div>
+      </div>
+    </div>
   </div>
 </div>
 
