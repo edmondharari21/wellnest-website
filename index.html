@@ -1843,8 +1843,8 @@ body {
   /* Hero phone — iPhone real en mobile */
   .hero-inner { grid-template-columns: 1fr !important; gap: 32px !important; }
   .hero-visual {
-    perspective: none !important;
-    padding-top: 16px !important;
+    perspective: 1100px !important;
+    padding-top: 12px !important;
     position: relative;
     overflow: visible !important;
     max-height: none !important;
@@ -1852,17 +1852,30 @@ body {
     justify-content: center !important;
   }
   .hero-phone {
-    width: 230px !important;
-    border-radius: 40px !important;
-    padding: 20px 16px 20px !important;
-    animation: floatSimple 4s ease-in-out infinite !important;
-    box-shadow: 0 32px 80px rgba(30,27,75,0.5), 0 0 0 8px rgba(255,255,255,0.06), 0 0 0 9px rgba(255,255,255,0.03) !important;
+    width: 242px !important;
+    border-radius: 44px !important;
+    padding: 22px 18px 24px !important;
+    transform-style: preserve-3d !important;
+    animation: floatMobile 5s ease-in-out infinite !important;
+    /* layer 1: deep ground shadow  */
+    /* layer 2: violet brand glow   */
+    /* layer 3: thin aluminium edge */
+    /* layer 4: dark bezel ring     */
+    /* layer 5: outer glow halo     */
+    /* layer 6: inset screen top    */
+    box-shadow:
+      0 52px 120px rgba(8, 6, 18, 0.78),
+      0 20px 52px rgba(123, 97, 255, 0.38),
+      0 0 0 1.5px rgba(255,255,255,0.22),
+      0 0 0 3.5px rgba(0,0,0,0.55),
+      0 0 0 4.5px rgba(255,255,255,0.05),
+      inset 0 1px 0 rgba(255,255,255,0.28) !important;
   }
-  @keyframes floatSimple {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
+  @keyframes floatMobile {
+    0%,100% { transform: rotateY(-9deg) rotateX(5deg) translateY(0px); }
+    50%      { transform: rotateY(-9deg) rotateX(5deg) translateY(-10px); }
   }
-  .phone-notch { width: 96px !important; height: 28px !important; border-radius: 16px !important; }
+  .phone-notch { width: 88px !important; height: 26px !important; border-radius: 13px !important; }
   .hero-float-card { display: none !important; }
   .mod-tag { flex-shrink: 0; font-size: 12px; padding: 8px 14px; }
 
