@@ -1822,7 +1822,7 @@ body {
     display: flex !important;
     flex-direction: column !important;
     min-height: unset !important;
-    padding-top: 64px !important;
+    padding: 72px 20px 40px !important;
   }
   #inicio h1 {
     font-size: 28px !important;
@@ -1830,9 +1830,15 @@ body {
     letter-spacing: -0.02em !important;
     margin-bottom: 14px !important;
   }
-  .hero-sub { font-size: 15px !important; max-width: 100% !important; margin-bottom: 28px !important; }
-  .hero-actions { flex-direction: column !important; gap: 10px !important; }
-  .hero-actions a { width: 100% !important; text-align: center !important; }
+  .hero-sub { display: none !important; }
+  .hero-actions { flex-direction: column !important; align-items: center !important; gap: 10px !important; }
+  .hero-actions .btn-primary {
+    padding: 13px 28px !important;
+    font-size: 14px !important;
+    width: auto !important;
+    min-width: 200px !important;
+    justify-content: center !important;
+  }
 
   /* Hero phone — iPhone real en mobile */
   .hero-inner { grid-template-columns: 1fr !important; gap: 32px !important; }
@@ -2005,7 +2011,7 @@ body {
   }
 
   /* ── Footer ── */
-  .footer { padding: 44px 20px 100px; }
+  .footer { padding: 44px 20px 96px; }
   .footer-top { flex-direction: column; gap: 28px; }
   .footer-links { flex-direction: column; gap: 16px; }
   .footer-logo { font-size: 20px; }
@@ -2013,7 +2019,6 @@ body {
   /* ── Floating ── */
   .sticky-demo { display: none !important; }
   .whatsapp-btn { display: none !important; }
-  .mobile-cta-unified { display: flex !important; }
 }
 
 @media (max-width: 420px) {
@@ -2107,11 +2112,7 @@ details[open] .faq-chevron { transform: rotate(180deg); color: var(--violet); }
   .mobile-bottom-nav-cta svg {
     stroke: #fff;
   }
-  /* Buttons smaller on mobile */
-  .btn-primary {
-    padding: 12px 22px !important;
-    font-size: 14px !important;
-  }
+
   /* Add bottom padding so content isn't hidden behind nav */
   body { padding-bottom: 72px; }
 }
