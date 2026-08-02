@@ -384,30 +384,6 @@ body {
 .fc-notif-text strong { display: block; font-size: 12px; font-weight: 700; color: var(--night); }
 .fc-notif-text span { font-size: 11px; color: #9CA3AF; }
 
-/* ── HERO METRIC BADGES ── */
-.hero-badge {
-  position: absolute; z-index: 10;
-  background: #fff;
-  border: 1px solid rgba(0,0,0,0.07);
-  border-radius: 16px; padding: 12px 16px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.09), 0 2px 6px rgba(0,0,0,0.05);
-  display: flex; flex-direction: column;
-  min-width: 108px; pointer-events: none;
-}
-.hero-badge .hb-emoji { font-size: 18px; line-height: 1; margin-bottom: 6px; }
-.hero-badge .hb-value {
-  font-size: 22px; font-weight: 800;
-  color: var(--night); font-family: 'DM Serif Display', serif; line-height: 1;
-}
-.hero-badge .hb-label {
-  font-size: 10px; color: #9CA3AF;
-  font-weight: 600; text-transform: uppercase;
-  letter-spacing: 0.06em; margin-top: 4px;
-}
-.hero-badge-1 { top: 70px; left: 8px; animation: floatCard2 5.5s ease-in-out infinite 0.3s; }
-.hero-badge-2 { top: 240px; right: 8px; animation: floatCard1 5s ease-in-out infinite 1.2s; }
-.hero-badge-3 { bottom: 200px; left: 8px; animation: floatCard2 6s ease-in-out infinite 2s; }
-
 /* ── TRUST BAR ── */
 .trust-bar {
   background: var(--gray-50);
@@ -1860,14 +1836,6 @@ body {
     width: 240px !important;
     animation: float 5s ease-in-out infinite !important;
   }
-  /* Hero metric badges mobile */
-  .hero-badge { min-width: 86px; padding: 9px 12px; }
-  .hero-badge .hb-emoji { font-size: 14px; margin-bottom: 4px; }
-  .hero-badge .hb-value { font-size: 18px; }
-  .hero-badge .hb-label { font-size: 9px; }
-  .hero-badge-1 { top: -12px; left: 4px; }
-  .hero-badge-2 { top: 140px; right: 4px; }
-  .hero-badge-3 { display: none !important; }
   .hero-float-card { display: none !important; }
   .mod-tag { flex-shrink: 0; font-size: 12px; padding: 8px 14px; }
 
@@ -2120,62 +2088,33 @@ details[open] .faq-chevron { transform: rotate(180deg); color: var(--violet); }
         <div class="phone-module-list">
           <div class="phone-module-item">
             <div class="pmi-icon" style="background:rgba(123,97,255,0.35)"><i data-lucide="credit-card" class="wn-icon"></i></div>
-            <div class="pmi-text">
-              <div class="pmi-name">Wellnest Crédito</div>
-              <div class="pmi-status">Hasta $3,000 · Tasa pref.</div>
-            </div>
+            <div class="pmi-text"><div class="pmi-name">Wellnest Crédito</div><div class="pmi-status">Disponible</div></div>
             <span class="pmi-arrow">›</span>
           </div>
           <div class="phone-module-item">
             <div class="pmi-icon" style="background:rgba(174,230,255,0.3);color:#AEE6FF"><i data-lucide="shield-check" class="wn-icon"></i></div>
-            <div class="pmi-text">
-              <div class="pmi-name">Wellnest Protección</div>
-              <div class="pmi-status" style="color:#10B981">● SOAT activo</div>
-            </div>
+            <div class="pmi-text"><div class="pmi-name">Wellnest Protección</div><div class="pmi-status">Cotiza en minutos</div></div>
             <span class="pmi-arrow">›</span>
           </div>
           <div class="phone-module-item">
             <div class="pmi-icon" style="background:rgba(251,191,36,0.3);color:#FBBF24"><i data-lucide="tag" class="wn-icon"></i></div>
-            <div class="pmi-text">
-              <div class="pmi-name">Wellnest Club</div>
-              <div class="pmi-status">12 descuentos cerca</div>
-            </div>
+            <div class="pmi-text"><div class="pmi-name">Wellnest Club</div><div class="pmi-status">Descuentos activos</div></div>
             <span class="pmi-arrow">›</span>
           </div>
         </div>
         <div class="phone-activity">
           <div class="phone-activity-title">Actividad reciente</div>
           <div class="phone-activity-item">
-            <div class="phone-activity-icon" style="background:rgba(16,185,129,0.2);color:#10B981"><i data-lucide="check-circle" class="wn-icon-sm"></i></div>
-            <div class="phone-activity-text"><strong>Crédito aprobado</strong> · $1,500 <span style="color:#10B981;font-size:10px;font-weight:700">✓</span></div>
+            <div class="phone-activity-icon"><i data-lucide="send" class="wn-icon-sm"></i></div>
+            <div class="phone-activity-text"><strong>Solicitud enviada</strong> · Wellnest Crédito</div>
             <div class="phone-activity-time">Hoy</div>
           </div>
           <div class="phone-activity-item">
-            <div class="phone-activity-icon" style="background:rgba(251,191,36,0.2);color:#FBBF24"><i data-lucide="tag" class="wn-icon-sm"></i></div>
-            <div class="phone-activity-text"><strong>20% off</strong> · Restaurante Bellini</div>
+            <div class="phone-activity-icon"><i data-lucide="tag" class="wn-icon-sm"></i></div>
+            <div class="phone-activity-text"><strong>Nueva promoción</strong> · Wellnest Club</div>
             <div class="phone-activity-time">Ayer</div>
           </div>
-          <div class="phone-activity-item">
-            <div class="phone-activity-icon" style="background:rgba(174,230,255,0.2);color:#AEE6FF"><i data-lucide="shield" class="wn-icon-sm"></i></div>
-            <div class="phone-activity-text"><strong>SOAT renovado</strong> · Vence dic 2025</div>
-            <div class="phone-activity-time">Lun</div>
-          </div>
         </div>
-      </div>
-      <div class="hero-badge hero-badge-1">
-        <div class="hb-emoji">⚡</div>
-        <div class="hb-value">48h</div>
-        <div class="hb-label">Implementación</div>
-      </div>
-      <div class="hero-badge hero-badge-2">
-        <div class="hb-emoji">👥</div>
-        <div class="hb-value">1,200+</div>
-        <div class="hb-label">Colaboradores activos</div>
-      </div>
-      <div class="hero-badge hero-badge-3">
-        <div class="hb-emoji">🏪</div>
-        <div class="hb-value">50+</div>
-        <div class="hb-label">Comercios en el Club</div>
       </div>
       <div style="text-align:center;font-size:11px;color:#9CA3AF;margin-top:20px">Vista ilustrativa de la plataforma Wellnest</div>
     </div>
@@ -2344,12 +2283,6 @@ details[open] .faq-chevron { transform: rotate(180deg); color: var(--violet); }
       <div class="como-connector"></div>
       <div class="como-step">
         <div class="como-step-num">Paso 3</div>
-        <div class="como-step-icon"><i data-lucide="grid-2x2" class="wn-icon"></i></div>
-        <h3>Exploran sus beneficios</h3>
-      </div>
-      <div class="como-connector"></div>
-      <div class="como-step">
-        <div class="como-step-num">Paso 4</div>
         <div class="como-step-icon"><i data-lucide="check-circle" class="wn-icon"></i></div>
         <h3>Solicitan y listo</h3>
       </div>
