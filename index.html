@@ -39,14 +39,14 @@
   --gray-700: #374151;
   --gray-900: #111827;
 }
-html { scroll-behavior: smooth; overflow-x: hidden; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
   color: var(--gray-700);
   background: #fff;
   -webkit-font-smoothing: antialiased;
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* ── NAV ── */
@@ -211,6 +211,19 @@ body {
   display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
   justify-self: center; perspective: 1600px;
   animation: fadeInUp 0.8s ease both;
+}
+.hero-visual::after {
+  content: ''; position: absolute; z-index: 1;
+  bottom: 60px; left: 50%; transform: translateX(-50%);
+  width: 270px; height: 46px; border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(123,97,255,0.4) 0%, rgba(123,97,255,0.12) 45%, transparent 75%);
+  filter: blur(6px);
+  animation: floorGlow 5s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes floorGlow {
+  0%,100% { opacity: 0.7; transform: translateX(-50%) scale(1); }
+  50% { opacity: 1; transform: translateX(-50%) scale(1.08); }
 }
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }
@@ -387,7 +400,7 @@ body {
   50% { transform: translateY(-8px); }
 }
 .hero-float-card.card-notif {
-  bottom: 170px; left: -56px;
+  bottom: 120px; left: -66px;
   animation: floatCard2 5s ease-in-out infinite 2.5s;
 }
 @keyframes floatCard2 {
@@ -426,7 +439,6 @@ body {
   display: flex; width: max-content;
   animation: trust-scroll 22s linear infinite;
 }
-.trust-marquee:hover .trust-marquee-track { animation-play-state: paused; }
 .trust-marquee .trust-logos { flex-wrap: nowrap; justify-content: flex-start; gap: 56px; padding: 0 28px; }
 @keyframes trust-scroll {
   from { transform: translateX(0); }
@@ -1810,7 +1822,7 @@ body {
 
   /* ── Base ── */
   *, *::before, *::after { -webkit-tap-highlight-color: transparent; }
-  body { overflow-x: hidden; }
+  body { overflow-x: clip; }
   html { scroll-behavior: smooth; }
 
   /* ── Hero blobs — scale down on mobile ── */
@@ -2175,6 +2187,17 @@ details[open] .faq-chevron { transform: rotate(180deg); color: var(--violet); }
           </div>
         </div>
       </div>
+      <div class="hero-float-card card-stat" style="background:linear-gradient(135deg,var(--violet) 0%,#9C88FF 100%);border:none">
+        <div class="fc-label" style="color:rgba(255,255,255,0.75)">Wellnest Protección</div>
+        <div class="fc-value" style="font-size:16px;color:#fff;font-family:'DM Serif Display',serif">Cobertura vehicular</div>
+        <div class="fc-sub" style="color:rgba(255,255,255,0.85)">Cotiza en minutos</div>
+      </div>
+      <div class="hero-float-card card-notif">
+        <div class="fc-notif-row">
+          <div class="fc-notif-icon"><i data-lucide="send" class="wn-icon-sm" style="color:var(--violet)"></i></div>
+          <div class="fc-notif-text"><strong>Solicitud enviada</strong><span>Wellnest Crédito · en evaluación</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -2261,7 +2284,7 @@ details[open] .faq-chevron { transform: rotate(180deg); color: var(--violet); }
       <div class="como-step">
         <div class="como-step-num">Paso 3</div>
         <div class="como-step-icon"><i data-lucide="check-circle" class="wn-icon"></i></div>
-        <h3>Solicitan y listo</h3>
+        <h3>Seleccionan el beneficio</h3>
       </div>
     </div>
   </div>
