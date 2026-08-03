@@ -1825,14 +1825,16 @@ body {
   body { overflow-x: clip; }
   html { scroll-behavior: smooth; }
 
-  /* ── Hero blobs — scale down on mobile ── */
+  /* ── Hero blobs — more visible contrast behind phone on mobile ── */
   .hero::before {
-    width: 260px !important; height: 260px !important;
-    top: -60px !important; right: -80px !important;
+    width: 420px !important; height: 420px !important;
+    top: -80px !important; right: -140px !important;
+    background: radial-gradient(circle, rgba(123,97,255,0.22) 0%, transparent 70%) !important;
   }
   .hero::after {
-    width: 200px !important; height: 200px !important;
-    bottom: -60px !important; left: -60px !important;
+    width: 360px !important; height: 360px !important;
+    bottom: -40px !important; left: -100px !important;
+    background: radial-gradient(circle, rgba(174,230,255,0.2) 0%, transparent 70%) !important;
   }
 
   /* ── Nav ── */
@@ -1872,6 +1874,14 @@ body {
 
   /* Hero phone — iPhone real en mobile */
   .hero-inner { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .hero-visual::before {
+    content: '';
+    position: absolute; z-index: 0;
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 340px; height: 340px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(123,97,255,0.28) 0%, rgba(174,230,255,0.14) 45%, transparent 72%);
+    pointer-events: none;
+  }
   .hero-visual {
     perspective: 1100px !important;
     padding-top: 12px !important;
