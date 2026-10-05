@@ -489,10 +489,18 @@ body {
 }
 .trust-marquee-track {
   display: flex; width: max-content;
-  animation: trust-scroll 44s linear infinite;
+  animation: trust-scroll 62s linear infinite;
 }
 .trust-marquee .trust-logos { flex-wrap: nowrap; justify-content: flex-start; gap: 56px; padding: 0 28px; flex-shrink: 0; }
 .trust-marquee .trust-logo-item { flex-shrink: 0; }
+.trust-marquee .trust-logo-item img.trust-logo-wide { height: 18px !important; width: auto; aspect-ratio: auto !important; }
+.trust-marquee .trust-logo-item img.trust-logo-astro { height: 28px !important; }
+.trust-marquee .trust-logo-item img.trust-logo-round { height: 40px !important; width: 40px; aspect-ratio: 1 / 1 !important; }
+@media (max-width: 768px) {
+  .trust-marquee .trust-logo-item img.trust-logo-wide { height: 15px !important; }
+  .trust-marquee .trust-logo-item img.trust-logo-astro { height: 23px !important; }
+  .trust-marquee .trust-logo-item img.trust-logo-round { height: 34px !important; width: 34px; }
+}
 @keyframes trust-scroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
@@ -2440,6 +2448,9 @@ details[open] .faq-chevron { transform: rotate(180deg); color: var(--violet); }
         <div class="trust-logo-item" title="Viajes Regency Travel"><img src="wellnest-logo-regency-travel.png" alt="Viajes Regency Travel" loading="lazy"></div>
         <div class="trust-logo-item" title="Seiko Boutique"><img src="wellnest-logo-seiko.png" alt="Seiko Boutique" loading="lazy"></div>
         <div class="trust-logo-item" title="World Time"><img src="wellnest-logo-world-time.png" alt="World Time" loading="lazy"></div>
+        <div class="trust-logo-item" title="AV Securities"><img class="trust-logo-wide" src="wellnest-logo-av-securities.png" alt="AV Securities" width="1060" height="156" loading="lazy"></div>
+        <div class="trust-logo-item" title="Mercado de Calzados"><img class="trust-logo-round" src="wellnest-logo-mercado-de-calzados.png" alt="Mercado de Calzados" width="320" height="320" loading="lazy"></div>
+        <div class="trust-logo-item" title="Astro Asistencias"><img class="trust-logo-wide trust-logo-astro" src="astro-asistencias.png" alt="Astro Asistencias" width="2084" height="564" loading="lazy"></div>
       </div>
       <div class="trust-logos" aria-hidden="true">
         <div class="trust-logo-item" title="Bellini"><img src="wellnest-logo-bellini.png" alt="Bellini" loading="lazy"></div>
@@ -2449,6 +2460,9 @@ details[open] .faq-chevron { transform: rotate(180deg); color: var(--violet); }
         <div class="trust-logo-item" title="Viajes Regency Travel"><img src="wellnest-logo-regency-travel.png" alt="Viajes Regency Travel" loading="lazy"></div>
         <div class="trust-logo-item" title="Seiko Boutique"><img src="wellnest-logo-seiko.png" alt="Seiko Boutique" loading="lazy"></div>
         <div class="trust-logo-item" title="World Time"><img src="wellnest-logo-world-time.png" alt="World Time" loading="lazy"></div>
+        <div class="trust-logo-item" title="AV Securities"><img class="trust-logo-wide" src="wellnest-logo-av-securities.png" alt="AV Securities" width="1060" height="156" loading="lazy"></div>
+        <div class="trust-logo-item" title="Mercado de Calzados"><img class="trust-logo-round" src="wellnest-logo-mercado-de-calzados.png" alt="Mercado de Calzados" width="320" height="320" loading="lazy"></div>
+        <div class="trust-logo-item" title="Astro Asistencias"><img class="trust-logo-wide trust-logo-astro" src="astro-asistencias.png" alt="Astro Asistencias" width="2084" height="564" loading="lazy"></div>
       </div>
       <div class="trust-logos" aria-hidden="true">
         <div class="trust-logo-item" title="Bellini"><img src="wellnest-logo-bellini.png" alt="Bellini" loading="lazy"></div>
@@ -2458,6 +2472,9 @@ details[open] .faq-chevron { transform: rotate(180deg); color: var(--violet); }
         <div class="trust-logo-item" title="Viajes Regency Travel"><img src="wellnest-logo-regency-travel.png" alt="Viajes Regency Travel" loading="lazy"></div>
         <div class="trust-logo-item" title="Seiko Boutique"><img src="wellnest-logo-seiko.png" alt="Seiko Boutique" loading="lazy"></div>
         <div class="trust-logo-item" title="World Time"><img src="wellnest-logo-world-time.png" alt="World Time" loading="lazy"></div>
+        <div class="trust-logo-item" title="AV Securities"><img class="trust-logo-wide" src="wellnest-logo-av-securities.png" alt="AV Securities" width="1060" height="156" loading="lazy"></div>
+        <div class="trust-logo-item" title="Mercado de Calzados"><img class="trust-logo-round" src="wellnest-logo-mercado-de-calzados.png" alt="Mercado de Calzados" width="320" height="320" loading="lazy"></div>
+        <div class="trust-logo-item" title="Astro Asistencias"><img class="trust-logo-wide trust-logo-astro" src="astro-asistencias.png" alt="Astro Asistencias" width="2084" height="564" loading="lazy"></div>
       </div>
       <div class="trust-logos" aria-hidden="true">
         <div class="trust-logo-item" title="Bellini"><img src="wellnest-logo-bellini.png" alt="Bellini" loading="lazy"></div>
@@ -2467,6 +2484,9 @@ details[open] .faq-chevron { transform: rotate(180deg); color: var(--violet); }
         <div class="trust-logo-item" title="Viajes Regency Travel"><img src="wellnest-logo-regency-travel.png" alt="Viajes Regency Travel" loading="lazy"></div>
         <div class="trust-logo-item" title="Seiko Boutique"><img src="wellnest-logo-seiko.png" alt="Seiko Boutique" loading="lazy"></div>
         <div class="trust-logo-item" title="World Time"><img src="wellnest-logo-world-time.png" alt="World Time" loading="lazy"></div>
+        <div class="trust-logo-item" title="AV Securities"><img class="trust-logo-wide" src="wellnest-logo-av-securities.png" alt="AV Securities" width="1060" height="156" loading="lazy"></div>
+        <div class="trust-logo-item" title="Mercado de Calzados"><img class="trust-logo-round" src="wellnest-logo-mercado-de-calzados.png" alt="Mercado de Calzados" width="320" height="320" loading="lazy"></div>
+        <div class="trust-logo-item" title="Astro Asistencias"><img class="trust-logo-wide trust-logo-astro" src="astro-asistencias.png" alt="Astro Asistencias" width="2084" height="564" loading="lazy"></div>
       </div>
     </div>
   </div>
