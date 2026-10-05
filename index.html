@@ -706,6 +706,13 @@ body {
   display: flex; align-items: center; justify-content: space-between; gap: 6px;
 }
 .ms-field-box + .ms-field-box { margin-top: 6px; }
+.ms-select-wrap { position: relative; }
+.ms-select-wrap + .ms-select-wrap { margin-top: 6px; }
+.ms-select { width: 100%; -webkit-appearance: none; appearance: none; font-family: inherit; text-align: left; cursor: pointer; transition: border-color 0.2s, background 0.2s; }
+.ms-select b { font-weight: 600; }
+.ms-select:hover, .ms-select[aria-expanded="true"] { border-color: var(--violet); background: #fff; }
+.ms-select[aria-expanded="true"] span { color: var(--violet); }
+.ms-cat-menu.ms-select-menu { left: 0; right: 0; top: calc(100% + 4px); max-height: 132px; overflow-y: auto; }
 .ms-field-flag { flex-shrink: 0; }
 .ms-field-box span { color: #9CA3AF; font-size: 8px; }
 .ms-partner { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; }
@@ -2645,8 +2652,8 @@ details[open] .faq-chevron { transform: rotate(180deg); color: var(--violet); }
             </div>
             <div class="ms-field">
               <label>Mes y año de ingreso a tu empresa</label>
-              <div class="ms-field-box">Octubre <span>⌄</span></div>
-              <div class="ms-field-box">2019 <span>⌄</span></div>
+              <div class="ms-select-wrap"><button type="button" class="ms-field-box ms-select" data-options="Enero|Febrero|Marzo|Abril|Mayo|Junio|Julio|Agosto|Septiembre|Octubre|Noviembre|Diciembre" aria-haspopup="listbox" aria-expanded="false" onclick="toggleSelectMenu(this, event)"><b>Octubre</b> <span>⌄</span></button></div>
+              <div class="ms-select-wrap"><button type="button" class="ms-field-box ms-select" data-options="2026|2025|2024|2023|2022|2021|2020|2019|2018|2017|2016|2015" aria-haspopup="listbox" aria-expanded="false" onclick="toggleSelectMenu(this, event)"><b>2019</b> <span>⌄</span></button></div>
             </div>
           </div>
 
@@ -3082,6 +3089,7 @@ document.addEventListener('click', (e) => {
 // ── Para colaboradores: tab switcher ────────────────────────────────────────
 function switchColabTab(name) {
   closeClubOffer();
+  closeCatMenus();
   document.querySelectorAll('.colab-tab').forEach((t) => {
     const active = t.dataset.tab === name;
     t.classList.toggle('active', active);
@@ -3116,7 +3124,36 @@ function closeClubOffer() {
 const CAT_LABELS = { necesidad: 'Necesidad', deseo: 'Deseo', ahorro: 'Ahorro / deuda' };
 function closeCatMenus() {
   document.querySelectorAll('.ms-cat-menu').forEach((m) => m.remove());
-  document.querySelectorAll('.ms-cat').forEach((b) => b.setAttribute('aria-expanded', 'false'));
+  document.querySelectorAll('.ms-cat, .ms-select').forEach((b) => b.setAttribute('aria-expanded', 'false'));
+}
+// ── Wellnest Liquidez (demo): desplegables de mes y año ──────────────────────
+function toggleSelectMenu(btn, e) {
+  e.stopPropagation();
+  const wasOpen = btn.getAttribute('aria-expanded') === 'true';
+  closeCatMenus();
+  if (wasOpen) return;
+  const label = btn.querySelector('b');
+  const menu = document.createElement('div');
+  menu.className = 'ms-cat-menu ms-select-menu';
+  menu.setAttribute('role', 'listbox');
+  btn.dataset.options.split('|').forEach((value) => {
+    const opt = document.createElement('button');
+    opt.type = 'button';
+    opt.setAttribute('role', 'option');
+    opt.setAttribute('aria-selected', label.textContent === value ? 'true' : 'false');
+    opt.textContent = value;
+    opt.addEventListener('click', (ev) => {
+      ev.stopPropagation();
+      label.textContent = value;
+      closeCatMenus();
+    });
+    menu.appendChild(opt);
+  });
+  btn.parentElement.appendChild(menu);
+  btn.setAttribute('aria-expanded', 'true');
+  const current = menu.querySelector('[aria-selected="true"]');
+  if (current) menu.scrollTop = current.offsetTop - 40;
+  menu.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
 }
 function toggleCatMenu(btn, e) {
   e.stopPropagation();
