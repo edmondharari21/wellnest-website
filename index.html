@@ -4,19 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Wellnest | Beneficios para colaboradores en una sola plataforma</title>
-<meta name="description" content="Wellnest conecta a empresas y colaboradores con crédito a tasas preferenciales, seguros y descuentos exclusivos desde una sola plataforma.">
+<meta name="description" content="Wellnest reúne 6 módulos en una sola plataforma: crédito a tasas preferenciales, seguros, descuentos exclusivos, aprendizaje, presupuesto personal y un asistente con IA.">
 <link rel="canonical" href="https://miwellnest.com">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Wellnest | Beneficios para colaboradores en una sola plataforma">
-<meta property="og:description" content="Wellnest conecta a empresas y colaboradores con crédito a tasas preferenciales, seguros y descuentos exclusivos desde una sola plataforma.">
+<meta property="og:description" content="Wellnest reúne 6 módulos en una sola plataforma: crédito a tasas preferenciales, seguros, descuentos exclusivos, aprendizaje, presupuesto personal y un asistente con IA.">
 <meta property="og:url" content="https://miwellnest.com">
 <meta property="og:site_name" content="Wellnest">
 <meta property="og:locale" content="es_PA">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Wellnest | Beneficios para colaboradores en una sola plataforma">
-<meta name="twitter:description" content="Wellnest conecta a empresas y colaboradores con crédito a tasas preferenciales, seguros y descuentos exclusivos.">
+<meta name="twitter:description" content="Wellnest reúne 6 módulos en una sola plataforma: crédito, seguros, descuentos, aprendizaje, presupuesto personal y un asistente con IA.">
 <!-- Structured Data -->
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"Wellnest","url":"https://miwellnest.com","email":"team@miwellnest.com","description":"Plataforma de beneficios para colaboradores en Panamá","areaServed":"PA"}
@@ -56,7 +56,7 @@ body {
   backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(0,0,0,0.07);
   display: flex; align-items: center;
-  padding: 0 48px; height: 76px; gap: 32px;
+  padding: 0 max(48px, calc((100% - 1200px) / 2)); height: 76px; gap: 32px;
 }
 .nav-logo {
   display: flex; align-items: center; gap: 10px;
@@ -483,15 +483,16 @@ body {
   gap: 20px; flex-wrap: wrap;
 }
 .trust-marquee {
-  overflow: hidden;
+  overflow: hidden; max-width: 1200px; margin: 0 auto;
   -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
   mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
 }
 .trust-marquee-track {
   display: flex; width: max-content;
-  animation: trust-scroll 22s linear infinite;
+  animation: trust-scroll 44s linear infinite;
 }
-.trust-marquee .trust-logos { flex-wrap: nowrap; justify-content: flex-start; gap: 56px; padding: 0 28px; }
+.trust-marquee .trust-logos { flex-wrap: nowrap; justify-content: flex-start; gap: 56px; padding: 0 28px; flex-shrink: 0; }
+.trust-marquee .trust-logo-item { flex-shrink: 0; }
 @keyframes trust-scroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
@@ -661,9 +662,22 @@ body {
 }
 
 /* ── Pantallas recreadas (no screenshots) dentro del celular ── */
+.colab-topbar {
+  position: absolute; top: 0; left: 0; right: 0; height: 74px; z-index: 1; box-sizing: border-box;
+  padding: 7px 14px 0; background: #fff; border-bottom: 1px solid #F3F4F6;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.colab-topbar .phone-statusbar { font-size: 10px; margin-bottom: 11px; padding: 0 4px; height: 14px; }
+.colab-topbar .phone-statusbar-icons { gap: 3px; }
+.colab-topbar .phone-statusbar-icons .wn-icon-sm { width: 11px; height: 11px; }
+.colab-topbar .phone-dash-header { margin-bottom: 0; gap: 6px; }
+.colab-topbar .pdh-left { gap: 7px; min-width: 0; }
+.colab-topbar .pdh-right { gap: 9px; flex-shrink: 0; }
+.colab-topbar .pdh-menu { width: 26px; height: 26px; }
+.colab-topbar .pdh-company-name { font-size: 11px; white-space: nowrap; }
 .colab-screen {
-  position: absolute; inset: 0; overflow-y: auto;
-  padding: 30px 16px 18px; box-sizing: border-box;
+  position: absolute; inset: 74px 0 0 0; overflow-y: auto;
+  padding: 14px 16px 18px; box-sizing: border-box;
   opacity: 0; pointer-events: none; transition: opacity 0.35s ease;
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
@@ -686,6 +700,24 @@ body {
 .ms-field-box + .ms-field-box { margin-top: 6px; }
 .ms-field-flag { flex-shrink: 0; }
 .ms-field-box span { color: #9CA3AF; font-size: 8px; }
+.ms-partner { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; }
+.ms-partner span { white-space: nowrap; font-size: 10px; color: var(--gray-600); }
+.ms-partner img { display: block; height: 20px; width: auto; }
+.ms-plan { border: 1.5px solid #E4DEFF; border-radius: 14px; padding: 12px; margin-bottom: 10px; background: #fff; }
+.ms-plan-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 10px; }
+.ms-plan-icon { width: 30px; height: 30px; border-radius: 9px; background: var(--violet-pale); color: var(--violet-dark); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.ms-plan-tag { font-size: 8px; font-weight: 600; color: var(--gray-700); background: #F3F4F6; border-radius: 999px; padding: 3px 8px; white-space: nowrap; }
+.ms-plan strong { display: block; font-size: 12px; font-weight: 800; color: var(--night); margin-bottom: 5px; }
+.ms-plan p { font-size: 9.5px; line-height: 1.5; color: var(--gray-600); margin: 0 0 8px; }
+.ms-plan ul { list-style: none; margin: 0 0 10px; padding: 0; }
+.ms-plan li { font-size: 9.5px; line-height: 1.5; color: var(--gray-600); padding-left: 14px; position: relative; margin-bottom: 2px; }
+.ms-plan li::before { content: '✓'; position: absolute; left: 0; color: #10B981; font-weight: 800; }
+.ms-plan a { font-size: 10.5px; font-weight: 800; color: var(--violet-dark); }
+.ms-plan-dark { border-color: transparent; background: linear-gradient(180deg, #1E1B4B 0%, #2D2870 100%); box-shadow: 0 10px 24px rgba(30,27,75,0.22); }
+.ms-plan-dark .ms-plan-icon { background: rgba(255,255,255,0.12); color: #fff; }
+.ms-plan-dark .ms-plan-tag { color: #fff; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); }
+.ms-plan-dark strong, .ms-plan-dark a { color: #fff; }
+.ms-plan-dark p, .ms-plan-dark li { color: rgba(255,255,255,0.8); }
 .ms-hero-card {
   background: linear-gradient(135deg, var(--violet) 0%, #9C88FF 100%);
   border-radius: 14px; padding: 16px; color: #fff; margin-bottom: 14px;
@@ -704,12 +736,134 @@ body {
 .ms-chips { display: flex; gap: 6px; margin-bottom: 12px; overflow-x: hidden; }
 .ms-chip { flex-shrink: 0; font-size: 9px; font-weight: 700; padding: 6px 11px; border-radius: 999px; border: 1.5px solid #E5E7EB; color: var(--gray-600); }
 .ms-chip.active { background: var(--night); border-color: var(--night); color: #fff; }
+button.ms-chip { position: relative; -webkit-appearance: none; appearance: none; background: #fff; font-family: inherit; cursor: pointer; transition: background 0.2s, border-color 0.2s, color 0.2s; }
+button.ms-chip.active { background: var(--night); }
+button.ms-chip::after { content: ''; position: absolute; inset: -8px -2px; }
+button.ms-merchant[hidden] { display: none; }
 .ms-merchant { display: flex; align-items: center; gap: 10px; border: 1.5px solid #F3F4F6; border-radius: 12px; padding: 10px; margin-bottom: 8px; }
+button.ms-merchant { width: 100%; -webkit-appearance: none; appearance: none; color: inherit; background: #fff; font-family: inherit; text-align: left; cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s; }
+button.ms-merchant:hover { border-color: var(--violet); box-shadow: 0 6px 16px rgba(123,97,255,0.14); transform: translateY(-1px); }
+.ms-club-view[hidden] { display: none; }
+.ms-club-view { animation: ms-club-in 0.3s ease; }
+@keyframes ms-club-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 .ms-merchant-logo { width: 32px; height: 32px; border-radius: 9px; background: var(--violet-pale); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
 .ms-merchant-info { flex: 1; min-width: 0; }
-.ms-merchant-info strong { display: block; font-size: 10px; color: var(--night); }
-.ms-merchant-info span { font-size: 8.5px; color: #9CA3AF; }
+.ms-merchant-info strong { display: block; font-size: 10px; color: var(--night); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ms-merchant-info span { display: block; font-size: 8.5px; line-height: 1.3; color: #9CA3AF; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .ms-merchant-badge { font-size: 9px; font-weight: 800; color: var(--violet); background: var(--violet-pale); padding: 4px 8px; border-radius: 999px; flex-shrink: 0; }
+.ms-coupon {
+  position: relative; overflow: hidden; border-radius: 18px; padding: 16px 14px 14px; color: #fff;
+  background: linear-gradient(165deg, #1E1B4B 0%, #2D2870 100%);
+  box-shadow: 0 14px 30px rgba(30,27,75,0.28);
+}
+.ms-coupon::before {
+  content: ''; position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(123,97,255,0.55) 0%, rgba(123,97,255,0) 70%); pointer-events: none;
+}
+.ms-coupon > * { position: relative; }
+.ms-coupon-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 12px; }
+.ms-coupon-head strong { font-family: 'DM Serif Display', serif; font-size: 13.5px; font-weight: 400; white-space: nowrap; }
+.ms-coupon-pill {
+  display: inline-flex; align-items: center; gap: 4px; flex-shrink: 0;
+  font-size: 7.5px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sky);
+  border: 1px solid rgba(174,230,255,0.4); background: rgba(174,230,255,0.12); border-radius: 999px; padding: 3px 8px;
+}
+.ms-coupon-pill i { width: 5px; height: 5px; border-radius: 50%; background: var(--sky); animation: pulse-dot 2s ease-in-out infinite; }
+.ms-coupon-merchant { font-size: 8.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #C4B5FD; margin-bottom: 3px; }
+.ms-coupon-offer { font-family: 'DM Serif Display', serif; font-size: 13.5px; line-height: 1.3; margin-bottom: 12px; }
+.ms-coupon-qr { background: #fff; border-radius: 14px; padding: 14px 12px 12px; text-align: center; }
+.ms-coupon-qr-code { position: relative; width: 100px; height: 100px; margin: 0 auto 10px; overflow: hidden; }
+.ms-coupon-qr-code svg { display: block; width: 100%; height: 100%; }
+.ms-coupon-scan {
+  position: absolute; left: -4px; right: -4px; top: 0; height: 22px; pointer-events: none;
+  background: linear-gradient(180deg, rgba(123,97,255,0) 0%, rgba(123,97,255,0.35) 100%);
+  border-bottom: 1.5px solid var(--violet);
+  animation: ms-qr-scan 2.8s ease-in-out infinite alternate;
+}
+@keyframes ms-qr-scan { from { top: -22px; } to { top: 100%; } }
+.ms-coupon-label { font-size: 7px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #9CA3AF; margin-bottom: 2px; }
+.ms-coupon-code { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 15px; font-weight: 800; letter-spacing: 0.16em; color: var(--night); }
+.ms-coupon-foot { font-size: 9px; color: #C4B5FD; margin-top: 10px; }
+.ms-coupon-back { display: block; margin: 14px auto 0; background: none; border: none; cursor: pointer; font-family: inherit; font-size: 9.5px; font-weight: 700; color: var(--violet-dark); }
+@media (prefers-reduced-motion: reduce) { .ms-coupon-scan, .ms-coupon-pill i { animation: none; } .ms-coupon-scan { display: none; } .ms-club-view { animation: none; } }
+.ms-course { border: 1.5px solid #F3F4F6; border-radius: 12px; padding: 12px; margin-bottom: 8px; background: #fff; }
+.ms-course-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.ms-course-icon { width: 30px; height: 30px; border-radius: 9px; background: linear-gradient(135deg, var(--violet) 0%, #9C88FF 100%); color: #fff; display: flex; align-items: center; justify-content: center; }
+.ms-course-tag { font-size: 7.5px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--violet-dark); background: var(--violet-pale); border-radius: 999px; padding: 3px 8px; }
+.ms-course strong { display: block; font-size: 11.5px; font-weight: 800; line-height: 1.3; color: var(--night); margin-bottom: 4px; }
+.ms-course p { font-size: 9.5px; color: var(--gray-600); line-height: 1.5; margin: 0 0 8px; }
+.ms-course-foot { display: flex; align-items: center; justify-content: space-between; font-size: 8.5px; color: #9CA3AF; }
+.ms-course-foot a { font-size: 9.5px; font-weight: 700; color: var(--violet); }
+.ms-course-sky .ms-course-icon { background: linear-gradient(135deg, #1E1B4B 0%, #2D2870 100%); color: var(--sky); }
+.ms-course-sky .ms-course-tag { color: #0C5A7E; background: #E3F6FF; }
+.ms-catalog { margin-top: 16px; }
+.ms-catalog > strong { display: block; font-family: 'DM Serif Display', serif; font-size: 14px; font-weight: 400; color: var(--night); margin-bottom: 4px; }
+.ms-catalog > p { font-size: 10px; line-height: 1.5; color: var(--gray-600); margin: 0 0 10px; }
+.ms-catalog .ms-chips { margin-bottom: 10px; }
+.ms-chip b { font-weight: 600; opacity: 0.6; margin-left: 2px; }
+.ms-course-emoji { width: 30px; height: 30px; border-radius: 9px; background: var(--violet-pale); display: flex; align-items: center; justify-content: center; font-size: 14px; }
+.ms-course-kind { font-size: 8px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--violet-dark); margin-bottom: 3px; }
+.colab-screen[data-tab-screen="ia"] { display: flex; flex-direction: column; }
+.ms-ia-head { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+.ms-ia-avatar { width: 34px; height: 34px; border-radius: 10px; flex-shrink: 0; background: linear-gradient(135deg, var(--violet) 0%, #9C88FF 100%); color: #fff; display: flex; align-items: center; justify-content: center; }
+.ms-chat-row { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 14px; }
+.ms-chat-avatar { width: 24px; height: 24px; border-radius: 7px; flex-shrink: 0; background: var(--violet-dark); color: #fff; font-size: 8px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+.ms-chat-avatar-ia { background: linear-gradient(135deg, var(--violet) 0%, #9C88FF 100%); }
+.ms-chat-text { font-size: 10.5px; line-height: 1.5; color: var(--night); padding-top: 3px; }
+.ms-chat-foot { margin-top: auto; padding-top: 6px; }
+.ms-chat-input { display: flex; align-items: center; justify-content: space-between; gap: 6px; border: 1.5px solid #E5E7EB; border-radius: 999px; padding: 5px 5px 5px 12px; font-size: 9px; color: #9CA3AF; }
+.ms-chat-input > span:first-child { white-space: nowrap; overflow: hidden; }
+.ms-chat-send { width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0; background: var(--violet); color: #fff; opacity: 0.6; display: flex; align-items: center; justify-content: center; }
+.ms-chat-note { font-size: 8px; line-height: 1.5; color: #9CA3AF; text-align: center; margin: 8px 0 0; }
+.ms-stat { border: 1.5px solid #F3F4F6; border-radius: 12px; padding: 10px 12px; margin-bottom: 8px; }
+.ms-stat > span { display: block; font-size: 9px; font-weight: 600; color: var(--gray-600); margin-bottom: 2px; }
+.ms-stat > strong { display: block; font-family: 'DM Serif Display', serif; font-size: 16px; font-weight: 400; color: var(--night); }
+.ms-income { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.ms-income strong { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 500; color: var(--night); flex: 1; border-bottom: 1.5px solid #EDE9FE; padding-bottom: 2px; }
+.ms-income em { font-style: normal; font-size: 9px; font-weight: 700; color: #fff; background: linear-gradient(135deg, var(--violet) 0%, var(--violet-dark) 100%); padding: 7px 11px; border-radius: 999px; flex-shrink: 0; }
+.ms-expense { display: flex; align-items: center; gap: 9px; border: 1.5px solid #F3F4F6; border-radius: 11px; padding: 7px 10px 7px 7px; margin-bottom: 6px; }
+.ms-expense-icon { width: 26px; height: 26px; border-radius: 8px; background: var(--violet-pale); display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; }
+.ms-expense > div { flex: 1; min-width: 0; }
+.ms-expense strong { display: block; font-size: 10px; line-height: 1.3; color: var(--night); }
+.ms-expense { position: relative; }
+.ms-cat {
+  display: inline-flex; align-items: center; gap: 3px; margin-top: 2px; cursor: pointer;
+  font-family: inherit; font-size: 8px; font-weight: 700; line-height: 1.3; color: var(--violet-dark);
+  background: var(--violet-pale); border: 1px solid rgba(123,97,255,0.25); border-radius: 999px; padding: 2px 7px;
+  transition: background 0.2s, border-color 0.2s;
+}
+.ms-cat:hover, .ms-cat[aria-expanded="true"] { background: #EDE9FE; border-color: var(--violet); }
+.ms-cat { position: relative; }
+.ms-cat::after { content: ''; position: absolute; inset: -9px -6px; }
+.ms-cat i { font-style: normal; font-size: 8px; line-height: 1; }
+.ms-cat[data-cat="ahorro"] { color: #047857; background: #D1FAE5; border-color: rgba(16,185,129,0.35); }
+.ms-cat-menu {
+  position: absolute; left: 42px; top: calc(100% - 6px); z-index: 5; min-width: 108px;
+  background: #fff; border: 1px solid #E5E7EB; border-radius: 10px; padding: 4px;
+  box-shadow: 0 10px 24px rgba(30,27,75,0.18);
+}
+.ms-cat-menu button {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px; width: 100%; cursor: pointer;
+  font-family: inherit; font-size: 9px; font-weight: 600; color: var(--night); text-align: left;
+  background: none; border: none; border-radius: 7px; padding: 6px 8px;
+}
+.ms-cat-menu button:hover { background: var(--violet-pale); }
+.ms-cat-menu button[aria-selected="true"] { color: var(--violet-dark); font-weight: 800; }
+.ms-cat-menu button[aria-selected="true"]::after { content: '✓'; font-size: 9px; }
+.ms-bar i { transition: width 0.4s ease; }
+.ms-expense b { font-size: 10px; font-weight: 800; color: var(--night); flex-shrink: 0; }
+.ms-expense-total { display: flex; justify-content: space-between; align-items: center; background: var(--violet-pale); border-radius: 11px; padding: 9px 12px; font-size: 10px; font-weight: 700; color: var(--night); margin-top: 8px; }
+.ms-expense-total b { font-family: 'DM Serif Display', serif; font-size: 13px; font-weight: 400; color: var(--violet-dark); }
+.ms-stat-row { display: flex; gap: 8px; }
+.ms-stat-row .ms-stat { flex: 1; min-width: 0; }
+.ms-stat-title { font-size: 11px; font-weight: 800; color: var(--night); margin-bottom: 10px; }
+.ms-bar-row { display: flex; justify-content: space-between; gap: 6px; font-size: 9px; color: var(--gray-600); margin-bottom: 4px; }
+.ms-bar-row span { white-space: nowrap; }
+.ms-bar-row span:last-child { color: #9CA3AF; }
+.ms-bar-row b { color: var(--night); font-weight: 700; }
+.ms-bar { height: 5px; border-radius: 999px; background: #F3F4F6; margin-bottom: 9px; overflow: hidden; }
+.ms-bar:last-child { margin-bottom: 0; }
+.ms-bar i { display: block; height: 100%; border-radius: 999px; background: var(--violet-dark); }
 
 /* ── COLABORADOR ── */
 .colab-section {
@@ -1513,6 +1667,11 @@ body {
   gap: 10px;
   box-shadow: 0 8px 32px rgba(123,97,255,0.4);
   animation: bouncein 0.6s 2s ease both;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.mobile-cta-unified.is-hidden { opacity: 0 !important; transform: translateY(24px) !important; pointer-events: none; }
+@supports (bottom: env(safe-area-inset-bottom)) {
+  .mobile-cta-unified { bottom: calc(16px + env(safe-area-inset-bottom)); }
 }
 @media (max-width: 768px) {
   .sticky-demo { display: none !important; }
@@ -1913,7 +2072,7 @@ body {
     margin-bottom: 20px !important;
   }
   .hero-eyebrow { font-size: 10px !important; padding: 5px 12px !important; margin-bottom: 14px !important; }
-  .hero-sub { display: none !important; }
+  .hero-sub { font-size: 15px !important; line-height: 1.55 !important; margin-bottom: 22px !important; }
   .hero-trust { display: none !important; }
   .hero-proof { display: none !important; }
   .hero-actions { flex-direction: column !important; align-items: center !important; gap: 10px !important; margin-bottom: 24px !important; }
@@ -2043,6 +2202,28 @@ body {
   /* ── Para colaboradores ── */
   .colab-grid { grid-template-columns: 1fr !important; gap: 40px !important; padding: 0 20px !important; }
   .colab-phone { width: 230px !important; height: 480px !important; margin: 0 auto; }
+  .colab-phone-notch { width: 92px; height: 20px; }
+  .colab-topbar { padding: 6px 11px 0; height: 68px; }
+  .colab-topbar .phone-statusbar { font-size: 9.5px; margin-bottom: 9px; }
+  .colab-topbar .pdh-menu { width: 24px; height: 24px; }
+  .colab-topbar .pdh-company { gap: 5px; }
+  .colab-topbar .pdh-company-name { font-size: 10px; }
+  .colab-topbar .pdh-avatar > i, .colab-topbar .pdh-avatar > svg { display: none; }
+  .colab-screen { inset: 68px 0 0 0; }
+  /* 6 módulos: pestañas compactas en 2 columnas para que el celular quede a la vista */
+  .colab-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .colab-tab { align-items: center; gap: 10px; padding: 12px; }
+  .colab-tab-copy span { display: none; }
+  .colab-tab-copy strong { font-size: 15px; }
+  .ms-bar-row { font-size: 8px; gap: 4px; }
+  .ms-coupon-qr-code { width: 84px; height: 84px; }
+  .ms-partner img { height: 18px; }
+  .ms-merchant { gap: 8px; padding: 9px 8px; }
+  .ms-merchant-logo { width: 28px; height: 28px; font-size: 13px; }
+  .ms-merchant-badge { padding: 3px 7px; }
+  .ms-chips { gap: 5px; }
+  .ms-chip { padding: 5px 9px; }
+  .ms-coupon { padding: 14px 12px 12px; }
   #colaboradores { padding: 64px 0 !important; }
 
   /* ── Benefits ── */
@@ -2162,8 +2343,8 @@ details[open] .faq-chevron { transform: rotate(180deg); color: var(--violet); }
     <img src="logo-compact.png" class="wn-logo-mark" alt="Wellnest">
   </a>
   <div class="nav-links" style="margin-left:auto">
-    <a href="#colaboradores" class="nav-link">Beneficios</a>
     <a href="#como-funciona" class="nav-link">Cómo funciona</a>
+    <a href="#colaboradores" class="nav-link">Beneficios</a>
     <a href="#testimonios" class="nav-link">Clientes</a>
   </div>
   <a href="https://app.miwellnest.com" class="nav-login-btn" target="_blank" rel="noopener">Iniciar sesión</a>
@@ -2175,7 +2356,7 @@ details[open] .faq-chevron { transform: rotate(180deg); color: var(--violet); }
     <div class="hero-text">
       <div class="hero-eyebrow"><span class="hero-eyebrow-dot"></span> Plataforma de beneficios laborales</div>
       <h1>Todos los beneficios que tu equipo necesita, <em>en una sola plataforma.</em></h1>
-      <p class="hero-sub">Wellnest conecta a tus colaboradores con crédito a tasas preferenciales, seguros y descuentos exclusivos, sin complicar la operación de tu empresa.</p>
+      <p class="hero-sub">Más beneficios, más herramientas y más bienestar para tus colaboradores.</p>
       <div class="hero-actions">
         <a href="#form" class="btn-primary">Agendar una demo →</a>
       </div>
@@ -2210,7 +2391,7 @@ details[open] .faq-chevron { transform: rotate(180deg); color: var(--violet); }
         </div>
         <div class="phone-dash-card">
           <div class="pdc-icon"><i data-lucide="credit-card" class="wn-icon"></i></div>
-          <div class="pdc-title">Crédito Wellnest</div>
+          <div class="pdc-title">Wellnest Liquidez</div>
           <div class="pdc-desc">Dejá tus datos y la financiera se pone en contacto con vos.</div>
           <a class="pdc-link">Pedir crédito →</a>
         </div>
@@ -2232,14 +2413,14 @@ details[open] .faq-chevron { transform: rotate(180deg); color: var(--violet); }
         </div>
       </div>
       <div class="hero-float-card card-stat" style="background:linear-gradient(135deg,var(--violet) 0%,#9C88FF 100%);border:none">
-        <div class="fc-label" style="color:rgba(255,255,255,0.75)">Wellnest Protección</div>
+        <div class="fc-label" style="color:rgba(255,255,255,0.75)">Wellnest Seguros</div>
         <div class="fc-value" style="font-size:16px;color:#fff;font-family:'DM Serif Display',serif">Cobertura vehicular</div>
         <div class="fc-sub" style="color:rgba(255,255,255,0.85)">Cotiza en minutos</div>
       </div>
       <div class="hero-float-card card-notif">
         <div class="fc-notif-row">
           <div class="fc-notif-icon"><i data-lucide="send" class="wn-icon-sm" style="color:var(--violet)"></i></div>
-          <div class="fc-notif-text"><strong>Solicitud enviada</strong><span>Wellnest Crédito · en evaluación</span></div>
+          <div class="fc-notif-text"><strong>Solicitud enviada</strong><span>Wellnest Liquidez · en evaluación</span></div>
         </div>
       </div>
     </div>
@@ -2252,6 +2433,24 @@ details[open] .faq-chevron { transform: rotate(180deg); color: var(--violet); }
   <div class="trust-marquee">
     <div class="trust-marquee-track">
       <div class="trust-logos">
+        <div class="trust-logo-item" title="Bellini"><img src="wellnest-logo-bellini.png" alt="Bellini" loading="lazy"></div>
+        <div class="trust-logo-item" title="Nike"><svg role="img" viewBox="0 0 48 20" height="20" xmlns="http://www.w3.org/2000/svg" aria-label="Nike"><path fill="#F97316" d="M48 3.6L12.884 18.552c-2.912 1.232-5.358 1.85-7.336 1.85C3.44 20.402 1.932 19.619.924 18.05c-.634-1.008-.82-2.286-.56-3.836.26-1.55.952-3.2 2.072-4.956.934-1.42 2.464-3.286 4.594-5.6a12.244 12.244 0 00-1.568 3.696c-.56 2.39-.056 4.144 1.512 5.264.746.522 1.772.784 3.08.784 1.044 0 2.22-.168 3.528-.504L48 3.6z"/></svg></div>
+        <div class="trust-logo-item" title="Bulova Boutique"><img src="wellnest-logo-bulova.png" alt="Bulova Boutique" loading="lazy"></div>
+        <div class="trust-logo-item" title="Intima Secret"><img src="wellnest-logo-intima-secret.png" alt="Intima Secret" loading="lazy"></div>
+        <div class="trust-logo-item" title="Viajes Regency Travel"><img src="wellnest-logo-regency-travel.png" alt="Viajes Regency Travel" loading="lazy"></div>
+        <div class="trust-logo-item" title="Seiko Boutique"><img src="wellnest-logo-seiko.png" alt="Seiko Boutique" loading="lazy"></div>
+        <div class="trust-logo-item" title="World Time"><img src="wellnest-logo-world-time.png" alt="World Time" loading="lazy"></div>
+      </div>
+      <div class="trust-logos" aria-hidden="true">
+        <div class="trust-logo-item" title="Bellini"><img src="wellnest-logo-bellini.png" alt="Bellini" loading="lazy"></div>
+        <div class="trust-logo-item" title="Nike"><svg role="img" viewBox="0 0 48 20" height="20" xmlns="http://www.w3.org/2000/svg" aria-label="Nike"><path fill="#F97316" d="M48 3.6L12.884 18.552c-2.912 1.232-5.358 1.85-7.336 1.85C3.44 20.402 1.932 19.619.924 18.05c-.634-1.008-.82-2.286-.56-3.836.26-1.55.952-3.2 2.072-4.956.934-1.42 2.464-3.286 4.594-5.6a12.244 12.244 0 00-1.568 3.696c-.56 2.39-.056 4.144 1.512 5.264.746.522 1.772.784 3.08.784 1.044 0 2.22-.168 3.528-.504L48 3.6z"/></svg></div>
+        <div class="trust-logo-item" title="Bulova Boutique"><img src="wellnest-logo-bulova.png" alt="Bulova Boutique" loading="lazy"></div>
+        <div class="trust-logo-item" title="Intima Secret"><img src="wellnest-logo-intima-secret.png" alt="Intima Secret" loading="lazy"></div>
+        <div class="trust-logo-item" title="Viajes Regency Travel"><img src="wellnest-logo-regency-travel.png" alt="Viajes Regency Travel" loading="lazy"></div>
+        <div class="trust-logo-item" title="Seiko Boutique"><img src="wellnest-logo-seiko.png" alt="Seiko Boutique" loading="lazy"></div>
+        <div class="trust-logo-item" title="World Time"><img src="wellnest-logo-world-time.png" alt="World Time" loading="lazy"></div>
+      </div>
+      <div class="trust-logos" aria-hidden="true">
         <div class="trust-logo-item" title="Bellini"><img src="wellnest-logo-bellini.png" alt="Bellini" loading="lazy"></div>
         <div class="trust-logo-item" title="Nike"><svg role="img" viewBox="0 0 48 20" height="20" xmlns="http://www.w3.org/2000/svg" aria-label="Nike"><path fill="#F97316" d="M48 3.6L12.884 18.552c-2.912 1.232-5.358 1.85-7.336 1.85C3.44 20.402 1.932 19.619.924 18.05c-.634-1.008-.82-2.286-.56-3.836.26-1.55.952-3.2 2.072-4.956.934-1.42 2.464-3.286 4.594-5.6a12.244 12.244 0 00-1.568 3.696c-.56 2.39-.056 4.144 1.512 5.264.746.522 1.772.784 3.08.784 1.044 0 2.22-.168 3.528-.504L48 3.6z"/></svg></div>
         <div class="trust-logo-item" title="Bulova Boutique"><img src="wellnest-logo-bulova.png" alt="Bulova Boutique" loading="lazy"></div>
@@ -2336,27 +2535,48 @@ details[open] .faq-chevron { transform: rotate(180deg); color: var(--violet); }
     <div>
       <div class="section-eyebrow">Para tus colaboradores</div>
       <h2 class="section-h2">Beneficios pensados para <em>la vida real.</em></h2>
-      <p class="section-sub" style="margin:0 0 32px">Así accede tu equipo a cada solución, directo desde la plataforma.</p>
+      <p class="section-sub" style="margin:0 0 32px">Seis módulos en una sola plataforma. Así accede tu equipo a cada uno.</p>
       <div class="colab-tabs" role="tablist" aria-label="Soluciones para colaboradores">
         <button class="colab-tab active" role="tab" aria-selected="true" data-tab="credito" onclick="switchColabTab('credito')">
           <span class="colab-tab-icon"><i data-lucide="credit-card" class="wn-icon"></i></span>
           <span class="colab-tab-copy">
-            <strong>Crédito</strong>
+            <strong>Wellnest Liquidez</strong>
             <span>Solicita una opción de crédito desde la plataforma y recibe seguimiento durante el proceso.</span>
           </span>
         </button>
         <button class="colab-tab" role="tab" aria-selected="false" data-tab="proteccion" onclick="switchColabTab('proteccion')">
           <span class="colab-tab-icon"><i data-lucide="shield-check" class="wn-icon"></i></span>
           <span class="colab-tab-copy">
-            <strong>Protección</strong>
+            <strong>Wellnest Seguros</strong>
             <span>Explora opciones de seguro y solicita una cotización según tus necesidades.</span>
           </span>
         </button>
         <button class="colab-tab" role="tab" aria-selected="false" data-tab="club" onclick="switchColabTab('club')">
           <span class="colab-tab-icon"><i data-lucide="tag" class="wn-icon"></i></span>
           <span class="colab-tab-copy">
-            <strong>Club</strong>
+            <strong>Wellnest Club</strong>
             <span>Encuentra descuentos y promociones exclusivas cerca de ti.</span>
+          </span>
+        </button>
+        <button class="colab-tab" role="tab" aria-selected="false" data-tab="aprendizaje" onclick="switchColabTab('aprendizaje')">
+          <span class="colab-tab-icon"><i data-lucide="graduation-cap" class="wn-icon"></i></span>
+          <span class="colab-tab-copy">
+            <strong>Wellnest Aprendizaje</strong>
+            <span>Aprende y desarrolla nuevas habilidades con cursos y guías paso a paso.</span>
+          </span>
+        </button>
+        <button class="colab-tab" role="tab" aria-selected="false" data-tab="presupuesto" onclick="switchColabTab('presupuesto')">
+          <span class="colab-tab-icon"><i data-lucide="wallet" class="wn-icon"></i></span>
+          <span class="colab-tab-copy">
+            <strong>Wellnest Presupuesto</strong>
+            <span>Organiza tus ingresos, gastos y metas para tener mayor control de tus finanzas personales.</span>
+          </span>
+        </button>
+        <button class="colab-tab" role="tab" aria-selected="false" data-tab="ia" onclick="switchColabTab('ia')">
+          <span class="colab-tab-icon"><i data-lucide="sparkles" class="wn-icon"></i></span>
+          <span class="colab-tab-copy">
+            <strong>Wellnest IA</strong>
+            <span>Recibe orientación y respuestas de forma sencilla con el asistente inteligente de Wellnest.</span>
           </span>
         </button>
       </div>
@@ -2365,6 +2585,29 @@ details[open] .faq-chevron { transform: rotate(180deg); color: var(--violet); }
       <div class="colab-phone">
         <div class="colab-phone-notch"></div>
         <div class="colab-phone-screen">
+          <div class="colab-topbar">
+            <div class="phone-statusbar">
+              <span>9:41</span>
+              <span class="phone-statusbar-icons">
+                <i data-lucide="signal" class="wn-icon-sm"></i>
+                <i data-lucide="wifi" class="wn-icon-sm"></i>
+                <i data-lucide="battery-full" class="wn-icon-sm"></i>
+              </span>
+            </div>
+            <div class="phone-dash-header">
+              <div class="pdh-left">
+                <span class="pdh-menu"><i data-lucide="menu" class="wn-icon-sm"></i></span>
+                <span class="pdh-company">
+                  <span class="pdh-company-badge">E</span>
+                  <span class="pdh-company-name">Empresa Corp</span>
+                </span>
+              </div>
+              <div class="pdh-right">
+                <span class="pdh-bell"><i data-lucide="bell" class="wn-icon-sm"></i><span class="pdh-bell-badge">1</span></span>
+                <span class="pdh-avatar"><span class="pdh-avatar-circle">AS</span><i data-lucide="chevron-down" class="wn-icon-sm"></i></span>
+              </div>
+            </div>
+          </div>
 
           <!-- Crédito -->
           <div class="colab-screen active" data-tab-screen="credito">
@@ -2389,43 +2632,199 @@ details[open] .faq-chevron { transform: rotate(180deg); color: var(--violet); }
 
           <!-- Protección -->
           <div class="colab-screen" data-tab-screen="proteccion">
-            <div class="ms-h1">Seguro de Auto — SOAT</div>
-            <p class="ms-sub">Todos los planes cubren el SOAT obligatorio.</p>
-            <div class="ms-hero-card">
-              <strong>Tu SOAT en un minuto</strong>
-              <p>Cobertura obligatoria para tu auto, emitida al instante y descontada cómodamente por planilla.</p>
+            <div class="ms-h1">Seguros</div>
+            <div class="ms-partner"><span>En alianza con</span><img src="astro-asistencias.png" alt="Astro Asistencias" width="2084" height="564"></div>
+            <p class="ms-sub">Elegí la cobertura que querés solicitar.</p>
+            <div class="ms-plan">
+              <div class="ms-plan-top">
+                <div class="ms-plan-icon"><i data-lucide="car" class="wn-icon-sm"></i></div>
+                <span class="ms-plan-tag">Obligatorio por ley</span>
+              </div>
+              <strong>Seguro de Auto — SOAT</strong>
+              <p>Si tenés un accidente, responde por las lesiones y los daños que les causes a otros. Es el seguro que todo auto debe tener por ley.</p>
+              <ul>
+                <li>Lesiones a terceros</li>
+                <li>Daños a terceros</li>
+                <li>Contratación en línea</li>
+              </ul>
+              <a>Cotizar →</a>
             </div>
-            <div class="ms-feature"><strong>Obligatorio</strong><span>Cumplí con la ley al toque</span></div>
-            <div class="ms-feature"><strong>Con Astro Asistencias</strong><span>Respaldando cada asistencia</span></div>
-            <div class="ms-feature"><strong>Emisión al instante</strong><span>Póliza y carta al confirmar</span></div>
-            <button type="button" class="ms-btn">Ver planes</button>
+            <div class="ms-plan ms-plan-dark">
+              <div class="ms-plan-top">
+                <div class="ms-plan-icon"><i data-lucide="shield-check" class="wn-icon-sm"></i></div>
+                <span class="ms-plan-tag">Protección total</span>
+              </div>
+              <strong>Cobertura Completa</strong>
+              <p>Todo lo del SOAT y además tu propio auto: choque, vuelco, robo e incendio, por el valor que declares.</p>
+              <ul>
+                <li>Daños a tu propio auto</li>
+                <li>Robo e incendio</li>
+                <li>Terceros incluidos</li>
+              </ul>
+              <a>Cotizar →</a>
+            </div>
           </div>
 
           <!-- Club -->
           <div class="colab-screen" data-tab-screen="club">
-            <div class="ms-h1">Wellnest Club</div>
-            <p class="ms-sub">Comercios aliados con beneficios y descuentos para ti.</p>
-            <div class="ms-search">🔍 Buscar comercios u ofertas</div>
-            <div class="ms-chips">
-              <span class="ms-chip active">Todo</span>
-              <span class="ms-chip">Restaurantes</span>
-              <span class="ms-chip">Moda</span>
+            <div class="ms-club-view" id="clubList">
+              <div class="ms-h1">Wellnest Club</div>
+              <p class="ms-sub">Comercios aliados con beneficios y descuentos para ti. Tocá una promoción para ver tu código.</p>
+              <div class="ms-search">🔍 Buscar comercios u ofertas</div>
+              <div class="ms-chips">
+                <button type="button" class="ms-chip active" data-filter="todo" onclick="filterClub(this)">Todo</button>
+                <button type="button" class="ms-chip" data-filter="restaurantes" onclick="filterClub(this)">Restaurantes</button>
+                <button type="button" class="ms-chip" data-filter="moda" onclick="filterClub(this)">Moda</button>
+              </div>
+              <button type="button" class="ms-merchant" data-group="viajes" data-merchant="Regency Travel" data-offer="10% de descuento en Regency Travel" data-code="R7210TVL" onclick="openClubOffer(this)">
+                <div class="ms-merchant-logo">✈️</div>
+                <div class="ms-merchant-info"><strong>Regency Travel</strong><span>Viajes y Turismo</span></div>
+                <span class="ms-merchant-badge">10%</span>
+              </button>
+              <button type="button" class="ms-merchant" data-group="restaurantes" data-merchant="Oja" data-offer="15% de descuento en Oja" data-code="J3815OJA" onclick="openClubOffer(this)">
+                <div class="ms-merchant-logo">🍽️</div>
+                <div class="ms-merchant-info"><strong>Oja</strong><span>Restaurante</span></div>
+                <span class="ms-merchant-badge">15%</span>
+              </button>
+              <button type="button" class="ms-merchant" data-group="moda" data-merchant="Bellini" data-offer="20% de descuento en Bellini" data-code="B2020BLN" onclick="openClubOffer(this)">
+                <div class="ms-merchant-logo">👔</div>
+                <div class="ms-merchant-info"><strong>Bellini</strong><span>Moda y Calzado</span></div>
+                <span class="ms-merchant-badge">20%</span>
+              </button>
             </div>
-            <div class="ms-merchant">
-              <div class="ms-merchant-logo">✈️</div>
-              <div class="ms-merchant-info"><strong>Regency Travel</strong><span>Viajes y Turismo</span></div>
-              <span class="ms-merchant-badge">10%</span>
+            <div class="ms-club-view" id="clubOffer" hidden>
+                <div class="ms-coupon">
+                <div class="ms-coupon-head">
+                  <strong>Wellnest Club</strong>
+                  <span class="ms-coupon-pill"><i></i>Activa</span>
+                </div>
+                <div class="ms-coupon-merchant" id="clubOfferMerchant">Regency Travel</div>
+                <div class="ms-coupon-offer" id="clubOfferTitle">10% de descuento en Regency Travel</div>
+                <div class="ms-coupon-qr">
+                  <div class="ms-coupon-qr-code"><svg viewBox="0 0 25 25" shape-rendering="crispEdges" aria-hidden="true"><path fill="#0D0B1E" d="M0 0h1v1h-1zM1 0h1v1h-1zM2 0h1v1h-1zM3 0h1v1h-1zM4 0h1v1h-1zM5 0h1v1h-1zM6 0h1v1h-1zM8 0h1v1h-1zM12 0h1v1h-1zM16 0h1v1h-1zM18 0h1v1h-1zM19 0h1v1h-1zM20 0h1v1h-1zM21 0h1v1h-1zM22 0h1v1h-1zM23 0h1v1h-1zM24 0h1v1h-1zM0 1h1v1h-1zM6 1h1v1h-1zM9 1h1v1h-1zM11 1h1v1h-1zM13 1h1v1h-1zM14 1h1v1h-1zM15 1h1v1h-1zM18 1h1v1h-1zM24 1h1v1h-1zM0 2h1v1h-1zM2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM6 2h1v1h-1zM9 2h1v1h-1zM13 2h1v1h-1zM15 2h1v1h-1zM16 2h1v1h-1zM18 2h1v1h-1zM20 2h1v1h-1zM21 2h1v1h-1zM22 2h1v1h-1zM24 2h1v1h-1zM0 3h1v1h-1zM2 3h1v1h-1zM3 3h1v1h-1zM4 3h1v1h-1zM6 3h1v1h-1zM9 3h1v1h-1zM13 3h1v1h-1zM14 3h1v1h-1zM15 3h1v1h-1zM18 3h1v1h-1zM20 3h1v1h-1zM21 3h1v1h-1zM22 3h1v1h-1zM24 3h1v1h-1zM0 4h1v1h-1zM2 4h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM6 4h1v1h-1zM8 4h1v1h-1zM9 4h1v1h-1zM11 4h1v1h-1zM15 4h1v1h-1zM18 4h1v1h-1zM20 4h1v1h-1zM21 4h1v1h-1zM22 4h1v1h-1zM24 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM18 5h1v1h-1zM24 5h1v1h-1zM0 6h1v1h-1zM1 6h1v1h-1zM2 6h1v1h-1zM3 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM12 6h1v1h-1zM13 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM19 6h1v1h-1zM20 6h1v1h-1zM21 6h1v1h-1zM22 6h1v1h-1zM23 6h1v1h-1zM24 6h1v1h-1zM8 7h1v1h-1zM9 7h1v1h-1zM11 7h1v1h-1zM15 7h1v1h-1zM16 7h1v1h-1zM3 8h1v1h-1zM5 8h1v1h-1zM8 8h1v1h-1zM10 8h1v1h-1zM14 8h1v1h-1zM16 8h1v1h-1zM18 8h1v1h-1zM19 8h1v1h-1zM20 8h1v1h-1zM22 8h1v1h-1zM0 9h1v1h-1zM2 9h1v1h-1zM3 9h1v1h-1zM5 9h1v1h-1zM10 9h1v1h-1zM14 9h1v1h-1zM15 9h1v1h-1zM20 9h1v1h-1zM23 9h1v1h-1zM1 10h1v1h-1zM2 10h1v1h-1zM5 10h1v1h-1zM7 10h1v1h-1zM8 10h1v1h-1zM9 10h1v1h-1zM11 10h1v1h-1zM14 10h1v1h-1zM15 10h1v1h-1zM16 10h1v1h-1zM20 10h1v1h-1zM0 11h1v1h-1zM5 11h1v1h-1zM8 11h1v1h-1zM9 11h1v1h-1zM10 11h1v1h-1zM12 11h1v1h-1zM18 11h1v1h-1zM19 11h1v1h-1zM21 11h1v1h-1zM0 12h1v1h-1zM1 12h1v1h-1zM2 12h1v1h-1zM4 12h1v1h-1zM5 12h1v1h-1zM6 12h1v1h-1zM9 12h1v1h-1zM10 12h1v1h-1zM13 12h1v1h-1zM14 12h1v1h-1zM16 12h1v1h-1zM17 12h1v1h-1zM19 12h1v1h-1zM21 12h1v1h-1zM24 12h1v1h-1zM3 13h1v1h-1zM4 13h1v1h-1zM5 13h1v1h-1zM6 13h1v1h-1zM7 13h1v1h-1zM8 13h1v1h-1zM9 13h1v1h-1zM10 13h1v1h-1zM11 13h1v1h-1zM14 13h1v1h-1zM17 13h1v1h-1zM18 13h1v1h-1zM19 13h1v1h-1zM23 13h1v1h-1zM0 14h1v1h-1zM1 14h1v1h-1zM2 14h1v1h-1zM3 14h1v1h-1zM4 14h1v1h-1zM7 14h1v1h-1zM11 14h1v1h-1zM13 14h1v1h-1zM16 14h1v1h-1zM18 14h1v1h-1zM20 14h1v1h-1zM21 14h1v1h-1zM22 14h1v1h-1zM24 14h1v1h-1zM0 15h1v1h-1zM1 15h1v1h-1zM5 15h1v1h-1zM6 15h1v1h-1zM7 15h1v1h-1zM8 15h1v1h-1zM13 15h1v1h-1zM15 15h1v1h-1zM16 15h1v1h-1zM17 15h1v1h-1zM18 15h1v1h-1zM21 15h1v1h-1zM22 15h1v1h-1zM23 15h1v1h-1zM24 15h1v1h-1zM1 16h1v1h-1zM2 16h1v1h-1zM3 16h1v1h-1zM4 16h1v1h-1zM5 16h1v1h-1zM6 16h1v1h-1zM7 16h1v1h-1zM11 16h1v1h-1zM15 16h1v1h-1zM16 16h1v1h-1zM17 16h1v1h-1zM18 16h1v1h-1zM19 16h1v1h-1zM20 16h1v1h-1zM21 16h1v1h-1zM8 17h1v1h-1zM10 17h1v1h-1zM12 17h1v1h-1zM14 17h1v1h-1zM16 17h1v1h-1zM20 17h1v1h-1zM21 17h1v1h-1zM23 17h1v1h-1zM24 17h1v1h-1zM0 18h1v1h-1zM1 18h1v1h-1zM2 18h1v1h-1zM3 18h1v1h-1zM4 18h1v1h-1zM5 18h1v1h-1zM6 18h1v1h-1zM9 18h1v1h-1zM10 18h1v1h-1zM11 18h1v1h-1zM13 18h1v1h-1zM15 18h1v1h-1zM16 18h1v1h-1zM18 18h1v1h-1zM20 18h1v1h-1zM0 19h1v1h-1zM6 19h1v1h-1zM9 19h1v1h-1zM10 19h1v1h-1zM11 19h1v1h-1zM12 19h1v1h-1zM15 19h1v1h-1zM16 19h1v1h-1zM20 19h1v1h-1zM21 19h1v1h-1zM24 19h1v1h-1zM0 20h1v1h-1zM2 20h1v1h-1zM3 20h1v1h-1zM4 20h1v1h-1zM6 20h1v1h-1zM8 20h1v1h-1zM9 20h1v1h-1zM11 20h1v1h-1zM13 20h1v1h-1zM16 20h1v1h-1zM17 20h1v1h-1zM18 20h1v1h-1zM19 20h1v1h-1zM20 20h1v1h-1zM21 20h1v1h-1zM22 20h1v1h-1zM0 21h1v1h-1zM2 21h1v1h-1zM3 21h1v1h-1zM4 21h1v1h-1zM6 21h1v1h-1zM10 21h1v1h-1zM11 21h1v1h-1zM13 21h1v1h-1zM16 21h1v1h-1zM18 21h1v1h-1zM20 21h1v1h-1zM21 21h1v1h-1zM0 22h1v1h-1zM2 22h1v1h-1zM3 22h1v1h-1zM4 22h1v1h-1zM6 22h1v1h-1zM8 22h1v1h-1zM12 22h1v1h-1zM13 22h1v1h-1zM14 22h1v1h-1zM15 22h1v1h-1zM17 22h1v1h-1zM18 22h1v1h-1zM19 22h1v1h-1zM21 22h1v1h-1zM22 22h1v1h-1zM23 22h1v1h-1zM0 23h1v1h-1zM6 23h1v1h-1zM8 23h1v1h-1zM10 23h1v1h-1zM12 23h1v1h-1zM13 23h1v1h-1zM17 23h1v1h-1zM18 23h1v1h-1zM20 23h1v1h-1zM21 23h1v1h-1zM23 23h1v1h-1zM0 24h1v1h-1zM1 24h1v1h-1zM2 24h1v1h-1zM3 24h1v1h-1zM4 24h1v1h-1zM5 24h1v1h-1zM6 24h1v1h-1zM9 24h1v1h-1zM10 24h1v1h-1zM12 24h1v1h-1zM13 24h1v1h-1zM14 24h1v1h-1zM16 24h1v1h-1zM17 24h1v1h-1zM23 24h1v1h-1z"/></svg><span class="ms-coupon-scan"></span></div>
+                  <div class="ms-coupon-label">Código manual</div>
+                  <div class="ms-coupon-code" id="clubOfferCode">R7210TVL</div>
+                </div>
+                <div class="ms-coupon-foot">🎟️ Usos ilimitados</div>
+              </div>
+              <button type="button" class="ms-coupon-back" onclick="closeClubOffer()">← Volver a comercios</button>
             </div>
-            <div class="ms-merchant">
-              <div class="ms-merchant-logo">🍽️</div>
-              <div class="ms-merchant-info"><strong>Oja</strong><span>Restaurante</span></div>
-              <span class="ms-merchant-badge">15%</span>
+          </div>
+
+          <!-- Aprendizaje -->
+          <div class="colab-screen" data-tab-screen="aprendizaje">
+            <div class="ms-eyebrow">Wellnest Aprendizaje</div>
+            <div class="ms-h1">Tu ruta de aprendizaje</div>
+            <p class="ms-sub">Recorridos guiados, paso a paso, para tomar el control de tus finanzas.</p>
+            <div class="ms-course">
+              <div class="ms-course-top">
+                <div class="ms-course-icon"><i data-lucide="piggy-bank" class="wn-icon-sm"></i></div>
+                <span class="ms-course-tag">Guía</span>
+              </div>
+              <strong>Presupuesto Financiero Familiar</strong>
+              <p>Controlá el flujo de caja de tu familia y convertí tu excedente en ahorro e inversión, paso a paso.</p>
+              <div class="ms-course-foot"><span>5 lecciones · guía</span><a>Empezar →</a></div>
             </div>
-            <div class="ms-merchant">
-              <div class="ms-merchant-logo">👟</div>
-              <div class="ms-merchant-info"><strong>Nike</strong><span>Calzado deportivo</span></div>
-              <span class="ms-merchant-badge">15%</span>
+            <div class="ms-course ms-course-sky">
+              <div class="ms-course-top">
+                <div class="ms-course-icon"><i data-lucide="sparkles" class="wn-icon-sm"></i></div>
+                <span class="ms-course-tag">Guía</span>
+              </div>
+              <strong>Inteligencia Artificial paso a paso</strong>
+              <p>De los conceptos básicos y cómo escribir un buen prompt, hasta agentes que ejecutan acciones.</p>
+              <div class="ms-course-foot"><span>9 lecciones · guía</span><a>Empezar →</a></div>
             </div>
+            <div class="ms-catalog">
+              <strong>Catálogo de cursos</strong>
+              <p>Cursos interactivos con capítulos, quiz y certificado. Elegí por categoría.</p>
+              <div class="ms-chips">
+                <span class="ms-chip active">Todos <b>12</b></span>
+                <span class="ms-chip">Presupuesto <b>1</b></span>
+                <span class="ms-chip">Inversión <b>2</b></span>
+                <span class="ms-chip">Crédito</span>
+              </div>
+              <div class="ms-course">
+                <div class="ms-course-top">
+                  <div class="ms-course-emoji">📊</div>
+                  <span class="ms-course-tag">Fundamentos</span>
+                </div>
+                <div class="ms-course-kind">Curso</div>
+                <strong>Presupuesto y control de gastos</strong>
+                <p>Seis capítulos breves para construir un presupuesto que se sostiene en el tiempo, con mini-quiz en cada uno.</p>
+                <div class="ms-course-foot"><span>6 capítulos · 12 preguntas</span></div>
+              </div>
+              <div class="ms-course">
+                <div class="ms-course-top">
+                  <div class="ms-course-emoji">📈</div>
+                  <span class="ms-course-tag">Primeros pasos</span>
+                </div>
+                <div class="ms-course-kind">Curso</div>
+                <strong>Ahorro e inversión: primeros pasos</strong>
+                <p>Seis capítulos para entender la diferencia entre ahorrar e invertir y por qué el tiempo es la variable más poderosa.</p>
+                <div class="ms-course-foot"><span>6 capítulos · 12 preguntas</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- IA -->
+          <div class="colab-screen" data-tab-screen="ia">
+            <div class="ms-ia-head">
+              <div class="ms-ia-avatar"><i data-lucide="sparkles" class="wn-icon-sm"></i></div>
+              <div>
+                <div class="ms-h1" style="margin-bottom:2px">Wellnest IA</div>
+                <p class="ms-sub" style="margin-bottom:0">Tu asistente de educación financiera</p>
+              </div>
+            </div>
+            <div class="ms-chat-row">
+              <div class="ms-chat-avatar">AS</div>
+              <div class="ms-chat-text">¿Cómo armo un presupuesto?</div>
+            </div>
+            <div class="ms-chat-row">
+              <div class="ms-chat-avatar ms-chat-avatar-ia"><i data-lucide="sparkles" class="wn-icon-sm"></i></div>
+              <div class="ms-chat-text">Una guía simple es la <strong>regla 50/30/20</strong> sobre tu ingreso neto: <strong>50%</strong> necesidades (vivienda, comida, transporte), <strong>30%</strong> deseos y <strong>20%</strong> ahorro o pago de deuda. Podés cargar tus gastos en <strong>Wellnest Presupuesto</strong> y ver tu reparto real.</div>
+            </div>
+            <div class="ms-chat-row">
+              <div class="ms-chat-avatar">AS</div>
+              <div class="ms-chat-text">cambiá mi ingreso a 1400</div>
+            </div>
+            <div class="ms-chat-row">
+              <div class="ms-chat-avatar ms-chat-avatar-ia"><i data-lucide="sparkles" class="wn-icon-sm"></i></div>
+              <div class="ms-chat-text">Listo ✅. Actualicé tu <strong>ingreso mensual</strong> a $1,400.00 en Wellnest Presupuesto.</div>
+            </div>
+            <div class="ms-chat-foot">
+              <div class="ms-chat-input"><span>Preguntá o pedime cambiar tu presupuesto</span><span class="ms-chat-send"><i data-lucide="arrow-up" class="wn-icon-sm"></i></span></div>
+              <p class="ms-chat-note">Wellnest IA da orientación educativa, no asesoría financiera. Verificá la información importante.</p>
+            </div>
+          </div>
+
+          <!-- Presupuesto -->
+          <div class="colab-screen" data-tab-screen="presupuesto">
+            <div class="ms-h1">Wellnest Presupuesto</div>
+            <p class="ms-sub">Cargá tu ingreso y tus gastos, mirá el reparto 50/30/20 y planificá tus metas con fecha.</p>
+            <div class="ms-stat">
+              <span>Ingreso mensual (bruto)</span>
+              <div class="ms-income"><strong>$ 1400</strong><em>Confirmar</em></div>
+            </div>
+            <div class="ms-stat-row">
+              <div class="ms-stat"><span>Gastos totales</span><strong>$480.00</strong></div>
+              <div class="ms-stat"><span>Balance</span><strong style="color:#059669">$920.00</strong></div>
+            </div>
+            <div class="ms-stat">
+              <div class="ms-stat-title">Reparto 50/30/20</div>
+              <div class="ms-bar-row"><span>Necesidades</span><span><b data-budget="necesidad" data-limit="700">$480.00</b> / $700.00</span></div>
+              <div class="ms-bar"><i data-budget-bar="necesidad" style="width:69%"></i></div>
+              <div class="ms-bar-row"><span>Deseos</span><span><b data-budget="deseo" data-limit="420">$0.00</b> / $420.00</span></div>
+              <div class="ms-bar"><i data-budget-bar="deseo" style="width:0%;background:var(--violet)"></i></div>
+              <div class="ms-bar-row"><span>Ahorro / deuda</span><span><b data-budget="ahorro" data-limit="280">$0.00</b> / $280.00</span></div>
+              <div class="ms-bar"><i data-budget-bar="ahorro" style="width:0%;background:#10B981"></i></div>
+            </div>
+            <div class="ms-stat-title" style="margin:14px 0 2px">Mis gastos</div>
+            <p class="ms-sub" style="margin-bottom:8px">Tocá la categoría de un gasto para cambiarla y mirá cómo se mueve el reparto.</p>
+            <div class="ms-expense"><span class="ms-expense-icon">🏠</span><div><strong>Alquiler</strong><button type="button" class="ms-cat" data-cat="necesidad" data-amount="250.00" aria-haspopup="listbox" aria-expanded="false" onclick="toggleCatMenu(this, event)">Necesidad <i>⌄</i></button></div><b>$250.00</b></div>
+            <div class="ms-expense"><span class="ms-expense-icon">🛒</span><div><strong>Supermercado</strong><button type="button" class="ms-cat" data-cat="necesidad" data-amount="120.00" aria-haspopup="listbox" aria-expanded="false" onclick="toggleCatMenu(this, event)">Necesidad <i>⌄</i></button></div><b>$120.00</b></div>
+            <div class="ms-expense"><span class="ms-expense-icon">🛡️</span><div><strong>Seguros</strong><button type="button" class="ms-cat" data-cat="necesidad" data-amount="80.00" aria-haspopup="listbox" aria-expanded="false" onclick="toggleCatMenu(this, event)">Necesidad <i>⌄</i></button></div><b>$80.00</b></div>
+            <div class="ms-expense"><span class="ms-expense-icon">🚌</span><div><strong>Transporte</strong><button type="button" class="ms-cat" data-cat="necesidad" data-amount="30.00" aria-haspopup="listbox" aria-expanded="false" onclick="toggleCatMenu(this, event)">Necesidad <i>⌄</i></button></div><b>$30.00</b></div>
+            <div class="ms-expense-total"><span>Total de gastos</span><b>$480.00</b></div>
           </div>
 
         </div>
@@ -2539,6 +2938,30 @@ details[open] .faq-chevron { transform: rotate(180deg); color: var(--violet); }
         <p class="faq-a">Los colaboradores acceden a promociones y descuentos ofrecidos por comercios aliados directamente desde la plataforma Wellnest, sin necesidad de intermediarios.</p>
       </details>
 
+      <details class="faq-item">
+        <summary class="faq-q">
+          ¿Qué módulos incluye Wellnest?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <p class="faq-a">Wellnest reúne 6 módulos en una sola plataforma: Wellnest Liquidez, Wellnest Seguros, Wellnest Club, Wellnest Aprendizaje (cursos y contenido educativo), Wellnest Presupuesto (ingresos, gastos y metas) y Wellnest IA, un asistente que da orientación educativa, no asesoría financiera.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">
+          ¿Wellnest IA brinda asesoría financiera?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <p class="faq-a">No. Wellnest IA brinda orientación e información educativa para ayudar a los colaboradores a entender mejor sus opciones. No sustituye asesoría financiera profesional.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">
+          ¿Qué es Wellnest Presupuesto?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <p class="faq-a">Wellnest Presupuesto es una herramienta que ayuda a los colaboradores a organizar sus ingresos y gastos, crear metas y tener una mejor visión de sus finanzas personales desde un solo lugar.</p>
+      </details>
+
     </div>
   </div>
 </section>
@@ -2593,7 +3016,7 @@ details[open] .faq-chevron { transform: rotate(180deg); color: var(--violet); }
       </div>
       <div class="footer-links-group">
         <h4>Plataforma</h4>
-        <a href="#modulos">Módulos</a>
+        <a href="#colaboradores">Módulos</a>
         <a href="#beneficios">Centro de Beneficios</a>
         <a href="#form">Activar</a>
       </div>
@@ -2638,6 +3061,7 @@ document.addEventListener('click', (e) => {
 
 // ── Para colaboradores: tab switcher ────────────────────────────────────────
 function switchColabTab(name) {
+  closeClubOffer();
   document.querySelectorAll('.colab-tab').forEach((t) => {
     const active = t.dataset.tab === name;
     t.classList.toggle('active', active);
@@ -2647,6 +3071,72 @@ function switchColabTab(name) {
     screen.classList.toggle('active', screen.dataset.tabScreen === name);
   });
 }
+
+// ── Wellnest Club (demo): tocar una promoción muestra su cupón con QR ────────
+function openClubOffer(btn) {
+  document.getElementById('clubOfferMerchant').textContent = btn.dataset.merchant;
+  document.getElementById('clubOfferTitle').textContent = btn.dataset.offer;
+  document.getElementById('clubOfferCode').textContent = btn.dataset.code;
+  document.getElementById('clubList').hidden = true;
+  document.getElementById('clubOffer').hidden = false;
+  document.getElementById('clubOffer').parentElement.scrollTop = 0;
+}
+function filterClub(chip) {
+  document.querySelectorAll('#clubList .ms-chip').forEach((c) => c.classList.toggle('active', c === chip));
+  document.querySelectorAll('#clubList .ms-merchant').forEach((m) => {
+    m.hidden = chip.dataset.filter !== 'todo' && m.dataset.group !== chip.dataset.filter;
+  });
+}
+function closeClubOffer() {
+  document.getElementById('clubOffer').hidden = true;
+  document.getElementById('clubList').hidden = false;
+}
+
+// ── Wellnest Presupuesto (demo): cambiar la categoría de un gasto ────────────
+const CAT_LABELS = { necesidad: 'Necesidad', deseo: 'Deseo', ahorro: 'Ahorro / deuda' };
+function closeCatMenus() {
+  document.querySelectorAll('.ms-cat-menu').forEach((m) => m.remove());
+  document.querySelectorAll('.ms-cat').forEach((b) => b.setAttribute('aria-expanded', 'false'));
+}
+function toggleCatMenu(btn, e) {
+  e.stopPropagation();
+  const wasOpen = btn.getAttribute('aria-expanded') === 'true';
+  closeCatMenus();
+  if (wasOpen) return;
+  const menu = document.createElement('div');
+  menu.className = 'ms-cat-menu';
+  menu.setAttribute('role', 'listbox');
+  Object.keys(CAT_LABELS).forEach((cat) => {
+    const opt = document.createElement('button');
+    opt.type = 'button';
+    opt.setAttribute('role', 'option');
+    opt.setAttribute('aria-selected', btn.dataset.cat === cat ? 'true' : 'false');
+    opt.textContent = CAT_LABELS[cat];
+    opt.addEventListener('click', (ev) => {
+      ev.stopPropagation();
+      btn.dataset.cat = cat;
+      btn.firstChild.textContent = CAT_LABELS[cat] + ' ';
+      closeCatMenus();
+      updateBudgetSplit();
+    });
+    menu.appendChild(opt);
+  });
+  btn.closest('.ms-expense').appendChild(menu);
+  btn.setAttribute('aria-expanded', 'true');
+  menu.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+}
+function updateBudgetSplit() {
+  const totals = { necesidad: 0, deseo: 0, ahorro: 0 };
+  document.querySelectorAll('.ms-cat').forEach((b) => { totals[b.dataset.cat] += parseFloat(b.dataset.amount); });
+  Object.keys(totals).forEach((cat) => {
+    const label = document.querySelector('[data-budget="' + cat + '"]');
+    const bar = document.querySelector('[data-budget-bar="' + cat + '"]');
+    if (!label || !bar) return;
+    label.textContent = '$' + totals[cat].toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    bar.style.width = Math.min(100, Math.round(totals[cat] / parseFloat(label.dataset.limit) * 100)) + '%';
+  });
+}
+document.addEventListener('click', closeCatMenus);
 
 // ── Showcase tab switcher ────────────────────────────────────────────────────
 function switchTab(id, btn) {
@@ -2716,6 +3206,24 @@ function submitWaitlist(e) {
   }, { passive: true });
 })();
 
+// ── CTA móvil: se oculta donde taparía contenido o sobra (módulos, formulario, footer) ──
+document.addEventListener('DOMContentLoaded', function() {
+  const cta = document.getElementById('mobileCta');
+  if (!cta) return;
+  const targets = [document.querySelector('.colab-phone'), document.getElementById('form'), document.querySelector('footer')].filter(Boolean);
+  function update() {
+    const limit = window.innerHeight - 80;
+    const hide = targets.some((t) => {
+      const r = t.getBoundingClientRect();
+      return r.top < limit && r.bottom > 0;
+    });
+    cta.classList.toggle('is-hidden', hide);
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update, { passive: true });
+  update();
+});
+
 // ── Nav active section highlighting ─────────────────────────────────────────
 (function() {
   const sections = ['como-funciona','modulos','resultados','form','beneficios','portal-rrhh','verificar'];
@@ -2763,7 +3271,7 @@ function submitWaitlist(e) {
 </a>
 
 <!-- MOBILE UNIFIED CTA — only shows on mobile -->
-<a href="mailto:team@miwellnest.com?subject=Solicitud%20de%20Demo%20Wellnest" class="mobile-cta-unified" id="mobileCta">
+<a href="https://wa.me/50760967343?text=Hola%2C%20quiero%20agendar%20una%20demo%20de%20Wellnest" class="mobile-cta-unified" id="mobileCta" target="_blank" rel="noopener" aria-label="Agendar una demo por WhatsApp">
   <svg viewBox="0 0 24 24" fill="#fff" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   Demo en 30 min
 </a>
