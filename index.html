@@ -813,17 +813,76 @@ body {
 .hero-demo-tab:hover { border-color: var(--violet); transform: translateY(-1px); }
 .hero-demo-tab.active { background: var(--violet); border-color: var(--violet); color: #fff; box-shadow: 0 8px 20px rgba(123,97,255,0.42); }
 .hero-demo .colab-phone {
-  width: 300px; height: 620px; z-index: 2;
-  background: linear-gradient(160deg, #2A2566 0%, #0D0B1E 38%, #0D0B1E 100%);
-  box-shadow: 0 50px 110px rgba(8,6,18,0.5), 0 24px 60px rgba(123,97,255,0.45), inset 0 0 0 1.5px rgba(255,255,255,0.14);
+  width: 300px; height: 620px; z-index: 2; padding: 10px; border-radius: 52px;
+  background: linear-gradient(145deg, #6E69A8 0%, #2B2760 14%, #0F0D24 34%, #1B1840 62%, #4C4790 86%, #17142F 100%);
+  box-shadow:
+    0 60px 120px rgba(8,6,18,0.55), 0 26px 64px rgba(123,97,255,0.5),
+    inset 0 0 0 1px rgba(255,255,255,0.22), inset 0 2px 3px rgba(255,255,255,0.35), inset 0 -2px 4px rgba(0,0,0,0.5);
+  transform: perspective(1400px) rotateX(var(--tx, 0deg)) rotateY(var(--ty, 0deg));
+  transform-style: preserve-3d; transition: transform 0.25s ease-out; will-change: transform;
 }
+/* halo que respira */
 .hero-demo .colab-phone::before {
-  content: ''; position: absolute; inset: -26px; z-index: -1; border-radius: 64px; pointer-events: none;
-  background: conic-gradient(from 140deg, rgba(123,97,255,0.55), rgba(174,230,255,0.45), rgba(123,97,255,0.1), rgba(123,97,255,0.55));
-  filter: blur(34px); opacity: 0.75; animation: demoGlow 6s ease-in-out infinite;
+  content: ''; position: absolute; inset: -30px; z-index: -1; border-radius: 70px; pointer-events: none;
+  background: conic-gradient(from 140deg, rgba(123,97,255,0.6), rgba(174,230,255,0.5), rgba(123,97,255,0.1), rgba(123,97,255,0.6));
+  filter: blur(36px); opacity: 0.75; animation: demoGlow 6s ease-in-out infinite;
 }
+/* filo de luz que recorre el marco */
+.hero-demo .colab-phone::after {
+  content: ''; position: absolute; inset: -1.5px; border-radius: 53.5px; padding: 1.5px; pointer-events: none; z-index: 3;
+  background: conic-gradient(from var(--edge, 0deg), rgba(174,230,255,0) 0deg, rgba(174,230,255,0.95) 40deg, rgba(156,136,255,0.9) 70deg, rgba(174,230,255,0) 120deg, rgba(174,230,255,0) 360deg);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude;
+  animation: demoEdge 7s linear infinite;
+}
+@property --edge { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+@keyframes demoEdge { to { --edge: 360deg; } }
 @keyframes demoGlow { 0%,100% { opacity: 0.55; transform: scale(0.98); } 50% { opacity: 0.9; transform: scale(1.03); } }
-@media (prefers-reduced-motion: reduce) { .hero-demo .colab-phone::before { animation: none; } }
+.hero-demo .colab-phone-screen { border-radius: 42px; box-shadow: 0 0 0 3px #05040D; }
+/* reflejo de vidrio */
+.hero-demo .colab-phone-screen::after {
+  content: ''; position: absolute; inset: 0; z-index: 8; pointer-events: none; border-radius: inherit;
+  background: linear-gradient(118deg, rgba(255,255,255,0.20) 0%, rgba(255,255,255,0.05) 16%, rgba(255,255,255,0) 30%);
+  mix-blend-mode: screen;
+}
+/* isla dinámica */
+.hero-demo .colab-phone-notch {
+  top: 19px; width: 88px; height: 25px; border-radius: 999px; background: #05040D; z-index: 9;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
+}
+.hero-demo .colab-phone-notch::after {
+  content: ''; position: absolute; right: 9px; top: 50%; width: 9px; height: 9px; margin-top: -4.5px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #4A5BD0 0%, #14123A 55%, #05040D 100%); box-shadow: 0 0 0 1px rgba(255,255,255,0.08);
+}
+.hero-demo .colab-phone-notch::before {
+  content: ''; position: absolute; left: 11px; top: 50%; width: 5px; height: 5px; margin-top: -2.5px; border-radius: 50%;
+  background: #34D399; box-shadow: 0 0 6px #34D399; animation: pulse-dot 2s infinite;
+}
+.hero-demo .cp-drawer-logo { padding-top: 46px !important; }
+.hero-demo .colab-topbar .phone-statusbar { padding: 0 12px; }
+.ph-home-bar { position: absolute; left: 50%; bottom: 6px; width: 96px; height: 4px; margin-left: -48px; border-radius: 999px; background: rgba(13,11,30,0.28); z-index: 7; pointer-events: none; }
+/* botones físicos */
+.ph-btn { position: absolute; width: 3px; border-radius: 2px; background: linear-gradient(90deg, #17142F, #5A5596); z-index: -1; }
+.ph-btn-l1 { left: -2.5px; top: 104px; height: 22px; }
+.ph-btn-l2 { left: -2.5px; top: 146px; height: 42px; }
+.ph-btn-l3 { left: -2.5px; top: 198px; height: 42px; }
+.ph-btn-r { right: -2.5px; top: 170px; height: 66px; background: linear-gradient(270deg, #17142F, #5A5596); }
+/* barra superior de vidrio y fondo del inicio */
+.hero-demo .colab-topbar { background: rgba(255,255,255,0.82); -webkit-backdrop-filter: blur(14px) saturate(1.4); backdrop-filter: blur(14px) saturate(1.4); border-bottom-color: rgba(123,97,255,0.10); }
+.hero-demo .colab-screen[data-tab-screen="home"] {
+  background:
+    radial-gradient(120% 60% at 100% 0%, rgba(174,230,255,0.35) 0%, rgba(174,230,255,0) 60%),
+    radial-gradient(120% 60% at 0% 10%, rgba(123,97,255,0.16) 0%, rgba(123,97,255,0) 60%), #FAFAFD;
+}
+.hero-demo .phone-greet-card {
+  background: linear-gradient(120deg, #7B61FF, #4B3BC4, #1E1B4B, #5B45CC, #7B61FF); background-size: 300% 300%;
+  animation: greetAurora 10s ease-in-out infinite; box-shadow: 0 14px 28px rgba(91,69,204,0.4), inset 0 1px 0 rgba(255,255,255,0.25);
+}
+@keyframes greetAurora { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+.hero-demo .colab-screen .phone-dash-card { background: rgba(255,255,255,0.86); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border-color: rgba(123,97,255,0.16); }
+@media (prefers-reduced-motion: reduce) {
+  .hero-demo .colab-phone::before, .hero-demo .colab-phone::after, .hero-demo .phone-greet-card { animation: none; }
+  .hero-demo .colab-phone { transition: none; transform: none; }
+}
 .colab-screen[data-tab-screen="home"] { background: #FAFAFD; }
 .colab-screen .phone-dash-card[role="button"] { cursor: pointer; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; }
 .colab-screen .phone-dash-card[role="button"]:hover { transform: translateY(-2px); border-color: var(--violet); box-shadow: 0 12px 26px rgba(91,69,204,0.2); }
@@ -2575,7 +2634,8 @@ button.ms-merchant:hover { border-color: var(--violet); box-shadow: 0 6px 16px r
   .hero-demo-tabs { grid-template-columns: repeat(3, 1fr); width: 100%; gap: 7px; }
   .hero-demo-tab { padding: 12px 4px; font-size: 12px; gap: 5px; }
   .footer-links-group a { padding: 7px 0; margin-bottom: 2px; }
-  .colab-phone-notch { width: 92px; height: 20px; }
+  .hero-demo .colab-phone-notch { width: 80px; height: 23px; top: 18px; }
+  .ph-btn-l1 { top: 98px; } .ph-btn-l2 { top: 138px; } .ph-btn-l3 { top: 188px; } .ph-btn-r { top: 160px; }
   .colab-topbar { padding: 6px 11px 0; height: 68px; }
   .colab-topbar .phone-statusbar { font-size: 9.5px; margin-bottom: 9px; }
   .colab-topbar .pdh-menu { width: 24px; height: 24px; }
@@ -2750,9 +2810,11 @@ details[open] .faq-chevron { transform: rotate(180deg); color: var(--violet); }
         <button type="button" class="hero-demo-tab" data-tab="presupuesto" onclick="switchColabTab('presupuesto')"><i data-lucide="wallet" class="wn-icon-sm"></i>Presupuesto</button>
         <button type="button" class="hero-demo-tab" data-tab="ia" onclick="switchColabTab('ia')"><i data-lucide="sparkles" class="wn-icon-sm"></i>IA</button>
       </div>
-      <div class="colab-phone">
+      <div class="colab-phone" id="demoPhone">
+        <span class="ph-btn ph-btn-l1"></span><span class="ph-btn ph-btn-l2"></span><span class="ph-btn ph-btn-l3"></span><span class="ph-btn ph-btn-r"></span>
         <div class="colab-phone-notch"></div>
         <div class="colab-phone-screen">
+          <span class="ph-home-bar" aria-hidden="true"></span>
           <div class="colab-topbar">
             <div class="phone-statusbar">
               <span>9:41</span>
@@ -3442,11 +3504,11 @@ details[open] .faq-chevron { transform: rotate(180deg); color: var(--violet); }
         <div class="pr-slider-wrap">
           <div class="pr-track"><i id="prFill"></i></div>
           <div class="pr-ticks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-          <input type="range" class="pr-slider" id="prSlider" min="0" max="600" step="1" value="199" aria-label="Cantidad de colaboradores" oninput="setPriceCount(+this.value)">
+          <input type="range" class="pr-slider" id="prSlider" min="0" max="600" step="1" value="299" aria-label="Cantidad de colaboradores" oninput="setPriceCount(+this.value)">
         </div>
-        <div class="pr-scale" aria-hidden="true"><span>1</span><span>50</span><span>100</span><span>200</span><span>300</span><span>500</span><span>1,000+</span></div>
+        <div class="pr-scale" aria-hidden="true"><span>5</span><span>20</span><span>50</span><span>100</span><span>250</span><span>500</span><span>1,000+</span></div>
         <div class="pr-card-price">
-          <strong id="prPrice">US$90</strong>
+          <strong id="prPrice">US$150</strong>
           <span id="prUnit">+ ITBMS / mes</span>
         </div>
         <p class="pr-card-per" id="prPer"></p>
@@ -3459,43 +3521,43 @@ details[open] .faq-chevron { transform: rotate(180deg); color: var(--violet); }
         <a href="#form" class="pr-card-btn" id="prBtn">Agendar una demo →</a>
       </div>
       <div class="pr-table" aria-label="Tabla de precios por cantidad de colaboradores">
-        <div class="pr-table-head"><span>Colaboradores</span><span>Precio mensual</span><span>Por colaborador*</span></div>
+        <div class="pr-table-head"><span>Colaboradores</span><span>Precio mensual</span><span>Aprox. c/u*</span></div>
         <button type="button" class="pr-row" data-tier="0" onclick="setPriceTier(0)">
-          <span class="pr-row-range"><b>1–50</b> colaboradores</span>
-          <span class="pr-row-price"><b>US$60</b> + ITBMS</span>
-          <span class="pr-row-per">US$1.20 c/u</span>
+          <span class="pr-row-range"><b>5–20</b> colaboradores</span>
+          <span class="pr-row-price"><b>US$50</b> + ITBMS</span>
+          <span class="pr-row-per">US$2.50 c/u</span>
         </button>
-        <button type="button" class="pr-row active" data-tier="1" onclick="setPriceTier(1)">
+        <button type="button" class="pr-row" data-tier="1" onclick="setPriceTier(1)">
+          <span class="pr-row-range"><b>21–50</b> colaboradores</span>
+          <span class="pr-row-price"><b>US$100</b> + ITBMS</span>
+          <span class="pr-row-per">US$2.00 c/u</span>
+        </button>
+        <button type="button" class="pr-row active" data-tier="2" onclick="setPriceTier(2)">
           <span class="pr-row-range"><b>51–100</b> colaboradores</span>
-          <span class="pr-row-price"><b>US$90</b> + ITBMS</span>
-          <span class="pr-row-per">US$0.90 c/u</span>
-        </button>
-        <button type="button" class="pr-row" data-tier="2" onclick="setPriceTier(2)">
-          <span class="pr-row-range"><b>101–200</b> colaboradores</span>
           <span class="pr-row-price"><b>US$150</b> + ITBMS</span>
-          <span class="pr-row-per">US$0.75 c/u</span>
+          <span class="pr-row-per">US$1.50 c/u</span>
         </button>
         <button type="button" class="pr-row" data-tier="3" onclick="setPriceTier(3)">
-          <span class="pr-row-range"><b>201–300</b> colaboradores</span>
-          <span class="pr-row-price"><b>US$200</b> + ITBMS</span>
-          <span class="pr-row-per">US$0.67 c/u</span>
+          <span class="pr-row-range"><b>101–250</b> colaboradores</span>
+          <span class="pr-row-price"><b>US$300</b> + ITBMS</span>
+          <span class="pr-row-per">US$1.20 c/u</span>
         </button>
         <button type="button" class="pr-row" data-tier="4" onclick="setPriceTier(4)">
-          <span class="pr-row-range"><b>301–500</b> colaboradores</span>
-          <span class="pr-row-price"><b>US$300</b> + ITBMS</span>
-          <span class="pr-row-per">US$0.60 c/u</span>
+          <span class="pr-row-range"><b>251–500</b> colaboradores</span>
+          <span class="pr-row-price"><b>US$500</b> + ITBMS</span>
+          <span class="pr-row-per">US$1.00 c/u</span>
         </button>
         <button type="button" class="pr-row" data-tier="5" onclick="setPriceTier(5)">
           <span class="pr-row-range"><b>501–1,000</b> colaboradores</span>
-          <span class="pr-row-price"><b>US$500</b> + ITBMS</span>
-          <span class="pr-row-per">US$0.50 c/u</span>
+          <span class="pr-row-price"><b>US$800</b> + ITBMS</span>
+          <span class="pr-row-per">US$0.80 c/u</span>
         </button>
         <button type="button" class="pr-row" data-tier="6" onclick="setPriceTier(6)">
           <span class="pr-row-range"><b>1,001+</b> colaboradores</span>
           <span class="pr-row-price"><b>Cotización personalizada</b></span>
-          <span class="pr-row-per">—</span>
+          <span class="pr-row-per">Según volumen</span>
         </button>
-        <p class="pr-foot">* Costo por colaborador con el rango completo. Precios mensuales en US$; el ITBMS se suma aparte.</p>
+        <p class="pr-foot">* Costo aproximado por colaborador al tope de cada rango. Precios mensuales en US$; el ITBMS se suma aparte.</p>
       </div>
     </div>
   </div>
@@ -3593,7 +3655,7 @@ details[open] .faq-chevron { transform: rotate(180deg); color: var(--violet); }
           ¿Cuánto cuesta Wellnest para la empresa?
           <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </summary>
-        <p class="faq-a">Un pago mensual según la cantidad de colaboradores, desde US$60 + ITBMS, con los 6 módulos incluidos y sin costo de implementación. Puedes ver todos los rangos en la <a href="#precios" style="color:var(--violet);font-weight:600">sección de precios</a>.</p>
+        <p class="faq-a">Un pago mensual según la cantidad de colaboradores, desde US$50 + ITBMS, con los 6 módulos incluidos y sin costo de implementación. Puedes ver todos los rangos en la <a href="#precios" style="color:var(--violet);font-weight:600">sección de precios</a>.</p>
       </details>
 
       <details class="faq-item">
@@ -3929,14 +3991,34 @@ function updateBudgetSplit() {
 }
 document.addEventListener('click', closeCatMenus);
 
+// ── Celular de la demo: inclinación 3D sutil con el mouse (solo escritorio) ──
+document.addEventListener('DOMContentLoaded', () => {
+  const phone = document.getElementById('demoPhone');
+  const area = document.querySelector('.hero-visual.hero-demo');
+  if (!phone || !area || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  area.addEventListener('mousemove', (e) => {
+    const r = phone.getBoundingClientRect();
+    const x = (e.clientX - (r.left + r.width / 2)) / r.width;
+    const y = (e.clientY - (r.top + r.height / 2)) / r.height;
+    phone.style.setProperty('--ty', Math.max(-1, Math.min(1, x)) * 7 + 'deg');
+    phone.style.setProperty('--tx', Math.max(-1, Math.min(1, y)) * -5 + 'deg');
+  });
+  area.addEventListener('mouseleave', () => {
+    phone.style.setProperty('--ty', '0deg');
+    phone.style.setProperty('--tx', '0deg');
+  });
+});
+
 // ── Precios: selector por cantidad de colaboradores ─────────────────────────
+const PRICE_MIN = 5;
 const PRICE_TIERS = [
-  { range: '1–50', price: 60, max: 50 },
-  { range: '51–100', price: 90, max: 100 },
-  { range: '101–200', price: 150, max: 200 },
-  { range: '201–300', price: 200, max: 300 },
-  { range: '301–500', price: 300, max: 500 },
-  { range: '501–1,000', price: 500, max: 1000 },
+  { range: '5–20', price: 50, max: 20 },
+  { range: '21–50', price: 100, max: 50 },
+  { range: '51–100', price: 150, max: 100 },
+  { range: '101–250', price: 300, max: 250 },
+  { range: '251–500', price: 500, max: 500 },
+  { range: '501–1,000', price: 800, max: 1000 },
   { range: '1,001+', price: null, max: null }
 ];
 // El deslizador reparte el mismo ancho a cada rango (0–599) y deja el último punto para 1,001+
@@ -3944,7 +4026,7 @@ function setPriceCount(pos) {
   const last = PRICE_TIERS.length - 1;
   const i = pos >= 600 ? last : Math.floor(pos / 100);
   const t = PRICE_TIERS[i];
-  const min = i === 0 ? 1 : PRICE_TIERS[i - 1].max + 1;
+  const min = i === 0 ? PRICE_MIN : PRICE_TIERS[i - 1].max + 1;
   const n = i === last ? null : Math.round(min + ((pos % 100) / 99) * (t.max - min));
   const slider = document.getElementById('prSlider');
   const price = document.getElementById('prPrice');
@@ -3973,7 +4055,7 @@ function setPriceCount(pos) {
 function setPriceTier(i) {
   setPriceCount(i >= PRICE_TIERS.length - 1 ? 600 : i * 100 + 99);
 }
-document.addEventListener('DOMContentLoaded', () => { if (document.getElementById('prSlider')) setPriceCount(199); });
+document.addEventListener('DOMContentLoaded', () => { if (document.getElementById('prSlider')) setPriceCount(299); });
 
 // ── Wellnest IA (demo): preguntas sugeridas con respuesta escrita en vivo ────
 const IA_ANSWERS = {
